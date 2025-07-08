@@ -1,0 +1,12 @@
+${AnsiColor.BLUE}
+
+  ________ ________ _____.___.  _____
+ /  _____/ \_____  \\__  |   | /  _  \
+/   \  ___  /   |   \/   |   |/  /_\  \
+\    \_\  \/    |    \____   /    |    \
+ \______  /\_______  / ______\____|__  /
+        \/         \/\/              \/
+
+
+${AnsiColor.BRIGHT_YELLOW} :: Goya Platform :: ${application.formatted-version}  based on  ${AnsiColor.RED}:: Spring Boot :: ${spring-boot.formatted-version} ${AnsiColor.BLUE}:: Website ::  https://www.ysmjjsy.cn
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.ysmjjsy.goya</groupId>
+        <artifactId>goya</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+    <artifactId>starter</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>goya-common-api-starter</module>
+        <module>goya-common-starter</module>
+        <module>goya-common-jpa-starter</module>
+        <module>goya-common-web-starter</module>
+        <module>goya-common-rest-starter</module>
+        <module>goya-module-redis-starter</module>
+        <module>goya-security-resource-server-starter</module>
+        <module>goya-cloud-starter</module>
+        <module>goya-security-authorization-server-starter</module>
+        <module>goya-service-starter</module>
+    </modules>
+
+
+</project>

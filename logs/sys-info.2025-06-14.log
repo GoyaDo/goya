@@ -1,0 +1,88 @@
+2025-06-14 20:06:36 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-06-14 20:06:37 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-14 20:06:37 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 JPA repository interfaces.
+2025-06-14 20:06:37 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-06-14 20:06:37 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 542 ms
+2025-06-14 20:06:37 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-14 20:06:37 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-14 20:06:37 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-06-14 20:07:48 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-06-14 20:07:48 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-14 20:07:48 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2025-06-14 20:07:49 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-06-14 20:07:49 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 558 ms
+2025-06-14 20:07:49 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-14 20:07:49 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-14 20:07:49 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000025: Second-level cache region factory [com.ysmjjsy.goya.component.db.cache.GoyaRegionFactory]
+2025-06-14 20:07:49 [main] INFO  o.h.e.b.internal.EnversServiceImpl - Envers integration enabled? : true
+2025-06-14 20:07:49 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-14 20:07:49 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Starting...
+2025-06-14 20:07:49 [main] INFO  com.zaxxer.hikari.pool.HikariPool - Hikari - Added connection com.p6spy.engine.wrapper.ConnectionWrapper@42f2cae8
+2025-06-14 20:07:49 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Start completed.
+2025-06-14 20:07:49 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (Hikari)']
+	Database driver: undefined/unknown
+	Database version: 9.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-14 20:07:49 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown initiated...
+2025-06-14 20:07:50 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown completed.
+2025-06-14 20:07:50 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-06-14 20:08:51 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-06-14 20:08:51 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-14 20:08:51 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2025-06-14 20:08:52 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-06-14 20:08:52 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 573 ms
+2025-06-14 20:08:52 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-14 20:08:52 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-14 20:08:52 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000025: Second-level cache region factory [com.ysmjjsy.goya.component.db.cache.GoyaRegionFactory]
+2025-06-14 20:08:52 [main] INFO  o.h.e.b.internal.EnversServiceImpl - Envers integration enabled? : true
+2025-06-14 20:08:52 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-14 20:08:52 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Starting...
+2025-06-14 20:08:52 [main] INFO  com.zaxxer.hikari.pool.HikariPool - Hikari - Added connection com.p6spy.engine.wrapper.ConnectionWrapper@8f589d7
+2025-06-14 20:08:52 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Start completed.
+2025-06-14 20:08:52 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (Hikari)']
+	Database driver: undefined/unknown
+	Database version: 9.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-14 20:08:53 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown initiated...
+2025-06-14 20:08:53 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown completed.
+2025-06-14 20:08:53 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-06-14 20:09:26 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-06-14 20:09:27 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-14 20:09:27 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2025-06-14 20:09:27 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-06-14 20:09:27 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 477 ms
+2025-06-14 20:09:27 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-14 20:09:27 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-14 20:09:27 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000025: Second-level cache region factory [com.ysmjjsy.goya.component.db.cache.GoyaRegionFactory]
+2025-06-14 20:09:27 [main] INFO  o.h.e.b.internal.EnversServiceImpl - Envers integration enabled? : true
+2025-06-14 20:09:27 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-14 20:09:27 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Starting...
+2025-06-14 20:09:28 [main] INFO  com.zaxxer.hikari.pool.HikariPool - Hikari - Added connection com.p6spy.engine.wrapper.ConnectionWrapper@5b0e5d5f
+2025-06-14 20:09:28 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Start completed.
+2025-06-14 20:09:28 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (Hikari)']
+	Database driver: undefined/unknown
+	Database version: 9.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-14 20:09:28 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown initiated...
+2025-06-14 20:09:28 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown completed.
+2025-06-14 20:09:28 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.

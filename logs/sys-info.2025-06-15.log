@@ -1,0 +1,673 @@
+2025-06-15 00:20:35 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-06-15 00:20:35 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-15 00:20:35 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
+2025-06-15 00:20:35 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-06-15 00:20:35 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 674 ms
+2025-06-15 00:20:36 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-15 00:20:36 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-15 00:20:36 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000025: Second-level cache region factory [com.ysmjjsy.goya.component.db.cache.GoyaRegionFactory]
+2025-06-15 00:20:36 [main] INFO  o.h.e.b.internal.EnversServiceImpl - Envers integration enabled? : true
+2025-06-15 00:20:36 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-15 00:20:36 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Starting...
+2025-06-15 00:20:36 [main] INFO  com.zaxxer.hikari.pool.HikariPool - Hikari - Added connection com.p6spy.engine.wrapper.ConnectionWrapper@31b289da
+2025-06-15 00:20:36 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Start completed.
+2025-06-15 00:20:36 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (Hikari)']
+	Database driver: undefined/unknown
+	Database version: 9.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-15 00:20:37 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown initiated...
+2025-06-15 00:20:37 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown completed.
+2025-06-15 00:20:37 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-06-15 00:28:42 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-06-15 00:28:43 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-15 00:28:43 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2025-06-15 00:28:43 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-06-15 00:28:43 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 549 ms
+2025-06-15 00:28:43 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-15 00:28:43 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-15 00:28:43 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000025: Second-level cache region factory [com.ysmjjsy.goya.component.db.cache.GoyaRegionFactory]
+2025-06-15 00:28:43 [main] INFO  o.h.e.b.internal.EnversServiceImpl - Envers integration enabled? : true
+2025-06-15 00:28:43 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-15 00:28:43 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Starting...
+2025-06-15 00:28:44 [main] INFO  com.zaxxer.hikari.pool.HikariPool - Hikari - Added connection com.p6spy.engine.wrapper.ConnectionWrapper@1c23e369
+2025-06-15 00:28:44 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Start completed.
+2025-06-15 00:28:44 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (Hikari)']
+	Database driver: undefined/unknown
+	Database version: 9.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-15 00:28:44 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown initiated...
+2025-06-15 00:28:44 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown completed.
+2025-06-15 00:28:44 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-06-15 00:30:52 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-06-15 00:30:52 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-15 00:30:52 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-15 00:30:52 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2025-06-15 00:30:53 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-06-15 00:30:53 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 666 ms
+2025-06-15 00:30:53 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-15 00:30:53 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-15 00:30:53 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000025: Second-level cache region factory [com.ysmjjsy.goya.component.db.cache.GoyaRegionFactory]
+2025-06-15 00:30:53 [main] INFO  o.h.e.b.internal.EnversServiceImpl - Envers integration enabled? : true
+2025-06-15 00:30:53 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-15 00:30:53 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Starting...
+2025-06-15 00:30:54 [main] INFO  com.zaxxer.hikari.pool.HikariPool - Hikari - Added connection com.p6spy.engine.wrapper.ConnectionWrapper@1ba98508
+2025-06-15 00:30:54 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Start completed.
+2025-06-15 00:30:54 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (Hikari)']
+	Database driver: undefined/unknown
+	Database version: 9.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-15 00:30:54 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown initiated...
+2025-06-15 00:30:54 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown completed.
+2025-06-15 00:30:54 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-06-15 00:32:15 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-06-15 00:32:16 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-15 00:32:16 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-15 00:32:16 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2025-06-15 00:32:16 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-06-15 00:32:16 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 779 ms
+2025-06-15 00:32:16 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-15 00:32:16 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-15 00:32:16 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000025: Second-level cache region factory [com.ysmjjsy.goya.component.db.cache.GoyaRegionFactory]
+2025-06-15 00:32:16 [main] INFO  o.h.e.b.internal.EnversServiceImpl - Envers integration enabled? : true
+2025-06-15 00:32:16 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-15 00:32:16 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Starting...
+2025-06-15 00:32:17 [main] INFO  com.zaxxer.hikari.pool.HikariPool - Hikari - Added connection com.p6spy.engine.wrapper.ConnectionWrapper@4c6eaa65
+2025-06-15 00:32:17 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Start completed.
+2025-06-15 00:32:17 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (Hikari)']
+	Database driver: undefined/unknown
+	Database version: 9.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-15 00:32:17 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown initiated...
+2025-06-15 00:32:17 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown completed.
+2025-06-15 00:32:17 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-06-15 00:33:04 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-06-15 00:33:04 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-15 00:33:04 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-15 00:33:04 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2025-06-15 00:33:05 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-06-15 00:33:05 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 707 ms
+2025-06-15 00:33:05 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-15 00:33:05 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-15 00:33:05 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000025: Second-level cache region factory [com.ysmjjsy.goya.component.db.cache.GoyaRegionFactory]
+2025-06-15 00:33:05 [main] INFO  o.h.e.b.internal.EnversServiceImpl - Envers integration enabled? : true
+2025-06-15 00:33:05 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-15 00:33:05 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Starting...
+2025-06-15 00:33:05 [main] INFO  com.zaxxer.hikari.pool.HikariPool - Hikari - Added connection com.p6spy.engine.wrapper.ConnectionWrapper@4930213b
+2025-06-15 00:33:05 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Start completed.
+2025-06-15 00:33:06 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (Hikari)']
+	Database driver: undefined/unknown
+	Database version: 9.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-15 00:33:06 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown initiated...
+2025-06-15 00:33:06 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown completed.
+2025-06-15 00:33:06 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-06-15 00:33:11 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-06-15 00:33:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-15 00:33:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-15 00:33:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2025-06-15 00:33:12 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-06-15 00:33:12 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 677 ms
+2025-06-15 00:33:12 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-15 00:33:12 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-15 00:33:12 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000025: Second-level cache region factory [com.ysmjjsy.goya.component.db.cache.GoyaRegionFactory]
+2025-06-15 00:33:12 [main] INFO  o.h.e.b.internal.EnversServiceImpl - Envers integration enabled? : true
+2025-06-15 00:33:12 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-15 00:33:12 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Starting...
+2025-06-15 00:33:13 [main] INFO  com.zaxxer.hikari.pool.HikariPool - Hikari - Added connection com.p6spy.engine.wrapper.ConnectionWrapper@430db481
+2025-06-15 00:33:13 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Start completed.
+2025-06-15 00:33:13 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (Hikari)']
+	Database driver: undefined/unknown
+	Database version: 9.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-15 00:33:13 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown initiated...
+2025-06-15 00:33:13 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown completed.
+2025-06-15 00:33:13 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-06-15 00:34:50 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-06-15 00:34:51 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-15 00:34:51 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-15 00:34:51 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2025-06-15 00:34:51 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-06-15 00:34:51 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 664 ms
+2025-06-15 00:34:51 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-15 00:34:51 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-15 00:34:51 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000025: Second-level cache region factory [com.ysmjjsy.goya.component.db.cache.GoyaRegionFactory]
+2025-06-15 00:34:51 [main] INFO  o.h.e.b.internal.EnversServiceImpl - Envers integration enabled? : true
+2025-06-15 00:34:51 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-15 00:34:51 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Starting...
+2025-06-15 00:34:52 [main] INFO  com.zaxxer.hikari.pool.HikariPool - Hikari - Added connection com.p6spy.engine.wrapper.ConnectionWrapper@25e24908
+2025-06-15 00:34:52 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Start completed.
+2025-06-15 00:34:52 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (Hikari)']
+	Database driver: undefined/unknown
+	Database version: 9.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-15 00:34:52 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown initiated...
+2025-06-15 00:34:52 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown completed.
+2025-06-15 00:34:52 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-06-15 00:35:49 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-06-15 00:35:49 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-15 00:35:49 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-15 00:35:49 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2025-06-15 00:35:50 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-06-15 00:35:50 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 795 ms
+2025-06-15 00:35:50 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-15 00:35:50 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-15 00:35:50 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000025: Second-level cache region factory [com.ysmjjsy.goya.component.db.cache.GoyaRegionFactory]
+2025-06-15 00:35:50 [main] INFO  o.h.e.b.internal.EnversServiceImpl - Envers integration enabled? : true
+2025-06-15 00:35:50 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-15 00:35:50 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Starting...
+2025-06-15 00:35:50 [main] INFO  com.zaxxer.hikari.pool.HikariPool - Hikari - Added connection com.p6spy.engine.wrapper.ConnectionWrapper@575cfec1
+2025-06-15 00:35:50 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Start completed.
+2025-06-15 00:35:51 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (Hikari)']
+	Database driver: undefined/unknown
+	Database version: 9.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-15 00:35:51 [main] INFO  c.a.j.a.AbstractCacheAutoInit - init cache area default , type= caffeine
+2025-06-15 00:35:51 [main] INFO  c.a.j.a.AbstractCacheAutoInit - init cache area default , type= redis.lettuce
+2025-06-15 00:35:51 [main] INFO  c.a.j.support.DefaultMetricsManager - cache stat period at 15 MINUTES
+2025-06-15 00:35:52 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-15 00:35:52 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-15 00:35:52 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-06-15 00:35:52 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-06-15 00:35:52 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-06-15 00:35:52 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-06-15 00:35:52 [main] INFO  o.s.b.w.e.undertow.UndertowWebServer - Undertow started on port 8082 (http) with context path '/'
+2025-06-15 00:36:08 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.undertow.UndertowWebServer - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-15 00:36:08 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.undertow.UndertowWebServer - Graceful shutdown complete
+2025-06-15 00:36:08 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-06-15 00:36:08 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-15 00:36:08 [SpringApplicationShutdownHook] INFO  c.a.j.support.DefaultMetricsManager - cache stat canceled
+2025-06-15 00:36:08 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown initiated...
+2025-06-15 00:36:08 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown completed.
+2025-06-15 00:36:09 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-06-15 00:36:10 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-15 00:36:10 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-15 00:36:10 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
+2025-06-15 00:36:10 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-06-15 00:36:10 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 752 ms
+2025-06-15 00:36:10 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-15 00:36:10 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-15 00:36:10 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000025: Second-level cache region factory [com.ysmjjsy.goya.component.db.cache.GoyaRegionFactory]
+2025-06-15 00:36:10 [main] INFO  o.h.e.b.internal.EnversServiceImpl - Envers integration enabled? : true
+2025-06-15 00:36:10 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-15 00:36:10 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Starting...
+2025-06-15 00:36:11 [main] INFO  com.zaxxer.hikari.pool.HikariPool - Hikari - Added connection com.p6spy.engine.wrapper.ConnectionWrapper@32068aef
+2025-06-15 00:36:11 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Start completed.
+2025-06-15 00:36:11 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (Hikari)']
+	Database driver: undefined/unknown
+	Database version: 9.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-15 00:36:11 [main] INFO  c.a.j.a.AbstractCacheAutoInit - init cache area default , type= caffeine
+2025-06-15 00:36:11 [main] INFO  c.a.j.a.AbstractCacheAutoInit - init cache area default , type= redis.lettuce
+2025-06-15 00:36:12 [main] INFO  c.a.j.support.DefaultMetricsManager - cache stat period at 15 MINUTES
+2025-06-15 00:36:12 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-15 00:36:12 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-15 00:36:12 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-06-15 00:36:12 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-06-15 00:36:12 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-06-15 00:36:12 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-06-15 00:36:12 [main] INFO  o.s.b.w.e.undertow.UndertowWebServer - Undertow started on port 8082 (http) with context path '/'
+2025-06-15 00:36:14 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.undertow.UndertowWebServer - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-15 00:36:14 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.undertow.UndertowWebServer - Graceful shutdown complete
+2025-06-15 00:36:14 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-06-15 00:36:14 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-15 00:36:14 [SpringApplicationShutdownHook] INFO  c.a.j.support.DefaultMetricsManager - cache stat canceled
+2025-06-15 00:36:14 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown initiated...
+2025-06-15 00:36:14 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown completed.
+2025-06-15 00:44:26 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-06-15 00:44:27 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-15 00:44:27 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-15 00:44:27 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2025-06-15 00:44:27 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-06-15 00:44:27 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 701 ms
+2025-06-15 00:44:27 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-15 00:44:27 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-15 00:44:27 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000025: Second-level cache region factory [com.ysmjjsy.goya.component.db.cache.GoyaRegionFactory]
+2025-06-15 00:44:27 [main] INFO  o.h.e.b.internal.EnversServiceImpl - Envers integration enabled? : true
+2025-06-15 00:44:28 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-15 00:44:28 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Starting...
+2025-06-15 00:44:28 [main] INFO  com.zaxxer.hikari.pool.HikariPool - Hikari - Added connection com.p6spy.engine.wrapper.ConnectionWrapper@64a4739
+2025-06-15 00:44:28 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Start completed.
+2025-06-15 00:44:28 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (Hikari)']
+	Database driver: undefined/unknown
+	Database version: 9.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-15 00:44:28 [main] INFO  c.a.j.a.AbstractCacheAutoInit - init cache area default , type= caffeine
+2025-06-15 00:44:28 [main] INFO  c.a.j.a.AbstractCacheAutoInit - init cache area default , type= redis.lettuce
+2025-06-15 00:44:29 [main] INFO  c.a.j.support.DefaultMetricsManager - cache stat period at 15 MINUTES
+2025-06-15 00:44:29 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-15 00:44:29 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-15 00:44:30 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-06-15 00:44:30 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-06-15 00:44:30 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-06-15 00:44:30 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-06-15 00:44:30 [main] INFO  o.s.b.w.e.undertow.UndertowWebServer - Undertow started on port 8082 (http) with context path '/'
+2025-06-15 00:44:34 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.undertow.UndertowWebServer - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-15 00:44:34 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.undertow.UndertowWebServer - Graceful shutdown complete
+2025-06-15 00:44:34 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-06-15 00:44:34 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-15 00:44:34 [SpringApplicationShutdownHook] INFO  c.a.j.support.DefaultMetricsManager - cache stat canceled
+2025-06-15 00:44:34 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown initiated...
+2025-06-15 00:44:34 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown completed.
+2025-06-15 22:14:08 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-06-15 22:14:08 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-15 22:14:08 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-15 22:14:08 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2025-06-15 22:14:08 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-06-15 22:14:08 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 691 ms
+2025-06-15 22:14:09 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-15 22:14:09 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-15 22:14:09 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000025: Second-level cache region factory [com.ysmjjsy.goya.component.db.cache.GoyaRegionFactory]
+2025-06-15 22:14:09 [main] INFO  o.h.e.b.internal.EnversServiceImpl - Envers integration enabled? : true
+2025-06-15 22:14:09 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-15 22:14:09 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Starting...
+2025-06-15 22:14:09 [main] INFO  com.zaxxer.hikari.pool.HikariPool - Hikari - Added connection com.p6spy.engine.wrapper.ConnectionWrapper@5b3a8bea
+2025-06-15 22:14:09 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Start completed.
+2025-06-15 22:14:09 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (Hikari)']
+	Database driver: undefined/unknown
+	Database version: 9.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-15 22:14:09 [main] INFO  c.a.j.a.AbstractCacheAutoInit - init cache area default , type= caffeine
+2025-06-15 22:14:09 [main] INFO  c.a.j.a.AbstractCacheAutoInit - init cache area default , type= redis.lettuce
+2025-06-15 22:14:10 [main] INFO  c.a.j.support.DefaultMetricsManager - cache stat period at 15 MINUTES
+2025-06-15 22:14:10 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-15 22:14:10 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-15 22:14:11 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-06-15 22:14:11 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-06-15 22:14:11 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-06-15 22:14:11 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-06-15 22:14:11 [main] INFO  o.s.b.w.e.undertow.UndertowWebServer - Undertow started on port 8082 (http) with context path '/'
+2025-06-15 22:14:40 [XNIO-1 task-2] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-15 22:14:40 [XNIO-1 task-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-15 22:14:40 [XNIO-1 task-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-06-15 22:15:00 [JetCacheDefaultExecutor] INFO  c.a.jetcache.support.StatInfoLogger - jetcache stat from 2025-06-15 22:14:10,676 to 2025-06-15 22:15:00,002
+cache                                   |       qps|   rate|           get|           hit|          fail|        expire|avgLoadTime|maxLoadTime
+----------------------------------------+----------+-------+--------------+--------------+--------------+--------------+-----------+-----------
+default-query-results-region:           |      0.00|  0.00%|             0|             0|             0|             0|        0.0|          0
+default-query-results-region:_local     |      0.00|  0.00%|             0|             0|             0|             0|        0.0|          0
+default-query-results-region:_remote    |      0.00|  0.00%|             0|             0|             0|             0|        0.0|          0
+default-update-timestamps-region:       |      0.00|  0.00%|             0|             0|             0|             0|        0.0|          0
+default-update-timestamps-region:_local |      0.00|  0.00%|             0|             0|             0|             0|        0.0|          0
+default-update-timestamps-region:_remote|      0.00|  0.00%|             0|             0|             0|             0|        0.0|          0
+----------------------------------------+----------+-------+--------------+--------------+--------------+--------------+-----------+-----------
+
+2025-06-15 22:20:18 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.undertow.UndertowWebServer - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-15 22:20:18 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.undertow.UndertowWebServer - Graceful shutdown complete
+2025-06-15 22:20:18 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-06-15 22:20:18 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-06-15 22:20:18 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-15 22:20:18 [SpringApplicationShutdownHook] INFO  c.a.j.support.DefaultMetricsManager - cache stat canceled
+2025-06-15 22:20:18 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown initiated...
+2025-06-15 22:20:18 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown completed.
+2025-06-15 22:20:20 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-06-15 22:20:21 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-15 22:20:21 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-15 22:20:21 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2025-06-15 22:20:21 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-06-15 22:20:21 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 638 ms
+2025-06-15 22:20:21 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-15 22:20:21 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-15 22:20:21 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000025: Second-level cache region factory [com.ysmjjsy.goya.component.db.cache.GoyaRegionFactory]
+2025-06-15 22:20:21 [main] INFO  o.h.e.b.internal.EnversServiceImpl - Envers integration enabled? : true
+2025-06-15 22:20:21 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-15 22:20:21 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Starting...
+2025-06-15 22:20:22 [main] INFO  com.zaxxer.hikari.pool.HikariPool - Hikari - Added connection com.p6spy.engine.wrapper.ConnectionWrapper@386f88b3
+2025-06-15 22:20:22 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Start completed.
+2025-06-15 22:20:22 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (Hikari)']
+	Database driver: undefined/unknown
+	Database version: 9.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-15 22:20:22 [main] INFO  c.a.j.a.AbstractCacheAutoInit - init cache area default , type= caffeine
+2025-06-15 22:20:22 [main] INFO  c.a.j.a.AbstractCacheAutoInit - init cache area default , type= redis.lettuce
+2025-06-15 22:20:23 [main] INFO  c.a.j.support.DefaultMetricsManager - cache stat period at 15 MINUTES
+2025-06-15 22:20:23 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-15 22:20:23 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-15 22:20:23 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-06-15 22:20:23 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-06-15 22:20:23 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-06-15 22:20:23 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-06-15 22:20:23 [main] INFO  o.s.b.w.e.undertow.UndertowWebServer - Undertow started on port 8082 (http) with context path '/'
+2025-06-15 22:20:34 [XNIO-1 task-2] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-15 22:20:34 [XNIO-1 task-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-15 22:20:34 [XNIO-1 task-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-06-15 22:21:17 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.undertow.UndertowWebServer - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-15 22:21:17 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.undertow.UndertowWebServer - Graceful shutdown complete
+2025-06-15 22:21:17 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-06-15 22:21:17 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-06-15 22:21:17 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-15 22:21:17 [SpringApplicationShutdownHook] INFO  c.a.j.support.DefaultMetricsManager - cache stat canceled
+2025-06-15 22:21:17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown initiated...
+2025-06-15 22:21:17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown completed.
+2025-06-15 22:21:19 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-06-15 22:21:20 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-15 22:21:20 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-15 22:21:20 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2025-06-15 22:21:20 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-06-15 22:21:20 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 643 ms
+2025-06-15 22:21:20 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-15 22:21:20 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-15 22:21:20 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000025: Second-level cache region factory [com.ysmjjsy.goya.component.db.cache.GoyaRegionFactory]
+2025-06-15 22:21:20 [main] INFO  o.h.e.b.internal.EnversServiceImpl - Envers integration enabled? : true
+2025-06-15 22:21:20 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-15 22:21:20 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Starting...
+2025-06-15 22:21:21 [main] INFO  com.zaxxer.hikari.pool.HikariPool - Hikari - Added connection com.p6spy.engine.wrapper.ConnectionWrapper@1885905b
+2025-06-15 22:21:21 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Start completed.
+2025-06-15 22:21:21 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (Hikari)']
+	Database driver: undefined/unknown
+	Database version: 9.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-15 22:21:21 [main] INFO  c.a.j.a.AbstractCacheAutoInit - init cache area default , type= caffeine
+2025-06-15 22:21:21 [main] INFO  c.a.j.a.AbstractCacheAutoInit - init cache area default , type= redis.lettuce
+2025-06-15 22:21:22 [main] INFO  c.a.j.support.DefaultMetricsManager - cache stat period at 15 MINUTES
+2025-06-15 22:21:22 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-15 22:21:22 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-15 22:21:22 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-06-15 22:21:22 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-06-15 22:21:22 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-06-15 22:21:22 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-06-15 22:21:22 [main] INFO  o.s.b.w.e.undertow.UndertowWebServer - Undertow started on port 8082 (http) with context path '/'
+2025-06-15 22:21:25 [XNIO-1 task-2] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-15 22:21:25 [XNIO-1 task-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-15 22:21:25 [XNIO-1 task-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-06-15 22:22:17 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.undertow.UndertowWebServer - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-15 22:22:17 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.undertow.UndertowWebServer - Graceful shutdown complete
+2025-06-15 22:22:17 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-06-15 22:22:17 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-06-15 22:22:17 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-15 22:22:17 [SpringApplicationShutdownHook] INFO  c.a.j.support.DefaultMetricsManager - cache stat canceled
+2025-06-15 22:22:17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown initiated...
+2025-06-15 22:22:17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown completed.
+2025-06-15 22:22:19 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-06-15 22:22:19 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-15 22:22:19 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-15 22:22:19 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2025-06-15 22:22:19 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-06-15 22:22:19 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 626 ms
+2025-06-15 22:22:19 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-15 22:22:19 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-15 22:22:19 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000025: Second-level cache region factory [com.ysmjjsy.goya.component.db.cache.GoyaRegionFactory]
+2025-06-15 22:22:20 [main] INFO  o.h.e.b.internal.EnversServiceImpl - Envers integration enabled? : true
+2025-06-15 22:22:20 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-15 22:22:20 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Starting...
+2025-06-15 22:22:20 [main] INFO  com.zaxxer.hikari.pool.HikariPool - Hikari - Added connection com.p6spy.engine.wrapper.ConnectionWrapper@386f88b3
+2025-06-15 22:22:20 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Start completed.
+2025-06-15 22:22:20 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (Hikari)']
+	Database driver: undefined/unknown
+	Database version: 9.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-15 22:22:20 [main] INFO  c.a.j.a.AbstractCacheAutoInit - init cache area default , type= caffeine
+2025-06-15 22:22:20 [main] INFO  c.a.j.a.AbstractCacheAutoInit - init cache area default , type= redis.lettuce
+2025-06-15 22:22:21 [main] INFO  c.a.j.support.DefaultMetricsManager - cache stat period at 15 MINUTES
+2025-06-15 22:22:21 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-15 22:22:21 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-15 22:22:22 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-06-15 22:22:22 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-06-15 22:22:22 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-06-15 22:22:22 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-06-15 22:22:22 [main] INFO  o.s.b.w.e.undertow.UndertowWebServer - Undertow started on port 8082 (http) with context path '/'
+2025-06-15 22:22:30 [XNIO-1 task-2] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-15 22:22:30 [XNIO-1 task-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-15 22:22:30 [XNIO-1 task-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-06-15 22:22:58 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.undertow.UndertowWebServer - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-15 22:22:58 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.undertow.UndertowWebServer - Graceful shutdown complete
+2025-06-15 22:22:58 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-06-15 22:22:58 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-06-15 22:22:58 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-15 22:22:58 [SpringApplicationShutdownHook] INFO  c.a.j.support.DefaultMetricsManager - cache stat canceled
+2025-06-15 22:22:58 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown initiated...
+2025-06-15 22:22:58 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown completed.
+2025-06-15 22:23:00 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-06-15 22:23:00 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-15 22:23:00 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-15 22:23:00 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2025-06-15 22:23:01 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-06-15 22:23:01 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 629 ms
+2025-06-15 22:23:01 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-15 22:23:01 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-15 22:23:01 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000025: Second-level cache region factory [com.ysmjjsy.goya.component.db.cache.GoyaRegionFactory]
+2025-06-15 22:23:01 [main] INFO  o.h.e.b.internal.EnversServiceImpl - Envers integration enabled? : true
+2025-06-15 22:23:01 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-15 22:23:01 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Starting...
+2025-06-15 22:23:01 [main] INFO  com.zaxxer.hikari.pool.HikariPool - Hikari - Added connection com.p6spy.engine.wrapper.ConnectionWrapper@c4ca86a
+2025-06-15 22:23:01 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Start completed.
+2025-06-15 22:23:01 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (Hikari)']
+	Database driver: undefined/unknown
+	Database version: 9.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-15 22:23:02 [main] INFO  c.a.j.a.AbstractCacheAutoInit - init cache area default , type= caffeine
+2025-06-15 22:23:02 [main] INFO  c.a.j.a.AbstractCacheAutoInit - init cache area default , type= redis.lettuce
+2025-06-15 22:23:02 [main] INFO  c.a.j.support.DefaultMetricsManager - cache stat period at 15 MINUTES
+2025-06-15 22:23:02 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-15 22:23:02 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-15 22:23:03 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-06-15 22:23:03 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-06-15 22:23:03 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-06-15 22:23:03 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-06-15 22:23:03 [main] INFO  o.s.b.w.e.undertow.UndertowWebServer - Undertow started on port 8082 (http) with context path '/'
+2025-06-15 22:23:06 [XNIO-1 task-2] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-15 22:23:06 [XNIO-1 task-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-15 22:23:06 [XNIO-1 task-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-06-15 22:29:59 [JetCacheDefaultExecutor] INFO  c.a.jetcache.support.StatInfoLogger - jetcache stat from 2025-06-15 22:23:02,822 to 2025-06-15 22:29:59,994
+cache                                   |       qps|   rate|           get|           hit|          fail|        expire|avgLoadTime|maxLoadTime
+----------------------------------------+----------+-------+--------------+--------------+--------------+--------------+-----------+-----------
+default-query-results-region:           |      0.00|  0.00%|             0|             0|             0|             0|        0.0|          0
+default-query-results-region:_local     |      0.00|  0.00%|             0|             0|             0|             0|        0.0|          0
+default-query-results-region:_remote    |      0.00|  0.00%|             0|             0|             0|             0|        0.0|          0
+default-update-timestamps-region:       |      0.00|  0.00%|             0|             0|             0|             0|        0.0|          0
+default-update-timestamps-region:_local |      0.00|  0.00%|             0|             0|             0|             0|        0.0|          0
+default-update-timestamps-region:_remote|      0.00|  0.00%|             0|             0|             0|             0|        0.0|          0
+test2:                                  |      0.00|100.00%|             2|             2|             0|             0|        0.0|          0
+test2:_local                            |      0.00|100.00%|             2|             2|             0|             0|        0.0|          0
+test2:_remote                           |      0.00|  0.00%|             0|             0|             0|             0|        0.0|          0
+----------------------------------------+----------+-------+--------------+--------------+--------------+--------------+-----------+-----------
+
+2025-06-15 22:32:26 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.undertow.UndertowWebServer - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-15 22:32:26 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.undertow.UndertowWebServer - Graceful shutdown complete
+2025-06-15 22:32:26 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-06-15 22:32:26 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-06-15 22:32:26 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-15 22:32:26 [SpringApplicationShutdownHook] INFO  c.a.j.support.DefaultMetricsManager - cache stat canceled
+2025-06-15 22:32:26 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown initiated...
+2025-06-15 22:32:26 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown completed.
+2025-06-15 22:32:28 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-06-15 22:32:29 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-15 22:32:29 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-15 22:32:29 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2025-06-15 22:32:29 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-06-15 22:32:29 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 642 ms
+2025-06-15 22:32:29 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-15 22:32:29 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-15 22:32:29 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000025: Second-level cache region factory [com.ysmjjsy.goya.component.db.cache.GoyaRegionFactory]
+2025-06-15 22:32:29 [main] INFO  o.h.e.b.internal.EnversServiceImpl - Envers integration enabled? : true
+2025-06-15 22:32:29 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-15 22:32:29 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Starting...
+2025-06-15 22:32:30 [main] INFO  com.zaxxer.hikari.pool.HikariPool - Hikari - Added connection com.p6spy.engine.wrapper.ConnectionWrapper@662e5590
+2025-06-15 22:32:30 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Start completed.
+2025-06-15 22:32:30 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (Hikari)']
+	Database driver: undefined/unknown
+	Database version: 9.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-15 22:32:30 [main] INFO  c.a.j.a.AbstractCacheAutoInit - init cache area default , type= caffeine
+2025-06-15 22:32:30 [main] INFO  c.a.j.a.AbstractCacheAutoInit - init cache area default , type= redis.lettuce
+2025-06-15 22:32:31 [main] INFO  c.a.j.support.DefaultMetricsManager - cache stat period at 15 MINUTES
+2025-06-15 22:32:31 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-15 22:32:31 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-15 22:32:31 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-06-15 22:32:31 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-06-15 22:32:31 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-06-15 22:32:31 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-06-15 22:32:31 [main] INFO  o.s.b.w.e.undertow.UndertowWebServer - Undertow started on port 8082 (http) with context path '/'
+2025-06-15 22:32:37 [XNIO-1 task-2] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-15 22:32:37 [XNIO-1 task-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-15 22:32:37 [XNIO-1 task-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-06-15 22:33:32 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.undertow.UndertowWebServer - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-15 22:33:32 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.undertow.UndertowWebServer - Graceful shutdown complete
+2025-06-15 22:33:32 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-06-15 22:33:32 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-06-15 22:33:32 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-15 22:33:32 [SpringApplicationShutdownHook] INFO  c.a.j.support.DefaultMetricsManager - cache stat canceled
+2025-06-15 22:33:32 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown initiated...
+2025-06-15 22:33:32 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown completed.
+2025-06-15 22:33:34 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-06-15 22:33:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-15 22:33:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-15 22:33:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2025-06-15 22:33:35 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-06-15 22:33:35 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 639 ms
+2025-06-15 22:33:35 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-15 22:33:35 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-15 22:33:35 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000025: Second-level cache region factory [com.ysmjjsy.goya.component.db.cache.GoyaRegionFactory]
+2025-06-15 22:33:35 [main] INFO  o.h.e.b.internal.EnversServiceImpl - Envers integration enabled? : true
+2025-06-15 22:33:35 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-15 22:33:35 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Starting...
+2025-06-15 22:33:35 [main] INFO  com.zaxxer.hikari.pool.HikariPool - Hikari - Added connection com.p6spy.engine.wrapper.ConnectionWrapper@386f88b3
+2025-06-15 22:33:35 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Start completed.
+2025-06-15 22:33:35 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (Hikari)']
+	Database driver: undefined/unknown
+	Database version: 9.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-15 22:33:35 [main] INFO  c.a.j.a.AbstractCacheAutoInit - init cache area default , type= caffeine
+2025-06-15 22:33:35 [main] INFO  c.a.j.a.AbstractCacheAutoInit - init cache area default , type= redis.lettuce
+2025-06-15 22:33:36 [main] INFO  c.a.j.support.DefaultMetricsManager - cache stat period at 15 MINUTES
+2025-06-15 22:33:36 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-15 22:33:36 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-15 22:33:37 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-06-15 22:33:37 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-06-15 22:33:37 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-06-15 22:33:37 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-06-15 22:33:37 [main] INFO  o.s.b.w.e.undertow.UndertowWebServer - Undertow started on port 8082 (http) with context path '/'
+2025-06-15 22:33:43 [XNIO-1 task-2] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-15 22:33:43 [XNIO-1 task-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-15 22:33:43 [XNIO-1 task-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-06-15 22:35:31 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.undertow.UndertowWebServer - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-15 22:35:31 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.undertow.UndertowWebServer - Graceful shutdown complete
+2025-06-15 22:35:31 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-06-15 22:35:31 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-06-15 22:35:31 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-15 22:35:31 [SpringApplicationShutdownHook] INFO  c.a.j.support.DefaultMetricsManager - cache stat canceled
+2025-06-15 22:35:31 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown initiated...
+2025-06-15 22:35:31 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown completed.
+2025-06-15 22:35:59 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-06-15 22:36:00 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-15 22:36:00 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-15 22:36:00 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2025-06-15 22:36:00 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2025-06-15 22:36:00 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 667 ms
+2025-06-15 22:36:00 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-15 22:36:00 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-15 22:36:00 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000025: Second-level cache region factory [com.ysmjjsy.goya.component.db.cache.GoyaRegionFactory]
+2025-06-15 22:36:00 [main] INFO  o.h.e.b.internal.EnversServiceImpl - Envers integration enabled? : true
+2025-06-15 22:36:00 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-15 22:36:00 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Starting...
+2025-06-15 22:36:01 [main] INFO  com.zaxxer.hikari.pool.HikariPool - Hikari - Added connection com.p6spy.engine.wrapper.ConnectionWrapper@38394e76
+2025-06-15 22:36:01 [main] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Start completed.
+2025-06-15 22:36:01 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (Hikari)']
+	Database driver: undefined/unknown
+	Database version: 9.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-15 22:36:01 [main] INFO  c.a.j.a.AbstractCacheAutoInit - init cache area default , type= caffeine
+2025-06-15 22:36:01 [main] INFO  c.a.j.a.AbstractCacheAutoInit - init cache area default , type= redis.lettuce
+2025-06-15 22:36:02 [main] INFO  c.a.j.support.DefaultMetricsManager - cache stat period at 15 MINUTES
+2025-06-15 22:36:02 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-15 22:36:02 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-15 22:36:02 [main] INFO  io.undertow - starting server: Undertow - 2.3.18.Final
+2025-06-15 22:36:02 [main] INFO  org.xnio - XNIO version 3.8.16.Final
+2025-06-15 22:36:02 [main] INFO  org.xnio.nio - XNIO NIO Implementation Version 3.8.16.Final
+2025-06-15 22:36:02 [main] INFO  org.jboss.threads - JBoss Threads version 3.5.0.Final
+2025-06-15 22:36:02 [main] INFO  o.s.b.w.e.undertow.UndertowWebServer - Undertow started on port 8082 (http) with context path '/'
+2025-06-15 22:36:06 [XNIO-1 task-2] INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-15 22:36:06 [XNIO-1 task-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-15 22:36:06 [XNIO-1 task-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-06-15 22:36:15 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.undertow.UndertowWebServer - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-15 22:36:15 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.undertow.UndertowWebServer - Graceful shutdown complete
+2025-06-15 22:36:15 [SpringApplicationShutdownHook] INFO  io.undertow - stopping server: Undertow - 2.3.18.Final
+2025-06-15 22:36:15 [SpringApplicationShutdownHook] INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-06-15 22:36:15 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-15 22:36:15 [SpringApplicationShutdownHook] INFO  c.a.j.support.DefaultMetricsManager - cache stat canceled
+2025-06-15 22:36:15 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown initiated...
+2025-06-15 22:36:15 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - Hikari - Shutdown completed.

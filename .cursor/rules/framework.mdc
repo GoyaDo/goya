@@ -1,0 +1,111 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Spring Boot/Spring Cloud 框架规范
+
+## 1. Spring Boot 基础
+
+- **依赖管理:**
+  - 优先使用 `bom/pom.xml` 中定义的 `spring-boot-dependencies` 和项目自定义的 BOM 来管理依赖版本，避免手动指定版本。
+  - 对于自定义的 Starter，应遵循 Spring Boot Starter 的命名约定 (`[module]-spring-boot-starter`)。
+- **配置管理:**
+  - 使用 `application.yml` 或 `application.properties` 进行配置。
+  - 敏感信息（如数据库密码、API 密钥）应使用 Spring Cloud Config 或其他安全方式管理，避免硬编码。
+  - 使用 `@ConfigurationProperties` 绑定外部配置到 Java 对象。
+- **自动配置:**
+  - 尽可能利用 Spring Boot 的自动配置功能，减少 boilerplate 代码。
+  - 如果需要自定义自动配置，应使用 `@ConditionalOnProperty`、`@ConditionalOnClass` 等条件注解。
+- **健康检查与监控:**
+  - 引入 Spring Boot Actuator 提供健康检查、度量指标等功能。
+  - 暴露必要的 Actuator 端点，并进行适当的安全配置。
+- **日志:**
+  - 统一使用 SLF4J 接口和 Logback 实现。
+  - 配置日志级别和输出格式，确保日志信息清晰可读且包含关键上下文信息。
+
+## 2. Spring Cloud 微服务
+
+- **服务注册与发现:**
+  - 使用 Spring Cloud Eureka、Nacos 或 Consul 等作为服务注册中心。
+  - 服务消费者应通过服务名进行调用，而不是硬编码 IP 地址和端口。
+- **负载均衡:**
+  - 结合 Ribbon 或 Spring Cloud LoadBalancer 进行客户端负载均衡。
+- **API 网关:**
+  - 使用 Spring Cloud Gateway 或 Zuul 作为 API 网关，进行路由、过滤、限流、熔断等。
+- **配置中心:**
+  - 使用 Spring Cloud Config 或 Nacos Config 作为统一配置中心，实现配置的动态刷新。
+- **熔断与降级:**
+  - 使用 Spring Cloud Alibaba Sentinel 或 Hystrix (如果仍在维护) 实现服务熔断、降级和限流，提高系统稳定性。
+- **链路追踪:**
+  - 使用 Spring Cloud Sleuth 结合 Zipkin 或 Jaeger 实现分布式链路追踪，便于问题排查。
+- **消息队列:**
+  - 使用 Spring Cloud Stream 简化与 Kafka、RabbitMQ 等消息队列的集成。
+  - 遵循消息发布/订阅模式，实现服务间的异步通信。
+- **分布式事务:**
+  - 谨慎使用分布式事务，考虑最终一致性方案（如 TCC、Seata）。
+
+## 3. RESTful API 设计规范
+
+- **URL 命名:**
+  - 使用名词复数表示资源集合，例如 `/users`, `/products`。
+  - 使用连字符 `-` 分隔单词，例如 `/user-profiles`。
+  - 避免在 URL 中包含动词。
+- **HTTP 方法:**
+  - `GET`: 获取资源。
+  - `POST`: 创建资源。
+  - `PUT`: 更新资源（全量更新）。
+  - `PATCH`: 更新资源（部分更新）。
+  - `DELETE`: 删除资源。
+- **状态码:**
+  - `200 OK`: 请求成功。
+  - `201 Created`: 资源创建成功。
+  - `204 No Content`: 请求成功，但没有返回内容（如删除操作）。
+  - `400 Bad Request`: 客户端请求参数错误。
+  - `401 Unauthorized`: 未认证。
+  - `403 Forbidden`: 未授权。
+  - `404 Not Found`: 资源未找到。
+  - `500 Internal Server Error`: 服务器内部错误。
+- **请求/响应格式:**
+  - 统一使用 JSON 格式进行数据传输。
+  - 响应体应包含清晰的业务状态码和消息，便于前端处理。
+
+## 4. 模块和组件细化规范
+
+### `component` 模块规范
+
+- **`component-web`:**
+  - 包含 Web 层通用的配置、拦截器、过滤器、控制器基类等。
+  - 避免业务逻辑，专注于 Web 层的技术支撑。
+- **`component-rest`:**
+  - 包含 RESTful API 通用的工具类、异常处理器、响应封装等。
+- **`component-db`:**
+  - 包含数据库相关的通用配置、ORM 框架集成（如 MyBatis-Plus 配置）、数据源管理等。
+  - 提供通用的 Repository 接口或基类。
+- **`component-cache`:**
+  - 包含缓存相关的通用配置和抽象接口，支持多种缓存实现（如 Redis Cache）。
+- **`component-exception`:**
+  - 定义项目统一的业务异常类和全局异常处理器。
+  - 统一异常响应格式。
+- **`component-common`:**
+  - 存放项目中通用的工具类、枚举、常量等。
+  - 避免引入特定业务逻辑。
+- **`component-dto`:**
+  - 存放数据传输对象 (DTO)，用于接口参数和返回值。
+  - DTO 应保持扁平化，避免复杂的嵌套结构。
+
+### `module` 模块规范
+
+- **`module-redis`:**
+  - 封装 Redis 客户端操作，提供统一的 Redis 工具类。
+  - 管理 Redis 连接池和序列化配置。
+- **`module-websocket`:**
+  - 封装 WebSocket 相关配置和消息处理。
+- **`module-kafka`:**
+  - 封装 Kafka 生产者和消费者配置。
+  - 提供统一的 Kafka 消息发送和接收工具类。
+- **业务模块 (例如 `module-user`, `module-order`):**
+  - **分层:** 遵循经典的三层架构：Controller (API), Service (业务逻辑), Repository (数据访问)。
+  - **依赖:** 业务模块可以依赖 `component` 模块，但不应直接依赖其他业务模块（除非明确的业务协作）。
+  - **事务:** 业务逻辑层应合理使用 Spring 事务管理。
+  - **验证:** 对输入参数进行严格的校验。

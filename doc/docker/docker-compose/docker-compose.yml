@@ -1,0 +1,430 @@
+# docker network create --subnet=172.18.0.0/16 -d bridge granularity_net
+networks:
+  granularity_net:
+    driver: bridge
+
+services:
+  postgres:
+    image: bitnami/postgresql:17
+    container_name: postgres
+    hostname: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - ${DATA_DIR}/components/postgres/:/bitnami/postgresql
+      - ${DATA_DIR}/components/postgres/init/nacos-postgresql.sql:/docker-entrypoint-initdb.d/nacos.sql
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - POSTGRESQL_POSTGRES_PASSWORD=goya
+      - POSTGRES_DB=nacos
+      - POSTGRES_USER=nacos
+      - POSTGRES_PASSWORD=nacos
+    networks:
+      - granularity_net
+
+#  nacos:
+#    image: nacos/nacos-server:v2.5.0
+#    container_name: nacos
+#    hostname: nacos
+#    restart: always
+#    environment:
+#      - PREFER_HOST_MODE=hostname
+#      - MODE=standalone
+#      - NACOS_AUTH_ENABLE=true
+#      - NACOS_AUTH_IDENTITY_KEY=serverIdentity
+#      - NACOS_AUTH_IDENTITY_VALUE=security
+#      - NACOS_AUTH_TOKEN=SecretKey012345678901234567890123456789012345678901234567890123456789
+#      - SPRING_DATASOURCE_PLATFORM=postgresql
+#      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/nacos
+#      - SPRING_DATASOURCE_USERNAME=nacos
+#      - SPRING_DATASOURCE_PASSWORD=nacos
+#    volumes:
+#      - ${DATA_DIR}/components/nacos/data:/home/nacos/data
+#      - ${DATA_DIR}/components/nacos/logs:/home/nacos/logs
+#      - ${DATA_DIR}/components/nacos/logs:/home/nacos/logs
+#    ports:
+#      - "8848:8848"
+#      - "9848:9848"
+#      - "9849:9849"
+#    depends_on:
+#      - postgres
+#    networks:
+#      - granularity_net
+
+  nacos:
+    image: quay.io/herodotus-cloud/nacos-server:v3.0.1
+    container_name: nacos
+    hostname: nacos
+    restart: always
+    environment:
+      - PREFER_HOST_MODE=hostname
+      - MODE=standalone
+      - NACOS_AUTH_ENABLE=true
+      - NACOS_AUTH_IDENTITY_KEY=serverIdentity
+      - NACOS_AUTH_IDENTITY_VALUE=security
+      - NACOS_AUTH_TOKEN=SecretKey012345678901234567890123456789012345678901234567890123456789
+      - SPRING_DATASOURCE_PLATFORM=postgresql
+      - POSTGRESQL_SERVICE_HOST=postgres
+      - POSTGRESQL_SERVICE_PORT=5432
+      - POSTGRESQL_SERVICE_USER=nacos
+      - POSTGRESQL_SERVICE_PASSWORD=nacos
+      - POSTGRESQL_SERVICE_DB_NAME=nacos
+      - POSTGRESQL_SERVICE_DB_PARAM=tcpKeepAlive=true&reWriteBatchedInserts=true&ApplicationName=nacos
+    volumes:
+      - ${DATA_DIR}/components/nacos/data:/home/nacos/data
+      - ${DATA_DIR}/components/nacos/logs:/home/nacos/logs
+    ports:
+      - "8849:8080"
+      - "8848:8848"
+      - "9848:9848"
+      - "9849:9849"
+    depends_on:
+      - postgres
+    networks:
+      - granularity_net
+
+  sentinel:
+    image: quay.io/herodotus-cloud/sentinel-dashboard:v1.8.8
+    container_name: sentinel-dashboard
+    environment:
+      SENTINEL_ADMIN_USERNAME: sentinel
+      SENTINEL_ADMIN_PASSWORD: sentinel
+    restart: always
+    ports:
+      - "8858:8858"
+    networks:
+      - granularity_net
+
+  mongo:
+    image: "${MONGO_IMAGE}"
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    command: ["mongod", "--config", "/etc/mongo/mongod.conf"]
+    volumes:
+      - "${DATA_DIR}/components/mongodb/data/db:/data/db"
+      - "${DATA_DIR}/components/mongodb/data/logs:/data/logs"
+      - "${DATA_DIR}/components/mongodb/data/conf:/etc/mongo"
+      - "${DATA_DIR}/components/mongodb/init:/docker-entrypoint-initdb.d"
+    environment:
+      - TZ=Asia/Shanghai
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=goya123
+      - MONGO_INITDB_DATABASE=openim_v3
+      - MONGO_OPENIM_USERNAME=${MONGO_USERNAME}
+      - MONGO_OPENIM_PASSWORD=${MONGO_PASSWORD}
+    restart: always
+    networks:
+      - granularity_net
+
+  redis:
+    image: "${REDIS_IMAGE}"
+    container_name: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - "${DATA_DIR}/components/redis/data:/data"
+      - "${DATA_DIR}/components/redis/config/redis.conf:/usr/local/redis/config/redis.conf"
+    environment:
+      TZ: Asia/Shanghai
+    restart: always
+    sysctls:
+      net.core.somaxconn: 1024
+    command:
+      [
+        "redis-server",
+        "/usr/local/redis/config/redis.conf",
+        "--requirepass",
+        "${REDIS_PASSWORD}",
+        "--appendonly",
+        "yes",
+      ]
+    networks:
+      - granularity_net
+
+
+  etcd:
+    image: "${ETCD_IMAGE}"
+    container_name: etcd
+    ports:
+      - "12379:2379"
+      - "12380:2380"
+    environment:
+      - ETCD_NAME=s1
+      - ETCD_DATA_DIR=/etcd-data
+      - ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379
+      - ETCD_ADVERTISE_CLIENT_URLS=http://0.0.0.0:2379
+      - ETCD_LISTEN_PEER_URLS=http://0.0.0.0:2380
+      - ETCD_INITIAL_ADVERTISE_PEER_URLS=http://0.0.0.0:2380
+      - ETCD_INITIAL_CLUSTER=s1=http://0.0.0.0:2380
+      - ETCD_INITIAL_CLUSTER_TOKEN=tkn
+      - ETCD_INITIAL_CLUSTER_STATE=new
+      - ALLOW_NONE_AUTHENTICATION=no
+    volumes:
+      - "${DATA_DIR}/components/etcd:/etcd-data"
+    command: >
+      /bin/sh -c '
+        etcd &
+        export ETCDCTL_API=3
+        echo "Waiting for etcd to become healthy..."
+        until etcdctl --endpoints=http://127.0.0.1:2379 endpoint health &>/dev/null; do
+          echo "Waiting for ETCD to start..."
+          sleep 1
+        done
+
+        echo "etcd is healthy."
+
+        if [ -n "$${ETCD_ROOT_USER}" ] && [ -n "$${ETCD_ROOT_PASSWORD}" ] && [ -n "$${ETCD_USERNAME}" ] && [ -n "$${ETCD_PASSWORD}" ]; then
+          echo "Authentication credentials provided. Setting up authentication..."
+
+        echo "Checking authentication status..."
+        if ! etcdctl --endpoints=http://127.0.0.1:2379 auth status | grep -q "Authentication Status: true"; then
+          echo "Authentication is disabled. Creating users and enabling..."
+
+          # Create users and setup permissions
+          etcdctl --endpoints=http://127.0.0.1:2379 user add $${ETCD_ROOT_USER} --new-user-password=$${ETCD_ROOT_PASSWORD} || true
+          etcdctl --endpoints=http://127.0.0.1:2379 user add $${ETCD_USERNAME} --new-user-password=$${ETCD_PASSWORD} || true
+
+          etcdctl --endpoints=http://127.0.0.1:2379 role add openim-role || true
+          etcdctl --endpoints=http://127.0.0.1:2379 role grant-permission openim-role --prefix=true readwrite / || true
+          etcdctl --endpoints=http://127.0.0.1:2379 role grant-permission openim-role --prefix=true readwrite "" || true
+          etcdctl --endpoints=http://127.0.0.1:2379 user grant-role $${ETCD_USERNAME} openim-role || true
+
+          etcdctl --endpoints=http://127.0.0.1:2379 user grant-role $${ETCD_ROOT_USER} $${ETCD_USERNAME} root || true
+
+          echo "Enabling authentication..."
+          etcdctl --endpoints=http://127.0.0.1:2379 auth enable
+          echo "Authentication enabled successfully"
+        else
+          echo "Authentication is already enabled. Checking OpenIM user..."
+
+          # Check if openIM user exists and can perform operations
+          if ! etcdctl --endpoints=http://127.0.0.1:2379 --user=$${ETCD_USERNAME}:$${ETCD_PASSWORD} put /test/auth "auth-check" &>/dev/null; then
+            echo "OpenIM user test failed. Recreating user with root credentials..."
+
+            # Try to create/update the openIM user using root credentials
+            etcdctl --endpoints=http://127.0.0.1:2379 --user=$${ETCD_ROOT_USER}:$${ETCD_ROOT_PASSWORD} user add $${ETCD_USERNAME} --new-user-password=$${ETCD_PASSWORD} --no-password-file || true
+            etcdctl --endpoints=http://127.0.0.1:2379 --user=$${ETCD_ROOT_USER}:$${ETCD_ROOT_PASSWORD} role add openim-role || true
+            etcdctl --endpoints=http://127.0.0.1:2379 --user=$${ETCD_ROOT_USER}:$${ETCD_ROOT_PASSWORD} role grant-permission openim-role --prefix=true readwrite / || true
+            etcdctl --endpoints=http://127.0.0.1:2379 --user=$${ETCD_ROOT_USER}:$${ETCD_ROOT_PASSWORD} role grant-permission openim-role --prefix=true readwrite "" || true
+            etcdctl --endpoints=http://127.0.0.1:2379 --user=$${ETCD_ROOT_USER}:$${ETCD_ROOT_PASSWORD} user grant-role $${ETCD_USERNAME} openim-role || true
+            etcdctl --endpoints=http://127.0.0.1:2379 user grant-role $${ETCD_ROOT_USER} $${ETCD_USERNAME} root || true
+
+            echo "OpenIM user recreated with required permissions"
+          else
+            echo "OpenIM user exists and has correct permissions"
+            etcdctl --endpoints=http://127.0.0.1:2379 --user=$${ETCD_USERNAME}:$${ETCD_PASSWORD} del /test/auth &>/dev/null
+          fi
+        fi
+        echo "Testing authentication with OpenIM user..."
+        if etcdctl --endpoints=http://127.0.0.1:2379 --user=$${ETCD_USERNAME}:$${ETCD_PASSWORD} put /test/auth "auth-works"; then
+          echo "Authentication working properly"
+          etcdctl --endpoints=http://127.0.0.1:2379 --user=$${ETCD_USERNAME}:$${ETCD_PASSWORD} del /test/auth
+        else
+          echo "WARNING: Authentication test failed"
+          fi
+        else
+          echo "No authentication credentials provided. Running in no-auth mode."
+          echo "To enable authentication, set ETCD_ROOT_USER, ETCD_ROOT_PASSWORD, ETCD_USERNAME, and ETCD_PASSWORD environment variables."
+        fi
+
+        tail -f /dev/null
+      '
+    restart: always
+    networks:
+      - granularity_net
+
+  kafka:
+    image: "${KAFKA_IMAGE}"
+    container_name: kafka
+    user: root
+    restart: always
+    ports:
+      - "9092:9092"     # 内部 PLAINTEXT
+      - "9093:9093"     # CONTROLLER
+      - "9094:9094"     # 容器内 EXTERNAL（OpenIM 用）
+      - "29092:29092"   # 宿主机 HOST 访问（IDE 插件等外部工具用）
+    volumes:
+      - "${DATA_DIR}/components/kafka:/bitnami/kafka"
+    environment:
+      TZ: Asia/Shanghai
+
+      # Kafka 基础配置
+      KAFKA_CFG_NODE_ID: 0
+      KAFKA_CFG_PROCESS_ROLES: controller,broker
+      KAFKA_CFG_CONTROLLER_QUORUM_VOTERS: 0@kafka:9093
+      KAFKA_CFG_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_CFG_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE: "true"
+
+      # 多监听地址配置
+      KAFKA_CFG_LISTENERS: PLAINTEXT://:9092,CONTROLLER://:9093,EXTERNAL://:9094,HOST://:29092
+      KAFKA_CFG_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,EXTERNAL://kafka:9094,HOST://10.1.13.167:29092
+      KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,EXTERNAL:PLAINTEXT,CONTROLLER:PLAINTEXT,HOST:PLAINTEXT
+
+    networks:
+      - granularity_net
+
+  minio:
+    image: "${MINIO_IMAGE}"
+    ports:
+      - "${MINIO_PORT}:9000"
+      - "${MINIO_CONSOLE_PORT}:9090"
+    container_name: minio
+    volumes:
+      - "${DATA_DIR}/components/mnt/data:/data"
+      - "${DATA_DIR}/components/mnt/config:/root/.minio"
+    environment:
+      TZ: Asia/Shanghai
+      MINIO_ROOT_USER: "${MINIO_ACCESS_KEY_ID}"
+      MINIO_ROOT_PASSWORD: "${MINIO_SECRET_ACCESS_KEY}"
+    restart: always
+    command: minio server /data --console-address ':9090'
+    networks:
+      - granularity_net
+
+  openim-web-front:
+    image: ${OPENIM_WEB_FRONT_IMAGE}
+    container_name: openim-web-front
+    restart: always
+    ports:
+      - "${OPENIM_WEB_FRONT_PORT}:80"
+    networks:
+      - granularity_net
+
+  openim-admin-front:
+    image: ${OPENIM_ADMIN_FRONT_IMAGE}
+    container_name: openim-admin-front
+    restart: always
+    ports:
+      - "${OPENIM_ADMIN_FRONT_PORT}:80"
+    networks:
+      - granularity_net
+
+  prometheus:
+    image: ${PROMETHEUS_IMAGE}
+    container_name: prometheus
+    restart: always
+    user: root
+    profiles:
+      - m
+    volumes:
+      - ${DATA_DIR}/components/prometheus/config/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ${DATA_DIR}/components/prometheus/config/instance-down-rules.yml:/etc/prometheus/instance-down-rules.yml
+      - ${DATA_DIR}/components/prometheus/data:/prometheus
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+      - "--web.listen-address=:${PROMETHEUS_PORT}"
+    network_mode: host
+
+  alertmanager:
+    image: ${ALERTMANAGER_IMAGE}
+    container_name: alertmanager
+    restart: always
+    profiles:
+      - m
+    volumes:
+      - ${DATA_DIR}/components/alertmanager/config/alertmanager.yml:/etc/alertmanager/alertmanager.yml
+      - ${DATA_DIR}/components/alertmanager/config/email.tmpl:/etc/alertmanager/email.tmpl
+    command:
+      - "--config.file=/etc/alertmanager/alertmanager.yml"
+      - "--web.listen-address=:${ALERTMANAGER_PORT}"
+    network_mode: host
+
+  grafana:
+    image: ${GRAFANA_IMAGE}
+    container_name: grafana
+    user: root
+    restart: always
+    profiles:
+      - m
+    environment:
+      - GF_SECURITY_ALLOW_EMBEDDING=true
+      - GF_SESSION_COOKIE_SAMESITE=none
+      - GF_SESSION_COOKIE_SECURE=true
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+      - GF_SERVER_HTTP_PORT=${GRAFANA_PORT}
+    volumes:
+      - ${DATA_DIR}/components/grafana:/var/lib/grafana
+    network_mode: host
+
+  openim-server:
+    image: ${OPENIM_SERVER_IMAGE}
+    container_name: openim-server
+    init: true
+    ports:
+      - "${OPENIM_MSG_GATEWAY_PORT}:10001"
+      - "${OPENIM_API_PORT}:10002"
+    healthcheck:
+      test: ["CMD", "sh", "-c", "mage check"]
+      interval: 5s
+      timeout: 60s
+      retries: 10
+    environment:
+      - IMENV_MONGODB_ADDRESS=${MONGO_ADDRESS}
+      - IMENV_MONGODB_USERNAME=${MONGO_USERNAME}
+      - IMENV_MONGODB_PASSWORD=${MONGO_PASSWORD}
+      - IMENV_KAFKA_ADDRESS=${KAFKA_ADDRESS}
+      - IMENV_KAFKA_USERNAME=${KAFKA_USERNAME}
+      - IMENV_KAFKA_PASSWORD=${KAFKA_PASSWORD}
+      - IMENV_DISCOVERY_ETCD_ADDRESS=${ETCD_ADDRESS}
+      - IMENV_REDIS_ADDRESS=${REDIS_ADDRESS}
+      - IMENV_REDIS_PASSWORD=${REDIS_PASSWORD}
+      - IMENV_DISCOVERY_ETCD_USERNAME=${ETCD_USERNAME}
+      - IMENV_DISCOVERY_ETCD_PASSWORD=${ETCD_PASSWORD}
+      - IMENV_MINIO_INTERNALADDRESS=${MINIO_INTERNAL_ADDRESS}
+      - IMENV_MINIO_EXTERNALADDRESS=${MINIO_EXTERNAL_ADDRESS}
+      - IMENV_MINIO_ACCESSKEYID=${MINIO_ACCESS_KEY_ID}
+      - IMENV_MINIO_SECRETACCESSKEY=${MINIO_SECRET_ACCESS_KEY}
+      - IMENV_SHARE_SECRET=${OPENIM_SECRET}
+      - IMENV_LOG_ISSTDOUT=${LOG_IS_STDOUT}
+      - IMENV_LOG_REMAINLOGLEVEL=${LOG_LEVEL}
+      - IMENV_OPENIM_API_PROMETHEUS_GRAFANAURL=${GRAFANA_URL}
+    restart: always
+    depends_on:
+      - mongo
+      - redis
+      - etcd
+      - kafka
+      - minio
+    networks:
+      - granularity_net
+
+  openim-chat:
+    image: ${OPENIM_CHAT_IMAGE}
+    container_name: openim-chat
+    init: true
+    healthcheck:
+      test: ["CMD", "sh", "-c", "mage check"]
+      interval: 5s
+      timeout: 60s
+      retries: 10
+    environment:
+      - CHATENV_MONGODB_ADDRESS=${MONGO_ADDRESS}
+      - CHATENV_MONGODB_USERNAME=${MONGO_USERNAME}
+      - CHATENV_MONGODB_PASSWORD=${MONGO_PASSWORD}
+      - CHATENV_DISCOVERY_ETCD_ADDRESS=${ETCD_ADDRESS}
+      - CHATENV_REDIS_ADDRESS=${REDIS_ADDRESS}
+      - CHATENV_REDIS_PASSWORD=${REDIS_PASSWORD}
+      - CHATENV_SHARE_OPENIM_SECRET=${OPENIM_SECRET}
+      - CHATENV_DISCOVERY_ETCD_USERNAME=${ETCD_USERNAME}
+      - CHATENV_DISCOVERY_ETCD_PASSWORD=${ETCD_PASSWORD}
+      - CHATENV_SHARE_OPENIM_APIURL=${API_URL}
+      - CHATENV_LOG_ISSTDOUT=${LOG_IS_STDOUT}
+      - CHATENV_LOG_REMAINLOGLEVEL=${LOG_LEVEL}
+    ports:
+      - "${CHAT_API_PORT}:10008"
+      - "${ADMIN_API_PORT}:10009"
+    restart: always
+    depends_on:
+      - mongo
+      - redis
+      - etcd
+      - kafka
+      - minio
+      - openim-server
+    networks:
+      - granularity_net

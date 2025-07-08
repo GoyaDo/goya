@@ -1,0 +1,41 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# 通用规范
+
+## 1. 项目结构
+
+- `pom.xml`: Maven 项目的根配置文件。
+- `bom/`: Maven Bill Of Materials (BOM) 模块，用于管理依赖版本。
+- `component/`: 存放可复用组件的模块，这些组件可以被其他模块引用。
+- `module/`: 存放业务模块，每个模块应代表一个独立的业务领域或服务。
+- `starter/`: 存放 Spring Boot Starter 模块，用于简化依赖管理和自动配置。
+- `cloud/`: 存放与 Spring Cloud 相关的模块，如服务发现、配置中心客户端等。
+- `openapi/`: 存放 OpenAPI (Swagger) 相关的接口定义和文档。
+- `security/`: 存放安全相关的模块，如认证、授权等。
+- `test-service/`: 存放测试服务或示例服务。
+- `logs/`: 日志文件存放目录。
+
+## 2. 命名规范
+
+- **包名 (Packages):** 小写，使用点分隔，例如 `com.ysmjjsy.goya.module.user`。
+- **类名 (Classes):** 大驼峰命名法 (PascalCase)，例如 `UserController`, `UserServiceImpl`。
+- **接口名 (Interfaces):** 大驼峰命名法 (PascalCase)，通常以 `I` 或 `Service`、`Repository` 结尾，例如 `IUserService`, `UserRepository`。
+- **方法名 (Methods):** 小驼峰命名法 (camelCase)，例如 `getUserById`, `saveUser`。
+- **变量名 (Variables):** 小驼峰命名法 (camelCase)，例如 `userName`, `orderAmount`。
+- **常量名 (Constants):** 全大写，使用下划线分隔，例如 `MAX_PAGE_SIZE`, `DEFAULT_TIMEOUT`。
+- **文件名 (Files):** 与类名保持一致。
+
+## 3. Git 提交信息规范
+
+- **格式:** `<type>(<scope>): <subject>`
+  - `<type>`: 提交类型，例如 `feat` (新功能), `fix` (修复 bug), `docs` (文档), `style` (代码格式), `refactor` (重构), `test` (测试), `chore` (构建过程或辅助工具的变动)。
+  - `<scope>` (可选): 提交影响的范围，例如 `user-module`, `payment-service`。
+  - `<subject>`: 提交的简短描述，不超过 50 个字符。
+- **示例:**
+  - `feat(user): 添加用户注册功能`
+  - `fix(payment): 修复支付金额计算错误`
+  - `docs: 更新 README.md`
+  - `chore(deps): 更新 Spring Boot 版本`

@@ -1,0 +1,3 @@
+com.ysmjjsy.goya.component.web.configuration.WebMvcConfiguration
+com.ysmjjsy.goya.component.web.configuration.WebMvcCryptoConfiguration
+com.ysmjjsy.goya.component.web.configuration.WebMvcRequestMappingScanConfiguration
