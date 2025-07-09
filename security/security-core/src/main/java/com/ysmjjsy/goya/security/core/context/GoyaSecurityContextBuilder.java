@@ -38,7 +38,7 @@ public class GoyaSecurityContextBuilder {
             goyaSecurityContext.setAuthServiceUri(issuerUri);
         } else {
             goyaSecurityContext.setAuthServiceName(securityEndpointProperties.getAuthServiceName());
-            goyaSecurityContext.setGatewayServiceUri(securityEndpointProperties.getGatewayServiceUri());
+            goyaSecurityContext.setGatewayServiceUri(GoyaContextHolder.getInstance().getGatewayServiceUri());
             goyaSecurityContext.setAuthorizationUri(securityEndpointProperties.getAuthorizationUri());
         }
 

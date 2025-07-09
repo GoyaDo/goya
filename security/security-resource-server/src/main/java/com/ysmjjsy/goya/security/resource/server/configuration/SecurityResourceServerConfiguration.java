@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
@@ -24,6 +25,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @AutoConfiguration
 @RequiredArgsConstructor
 @Import(SecurityAuthorizationConfiguration.class)
+@EnableWebSecurity
 public class SecurityResourceServerConfiguration {
 
     @PostConstruct

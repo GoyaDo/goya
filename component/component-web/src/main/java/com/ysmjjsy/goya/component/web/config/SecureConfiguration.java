@@ -34,6 +34,22 @@ public class SecureConfiguration {
 
     @Bean
     @ConditionalOnMissingBean
+    public IdempotentStampManager idempotentStampManager(SecureProperties secureProperties) {
+        IdempotentStampManager idempotentStampManager = new IdempotentStampManager(secureProperties);
+        log.trace("[Goya] |- Bean [Idempotent Stamp Manager] Configure.");
+        return idempotentStampManager;
+    }
+
+    @Bean
+    @ConditionalOnMissingBean
+    public AccessLimitedStampManager accessLimitedStampManager(SecureProperties secureProperties) {
+        AccessLimitedStampManager accessLimitedStampManager = new AccessLimitedStampManager(secureProperties);
+        log.trace("[Goya] |- Bean [Access Limited Stamp Manager] Configure.");
+        return accessLimitedStampManager;
+    }
+
+    @Bean
+    @ConditionalOnMissingBean
     @ConditionalOnBean(IdempotentStampManager.class)
     public IdempotentInterceptor idempotentInterceptor(IdempotentStampManager idempotentStampManager) {
         IdempotentInterceptor idempotentInterceptor = new IdempotentInterceptor();
@@ -58,21 +74,5 @@ public class SecureConfiguration {
         XssHttpServletFilter xssHttpServletFilter = new XssHttpServletFilter();
         log.trace("[Goya] |- Bean [Xss Http Servlet Filter] Configure.");
         return xssHttpServletFilter;
-    }
-
-    @Bean
-    @ConditionalOnMissingBean
-    public IdempotentStampManager idempotentStampManager(SecureProperties secureProperties) {
-        IdempotentStampManager idempotentStampManager = new IdempotentStampManager(secureProperties);
-        log.trace("[Goya] |- Bean [Idempotent Stamp Manager] Configure.");
-        return idempotentStampManager;
-    }
-
-    @Bean
-    @ConditionalOnMissingBean
-    public AccessLimitedStampManager accessLimitedStampManager(SecureProperties secureProperties) {
-        AccessLimitedStampManager accessLimitedStampManager = new AccessLimitedStampManager(secureProperties);
-        log.trace("[Goya] |- Bean [Access Limited Stamp Manager] Configure.");
-        return accessLimitedStampManager;
     }
 }

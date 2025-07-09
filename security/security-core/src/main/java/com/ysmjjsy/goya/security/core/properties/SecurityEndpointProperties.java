@@ -1,6 +1,7 @@
 package com.ysmjjsy.goya.security.core.properties;
 
 import com.ysmjjsy.goya.component.common.utils.WellFormedUtils;
+import com.ysmjjsy.goya.component.context.service.GoyaContextHolder;
 import com.ysmjjsy.goya.security.core.constants.SecurityConstants;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -24,11 +25,6 @@ public class SecurityEndpointProperties{
      * 统一认证中心服务地址
      */
     private String authServiceUri;
-
-    /**
-     * 统一网关服务地址。可以是IP+端口，可以是域名
-     */
-    private String gatewayServiceUri;
 
     /**
      * OAuth2 Authorization Code 模式认证端点，/oauth2/authorize uri 地址，可修改为自定义地址
@@ -125,7 +121,7 @@ public class SecurityEndpointProperties{
 
 
     public String getAuthServiceUri() {
-        return WellFormedUtils.serviceUri(authServiceUri, getAuthServiceName(), getGatewayServiceUri(), "AUTH");
+        return WellFormedUtils.serviceUri(authServiceUri, getAuthServiceName(), GoyaContextHolder.getInstance().getGatewayServiceUri(), "AUTH");
     }
 
     public String getAuthorizationUri() {

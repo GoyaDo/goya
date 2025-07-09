@@ -1,6 +1,5 @@
 package com.ysmjjsy.goya.component.web.utils;
 
-import com.ysmjjsy.goya.component.dto.constants.GoyaConstants;
 import com.ysmjjsy.goya.component.web.constants.GoyaHeaders;
 import jakarta.servlet.http.HttpServletRequest;
 import org.apache.commons.collections4.CollectionUtils;
@@ -226,21 +225,6 @@ public class HeaderUtils {
      */
     public static String getAuthorization(HttpServletRequest httpServletRequest) {
         return getHeader(httpServletRequest, HttpHeaders.AUTHORIZATION);
-    }
-
-    /**
-     * 获取 Bearer Token 的值
-     *
-     * @param request {@link HttpServletRequest}
-     * @return 如果 AUTHORIZATION 不存在，或者 Token 不是以 “Bearer ” 开头，则返回 null。如果 AUTHORIZATION 存在，而且是以 “Bearer ” 开头，那么返回 “Bearer ” 后面的值。
-     */
-    public static String getBearerToken(HttpServletRequest request) {
-        String header = getAuthorization(request);
-        if (StringUtils.isNotBlank(header) && StringUtils.startsWith(header, GoyaConstants.BEARER_TOKEN)) {
-            return StringUtils.remove(header, GoyaConstants.BEARER_TOKEN);
-        } else {
-            return null;
-        }
     }
 
     /**

@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.module.sms.properties;
 
 import com.google.common.base.MoreObjects;
-import com.ysmjjsy.goya.component.dto.constants.GoyaConstants;
+import com.ysmjjsy.goya.module.sms.constants.SmsConstants;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -16,7 +16,7 @@ import java.time.Duration;
  */
 @Setter
 @Getter
-@ConfigurationProperties(prefix = GoyaConstants.GOYA+".sms")
+@ConfigurationProperties(prefix = SmsConstants.PROPERTY_PREFIX_SMS)
 public class SmsProperties {
 
     /**

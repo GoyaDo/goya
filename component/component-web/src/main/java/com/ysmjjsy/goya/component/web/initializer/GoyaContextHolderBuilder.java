@@ -2,7 +2,6 @@ package com.ysmjjsy.goya.component.web.initializer;
 
 import com.ysmjjsy.goya.component.common.utils.WellFormedUtils;
 import com.ysmjjsy.goya.component.context.service.GoyaContextHolder;
-import com.ysmjjsy.goya.component.dto.enums.Architecture;
 import com.ysmjjsy.goya.component.web.properties.PlatformProperties;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -74,22 +73,8 @@ public class GoyaContextHolderBuilder {
     private void setProperties(PlatformProperties platformProperties, GoyaContextHolder serviceContextHolder) {
         serviceContextHolder.setArchitecture(platformProperties.getArchitecture());
         serviceContextHolder.setProtocol(platformProperties.getProtocol());
+        serviceContextHolder.setGatewayServiceUri(platformProperties.getGatewayServiceUri());
 
-        String issuerUri = platformProperties.getIssuerUri();
-
-        if (StringUtils.isNotBlank(issuerUri)) {
-            if (platformProperties.getArchitecture() == Architecture.MONOCOQUE) {
-                serviceContextHolder.setGatewayServiceUri(issuerUri);
-                serviceContextHolder.setAuthServiceUri(issuerUri);
-            }else{
-                serviceContextHolder.setGatewayServiceUri(platformProperties.getGatewayServiceUri());
-                serviceContextHolder.setAuthServiceName(platformProperties.getAuthServiceName());
-                serviceContextHolder.setAuthServiceUri(platformProperties.getAuthServiceUri());
-            }
-
-            serviceContextHolder.setTokenIntrospectionUri(platformProperties.getTokenIntrospectionUri());
-
-        }
 
     }
 }

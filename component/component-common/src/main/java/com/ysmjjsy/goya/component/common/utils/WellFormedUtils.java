@@ -1,7 +1,6 @@
 package com.ysmjjsy.goya.component.common.utils;
 
 import com.ysmjjsy.goya.component.dto.constants.DefaultConstants;
-import com.ysmjjsy.goya.component.dto.constants.GoyaConstants;
 import com.ysmjjsy.goya.component.dto.constants.SymbolConstants;
 import com.ysmjjsy.goya.component.dto.enums.Protocol;
 import com.ysmjjsy.goya.component.exception.properties.PropertyValueIsNotSetException;
@@ -149,14 +148,6 @@ public class WellFormedUtils {
             } else {
                 return issuerUri + endpoint;
             }
-        }
-    }
-
-    public static boolean isToken(String token) {
-        if (StringUtils.isNotBlank(token)) {
-            return StringUtils.startsWith(token, GoyaConstants.BEARER_TOKEN) || StringUtils.startsWith(token, GoyaConstants.BASIC_TOKEN);
-        } else {
-            return true;
         }
     }
 }
