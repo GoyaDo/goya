@@ -19,11 +19,11 @@ import org.springframework.context.annotation.ComponentScan;
 @AutoConfiguration
 @EnableConfigurationProperties({SecurityEndpointProperties.class})
 @ComponentScan(basePackageClasses = SecurityGlobalExceptionHandler.class)
-public class SecurityConfiguration {
+public class SecurityCoreConfiguration {
 
     private final GoyaSecurityContext goyaSecurityContext;
 
-    public SecurityConfiguration(SecurityEndpointProperties securityEndpointProperties) {
+    public SecurityCoreConfiguration(SecurityEndpointProperties securityEndpointProperties) {
         this.goyaSecurityContext = GoyaSecurityContextBuilder.builder()
                 .endpointProperties(securityEndpointProperties)
                 .build();

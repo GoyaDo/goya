@@ -1,6 +1,5 @@
 package com.ysmjjsy.goya.component.web.configuration;
 
-import com.ysmjjsy.goya.component.event.core.GoyaEventBus;
 import com.ysmjjsy.goya.component.web.properties.ScanProperties;
 import com.ysmjjsy.goya.component.web.scan.DefaultRequestMappingScanEventManager;
 import com.ysmjjsy.goya.component.web.scan.RequestMappingScanEventManager;
@@ -45,8 +44,8 @@ public class WebMvcRequestMappingScanConfiguration {
     @Bean
     @ConditionalOnMissingBean
     @Order
-    public RequestMappingScanEventManager requestMappingScanEventManager(GoyaEventBus goyaEventBus) {
-        DefaultRequestMappingScanEventManager requestMappingScanEventManager = new DefaultRequestMappingScanEventManager(EnableWebMvc.class, goyaEventBus);
+    public RequestMappingScanEventManager requestMappingScanEventManager() {
+        DefaultRequestMappingScanEventManager requestMappingScanEventManager = new DefaultRequestMappingScanEventManager(EnableWebMvc.class);
         log.trace("[Goya] |- Bean [Servlet Request Mapping Scan Event Manager] Configure.");
         return requestMappingScanEventManager;
     }

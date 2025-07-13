@@ -16,6 +16,7 @@ import com.ysmjjsy.goya.security.authorization.properties.SecurityAuthorizationP
 import com.ysmjjsy.goya.security.authorization.resolver.GoyaServletJwtTokenResolver;
 import com.ysmjjsy.goya.security.authorization.resolver.GoyaServletOpaqueTokenResolver;
 import com.ysmjjsy.goya.security.authorization.scan.SecurityDefaultRequestMappingScanEventManager;
+import com.ysmjjsy.goya.security.core.configuration.SecurityCoreConfiguration;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -39,7 +40,7 @@ import org.springframework.web.servlet.resource.ResourceUrlProvider;
  * @since 2025/7/8 22:43
  */
 @Slf4j
-@AutoConfiguration
+@AutoConfiguration(after = SecurityCoreConfiguration.class)
 @RequiredArgsConstructor
 @EnableConfigurationProperties(SecurityAuthorizationProperties.class)
 public class SecurityAuthorizationConfiguration {
