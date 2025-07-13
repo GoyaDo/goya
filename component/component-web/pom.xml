@@ -34,6 +34,11 @@
 
         <dependency>
             <groupId>com.ysmjjsy.goya</groupId>
+            <artifactId>component-bus</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ysmjjsy.goya</groupId>
             <artifactId>component-crypto</artifactId>
         </dependency>
 

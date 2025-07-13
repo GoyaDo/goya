@@ -1,7 +1,5 @@
 package com.ysmjjsy.goya.security.core.context;
 
-import com.ysmjjsy.goya.component.context.service.GoyaContextHolder;
-import com.ysmjjsy.goya.component.dto.enums.Architecture;
 import com.ysmjjsy.goya.security.core.properties.SecurityEndpointProperties;
 
 /**
@@ -32,16 +30,6 @@ public class GoyaSecurityContextBuilder {
 
 
     private void setProperties(GoyaSecurityContext goyaSecurityContext) {
-        if (GoyaContextHolder.getInstance().getArchitecture() == Architecture.MONOCOQUE) {
-            String issuerUri = securityEndpointProperties.getIssuerUri();
-            goyaSecurityContext.setGatewayServiceUri(issuerUri);
-            goyaSecurityContext.setAuthServiceUri(issuerUri);
-        } else {
-            goyaSecurityContext.setAuthServiceName(securityEndpointProperties.getAuthServiceName());
-            goyaSecurityContext.setGatewayServiceUri(GoyaContextHolder.getInstance().getGatewayServiceUri());
-            goyaSecurityContext.setAuthorizationUri(securityEndpointProperties.getAuthorizationUri());
-        }
-
         goyaSecurityContext.setAuthorizationUri(securityEndpointProperties.getAuthorizationUri());
         goyaSecurityContext.setAuthorizationEndpoint(securityEndpointProperties.getAuthorizationEndpoint());
         goyaSecurityContext.setPushedAuthorizationRequestUri(securityEndpointProperties.getPushedAuthorizationRequestUri());

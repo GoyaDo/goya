@@ -1,6 +1,5 @@
 package com.ysmjjsy.goya.security.resource.server.configuration;
 
-import com.ysmjjsy.goya.security.authorization.configuration.SecurityAuthorizationConfiguration;
 import com.ysmjjsy.goya.security.authorization.customizer.SecurityAuthorizeHttpRequestsConfigurerCustomer;
 import com.ysmjjsy.goya.security.authorization.customizer.SecurityResourceServerConfigurerCustomer;
 import jakarta.annotation.PostConstruct;
@@ -8,7 +7,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Import;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
@@ -24,7 +22,6 @@ import org.springframework.security.web.SecurityFilterChain;
 @Slf4j
 @AutoConfiguration
 @RequiredArgsConstructor
-@Import(SecurityAuthorizationConfiguration.class)
 @EnableWebSecurity
 public class SecurityResourceServerConfiguration {
 

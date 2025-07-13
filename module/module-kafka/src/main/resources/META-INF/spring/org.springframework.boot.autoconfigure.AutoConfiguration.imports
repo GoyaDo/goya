@@ -1,0 +1,2 @@
+com.ysmjjsy.goya.module.kafka.configuration.KafkaConfiguration
+com.ysmjjsy.goya.module.kafka.configuration.StreamAdapterAutoConfiguration

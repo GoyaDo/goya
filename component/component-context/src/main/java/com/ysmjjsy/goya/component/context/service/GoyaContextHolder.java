@@ -56,6 +56,16 @@ public class GoyaContextHolder {
     private ApplicationContext applicationContext;
 
     /**
+     * 认证中心服务名称
+     */
+    private String authServiceName;
+
+    /**
+     * 统一认证中心服务地址
+     */
+    private String authServiceUri;
+
+    /**
      * 统一网关服务地址。可以是IP+端口，可以是域名
      */
     private String gatewayServiceUri;

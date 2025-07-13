@@ -13,6 +13,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
+import org.springframework.core.annotation.Order;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 /**
@@ -37,12 +38,13 @@ public class WebMvcRequestMappingScanConfiguration {
     @ConditionalOnMissingBean
     public RequestMappingScanner requestMappingScanner(ScanProperties scanProperties, RequestMappingScanEventManager requestMappingScanManager) {
         RequestMappingScanner scanner = new RequestMappingScanner(scanProperties, requestMappingScanManager);
-        log.trace("[Goya] |- Bean [Servlet Request Mapping Scanner] Configure.");
+        log.trace("[Goya] |- Bean [Servlet Default Request Mapping Scanner] Configure.");
         return scanner;
     }
 
     @Bean
     @ConditionalOnMissingBean
+    @Order
     public RequestMappingScanEventManager requestMappingScanEventManager(GoyaEventBus goyaEventBus) {
         DefaultRequestMappingScanEventManager requestMappingScanEventManager = new DefaultRequestMappingScanEventManager(EnableWebMvc.class, goyaEventBus);
         log.trace("[Goya] |- Bean [Servlet Request Mapping Scan Event Manager] Configure.");

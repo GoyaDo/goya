@@ -1,5 +1,7 @@
 package com.ysmjjsy.goya.component.web.properties;
 
+import com.ysmjjsy.goya.component.common.utils.WellFormedUtils;
+import com.ysmjjsy.goya.component.context.service.GoyaContextHolder;
 import com.ysmjjsy.goya.component.dto.constants.GoyaConstants;
 import com.ysmjjsy.goya.component.dto.enums.Architecture;
 import com.ysmjjsy.goya.component.dto.enums.Protocol;
@@ -32,4 +34,19 @@ public class PlatformProperties {
      * 统一网关服务地址。可以是IP+端口，可以是域名
      */
     private String gatewayServiceUri;
+
+    /**
+     * 认证中心服务名称
+     */
+    private String authServiceName;
+
+    /**
+     * 统一认证中心服务地址
+     */
+    private String authServiceUri;
+
+
+    public String getAuthServiceUri() {
+        return WellFormedUtils.serviceUri(authServiceUri, getAuthServiceName(), GoyaContextHolder.getInstance().getGatewayServiceUri(), "AUTH");
+    }
 }

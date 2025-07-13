@@ -29,6 +29,7 @@
         <module>component-context</module>
         <module>component-captcha</module>
         <module>component-crypto</module>
+        <module>component-bus</module>
     </modules>
 
 

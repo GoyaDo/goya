@@ -74,7 +74,7 @@ public class GoyaContextHolderBuilder {
         serviceContextHolder.setArchitecture(platformProperties.getArchitecture());
         serviceContextHolder.setProtocol(platformProperties.getProtocol());
         serviceContextHolder.setGatewayServiceUri(platformProperties.getGatewayServiceUri());
-
-
+        serviceContextHolder.setAuthServiceUri(platformProperties.getAuthServiceUri());
+        serviceContextHolder.setAuthServiceName(platformProperties.getAuthServiceName());
     }
 }

@@ -1,5 +1,6 @@
 package com.ysmjjsy.goya.component.web.scan;
 
+import com.ysmjjsy.goya.component.context.service.GoyaContextHolder;
 import com.ysmjjsy.goya.component.event.core.GoyaEventBus;
 import com.ysmjjsy.goya.component.web.domain.RequestMapping;
 import lombok.RequiredArgsConstructor;
@@ -32,8 +33,17 @@ public class DefaultRequestMappingScanEventManager implements RequestMappingScan
     }
 
     @Override
-    public void publish(List<RequestMapping> requestMappings) {
-        RequestMappingEvent event = new RequestMappingEvent(this, requestMappings);
-        goyaEventBus.publish(event);
+    public String getDestinationServiceName() {
+        return GoyaContextHolder.getInstance().getAuthServiceName();
+    }
+
+    @Override
+    public void postLocalProcess(List<RequestMapping> data) {
+        publishEvent(new RequestMappingEvent(data));
+    }
+
+    @Override
+    public void postRemoteProcess(String data, String originService, String destinationService) {
+        log.info("request mapping remote process not support!");
     }
 }

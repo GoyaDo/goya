@@ -1,5 +1,6 @@
 package com.ysmjjsy.goya.component.web.scan;
 
+import com.ysmjjsy.goya.component.bus.event.strategy.ApplicationStrategyEventManager;
 import com.ysmjjsy.goya.component.context.service.GoyaContextHolder;
 import com.ysmjjsy.goya.component.web.domain.RequestMapping;
 import org.apache.commons.collections4.MapUtils;
@@ -15,8 +16,7 @@ import java.util.Map;
  * @author goya
  * @since 2022/1/16 18:42
  */
-public interface RequestMappingScanEventManager {
-
+public interface RequestMappingScanEventManager extends ApplicationStrategyEventManager<List<RequestMapping>> {
 
     /**
      * 获取是否执行扫描的标记注解。
@@ -31,6 +31,17 @@ public interface RequestMappingScanEventManager {
      * @param requestMappings 扫描到的RequestMapping
      */
     void postLocalStorage(List<RequestMapping> requestMappings);
+
+    /**
+     * 发布远程事件，传送RequestMapping
+     *
+     * @param requestMappings 扫描到的RequestMapping
+     */
+    @Override
+    default void postProcess(List<RequestMapping> requestMappings) {
+        postLocalStorage(requestMappings);
+        ApplicationStrategyEventManager.super.postProcess(requestMappings);
+    }
 
     /**
      * 是否满足执行扫描的条件。
@@ -52,21 +63,4 @@ public interface RequestMappingScanEventManager {
 
         return true;
     }
-
-    /**
-     * 发布远程事件，传送RequestMapping
-     *
-     * @param requestMappings 扫描到的RequestMapping
-     */
-    default void postProcess(List<RequestMapping> requestMappings) {
-        postLocalStorage(requestMappings);
-        publish(requestMappings);
-    }
-
-    /**
-     * 发布事件
-     *
-     * @param requestMappings 事件
-     */
-    void publish(List<RequestMapping> requestMappings);
 }

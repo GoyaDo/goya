@@ -1,10 +1,12 @@
-package com.ysmjjsy.goya.component.event.core;
+package com.ysmjjsy.goya.component.bus.event.domain;
 
 import com.ysmjjsy.goya.component.context.service.GoyaContextHolder;
+import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.ApplicationEvent;
 
 /**
  * <p>Description: 抽象 JPA 实体变更 Listener</p>
@@ -12,10 +14,10 @@ import org.springframework.context.ApplicationContextAware;
  * @author goya
  * @since 2021/8/11 18:12
  */
+@RequiredArgsConstructor
 public abstract class AbstractApplicationContextAware implements ApplicationContextAware {
 
     private ApplicationContext applicationContext;
-    private GoyaEventBus goyaEventBus;
 
     protected ApplicationContext getApplicationContext() {
         if (ObjectUtils.isEmpty(applicationContext)) {
@@ -29,7 +31,7 @@ public abstract class AbstractApplicationContextAware implements ApplicationCont
         this.applicationContext = applicationContext;
     }
 
-    protected void publishEvent(GoyaEvent event) {
-        goyaEventBus.publish(event);
+    protected void publishEvent(ApplicationEvent event) {
+        GoyaContextHolder.getInstance().publishEvent(event);
     }
 }
