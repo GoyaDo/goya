@@ -21,6 +21,7 @@ import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.security.oauth2.resource.OAuth2ResourceServerProperties;
@@ -60,7 +61,7 @@ public class SecurityAuthorizationConfiguration {
 
     @Bean
     @Order(Integer.MAX_VALUE - 1)
-    @ConditionalOnMissingBean
+    @ConditionalOnBean(RequestMappingScanEventManager.class)
     public RequestMappingScanEventManager requestMappingScanEventManager(SecurityAttributeAnalyzer securityAttributeAnalyzer) {
         SecurityDefaultRequestMappingScanEventManager requestMappingScanEventManager = new SecurityDefaultRequestMappingScanEventManager(securityAttributeAnalyzer);
         log.trace("[Goya] |- Bean [Servlet Security Request Mapping Scan Event Manager] Configure.");
