@@ -2,9 +2,9 @@ package com.ysmjjsy.goya.component.web.crypto;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.ysmjjsy.goya.component.common.json.jackson2.utils.Jackson2Utils;
-import com.ysmjjsy.goya.component.exception.request.SessionInvalidException;
+import com.ysmjjsy.goya.component.exception.request.RequestInvalidException;
 import com.ysmjjsy.goya.component.web.annotation.Crypto;
-import com.ysmjjsy.goya.component.web.utils.SessionUtils;
+import com.ysmjjsy.goya.component.web.utils.RequestUtils;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -49,8 +49,8 @@ public class EncryptResponseBodyAdvice implements ResponseBodyAdvice<Object> {
     @Override
     public Object beforeBodyWrite(Object body, MethodParameter methodParameter, MediaType selectedContentType, Class<? extends HttpMessageConverter<?>> selectedConverterType, ServerHttpRequest request, ServerHttpResponse response) {
 
-        String sessionId = SessionUtils.analyseSessionId(request);
-        if (SessionUtils.isCryptoEnabled(request, sessionId)) {
+        String requestId = RequestUtils.analyseRequestId(request);
+        if (RequestUtils.isCryptoEnabled(request, requestId)) {
 
             log.info("[Goya] |- EncryptResponseBodyAdvice begin encrypt data.");
 
@@ -59,7 +59,7 @@ public class EncryptResponseBodyAdvice implements ResponseBodyAdvice<Object> {
 
             try {
                 String bodyString = Jackson2Utils.getObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(body);
-                String result = httpCryptoProcessor.encrypt(sessionId, bodyString);
+                String result = httpCryptoProcessor.encrypt(requestId, bodyString);
                 if (StringUtils.isNotBlank(result)) {
                     log.debug("[Goya] |- Encrypt response body for rest method [{}] in [{}] finished.", methodName, className);
                     return result;
@@ -69,12 +69,12 @@ public class EncryptResponseBodyAdvice implements ResponseBodyAdvice<Object> {
             } catch (JsonProcessingException e) {
                 log.debug("[Goya] |- Encrypt response body for rest method [{}] in [{}] catch error, skip encrypt operation.", methodName, className, e);
                 return body;
-            } catch (SessionInvalidException e) {
+            } catch (RequestInvalidException e) {
                 log.error("[Goya] |- Session is expired for encrypt response body for rest method [{}] in [{}], skip encrypt operation.", methodName, className, e);
                 return body;
             }
         } else {
-            log.warn("[Goya] |- Cannot find Goya Cloud custom session header. Use interface crypto function need add X_GOYA_SESSION_ID to request header.");
+            log.warn("[Goya] |- Cannot find Goya Cloud custom session header. Use interface crypto function need add X_GOYA_REQUEST_ID to request header.");
             return body;
         }
     }

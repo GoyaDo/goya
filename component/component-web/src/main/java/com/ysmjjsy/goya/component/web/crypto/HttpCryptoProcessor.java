@@ -4,7 +4,7 @@ import com.ysmjjsy.goya.component.cache.jetcache.stamp.AbstractStampManager;
 import com.ysmjjsy.goya.component.crypto.definition.AsymmetricCryptoProcessor;
 import com.ysmjjsy.goya.component.crypto.definition.SymmetricCryptoProcessor;
 import com.ysmjjsy.goya.component.crypto.domain.SecretKey;
-import com.ysmjjsy.goya.component.exception.request.SessionInvalidException;
+import com.ysmjjsy.goya.component.exception.request.RequestInvalidException;
 import com.ysmjjsy.goya.component.exception.stamp.StampHasExpiredException;
 import com.ysmjjsy.goya.component.web.constants.WebConstants;
 import org.apache.commons.lang3.ObjectUtils;
@@ -67,14 +67,14 @@ public class HttpCryptoProcessor extends AbstractStampManager<String, SecretKey>
     }
 
     /**
-     * 根据SessionId创建SecretKey {@link SecretKey}。如果前端有可以唯一确定的SessionId，并且使用该值，则用该值创建SecretKey。否则就由后端动态生成一个SessionId。
+     * 根据requestId创建SecretKey {@link SecretKey}。如果前端有可以唯一确定的requestId，并且使用该值，则用该值创建SecretKey。否则就由后端动态生成一个requestId。
      *
-     * @param identity                   SessionId，可以为空。
+     * @param identity                   requestId，可以为空。
      * @param accessTokenValiditySeconds Session过期时间，单位秒
      * @return {@link SecretKey}
      */
     public SecretKey createSecretKey(String identity, Duration accessTokenValiditySeconds) {
-        // 前端如果设置sessionId，则由后端生成
+        // 前端如果设置requestId，则由后端生成
         if (StringUtils.isBlank(identity)) {
             identity = IdUtil.fastUUID();
         }
@@ -152,7 +152,7 @@ public class HttpCryptoProcessor extends AbstractStampManager<String, SecretKey>
      * @param identity     Session ID
      * @param confidential 前端和后端加解密结果都
      * @return 前端 PublicKey 加密后的 AES KEY
-     * @throws SessionInvalidException sessionId不可用，无法从缓存中找到对应的值
+     * @throws RequestInvalidException requestId不可用，无法从缓存中找到对应的值
      */
     public String exchange(String identity, String confidential) {
         try {
@@ -160,7 +160,7 @@ public class HttpCryptoProcessor extends AbstractStampManager<String, SecretKey>
             String frontendPublicKey = decryptFrontendPublicKey(confidential, secretKey.getPrivateKey());
             return encryptBackendKey(secretKey.getSymmetricKey(), frontendPublicKey);
         } catch (StampHasExpiredException e) {
-            throw new SessionInvalidException();
+            throw new RequestInvalidException();
         }
 
     }

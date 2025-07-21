@@ -3,9 +3,9 @@ package com.ysmjjsy.goya.component.web.crypto;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.TextNode;
 import com.ysmjjsy.goya.component.common.json.jackson2.utils.Jackson2Utils;
-import com.ysmjjsy.goya.component.exception.request.SessionInvalidException;
+import com.ysmjjsy.goya.component.exception.request.RequestInvalidException;
 import com.ysmjjsy.goya.component.web.annotation.Crypto;
-import com.ysmjjsy.goya.component.web.utils.SessionUtils;
+import com.ysmjjsy.goya.component.web.utils.RequestUtils;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.dromara.hutool.core.io.IoUtil;
@@ -58,9 +58,9 @@ public class DecryptRequestBodyAdvice implements RequestBodyAdvice {
     @Override
     public HttpInputMessage beforeBodyRead(HttpInputMessage httpInputMessage, MethodParameter methodParameter, Type targetType, Class<? extends HttpMessageConverter<?>> converterType) throws IOException {
 
-        String sessionId = SessionUtils.analyseSessionId(httpInputMessage);
+        String requestId = RequestUtils.analyseRequestId(httpInputMessage);
 
-        if (SessionUtils.isCryptoEnabled(httpInputMessage, sessionId)) {
+        if (RequestUtils.isCryptoEnabled(httpInputMessage, requestId)) {
 
             log.info("[Goya] |- DecryptRequestBodyAdvice begin decrypt data.");
 
@@ -70,9 +70,9 @@ public class DecryptRequestBodyAdvice implements RequestBodyAdvice {
             String content = IoUtil.read(httpInputMessage.getBody()).toString();
 
             if (StringUtils.isNotBlank(content)) {
-                String data = httpCryptoProcessor.decrypt(sessionId, content);
+                String data = httpCryptoProcessor.decrypt(requestId, content);
                 if (StringUtils.equals(data, content)) {
-                    data = decrypt(sessionId, content);
+                    data = decrypt(requestId, content);
                 }
                 log.debug("[Goya] |- Decrypt request body for rest method [{}] in [{}] finished.", methodName, className);
                 return new DecryptHttpInputMessage(httpInputMessage, ByteUtil.toUtf8Bytes(data));
@@ -80,12 +80,12 @@ public class DecryptRequestBodyAdvice implements RequestBodyAdvice {
                 return httpInputMessage;
             }
         } else {
-            log.warn("[Goya] |- Cannot find Goya Cloud custom session header. Use interface crypto founction need add X_GOYA_SESSION_ID to request header.");
+            log.warn("[Goya] |- Cannot find Goya Cloud custom session header. Use interface crypto founction need add X_GOYA_REQUEST_ID to request header.");
             return httpInputMessage;
         }
     }
 
-    private String decrypt(String sessionKey, String content) throws SessionInvalidException {
+    private String decrypt(String sessionKey, String content) throws RequestInvalidException {
         JsonNode jsonNode = Jackson2Utils.toNode(content);
         if (ObjectUtils.isNotEmpty(jsonNode)) {
             decrypt(sessionKey, jsonNode);
@@ -95,7 +95,7 @@ public class DecryptRequestBodyAdvice implements RequestBodyAdvice {
         return content;
     }
 
-    private void decrypt(String sessionKey, JsonNode jsonNode) throws SessionInvalidException {
+    private void decrypt(String sessionKey, JsonNode jsonNode) throws RequestInvalidException {
         if (jsonNode.isObject()) {
             Iterator<Map.Entry<String, JsonNode>> it = jsonNode.fields();
             while (it.hasNext()) {

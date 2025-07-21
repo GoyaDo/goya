@@ -7,33 +7,33 @@ import com.ysmjjsy.goya.component.exception.definition.GoyaRuntimeException;
 import java.io.Serial;
 
 /**
- * <p>Description: Session 不可用错误 </p>
+ * <p>Description: Request 不可用错误 </p>
  *
  * @author goya
  * @since 2021/10/4 16:46
  */
-public class SessionInvalidException extends GoyaRuntimeException {
+public class RequestInvalidException extends GoyaRuntimeException {
 
     @Serial
     private static final long serialVersionUID = 1420287360082166386L;
 
-    public SessionInvalidException() {
+    public RequestInvalidException() {
         super();
     }
 
-    public SessionInvalidException(String message) {
+    public RequestInvalidException(String message) {
         super(message);
     }
 
-    public SessionInvalidException(String message, Throwable cause) {
+    public RequestInvalidException(String message, Throwable cause) {
         super(message, cause);
     }
 
-    public SessionInvalidException(Throwable cause) {
+    public RequestInvalidException(Throwable cause) {
         super(cause);
     }
 
-    public SessionInvalidException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+    public RequestInvalidException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
     }
 

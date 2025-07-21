@@ -108,33 +108,33 @@ public class HeaderUtils {
     }
 
     /**
-     * 获取自定义 X_GOYA_SESSION_ID 头信息
+     * 获取自定义 X_GOYA_REQUEST_ID 头信息
      *
      * @param httpServletRequest {@link HttpServletRequest}
-     * @return X_GOYA_SESSION_ID 头信息
+     * @return X_GOYA_REQUEST_ID 头信息
      */
-    public static String getGoyaSessionId(HttpServletRequest httpServletRequest) {
-        return getHeader(httpServletRequest, GoyaHeaders.X_GOYA_SESSION_ID);
+    public static String getGoyaRequestId(HttpServletRequest httpServletRequest) {
+        return getHeader(httpServletRequest, GoyaHeaders.X_GOYA_REQUEST_ID);
     }
 
     /**
-     * 获取自定义 X_GOYA_SESSION_ID 请求头内容
+     * 获取自定义 X_GOYA_REQUEST_ID 请求头内容
      *
      * @param serverHttpRequest {@link ServerHttpRequest}
-     * @return X_GOYA_SESSION_ID 请求头内容
+     * @return X_GOYA_REQUEST_ID 请求头内容
      */
-    public static String getGoyaSessionId(ServerHttpRequest serverHttpRequest) {
-        return getHeader(serverHttpRequest, GoyaHeaders.X_GOYA_SESSION_ID);
+    public static String getGoyaRequestId(ServerHttpRequest serverHttpRequest) {
+        return getHeader(serverHttpRequest, GoyaHeaders.X_GOYA_REQUEST_ID);
     }
 
     /**
-     * 获取自定义 X_GOYA_SESSION_ID 请求头内容
+     * 获取自定义 X_GOYA_REQUEST_ID 请求头内容
      *
      * @param httpInputMessage {@link HttpInputMessage}
-     * @return X_GOYA_SESSION_ID 请求头内容
+     * @return X_GOYA_REQUEST_ID 请求头内容
      */
-    public static String getGoyaSessionId(HttpInputMessage httpInputMessage) {
-        return getHeader(httpInputMessage.getHeaders(), GoyaHeaders.X_GOYA_SESSION_ID);
+    public static String getGoyaRequestId(HttpInputMessage httpInputMessage) {
+        return getHeader(httpInputMessage.getHeaders(), GoyaHeaders.X_GOYA_REQUEST_ID);
     }
 
     /**
@@ -158,33 +158,33 @@ public class HeaderUtils {
     }
 
     /**
-     * 请求中包含 X_GOYA_SESSION_ID 请求头
+     * 请求中包含 X_GOYA_REQUEST_ID 请求头
      *
      * @param httpServletRequest {@link HttpServletRequest}
-     * @return 是否包含 X_GOYA_SESSION_ID 请求头
+     * @return 是否包含 X_GOYA_REQUEST_ID 请求头
      */
-    public static boolean hasGoyaSessionIdHeader(HttpServletRequest httpServletRequest) {
-        return hasHeader(httpServletRequest, GoyaHeaders.X_GOYA_SESSION_ID);
+    public static boolean hasGoyaRequestIdHeader(HttpServletRequest httpServletRequest) {
+        return hasHeader(httpServletRequest, GoyaHeaders.X_GOYA_REQUEST_ID);
     }
 
     /**
-     * 请求中包含 X_GOYA_SESSION_ID 请求头
+     * 请求中包含 X_GOYA_REQUEST_ID 请求头
      *
      * @param serverHttpRequest {@link ServerHttpRequest}
-     * @return 是否包含 X_GOYA_SESSION_ID 请求头
+     * @return 是否包含 X_GOYA_REQUEST_ID 请求头
      */
-    public static boolean hasGoyaSessionIdHeader(ServerHttpRequest serverHttpRequest) {
-        return hasHeader(serverHttpRequest, GoyaHeaders.X_GOYA_SESSION_ID);
+    public static boolean hasGoyaRequestIdHeader(ServerHttpRequest serverHttpRequest) {
+        return hasHeader(serverHttpRequest, GoyaHeaders.X_GOYA_REQUEST_ID);
     }
 
     /**
-     * 请求中包含 X_GOYA_SESSION_ID 请求头
+     * 请求中包含 X_GOYA_REQUEST_ID 请求头
      *
      * @param httpInputMessage {@link HttpInputMessage}
-     * @return 是否包含 X_GOYA_SESSION_ID 请求头
+     * @return 是否包含 X_GOYA_REQUEST_ID 请求头
      */
-    public static boolean hasGoyaSessionIdHeader(HttpInputMessage httpInputMessage) {
-        return hasHeader(httpInputMessage.getHeaders(), GoyaHeaders.X_GOYA_SESSION_ID);
+    public static boolean hasGoyaRequestIdHeader(HttpInputMessage httpInputMessage) {
+        return hasHeader(httpInputMessage.getHeaders(), GoyaHeaders.X_GOYA_REQUEST_ID);
     }
 
     /**

@@ -1,8 +1,8 @@
 package com.ysmjjsy.goya.component.web.crypto;
 
-import com.ysmjjsy.goya.component.exception.request.SessionInvalidException;
+import com.ysmjjsy.goya.component.exception.request.RequestInvalidException;
 import com.ysmjjsy.goya.component.web.annotation.Crypto;
-import com.ysmjjsy.goya.component.web.utils.SessionUtils;
+import com.ysmjjsy.goya.component.web.utils.RequestUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.ObjectUtils;
@@ -73,10 +73,10 @@ public class DecryptRequestParamResolver implements HandlerMethodArgumentResolve
         return ObjectUtils.isEmpty(multipartRequest);
     }
 
-    private String[] decrypt(String sessionId, String[] paramValues) throws SessionInvalidException {
+    private String[] decrypt(String requestId, String[] paramValues) throws RequestInvalidException {
         List<String> values = new ArrayList<>();
         for (String paramValue : paramValues) {
-            String value = httpCryptoProcessor.decrypt(sessionId, paramValue);
+            String value = httpCryptoProcessor.decrypt(requestId, paramValue);
             if (StringUtils.isNotBlank(value)) {
                 values.add(value);
             }
@@ -94,15 +94,15 @@ public class DecryptRequestParamResolver implements HandlerMethodArgumentResolve
 
             HttpServletRequest request = webRequest.getNativeRequest(HttpServletRequest.class);
 
-            String sessionId = SessionUtils.analyseSessionId(request);
-            if (SessionUtils.isCryptoEnabled(request, sessionId)) {
+            String requestId = RequestUtils.analyseRequestId(request);
+            if (RequestUtils.isCryptoEnabled(request, requestId)) {
                 String[] paramValues = request.getParameterValues(methodParameter.getParameterName());
                 if (ArrayUtils.isNotEmpty(paramValues)) {
-                    String[] values = decrypt(sessionId, paramValues);
+                    String[] values = decrypt(requestId, paramValues);
                     return (values.length == 1 ? values[0] : values);
                 }
             } else {
-                log.warn("[Goya] |- Cannot find Goya Cloud custom session header. Use interface crypto founction need add X_GOYA_SESSION_ID to request header.");
+                log.warn("[Goya] |- Cannot find Goya Cloud custom session header. Use interface crypto founction need add X_GOYA_REQUEST_ID to request header.");
             }
         }
 

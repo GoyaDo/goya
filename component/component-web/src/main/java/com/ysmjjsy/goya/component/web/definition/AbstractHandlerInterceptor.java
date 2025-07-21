@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.component.web.definition;
 
 import com.ysmjjsy.goya.component.dto.constants.SymbolConstants;
-import com.ysmjjsy.goya.component.web.utils.SessionUtils;
+import com.ysmjjsy.goya.component.web.utils.RequestUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import org.apache.commons.lang3.StringUtils;
 import org.dromara.hutool.crypto.SecureUtil;
@@ -23,17 +23,17 @@ public abstract class AbstractHandlerInterceptor implements HandlerInterceptor {
 
     protected String generateRequestKey(HttpServletRequest request) {
 
-        String sessionId = SessionUtils.analyseSessionId(request);
+        String requestId = RequestUtils.analyseRequestId(request);
 
         String url = request.getRequestURI();
         String method = request.getMethod();
 
-        if (StringUtils.isNotBlank(sessionId)) {
-            String key = SecureUtil.md5(sessionId + SymbolConstants.COLON + url + SymbolConstants.COLON + method);
+        if (StringUtils.isNotBlank(requestId)) {
+            String key = SecureUtil.md5(requestId + SymbolConstants.COLON + url + SymbolConstants.COLON + method);
             log.debug("[Goya] |- IdempotentInterceptor key is [{}].", key);
             return key;
         } else {
-            log.warn("[Goya] |- IdempotentInterceptor cannot create key, because sessionId is null.");
+            log.warn("[Goya] |- IdempotentInterceptor cannot create key, because requestId is null.");
             return null;
         }
     }

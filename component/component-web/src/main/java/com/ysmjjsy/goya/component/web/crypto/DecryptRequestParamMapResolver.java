@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.component.web.crypto;
 
 import com.ysmjjsy.goya.component.web.annotation.Crypto;
-import com.ysmjjsy.goya.component.web.utils.SessionUtils;
+import com.ysmjjsy.goya.component.web.utils.RequestUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.Part;
 import org.apache.commons.lang3.ObjectUtils;
@@ -106,8 +106,8 @@ public class DecryptRequestParamMapResolver implements HandlerMethodArgumentReso
 
         if (isConfigCrypto(methodParameter) || isOauthTokenRequest(requestURI, requestMethod)) {
 
-            String sessionId = SessionUtils.analyseSessionId(request);
-            if (SessionUtils.isCryptoEnabled(request, sessionId)) {
+            String requestId = RequestUtils.analyseRequestId(request);
+            if (RequestUtils.isCryptoEnabled(request, requestId)) {
 
                 if (isRegularMap(methodParameter)) {
                     Map<String, String[]> parameterMap = webRequest.getParameterMap();
@@ -118,7 +118,7 @@ public class DecryptRequestParamMapResolver implements HandlerMethodArgumentReso
                         String[] values = entry.getValue();
 
                         if (values.length > 0) {
-                            String value = httpCryptoProcessor.decrypt(sessionId, values[0]);
+                            String value = httpCryptoProcessor.decrypt(requestId, values[0]);
                             ;
                             result.put(key, value);
                         }
@@ -127,7 +127,7 @@ public class DecryptRequestParamMapResolver implements HandlerMethodArgumentReso
                     return result;
                 }
             } else {
-                log.warn("[Goya] |- Cannot find Goya Cloud custom session header. Use interface crypto founction need add X_GOYA_SESSION_ID to request header.");
+                log.warn("[Goya] |- Cannot find Goya Cloud custom session header. Use interface crypto founction need add X_GOYA_REQUEST_ID to request header.");
             }
         }
 

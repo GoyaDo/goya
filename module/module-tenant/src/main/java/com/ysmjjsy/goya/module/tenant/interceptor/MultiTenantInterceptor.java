@@ -2,7 +2,7 @@ package com.ysmjjsy.goya.module.tenant.interceptor;
 
 import com.ysmjjsy.goya.component.context.service.TenantContextHolder;
 import com.ysmjjsy.goya.component.web.utils.HeaderUtils;
-import com.ysmjjsy.goya.component.web.utils.SessionUtils;
+import com.ysmjjsy.goya.component.web.utils.RequestUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
@@ -27,11 +27,11 @@ public class MultiTenantInterceptor implements HandlerInterceptor {
         log.debug("[Goya] |- TENANT ID is : [{}].", tenantId);
 
         String path = request.getRequestURI();
-        String sessionId = SessionUtils.getSessionId(request);
-        String goyaSessionId = HeaderUtils.getGoyaSessionId(request);
+        String requestId = RequestUtils.analyseRequestId(request);
+        String goyaRequestId = HeaderUtils.getGoyaRequestId(request);
 
-        log.debug("[Goya] |- SESSION ID for [{}] is : [{}].", path, sessionId);
-        log.debug("[Goya] |- SESSION ID of Goya for [{}] is : [{}].", path, goyaSessionId);
+        log.debug("[Goya] |- REQUEST ID for [{}] is : [{}].", path, requestId);
+        log.debug("[Goya] |- REQUEST ID of Goya for [{}] is : [{}].", path, goyaRequestId);
 
         return true;
     }
