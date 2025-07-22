@@ -26,5 +26,10 @@
             <groupId>com.ysmjjsy.goya</groupId>
             <artifactId>security-authorization</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.ysmjjsy.goya</groupId>
+            <artifactId>security-authentication</artifactId>
+        </dependency>
     </dependencies>
 </project>

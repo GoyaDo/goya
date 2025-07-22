@@ -1,7 +1,9 @@
 package com.ysmjjsy.goya.module.kafka.configuration;
 
 import com.ysmjjsy.goya.component.web.scan.RequestMappingScanEventManager;
+import com.ysmjjsy.goya.module.kafka.account.RemoteAccountStatusEventManager;
 import com.ysmjjsy.goya.module.kafka.scan.RemoteSecurityDefaultRequestMappingScanEventManager;
+import com.ysmjjsy.goya.security.authentication.client.compliance.AccountStatusEventManager;
 import com.ysmjjsy.goya.security.authorization.processor.SecurityAttributeAnalyzer;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
@@ -38,6 +40,15 @@ public class KafkaConfiguration {
         RemoteSecurityDefaultRequestMappingScanEventManager requestMappingScanEventManager = new RemoteSecurityDefaultRequestMappingScanEventManager(securityAttributeAnalyzer);
         log.trace("[Goya] |- Bean [Servlet Remote Security Request Mapping Scan Event Manager] Configure.");
         return requestMappingScanEventManager;
+    }
+
+    @Bean
+    @Order(Integer.MAX_VALUE - 2)
+    @ConditionalOnBean(AccountStatusEventManager.class)
+    public AccountStatusEventManager accountStatusEventManager() {
+        RemoteAccountStatusEventManager remoteAccountStatusEventManager = new RemoteAccountStatusEventManager();
+        log.trace("[Goya] |- Bean [Remote Account Status Event Manager] Configure.");
+        return remoteAccountStatusEventManager;
     }
 
 }

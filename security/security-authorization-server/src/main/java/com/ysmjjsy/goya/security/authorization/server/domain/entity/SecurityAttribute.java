@@ -61,7 +61,6 @@ public class SecurityAttribute extends BaseJpaAggregate {
     @Column(name = "web_expression", length = 128)
     private String webExpression;
 
-
     /**
      * 角色描述,UI界面显示使用
      */
@@ -75,8 +74,8 @@ public class SecurityAttribute extends BaseJpaAggregate {
     @JoinTable(name = "security_attribute_permission",
             joinColumns = {@JoinColumn(name = "id")},
             inverseJoinColumns = {@JoinColumn(name = "id")},
-            uniqueConstraints = {@UniqueConstraint(columnNames = {"id", "id"})},
-            indexes = {@Index(name = "security_attribute_permission_aid_idx", columnList = "id"), @Index(name = "security_attribute_permission_pid_idx", columnList = "id")})
+            uniqueConstraints = {@UniqueConstraint(columnNames = {"attributeId", "permissionId"})},
+            indexes = {@Index(name = "security_attribute_permission_aid_idx", columnList = "attributeId"), @Index(name = "security_attribute_permission_pid_idx", columnList = "permissionId")})
     private Set<SecurityPermission> permissions = new HashSet<>();
 
     @Override

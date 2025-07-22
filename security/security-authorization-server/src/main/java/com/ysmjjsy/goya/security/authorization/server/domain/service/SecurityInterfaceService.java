@@ -29,7 +29,7 @@ import java.util.stream.Collectors;
  */
 @Slf4j
 @Service
-public class SecurityInterfaceService implements BaseService<SecurityInterface,String> {
+public class SecurityInterfaceService extends BaseService<SecurityInterface,String> {
 
     private final SecurityInterfaceRepository securityInterfaceRepository;
     private final Converter<RequestMapping, SecurityInterface> toSysInterface;

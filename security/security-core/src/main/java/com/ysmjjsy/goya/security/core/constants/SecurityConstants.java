@@ -4,6 +4,7 @@ import com.ysmjjsy.goya.component.dto.constants.GoyaConstants;
 import com.ysmjjsy.goya.component.dto.constants.SymbolConstants;
 
 import static com.ysmjjsy.goya.component.cache.constants.CacheConstants.CACHE_PREFIX;
+import static com.ysmjjsy.goya.component.cache.constants.CacheConstants.CACHE_TOKEN_BASE_PREFIX;
 
 /**
  * <p>认证相关</p>
@@ -19,6 +20,8 @@ public interface SecurityConstants {
 
     String PROPERTY_PREFIX_SECURITY_AUTHORIZATION = PROPERTY_PREFIX_SECURITY + ".authorization";
     String ITEM_AUTHORIZATION_VALIDATE = PROPERTY_PREFIX_SECURITY_AUTHORIZATION + ".validate";
+
+    String PROPERTY_REFIX_SECURITY_AUTHENTICATION = PROPERTY_PREFIX_SECURITY + ".authentication";
 
 
     String AUTHORIZATION_ENDPOINT = "/oauth2/authorize";
@@ -86,4 +89,9 @@ public interface SecurityConstants {
     String CACHE_NAME_SECURITY_METADATA_INDEXES = CACHE_SECURITY_METADATA_PREFIX + "indexes:";
     String CACHE_NAME_SECURITY_METADATA_INDEXABLE = CACHE_SECURITY_METADATA_PREFIX + "indexable:";
     String CACHE_NAME_SECURITY_METADATA_COMPATIBLE = CACHE_SECURITY_METADATA_PREFIX + "compatible:";
+
+    String CACHE_NAME_TOKEN_LOCKED_USER_DETAIL = CACHE_TOKEN_BASE_PREFIX + "locked:user_details:";
+    String CACHE_NAME_TOKEN_SIGN_IN_FAILURE_LIMITED = CACHE_TOKEN_BASE_PREFIX + "sign_in:failure_limited:";
+
+
 }

@@ -21,6 +21,17 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-oauth2-authorization-server</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.ysmjjsy.goya</groupId>
+            <artifactId>component-db</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
 </project>

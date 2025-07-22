@@ -19,7 +19,7 @@ import java.util.List;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class SecurityAttributeService implements BaseService<SecurityAttribute,String> {
+public class SecurityAttributeService extends BaseService<SecurityAttribute,String> {
 
     private final SecurityAttributeRepository securityAttributeRepository;
 

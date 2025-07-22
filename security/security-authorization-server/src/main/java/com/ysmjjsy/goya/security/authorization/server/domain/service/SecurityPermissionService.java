@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class SecurityPermissionService implements BaseService<SecurityPermission,String> {
+public class SecurityPermissionService extends BaseService<SecurityPermission,String> {
 
     private final SecurityPermissionRepository securityPermissionRepository;
 
