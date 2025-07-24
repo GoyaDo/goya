@@ -77,12 +77,6 @@
 
             <dependency>
                 <groupId>com.ysmjjsy.goya</groupId>
-                <artifactId>component-event</artifactId>
-                <version>${revision}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.ysmjjsy.goya</groupId>
                 <artifactId>component-job</artifactId>
                 <version>${revision}</version>
             </dependency>
@@ -207,6 +201,18 @@
             <dependency>
                 <groupId>com.ysmjjsy.goya</groupId>
                 <artifactId>module-tenant</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.ysmjjsy.goya</groupId>
+                <artifactId>module-jpa</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.ysmjjsy.goya</groupId>
+                <artifactId>module-mybatis-plus</artifactId>
                 <version>${revision}</version>
             </dependency>
 
