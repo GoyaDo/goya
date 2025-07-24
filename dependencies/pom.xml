@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.5.0</version>
+        <version>3.5.3</version>
         <relativePath/>
     </parent>
 
@@ -41,7 +41,8 @@
     </scm>
 
     <properties>
-        <revision>0.0.9-SNAPSHOT</revision>  <!--Maven项目基础信息-->
+        <!--Maven项目基础信息-->
+        <revision>0.0.9-SNAPSHOT</revision>
 
         <java.version>21</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
@@ -49,44 +50,43 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <!--Spring 家族-->
-        <spring-boot-dependencies.version>3.5.0</spring-boot-dependencies.version>
-        <spring-boot-admin-dependencies.version>3.4.5</spring-boot-admin-dependencies.version>
-        <spring-cloud-dependencies.version>2024.0.1</spring-cloud-dependencies.version>
-        <spring-cloud-alibaba-dependencies.version>2023.0.1.2</spring-cloud-alibaba-dependencies.version>
+        <spring-boot-dependencies.version>3.5.3</spring-boot-dependencies.version>
+        <spring-boot-admin-dependencies.version>3.5.1</spring-boot-admin-dependencies.version>
+        <spring-cloud-dependencies.version>2025.0.0</spring-cloud-dependencies.version>
+        <spring-cloud-alibaba-dependencies.version>2023.0.3.3</spring-cloud-alibaba-dependencies.version>
         <!--Maven Plugin 相关组件-->
         <apt-maven-plugin.version>1.1.3</apt-maven-plugin.version>
-        <archetype-packaging.verison>3.3.1</archetype-packaging.verison>
+        <archetype-packaging.verison>3.4.0</archetype-packaging.verison>
         <mapstruct-processor.version>1.6.3</mapstruct-processor.version>
-        <maven-archetype-plugin.version>3.3.1</maven-archetype-plugin.version>
         <maven-gpg-plugin.version>3.2.7</maven-gpg-plugin.version>
         <flatten-maven-plugin.version>1.6.0</flatten-maven-plugin.version>
-        <central-publishing-maven-plugin.version>0.7.0</central-publishing-maven-plugin.version>
+        <central-publishing-maven-plugin.version>0.8.0</central-publishing-maven-plugin.version>
         <maven-archetype-plugin.version>3.4.0</maven-archetype-plugin.version>
 
         <!--开源通用工具包-->
         <animated-gif-lib.version>1.4</animated-gif-lib.version>
-        <antisamy.version>1.7.7</antisamy.version>
+        <antisamy.version>1.7.8</antisamy.version>
         <commons-collections4.version>4.5.0</commons-collections4.version>
-        <commons-fileupload.version>1.5</commons-fileupload.version>
-        <commons-io.version>2.19.0</commons-io.version>
+        <commons-fileupload.version>1.6.0</commons-fileupload.version>
+        <commons-io.version>2.20.0</commons-io.version>
         <commons-text.version>1.13.1</commons-text.version>
         <guava.version>33.4.8-jre</guava.version>
         <zxing.version>3.5.3</zxing.version>
         <!-- 应用开发辅助工具组件 -->
-        <redisson.version>3.46.0</redisson.version>
+        <redisson.version>3.50.0</redisson.version>
         <p6spy.version>3.9.1</p6spy.version>
-        <springdoc.version>2.8.8</springdoc.version>
+        <springdoc.version>2.8.9</springdoc.version>
         <logstash-logback-encoder.version>8.1</logstash-logback-encoder.version>
         <skywalking.version>9.4.0</skywalking.version>
         <minio.version>8.5.17</minio.version>
-        <aws-java-sdk-s3.version>1.12.783</aws-java-sdk-s3.version>
+        <aws-java-sdk-s3.version>1.12.788</aws-java-sdk-s3.version>
         <software.amazon.awssdk.version>2.25.60</software.amazon.awssdk.version>
         <software.amazon.awssdk.crt.version>0.29.19</software.amazon.awssdk.crt.version>
         <org.eclipse.paho.version>1.2.5</org.eclipse.paho.version>
-        <influxdb-client.version>7.2.0</influxdb-client.version>
+        <influxdb-client.version>7.3.0</influxdb-client.version>
         <loki-logback-appender.version>1.5.1</loki-logback-appender.version>
-        <blaze-persistence.version>1.6.15</blaze-persistence.version>
-        <hypersistence-utils-hibernate-63.version>3.9.10</hypersistence-utils-hibernate-63.version>
+        <blaze-persistence.version>1.6.16</blaze-persistence.version>
+        <hypersistence-utils-hibernate-63.version>3.10.3</hypersistence-utils-hibernate-63.version>
         <opengauss-jdbc.version>6.0.0-og</opengauss-jdbc.version>
         <sm-crypto.version>0.3.13</sm-crypto.version>
         <querydsl.version>5.1.0</querydsl.version>
@@ -94,62 +94,63 @@
         <fastjson.version>1.2.83</fastjson.version>
         <fastjson2.version>2.0.57</fastjson2.version>
         <jetcache.version>2.7.8</jetcache.version>
-        <nacos.version>2.5.1</nacos.version>
+        <nacos.version>3.0.1</nacos.version>
         <transmittable-thread-local.version>2.14.5</transmittable-thread-local.version>
         <!-- 国内开源通用组件 -->
         <hutool.version>6.0.0-M21</hutool.version>
         <okhttps.version>4.1.0</okhttps.version>
-        <weixin-java-sdk.version>4.7.4.B</weixin-java-sdk.version>
+        <weixin-java-sdk.version>4.7.7-20250716.230806</weixin-java-sdk.version>
         <!--GRPC 依赖-->
         <os-maven-plugin.version>1.7.1</os-maven-plugin.version>
         <protobuf-maven-plugin.version>0.6.1</protobuf-maven-plugin.version>
         <grpc.version>1.70.0</grpc.version>
         <protobuf.version>3.21.7</protobuf.version>
         <!--第三方starter-->
-        <camunda-bpm-spring-boot-starter-rest.version>7.22.0</camunda-bpm-spring-boot-starter-rest.version>
+        <camunda-bpm-spring-boot-starter-rest.version>7.23.0</camunda-bpm-spring-boot-starter-rest.version>
         <grpc-spring-boot-starter.version>3.1.0.RELEASE</grpc-spring-boot-starter.version>
         <jasypt-spring-boot-starter.version>3.0.5</jasypt-spring-boot-starter.version>
-        <sms4j-spring-boot-starter.version>3.3.4</sms4j-spring-boot-starter.version>
+        <sms4j-spring-boot-starter.version>3.3.5</sms4j-spring-boot-starter.version>
         <mybatis-plus.version>3.5.12</mybatis-plus.version>
         <mybatis.version>3.5.19</mybatis.version>
         <velocity.version>2.3</velocity.version>
         <justauth.verison>1.16.7</justauth.verison>
         <!--Webjars 依赖-->
         <animate.css.version>4.1.1</animate.css.version>
-        <bootstrap.version>5.3.5</bootstrap.version>
+        <bootstrap.version>5.3.7</bootstrap.version>
         <font-awesome.version>6.5.2</font-awesome.version>
         <jquery.version>3.7.1</jquery.version>
         <jquery-backstretch.version>2.1.16</jquery-backstretch.version>
         <mdi__font.version>7.4.47</mdi__font.version>
         <quasar.version>2.18.1</quasar.version>
-        <sweetalert2.verison>11.21.0</sweetalert2.verison>
+        <sweetalert2.verison>11.22.2</sweetalert2.verison>
         <uniform.version>2.1.2-1</uniform.version>
-        <vue.version>3.5.13</vue.version>
+        <vue.version>3.5.17</vue.version>
         <!--厂商应用集成-->
-        <aliyun-java-sdk-core.version>4.7.5</aliyun-java-sdk-core.version>
+        <aliyun-java-sdk-core.version>4.7.6</aliyun-java-sdk-core.version>
         <aliyun-java-sdk-green.version>3.6.6</aliyun-java-sdk-green.version>
-        <alipay-sdk-java.version>4.40.186.ALL</alipay-sdk-java.version>
-        <aliyun-sdk-oss.version>3.18.2</aliyun-sdk-oss.version>
-        <com.baidu.aip.version>4.16.19</com.baidu.aip.version>
+        <alipay-sdk-java.version>4.40.328.ALL</alipay-sdk-java.version>
+        <aliyun-sdk-oss.version>3.18.3</aliyun-sdk-oss.version>
+        <com.baidu.aip.version>4.16.22</com.baidu.aip.version>
         <!--以下为特殊处理, 统一版本处理漏洞等-->
-        <bcprov-jdk18on.version>1.80</bcprov-jdk18on.version>
-        <bcpkix-jdk18on.version>1.80</bcpkix-jdk18on.version>
-        <checker-qual.version>3.49.3</checker-qual.version>
+        <bcprov-jdk18on.version>1.81</bcprov-jdk18on.version>
+        <bcpkix-jdk18on.version>1.81</bcpkix-jdk18on.version>
+        <checker-qual.version>3.49.5</checker-qual.version>
         <dom4j.version>2.1.4</dom4j.version>
         <httpclient.version>4.5.14</httpclient.version>
         <mysql.version>9.3.0</mysql.version>
-        <okio.version>3.11.0</okio.version>
+        <okio.version>3.15.0</okio.version>
         <org.json.version>20250107</org.json.version>
         <snappy-java.version>1.1.10.7</snappy-java.version>
-        <sqlite-jdbc.version>3.49.1.0</sqlite-jdbc.version>
+        <sqlite-jdbc.version>3.50.2.0</sqlite-jdbc.version>
         <xnio.version>3.8.16.Final</xnio.version>
-        <classgraph.version>4.8.179</classgraph.version>
-        <error_prone_annotations.version>2.38.0</error_prone_annotations.version>
-        <hutool5.version>5.8.37</hutool5.version>
+        <classgraph.version>4.8.181</classgraph.version>
+        <error_prone_annotations.version>2.40.0</error_prone_annotations.version>
+        <hutool5.version>5.8.38</hutool5.version>
         <javassist.version>3.30.2-GA</javassist.version>
         <jaxb-impl.version>4.0.5</jaxb-impl.version>
         <!--fix CVE-2024-47535-->
         <lettuce.version>6.5.2.RELEASE</lettuce.version>
+        <kryo.version>5.6.2</kryo.version>
     </properties>
 
 
@@ -653,6 +654,25 @@
                 <groupId>com.querydsl</groupId>
                 <artifactId>querydsl-apt</artifactId>
                 <version>${querydsl.version}</version>
+            </dependency>
+
+            <!--统一控制kryo版本，减少不必要的低版本组件引入-->
+            <dependency>
+                <groupId>com.esotericsoftware</groupId>
+                <artifactId>kryo</artifactId>
+                <version>${kryo.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${mapstruct-processor.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-processor</artifactId>
+                <version>${mapstruct-processor.version}</version>
+                <scope>provided</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>

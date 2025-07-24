@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.component.doc.configuration;
 
 import com.google.common.collect.ImmutableList;
-import com.ysmjjsy.goya.component.context.service.GoyaContextHolder;
+import com.ysmjjsy.goya.component.common.context.GoyaContextHolder;
 import com.ysmjjsy.goya.component.doc.properties.SwaggerProperties;
 import com.ysmjjsy.goya.component.doc.server.OpenApiServerResolver;
 import com.ysmjjsy.goya.component.dto.constants.GoyaConstants;

@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.security.authentication.client.compliance;
 
 
-import com.ysmjjsy.goya.component.context.service.GoyaContextHolder;
+import com.ysmjjsy.goya.component.common.context.GoyaContextHolder;
 import com.ysmjjsy.goya.security.authentication.client.compliance.event.ChangeUserStatusEvent;
 import lombok.extern.slf4j.Slf4j;
 

@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.component.bus.message.domain;
 
-import com.ysmjjsy.goya.component.context.service.GoyaContextHolder;
+import com.ysmjjsy.goya.component.common.context.GoyaContextHolder;
 import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
 

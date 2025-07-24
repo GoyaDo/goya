@@ -1,17 +1,13 @@
 package com.ysmjjsy.goya.module.redis.configuration;
 
 import com.ysmjjsy.goya.component.cache.properties.CacheProperties;
-import com.ysmjjsy.goya.component.event.serializer.EventSerializer;
+import com.ysmjjsy.goya.module.redis.distributedid.LocalRedisWorkIdChoose;
 import com.ysmjjsy.goya.module.redis.enhance.GoyaRedisCacheManager;
-import com.ysmjjsy.goya.module.redis.event.RedisEventTransport;
 import jakarta.annotation.PostConstruct;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -122,38 +118,19 @@ public class CacheRedisConfiguration {
         return goyaRedisCacheManager;
     }
 
+    /**
+     * 本地 Redis 构建雪花 WorkId 选择器
+     */
+    @Bean(name = "snowflakeWorkIdChoose")
+    public LocalRedisWorkIdChoose snowflakeWorkIdChoose(StringRedisTemplate stringRedisTemplate) {
+        return new LocalRedisWorkIdChoose(stringRedisTemplate);
+    }
+
     @Configuration(proxyBeanMethods = false)
     @ComponentScan({
             "com.ysmjjsy.goya.module.redis.utils"
     })
     static class RedisUtilsConfiguration {
 
-    }
-
-    /**
-     * Redis 传输配置
-     */
-    @Configuration
-    @ConditionalOnClass({RedisTemplate.class, RedisMessageListenerContainer.class})
-    @ConditionalOnProperty(prefix = "goya.event", name = "enabled", havingValue = "true", matchIfMissing = true)
-    static class RedisTransportConfiguration {
-
-        @Bean
-        @ConditionalOnMissingBean
-        public RedisMessageListenerContainer redisMessageListenerContainer() {
-            RedisMessageListenerContainer container = new RedisMessageListenerContainer();
-            // 配置将在 RedisEventTransport 中完成
-            return container;
-        }
-
-        @Bean
-        public RedisEventTransport redisEventTransport(RedisTemplate<String, String> redisTemplate,
-                                                       EventSerializer eventSerializer,
-                                                       @Qualifier("redisMessageListenerContainer")  RedisMessageListenerContainer messageListenerContainer) {
-            log.info("Creating Redis event transport");
-            RedisEventTransport transport = new RedisEventTransport(redisTemplate, eventSerializer, messageListenerContainer);
-            transport.start();
-            return transport;
-        }
     }
 }

@@ -32,6 +32,8 @@ public interface GoyaConstants {
 
     String PROPERTY_PREFIX_WEB = GoyaConstants.GOYA + ".web";
 
+    String PROPERTY_PREFIX_FASTJSON_SAFA_MODE = GoyaConstants.GOYA + ".fastjson.safa-mode";
+
     String PROPERTY_PREFIX_ENDPOINT = GoyaConstants.GOYA + ".endpoint";
     String PROPERTY_PREFIX_PLATFORM = GoyaConstants.GOYA + ".platform";
     String PROPERTY_WEB_SCAN = PROPERTY_PREFIX_WEB + ".scan";

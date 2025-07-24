@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.security.authorization.scan;
 
-import com.ysmjjsy.goya.component.context.service.GoyaContextHolder;
+import com.ysmjjsy.goya.component.common.context.GoyaContextHolder;
 import com.ysmjjsy.goya.component.web.domain.RequestMapping;
 import com.ysmjjsy.goya.component.web.scan.RequestMappingEvent;
 import com.ysmjjsy.goya.component.web.scan.RequestMappingScanEventManager;

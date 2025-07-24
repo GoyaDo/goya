@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.module.tenant.interceptor;
 
-import com.ysmjjsy.goya.component.context.service.TenantContextHolder;
+import com.ysmjjsy.goya.component.common.context.TenantContextHolder;
 import com.ysmjjsy.goya.component.web.utils.HeaderUtils;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

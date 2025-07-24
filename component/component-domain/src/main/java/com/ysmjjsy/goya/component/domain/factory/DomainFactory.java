@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.component.domain.factory;
 
-import com.ysmjjsy.goya.component.common.context.ApplicationContextHelper;
+import com.ysmjjsy.goya.component.common.context.ApplicationContextHolder;
 
 /**
  * <p></p>
@@ -11,7 +11,7 @@ import com.ysmjjsy.goya.component.common.context.ApplicationContextHelper;
 public class DomainFactory {
 
     public static <T> T create(Class<T> entityClz){
-        return ApplicationContextHelper.getBean(entityClz);
+        return ApplicationContextHolder.getBean(entityClz);
     }
 
 }

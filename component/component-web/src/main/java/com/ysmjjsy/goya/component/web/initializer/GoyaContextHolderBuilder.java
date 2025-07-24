@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.component.web.initializer;
 
 import com.ysmjjsy.goya.component.common.utils.WellFormedUtils;
-import com.ysmjjsy.goya.component.context.service.GoyaContextHolder;
+import com.ysmjjsy.goya.component.common.context.GoyaContextHolder;
 import com.ysmjjsy.goya.component.web.properties.PlatformProperties;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;

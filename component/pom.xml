@@ -25,10 +25,11 @@
         <module>component-statemachine</module>
         <module>component-doc</module>
         <module>component-web</module>
-        <module>component-context</module>
         <module>component-captcha</module>
         <module>component-crypto</module>
         <module>component-bus</module>
+        <module>component-distributedid</module>
+        <module>component-json</module>
     </modules>
 
 

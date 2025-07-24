@@ -26,97 +26,86 @@
                 <artifactId>component-dto</artifactId>
                 <version>${revision}</version>
             </dependency>
-
             <dependency>
                 <groupId>com.ysmjjsy.goya</groupId>
                 <artifactId>component-exception</artifactId>
                 <version>${revision}</version>
             </dependency>
-
+            <dependency>
+                <groupId>com.ysmjjsy.goya</groupId>
+                <artifactId>component-json</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ysmjjsy.goya</groupId>
+                <artifactId>component-distributedid</artifactId>
+                <version>${revision}</version>
+            </dependency>
             <dependency>
                 <groupId>com.ysmjjsy.goya</groupId>
                 <artifactId>component-common</artifactId>
                 <version>${revision}</version>
             </dependency>
-
             <dependency>
                 <groupId>com.ysmjjsy.goya</groupId>
                 <artifactId>component-cache</artifactId>
                 <version>${revision}</version>
             </dependency>
-
-            <dependency>
-                <groupId>com.ysmjjsy.goya</groupId>
-                <artifactId>component-context</artifactId>
-                <version>${revision}</version>
-            </dependency>
-
             <dependency>
                 <groupId>com.ysmjjsy.goya</groupId>
                 <artifactId>component-catchlog</artifactId>
                 <version>${revision}</version>
             </dependency>
-
             <dependency>
                 <groupId>com.ysmjjsy.goya</groupId>
                 <artifactId>component-db</artifactId>
                 <version>${revision}</version>
             </dependency>
-
             <dependency>
                 <groupId>com.ysmjjsy.goya</groupId>
                 <artifactId>component-doc</artifactId>
                 <version>${revision}</version>
             </dependency>
-
             <dependency>
                 <groupId>com.ysmjjsy.goya</groupId>
                 <artifactId>component-domain</artifactId>
                 <version>${revision}</version>
             </dependency>
-
             <dependency>
                 <groupId>com.ysmjjsy.goya</groupId>
                 <artifactId>component-job</artifactId>
                 <version>${revision}</version>
             </dependency>
-
             <dependency>
                 <groupId>com.ysmjjsy.goya</groupId>
                 <artifactId>component-ruleengine</artifactId>
                 <version>${revision}</version>
             </dependency>
-
             <dependency>
                 <groupId>com.ysmjjsy.goya</groupId>
                 <artifactId>component-statemachine</artifactId>
                 <version>${revision}</version>
             </dependency>
-
             <dependency>
                 <groupId>com.ysmjjsy.goya</groupId>
                 <artifactId>component-test-container</artifactId>
                 <version>${revision}</version>
             </dependency>
-
             <dependency>
                 <groupId>com.ysmjjsy.goya</groupId>
                 <artifactId>component-bus</artifactId>
                 <version>${revision}</version>
             </dependency>
-
             <dependency>
                 <groupId>com.ysmjjsy.goya</groupId>
                 <artifactId>component-web</artifactId>
                 <version>${revision}</version>
             </dependency>
-
             <dependency>
                 <groupId>com.ysmjjsy.goya</groupId>
                 <artifactId>component-captcha</artifactId>
                 <version>${revision}</version>
             </dependency>
-
             <dependency>
                 <groupId>com.ysmjjsy.goya</groupId>
                 <artifactId>component-crypto</artifactId>

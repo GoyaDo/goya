@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.module.kafka.account;
 
-import com.ysmjjsy.goya.component.context.service.GoyaContextHolder;
+import com.ysmjjsy.goya.component.common.context.GoyaContextHolder;
 import com.ysmjjsy.goya.module.kafka.bus.RemoteChangeUserStatusEvent;
 import com.ysmjjsy.goya.security.authentication.client.compliance.AccountStatusEventManager;
 import com.ysmjjsy.goya.security.authentication.client.compliance.UserStatus;

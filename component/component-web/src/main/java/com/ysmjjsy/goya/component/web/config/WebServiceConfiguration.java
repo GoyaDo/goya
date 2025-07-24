@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.component.web.config;
 
 import com.ysmjjsy.goya.component.common.resolver.PropertyResolver;
-import com.ysmjjsy.goya.component.context.service.GoyaContextHolder;
+import com.ysmjjsy.goya.component.common.context.GoyaContextHolder;
 import com.ysmjjsy.goya.component.dto.constants.GoyaConstants;
 import com.ysmjjsy.goya.component.web.advice.ServletRestControllerAdvice;
 import com.ysmjjsy.goya.component.web.customizer.Jackson2XssObjectMapperBuilderCustomizer;

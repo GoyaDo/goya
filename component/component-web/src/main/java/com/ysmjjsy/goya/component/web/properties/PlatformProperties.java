@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.component.web.properties;
 
 import com.ysmjjsy.goya.component.common.utils.WellFormedUtils;
-import com.ysmjjsy.goya.component.context.service.GoyaContextHolder;
+import com.ysmjjsy.goya.component.common.context.GoyaContextHolder;
 import com.ysmjjsy.goya.component.dto.constants.GoyaConstants;
 import com.ysmjjsy.goya.component.dto.enums.Architecture;
 import com.ysmjjsy.goya.component.dto.enums.Protocol;

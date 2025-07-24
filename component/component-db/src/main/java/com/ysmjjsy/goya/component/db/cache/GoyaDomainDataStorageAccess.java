@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.component.db.cache;
 
-import com.ysmjjsy.goya.component.context.service.TenantContextHolder;
+import com.ysmjjsy.goya.component.common.context.TenantContextHolder;
 import com.ysmjjsy.goya.component.dto.constants.SymbolConstants;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
