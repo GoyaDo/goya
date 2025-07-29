@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.component.cache.constants;
 
-import com.ysmjjsy.goya.component.dto.constants.GoyaConstants;
+import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
 
 /**
  * <p></p>

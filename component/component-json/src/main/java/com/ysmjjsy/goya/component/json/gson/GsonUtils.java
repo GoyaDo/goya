@@ -2,7 +2,7 @@ package com.ysmjjsy.goya.component.json.gson;
 
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
-import com.ysmjjsy.goya.component.dto.constants.DefaultConstants;
+import com.ysmjjsy.goya.component.pojo.constants.DefaultConstants;
 import org.apache.commons.lang3.ObjectUtils;
 
 import java.lang.reflect.Type;

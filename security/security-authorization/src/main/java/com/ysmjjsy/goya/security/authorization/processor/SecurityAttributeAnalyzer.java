@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.security.authorization.processor;
 
-import com.ysmjjsy.goya.component.dto.constants.SymbolConstants;
+import com.ysmjjsy.goya.component.pojo.constants.SymbolConstants;
 import com.ysmjjsy.goya.security.authorization.domain.AttributeTransmitter;
 import com.ysmjjsy.goya.security.authorization.domain.GoyaConfigAttribute;
 import com.ysmjjsy.goya.security.authorization.domain.GoyaRequest;

@@ -1,8 +1,8 @@
 package com.ysmjjsy.goya.module.wechat.constants;
 
-import com.ysmjjsy.goya.component.dto.constants.GoyaConstants;
+import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
 
-import static com.ysmjjsy.goya.component.dto.constants.GoyaConstants.PROPERTY_ENABLED;
+import static com.ysmjjsy.goya.component.pojo.constants.GoyaConstants.PROPERTY_ENABLED;
 
 
 /**

@@ -2,7 +2,7 @@ package com.ysmjjsy.goya.component.web.domain;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
-import com.ysmjjsy.goya.component.dto.domain.Entity;
+import com.ysmjjsy.goya.component.pojo.domain.Entity;
 import lombok.Getter;
 import lombok.Setter;
 

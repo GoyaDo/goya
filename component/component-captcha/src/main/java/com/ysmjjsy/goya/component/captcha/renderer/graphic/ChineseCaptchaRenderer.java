@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.component.captcha.renderer.graphic;
 
-import com.ysmjjsy.goya.component.dto.enums.CaptchaCategory;
+import com.ysmjjsy.goya.component.pojo.enums.CaptchaCategory;
 import org.springframework.stereotype.Component;
 
 import java.awt.*;

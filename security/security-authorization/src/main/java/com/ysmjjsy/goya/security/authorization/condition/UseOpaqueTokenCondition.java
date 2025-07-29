@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.security.authorization.condition;
 
 import com.ysmjjsy.goya.component.common.resolver.PropertyResolver;
-import com.ysmjjsy.goya.component.dto.enums.Target;
+import com.ysmjjsy.goya.component.pojo.enums.Target;
 import com.ysmjjsy.goya.security.core.constants.SecurityConstants;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;

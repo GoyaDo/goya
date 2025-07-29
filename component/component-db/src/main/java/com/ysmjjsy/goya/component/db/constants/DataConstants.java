@@ -1,10 +1,10 @@
 package com.ysmjjsy.goya.component.db.constants;
 
 
-import com.ysmjjsy.goya.component.dto.constants.GoyaConstants;
+import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
 
-import static com.ysmjjsy.goya.component.dto.constants.SymbolConstants.ANNOTATION_PREFIX;
-import static com.ysmjjsy.goya.component.dto.constants.SymbolConstants.ANNOTATION_SUFFIX;
+import static com.ysmjjsy.goya.component.pojo.constants.SymbolConstants.ANNOTATION_PREFIX;
+import static com.ysmjjsy.goya.component.pojo.constants.SymbolConstants.ANNOTATION_SUFFIX;
 
 /**
  * <p>Description: 数据常量 </p>

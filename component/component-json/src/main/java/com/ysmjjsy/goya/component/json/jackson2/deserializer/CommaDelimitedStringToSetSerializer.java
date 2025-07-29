@@ -3,7 +3,7 @@ package com.ysmjjsy.goya.component.json.jackson2.deserializer;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
-import com.ysmjjsy.goya.component.dto.constants.SymbolConstants;
+import com.ysmjjsy.goya.component.pojo.constants.SymbolConstants;
 import org.springframework.util.StringUtils;
 
 import java.io.IOException;

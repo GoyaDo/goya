@@ -1,8 +1,8 @@
 package com.ysmjjsy.goya.component.web.domain;
 
-import com.ysmjjsy.goya.component.dto.constants.DefaultConstants;
-import com.ysmjjsy.goya.component.dto.domain.Entity;
-import com.ysmjjsy.goya.component.dto.response.Response;
+import com.ysmjjsy.goya.component.pojo.constants.DefaultConstants;
+import com.ysmjjsy.goya.component.pojo.domain.Entity;
+import com.ysmjjsy.goya.component.pojo.response.Response;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.ArrayUtils;

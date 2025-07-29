@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.module.sms.configuration;
 
-import com.ysmjjsy.goya.component.dto.enums.AccountType;
+import com.ysmjjsy.goya.component.pojo.enums.AccountType;
 import com.ysmjjsy.goya.module.sms.annotation.ConditionalOnSmsEnabled;
 import com.ysmjjsy.goya.module.sms.properties.SmsProperties;
 import com.ysmjjsy.goya.module.sms.service.SmsService;

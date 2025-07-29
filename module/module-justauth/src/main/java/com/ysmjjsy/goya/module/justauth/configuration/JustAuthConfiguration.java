@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.module.justauth.configuration;
 
-import com.ysmjjsy.goya.component.dto.enums.AccountType;
+import com.ysmjjsy.goya.component.pojo.enums.AccountType;
 import com.ysmjjsy.goya.module.justauth.annotation.ConditionalOnJustAuthEnabled;
 import com.ysmjjsy.goya.module.justauth.processor.JustAuthProcessor;
 import com.ysmjjsy.goya.module.justauth.properties.JustAuthProperties;

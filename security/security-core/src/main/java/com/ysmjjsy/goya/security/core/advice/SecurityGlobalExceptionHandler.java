@@ -1,8 +1,8 @@
 package com.ysmjjsy.goya.security.core.advice;
 
-import com.ysmjjsy.goya.component.dto.errorcode.ErrorCodeService;
-import com.ysmjjsy.goya.component.dto.errorcode.ErrorCodes;
-import com.ysmjjsy.goya.component.dto.response.Response;
+import com.ysmjjsy.goya.component.pojo.errorcode.ErrorCodeService;
+import com.ysmjjsy.goya.component.pojo.errorcode.ErrorCodes;
+import com.ysmjjsy.goya.component.pojo.response.Response;
 import com.ysmjjsy.goya.component.exception.handler.GlobalExceptionHandler;
 import com.ysmjjsy.goya.security.core.constants.SecurityConstants;
 import lombok.extern.slf4j.Slf4j;

@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.component.captcha.domain;
 
-import com.ysmjjsy.goya.component.dto.domain.DTO;
+import com.ysmjjsy.goya.component.pojo.domain.DTO;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 

@@ -1,8 +1,8 @@
 package com.ysmjjsy.goya.component.exception.handler;
 
-import com.ysmjjsy.goya.component.dto.errorcode.ErrorCodeService;
-import com.ysmjjsy.goya.component.dto.errorcode.ErrorCodes;
-import com.ysmjjsy.goya.component.dto.response.Response;
+import com.ysmjjsy.goya.component.pojo.errorcode.ErrorCodeService;
+import com.ysmjjsy.goya.component.pojo.errorcode.ErrorCodes;
+import com.ysmjjsy.goya.component.pojo.response.Response;
 import com.ysmjjsy.goya.component.exception.definition.GoyaException;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;

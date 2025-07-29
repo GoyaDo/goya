@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.security.authorization.response;
 
-import com.ysmjjsy.goya.component.dto.response.Response;
+import com.ysmjjsy.goya.component.pojo.response.Response;
 import com.ysmjjsy.goya.component.web.utils.ResponseUtils;
 import com.ysmjjsy.goya.security.core.advice.SecurityGlobalExceptionHandler;
 import jakarta.servlet.ServletException;

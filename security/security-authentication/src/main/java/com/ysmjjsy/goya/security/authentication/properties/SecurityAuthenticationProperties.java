@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.security.authentication.properties;
 
 import com.google.common.base.MoreObjects;
-import com.ysmjjsy.goya.component.dto.constants.SymbolConstants;
+import com.ysmjjsy.goya.component.pojo.constants.SymbolConstants;
 import com.ysmjjsy.goya.security.core.constants.SecurityConstants;
 import lombok.Getter;
 import lombok.Setter;

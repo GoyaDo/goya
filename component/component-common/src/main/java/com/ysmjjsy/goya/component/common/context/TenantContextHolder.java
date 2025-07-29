@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.component.common.context;
 
 import com.alibaba.ttl.TransmittableThreadLocal;
-import com.ysmjjsy.goya.component.dto.constants.DefaultConstants;
+import com.ysmjjsy.goya.component.pojo.constants.DefaultConstants;
 import org.apache.commons.lang3.StringUtils;
 
 /**

@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.security.authentication.client.compliance;
 
-import com.ysmjjsy.goya.component.dto.enums.DataItemStatus;
+import com.ysmjjsy.goya.component.pojo.enums.DataItemStatus;
 import com.ysmjjsy.goya.security.authentication.client.compliance.stamp.LockedUserDetailsStampManager;
 import com.ysmjjsy.goya.security.core.domain.GoyaUser;
 import com.ysmjjsy.goya.security.core.service.EnhanceUserDetailsService;

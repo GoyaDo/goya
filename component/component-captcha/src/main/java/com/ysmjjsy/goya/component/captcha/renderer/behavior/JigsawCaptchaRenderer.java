@@ -6,7 +6,7 @@ import com.ysmjjsy.goya.component.captcha.domain.Coordinate;
 import com.ysmjjsy.goya.component.captcha.domain.Metadata;
 import com.ysmjjsy.goya.component.captcha.domain.Verification;
 import com.ysmjjsy.goya.component.captcha.provider.RandomProvider;
-import com.ysmjjsy.goya.component.dto.enums.CaptchaCategory;
+import com.ysmjjsy.goya.component.pojo.enums.CaptchaCategory;
 import com.ysmjjsy.goya.component.exception.captcha.CaptchaHasExpiredException;
 import com.ysmjjsy.goya.component.exception.captcha.CaptchaMismatchException;
 import com.ysmjjsy.goya.component.exception.captcha.CaptchaParameterIllegalException;

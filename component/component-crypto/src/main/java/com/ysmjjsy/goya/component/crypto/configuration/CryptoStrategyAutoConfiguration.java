@@ -7,7 +7,7 @@ import com.ysmjjsy.goya.component.crypto.processor.RSACryptoProcessor;
 import com.ysmjjsy.goya.component.crypto.processor.SM2CryptoProcessor;
 import com.ysmjjsy.goya.component.crypto.processor.SM4CryptoProcessor;
 import com.ysmjjsy.goya.component.crypto.properties.CryptoProperties;
-import com.ysmjjsy.goya.component.dto.constants.GoyaConstants;
+import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
 import jakarta.annotation.PostConstruct;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.module.tenant;
 
-import com.ysmjjsy.goya.component.dto.constants.DefaultConstants;
+import com.ysmjjsy.goya.component.pojo.constants.DefaultConstants;
 import org.hibernate.cfg.AvailableSettings;
 import org.hibernate.engine.jdbc.connections.spi.MultiTenantConnectionProvider;
 import org.slf4j.Logger;

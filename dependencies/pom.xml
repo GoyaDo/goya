@@ -90,6 +90,7 @@
         <opengauss-jdbc.version>6.0.0-og</opengauss-jdbc.version>
         <sm-crypto.version>0.3.13</sm-crypto.version>
         <querydsl.version>5.1.0</querydsl.version>
+        <therapi-javadoc.version>0.15.0</therapi-javadoc.version>
         <!-- 阿里巴巴开源工具依赖 -->
         <fastjson.version>1.2.83</fastjson.version>
         <fastjson2.version>2.0.57</fastjson2.version>
@@ -190,6 +191,11 @@
                 <version>${springdoc.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.github.therapi</groupId>
+                <artifactId>therapi-runtime-javadoc</artifactId>
+                <version>${therapi-javadoc.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.blazebit</groupId>
@@ -743,6 +749,11 @@
                                 <groupId>org.springframework.boot</groupId>
                                 <artifactId>spring-boot-autoconfigure-processor</artifactId>
                                 <version>${spring-boot-dependencies.version}</version>
+                            </path>
+                            <path>
+                                <groupId>com.github.therapi</groupId>
+                                <artifactId>therapi-runtime-javadoc-scribe</artifactId>
+                                <version>${therapi-javadoc.version}</version>
                             </path>
                         </annotationProcessorPaths>
                     </configuration>

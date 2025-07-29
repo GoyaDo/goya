@@ -1,9 +1,9 @@
 package com.ysmjjsy.goya.component.common.context;
 
 import com.ysmjjsy.goya.component.common.utils.WellFormedUtils;
-import com.ysmjjsy.goya.component.dto.constants.SymbolConstants;
-import com.ysmjjsy.goya.component.dto.enums.Architecture;
-import com.ysmjjsy.goya.component.dto.enums.Protocol;
+import com.ysmjjsy.goya.component.pojo.constants.SymbolConstants;
+import com.ysmjjsy.goya.component.pojo.enums.Architecture;
+import com.ysmjjsy.goya.component.pojo.enums.Protocol;
 import lombok.Data;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;

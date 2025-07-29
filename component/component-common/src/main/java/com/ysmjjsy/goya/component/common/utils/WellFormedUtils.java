@@ -1,8 +1,8 @@
 package com.ysmjjsy.goya.component.common.utils;
 
-import com.ysmjjsy.goya.component.dto.constants.DefaultConstants;
-import com.ysmjjsy.goya.component.dto.constants.SymbolConstants;
-import com.ysmjjsy.goya.component.dto.enums.Protocol;
+import com.ysmjjsy.goya.component.pojo.constants.DefaultConstants;
+import com.ysmjjsy.goya.component.pojo.constants.SymbolConstants;
+import com.ysmjjsy.goya.component.pojo.enums.Protocol;
 import com.ysmjjsy.goya.component.exception.properties.PropertyValueIsNotSetException;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;

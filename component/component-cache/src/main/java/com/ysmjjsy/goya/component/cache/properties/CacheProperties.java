@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.component.cache.properties;
 
 import com.alicp.jetcache.anno.CacheType;
-import com.ysmjjsy.goya.component.dto.constants.GoyaConstants;
+import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import java.time.Duration;

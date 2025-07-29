@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.module.redis.constants;
 
-import static com.ysmjjsy.goya.component.dto.constants.GoyaConstants.PROPERTY_PREFIX_CACHE;
+import static com.ysmjjsy.goya.component.pojo.constants.GoyaConstants.PROPERTY_PREFIX_CACHE;
 
 /**
  * <p></p>

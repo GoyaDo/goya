@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.module.wechat.configuration;
 
-import com.ysmjjsy.goya.component.dto.enums.AccountType;
+import com.ysmjjsy.goya.component.pojo.enums.AccountType;
 import com.ysmjjsy.goya.module.wechat.annotation.ConditionalOnWxAppEnabled;
 import com.ysmjjsy.goya.module.wechat.annotation.ConditionalOnWxMppEnabled;
 import com.ysmjjsy.goya.module.wechat.app.processor.WxappProcessor;

@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.component.catchlog.handler;
 
-import com.ysmjjsy.goya.component.dto.response.Response;
+import com.ysmjjsy.goya.component.pojo.response.Response;
 import com.ysmjjsy.goya.component.exception.definition.GoyaRuntimeException;
 import lombok.extern.slf4j.Slf4j;
 

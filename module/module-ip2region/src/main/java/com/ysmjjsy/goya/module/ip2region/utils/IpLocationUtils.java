@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.module.ip2region.utils;
 
-import com.ysmjjsy.goya.component.dto.constants.SymbolConstants;
+import com.ysmjjsy.goya.component.pojo.constants.SymbolConstants;
 import com.ysmjjsy.goya.module.ip2region.domain.IpLocation;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.util.Assert;

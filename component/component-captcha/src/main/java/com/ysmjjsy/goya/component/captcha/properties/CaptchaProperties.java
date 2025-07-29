@@ -3,7 +3,7 @@ package com.ysmjjsy.goya.component.captcha.properties;
 import com.ysmjjsy.goya.component.captcha.enums.CaptchaCharacter;
 import com.ysmjjsy.goya.component.captcha.enums.CaptchaFont;
 import com.ysmjjsy.goya.component.captcha.enums.FontStyle;
-import com.ysmjjsy.goya.component.dto.constants.GoyaConstants;
+import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

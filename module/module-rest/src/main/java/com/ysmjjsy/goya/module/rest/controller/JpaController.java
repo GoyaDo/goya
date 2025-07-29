@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.module.rest.controller;
 
 import com.ysmjjsy.goya.component.db.domain.BaseJpaAggregate;
-import com.ysmjjsy.goya.component.dto.response.Response;
+import com.ysmjjsy.goya.component.pojo.response.Response;
 import com.ysmjjsy.goya.component.web.domain.Controller;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.data.domain.Page;

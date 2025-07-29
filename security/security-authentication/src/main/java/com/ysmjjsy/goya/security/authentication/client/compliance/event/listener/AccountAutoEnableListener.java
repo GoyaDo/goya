@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.security.authentication.client.compliance.event.listener;
 
-import com.ysmjjsy.goya.component.dto.constants.SymbolConstants;
+import com.ysmjjsy.goya.component.pojo.constants.SymbolConstants;
 import com.ysmjjsy.goya.security.authentication.client.compliance.SecurityAccountStatusManager;
 import com.ysmjjsy.goya.security.core.constants.SecurityConstants;
 import org.apache.commons.lang3.StringUtils;

@@ -1,8 +1,8 @@
 package com.ysmjjsy.goya.component.exception.properties;
 
 
-import com.ysmjjsy.goya.component.dto.errorcode.ErrorCodeService;
-import com.ysmjjsy.goya.component.dto.errorcode.ErrorCodes;
+import com.ysmjjsy.goya.component.pojo.errorcode.ErrorCodeService;
+import com.ysmjjsy.goya.component.pojo.errorcode.ErrorCodes;
 import com.ysmjjsy.goya.component.exception.definition.GoyaRuntimeException;
 
 import java.io.Serial;

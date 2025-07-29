@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.component.web.advice;
 
-import com.ysmjjsy.goya.component.dto.response.Response;
+import com.ysmjjsy.goya.component.pojo.response.Response;
 import com.ysmjjsy.goya.component.exception.definition.GoyaDefaultException;
 import com.ysmjjsy.goya.component.exception.definition.GoyaRuntimeException;
 import com.ysmjjsy.goya.component.exception.handler.GlobalExceptionHandler;

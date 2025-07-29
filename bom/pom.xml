@@ -23,7 +23,7 @@
             <!-- component -->
             <dependency>
                 <groupId>com.ysmjjsy.goya</groupId>
-                <artifactId>component-dto</artifactId>
+                <artifactId>component-pojo</artifactId>
                 <version>${revision}</version>
             </dependency>
             <dependency>

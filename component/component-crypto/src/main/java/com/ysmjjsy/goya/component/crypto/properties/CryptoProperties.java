@@ -2,7 +2,7 @@ package com.ysmjjsy.goya.component.crypto.properties;
 
 import com.google.common.base.MoreObjects;
 import com.ysmjjsy.goya.component.crypto.enums.CryptoStrategy;
-import com.ysmjjsy.goya.component.dto.constants.GoyaConstants;
+import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;

@@ -5,7 +5,7 @@ import com.ysmjjsy.goya.component.common.context.ApplicationContextHolder;
 import com.ysmjjsy.goya.component.common.init.ApplicationContentPostProcessor;
 import com.ysmjjsy.goya.component.common.safa.FastJsonSafeMode;
 import com.ysmjjsy.goya.component.common.strategy.AbstractStrategyChoose;
-import com.ysmjjsy.goya.component.dto.constants.GoyaConstants;
+import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.dromara.hutool.extra.spring.SpringUtil;

@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.security.authentication.client.compliance;
 
 
-import com.ysmjjsy.goya.component.dto.domain.Entity;
+import com.ysmjjsy.goya.component.pojo.domain.Entity;
 import lombok.Getter;
 import lombok.Setter;
 

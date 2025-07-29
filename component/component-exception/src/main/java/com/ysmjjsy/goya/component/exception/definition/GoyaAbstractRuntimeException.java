@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.component.exception.definition;
 
-import com.ysmjjsy.goya.component.dto.response.Response;
+import com.ysmjjsy.goya.component.pojo.response.Response;
 
 import java.io.Serial;
 

@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.module.ip2region.searcher;
 
 import com.ysmjjsy.goya.component.common.resolver.ResourceResolver;
-import com.ysmjjsy.goya.component.dto.constants.SymbolConstants;
+import com.ysmjjsy.goya.component.pojo.constants.SymbolConstants;
 import com.ysmjjsy.goya.module.ip2region.definition.Ip2RegionSearcher;
 import com.ysmjjsy.goya.module.ip2region.domain.IpLocation;
 import com.ysmjjsy.goya.module.ip2region.exception.SearchIpLocationException;

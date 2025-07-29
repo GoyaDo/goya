@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.security.authorization.properties;
 
-import com.ysmjjsy.goya.component.dto.enums.Target;
+import com.ysmjjsy.goya.component.pojo.enums.Target;
 import com.ysmjjsy.goya.security.core.constants.SecurityConstants;
 import com.ysmjjsy.goya.security.core.enums.Certificate;
 import lombok.Data;

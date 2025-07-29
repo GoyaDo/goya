@@ -2,7 +2,7 @@ package com.ysmjjsy.goya.component.captcha.processor;
 
 import com.ysmjjsy.goya.component.captcha.domain.Captcha;
 import com.ysmjjsy.goya.component.captcha.domain.Verification;
-import com.ysmjjsy.goya.component.dto.enums.CaptchaCategory;
+import com.ysmjjsy.goya.component.pojo.enums.CaptchaCategory;
 import com.ysmjjsy.goya.component.exception.captcha.CaptchaCategoryIsIncorrectException;
 import com.ysmjjsy.goya.component.exception.captcha.CaptchaHandlerNotExistException;
 import org.apache.commons.lang3.ObjectUtils;

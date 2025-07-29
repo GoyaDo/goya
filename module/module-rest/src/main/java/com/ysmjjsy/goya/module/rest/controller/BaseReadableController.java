@@ -1,9 +1,9 @@
 package com.ysmjjsy.goya.module.rest.controller;
 
 import com.ysmjjsy.goya.component.db.domain.BaseJpaAggregate;
-import com.ysmjjsy.goya.component.dto.constants.GoyaConstants;
-import com.ysmjjsy.goya.component.dto.domain.PageQuery;
-import com.ysmjjsy.goya.component.dto.response.Response;
+import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
+import com.ysmjjsy.goya.component.pojo.domain.PageQuery;
+import com.ysmjjsy.goya.component.pojo.response.Response;
 import com.ysmjjsy.goya.component.web.annotation.AccessLimited;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;

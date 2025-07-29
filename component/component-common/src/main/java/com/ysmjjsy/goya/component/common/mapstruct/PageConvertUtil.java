@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.component.common.mapstruct;
 
-import com.ysmjjsy.goya.component.dto.domain.DTO;
-import com.ysmjjsy.goya.component.dto.domain.Entity;
+import com.ysmjjsy.goya.component.pojo.domain.DTO;
+import com.ysmjjsy.goya.component.pojo.domain.Entity;
 import lombok.experimental.UtilityClass;
 import org.springframework.data.domain.Page;
 

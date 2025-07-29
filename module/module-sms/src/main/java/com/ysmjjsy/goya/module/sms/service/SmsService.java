@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.module.sms.service;
 
-import com.ysmjjsy.goya.component.dto.constants.DefaultConstants;
+import com.ysmjjsy.goya.component.pojo.constants.DefaultConstants;
 import com.ysmjjsy.goya.module.sms.stamp.VerificationCodeStampManager;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

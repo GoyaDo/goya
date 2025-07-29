@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.module.ip2region.domain;
 
-import com.ysmjjsy.goya.component.dto.constants.SymbolConstants;
+import com.ysmjjsy.goya.component.pojo.constants.SymbolConstants;
 
 import java.util.Arrays;
 

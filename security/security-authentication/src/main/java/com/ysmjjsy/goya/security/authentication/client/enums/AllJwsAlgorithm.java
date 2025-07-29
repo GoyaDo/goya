@@ -3,7 +3,7 @@ package com.ysmjjsy.goya.security.authentication.client.enums;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.google.common.collect.ImmutableMap;
-import com.ysmjjsy.goya.component.dto.enums.GoyaEnum;
+import com.ysmjjsy.goya.component.pojo.enums.GoyaEnum;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.util.ArrayList;

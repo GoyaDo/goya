@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.component.db.cache;
 
 import com.ysmjjsy.goya.component.common.context.TenantContextHolder;
-import com.ysmjjsy.goya.component.dto.constants.SymbolConstants;
+import com.ysmjjsy.goya.component.pojo.constants.SymbolConstants;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.dromara.hutool.crypto.SecureUtil;

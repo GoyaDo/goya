@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.module.tenant;
 
 import com.ysmjjsy.goya.component.db.domain.BaseWriteableService;
-import com.ysmjjsy.goya.component.dto.response.Response;
+import com.ysmjjsy.goya.component.pojo.response.Response;
 import com.ysmjjsy.goya.component.web.annotation.AccessLimited;
 import com.ysmjjsy.goya.module.rest.controller.BaseWriteableController;
 import com.ysmjjsy.goya.module.tenant.entity.SysTenantDataSource;

@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.module.ip2region.domain;
 
 import com.google.common.base.MoreObjects;
-import com.ysmjjsy.goya.component.dto.constants.SymbolConstants;
+import com.ysmjjsy.goya.component.pojo.constants.SymbolConstants;
 import lombok.Getter;
 import lombok.Setter;
 import org.apache.commons.lang3.StringUtils;

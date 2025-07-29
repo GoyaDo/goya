@@ -2,7 +2,7 @@ package com.ysmjjsy.goya.component.crypto.processor;
 
 import com.ysmjjsy.goya.component.crypto.definition.AsymmetricCryptoProcessor;
 import com.ysmjjsy.goya.component.crypto.domain.SecretKey;
-import com.ysmjjsy.goya.component.dto.constants.SymbolConstants;
+import com.ysmjjsy.goya.component.pojo.constants.SymbolConstants;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.dromara.hutool.core.codec.binary.Base64;

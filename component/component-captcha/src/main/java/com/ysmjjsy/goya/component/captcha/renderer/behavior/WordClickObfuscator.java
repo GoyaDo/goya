@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.component.captcha.renderer.behavior;
 
 import com.ysmjjsy.goya.component.captcha.domain.Coordinate;
-import com.ysmjjsy.goya.component.dto.constants.SymbolConstants;
+import com.ysmjjsy.goya.component.pojo.constants.SymbolConstants;
 import org.apache.commons.lang3.StringUtils;
 import org.dromara.hutool.core.util.RandomUtil;
 

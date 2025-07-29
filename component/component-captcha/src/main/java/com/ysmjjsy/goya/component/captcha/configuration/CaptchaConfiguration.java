@@ -10,7 +10,7 @@ import com.ysmjjsy.goya.component.captcha.renderer.hutool.CircleCaptchaRenderer;
 import com.ysmjjsy.goya.component.captcha.renderer.hutool.GifCaptchaRenderer;
 import com.ysmjjsy.goya.component.captcha.renderer.hutool.LineCaptchaRenderer;
 import com.ysmjjsy.goya.component.captcha.renderer.hutool.ShearCaptchaRenderer;
-import com.ysmjjsy.goya.component.dto.enums.CaptchaCategory;
+import com.ysmjjsy.goya.component.pojo.enums.CaptchaCategory;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

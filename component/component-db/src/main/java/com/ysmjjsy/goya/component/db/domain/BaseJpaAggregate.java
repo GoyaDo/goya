@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.component.db.domain;
 
-import com.ysmjjsy.goya.component.dto.domain.Entity;
+import com.ysmjjsy.goya.component.pojo.domain.Entity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.dromara.hutool.core.data.id.IdUtil;

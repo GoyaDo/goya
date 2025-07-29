@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.security.authorization.customizer;
 
-import com.ysmjjsy.goya.component.dto.enums.Target;
+import com.ysmjjsy.goya.component.pojo.enums.Target;
 import com.ysmjjsy.goya.security.authorization.converter.GoyaJwtAuthenticationConverter;
 import com.ysmjjsy.goya.security.authorization.introspector.SecurityOpaqueTokenIntrospector;
 import com.ysmjjsy.goya.security.authorization.properties.SecurityAuthorizationProperties;

@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.security.core.constants;
 
-import com.ysmjjsy.goya.component.dto.constants.GoyaConstants;
-import com.ysmjjsy.goya.component.dto.constants.SymbolConstants;
+import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
+import com.ysmjjsy.goya.component.pojo.constants.SymbolConstants;
 
 import static com.ysmjjsy.goya.component.cache.constants.CacheConstants.CACHE_PREFIX;
 import static com.ysmjjsy.goya.component.cache.constants.CacheConstants.CACHE_TOKEN_BASE_PREFIX;

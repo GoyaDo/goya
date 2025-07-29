@@ -2,7 +2,7 @@ package com.ysmjjsy.goya.component.captcha.renderer.hutool;
 
 import com.ysmjjsy.goya.component.captcha.definition.AbstractGraphicRenderer;
 import com.ysmjjsy.goya.component.captcha.domain.Metadata;
-import com.ysmjjsy.goya.component.dto.enums.CaptchaCategory;
+import com.ysmjjsy.goya.component.pojo.enums.CaptchaCategory;
 import org.dromara.hutool.swing.captcha.CaptchaUtil;
 import org.dromara.hutool.swing.captcha.LineCaptcha;
 import org.springframework.stereotype.Component;

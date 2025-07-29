@@ -26,7 +26,7 @@ import java.io.Serial;
 @IdClass(GoyaAuthorizationConsentId.class)
 @Cacheable
 @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE, region = SecurityClientConstants.REGION_CLIENT_AUTHORIZATION_CONSENT)
-public class SecurityAuthorizationConsent implements com.ysmjjsy.goya.component.dto.domain.Entity {
+public class SecurityAuthorizationConsent implements com.ysmjjsy.goya.component.pojo.domain.Entity {
 
     @Serial
     private static final long serialVersionUID = -3705525280753746881L;

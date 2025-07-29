@@ -2,7 +2,7 @@ package com.ysmjjsy.goya.component.captcha.renderer.graphic;
 
 import com.madgag.gif.fmsware.AnimatedGifEncoder;
 import com.ysmjjsy.goya.component.captcha.domain.Metadata;
-import com.ysmjjsy.goya.component.dto.constants.SymbolConstants;
+import com.ysmjjsy.goya.component.pojo.constants.SymbolConstants;
 import org.apache.commons.lang3.StringUtils;
 import org.dromara.hutool.core.codec.binary.Base64;
 

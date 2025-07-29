@@ -1,8 +1,8 @@
 package com.ysmjjsy.goya.component.web.scan;
 
 import com.ysmjjsy.goya.component.common.resolver.PropertyResolver;
-import com.ysmjjsy.goya.component.dto.constants.GoyaConstants;
-import com.ysmjjsy.goya.component.dto.constants.SymbolConstants;
+import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
+import com.ysmjjsy.goya.component.pojo.constants.SymbolConstants;
 import com.ysmjjsy.goya.component.web.domain.RequestMapping;
 import com.ysmjjsy.goya.component.web.properties.ScanProperties;
 import io.swagger.v3.oas.annotations.Operation;

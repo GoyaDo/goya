@@ -2,7 +2,7 @@ package com.ysmjjsy.goya.component.common.utils;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
-import com.ysmjjsy.goya.component.dto.constants.SymbolConstants;
+import com.ysmjjsy.goya.component.pojo.constants.SymbolConstants;
 import com.ysmjjsy.goya.component.json.gson.GsonUtils;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.ObjectUtils;

@@ -1,8 +1,8 @@
 package com.ysmjjsy.goya.security.core.exception;
 
-import com.ysmjjsy.goya.component.dto.errorcode.ErrorCodeService;
-import com.ysmjjsy.goya.component.dto.errorcode.ErrorCodes;
-import com.ysmjjsy.goya.component.dto.response.Response;
+import com.ysmjjsy.goya.component.pojo.errorcode.ErrorCodeService;
+import com.ysmjjsy.goya.component.pojo.errorcode.ErrorCodes;
+import com.ysmjjsy.goya.component.pojo.response.Response;
 import com.ysmjjsy.goya.component.exception.definition.GoyaException;
 import org.springframework.security.core.AuthenticationException;
 

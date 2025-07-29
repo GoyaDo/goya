@@ -2,8 +2,8 @@ package com.ysmjjsy.goya.component.captcha.renderer.graphic;
 
 import com.ysmjjsy.goya.component.captcha.domain.Metadata;
 import com.ysmjjsy.goya.component.captcha.provider.RandomProvider;
-import com.ysmjjsy.goya.component.dto.constants.RegexPool;
-import com.ysmjjsy.goya.component.dto.enums.CaptchaCategory;
+import com.ysmjjsy.goya.component.pojo.constants.RegexPool;
+import com.ysmjjsy.goya.component.pojo.enums.CaptchaCategory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
