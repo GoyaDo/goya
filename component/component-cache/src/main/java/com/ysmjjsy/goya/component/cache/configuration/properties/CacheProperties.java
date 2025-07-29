@@ -1,4 +1,4 @@
-package com.ysmjjsy.goya.component.cache.properties;
+package com.ysmjjsy.goya.component.cache.configuration.properties;
 
 import com.alicp.jetcache.anno.CacheType;
 import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;

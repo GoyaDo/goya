@@ -12,4 +12,7 @@ public interface RedisConstants {
 
     String PROPERTY_PREFIX_REDIS = PROPERTY_PREFIX_CACHE + ".redis";
     String PROPERTY_PREFIX_REDISSON = PROPERTY_PREFIX_REDIS + ".redisson";
+
+    String REDIS_BLOOM_FILTER_DEFAULT_PREFIX = PROPERTY_PREFIX_REDIS + ".bloom-filter.default";
+
 }

@@ -2,7 +2,7 @@ package com.ysmjjsy.goya.component.cache.caffeine;
 
 import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
-import com.ysmjjsy.goya.component.cache.properties.CacheProperties;
+import com.ysmjjsy.goya.component.cache.configuration.properties.CacheProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cache.caffeine.CaffeineCacheManager;

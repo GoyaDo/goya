@@ -1,9 +1,10 @@
-package com.ysmjjsy.goya.module.redis.properties;
+package com.ysmjjsy.goya.module.redis.configuration.properties;
 
 import com.google.common.base.MoreObjects;
 import com.ysmjjsy.goya.component.pojo.constants.SymbolConstants;
 import com.ysmjjsy.goya.component.pojo.enums.Protocol;
 import com.ysmjjsy.goya.module.redis.constants.RedisConstants;
+import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
 import org.redisson.config.ClusterServersConfig;
 import org.redisson.config.SentinelServersConfig;
@@ -16,6 +17,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @author goya
  * @since 2021/10/22 14:02
  */
+@Data
 @ConfigurationProperties(prefix = RedisConstants.PROPERTY_PREFIX_REDISSON)
 public class RedissonProperties {
 
@@ -48,64 +50,8 @@ public class RedissonProperties {
      */
     private SentinelServersConfig sentinelServersConfig;
 
-    public Boolean getEnabled() {
-        return enabled;
-    }
-
-    public void setEnabled(Boolean enabled) {
-        this.enabled = enabled;
-    }
-
-    public Mode getMode() {
-        return mode;
-    }
-
-    public void setMode(Mode mode) {
-        this.mode = mode;
-    }
-
-    public Boolean getUseSslConnection() {
-        return useSslConnection;
-    }
-
-    public void setUseSslConnection(Boolean useSslConnection) {
-        this.useSslConnection = useSslConnection;
-    }
-
     public String getProtocol() {
-        return getUseSslConnection() ? Protocol.REDISS.getFormat() : Protocol.REDIS.getFormat();
-    }
-
-    public String getConfig() {
-        return config;
-    }
-
-    public void setConfig(String config) {
-        this.config = config;
-    }
-
-    public SingleServerConfig getSingleServerConfig() {
-        return singleServerConfig;
-    }
-
-    public void setSingleServerConfig(SingleServerConfig singleServerConfig) {
-        this.singleServerConfig = singleServerConfig;
-    }
-
-    public ClusterServersConfig getClusterServersConfig() {
-        return clusterServersConfig;
-    }
-
-    public void setClusterServersConfig(ClusterServersConfig clusterServersConfig) {
-        this.clusterServersConfig = clusterServersConfig;
-    }
-
-    public SentinelServersConfig getSentinelServersConfig() {
-        return sentinelServersConfig;
-    }
-
-    public void setSentinelServersConfig(SentinelServersConfig sentinelServersConfig) {
-        this.sentinelServersConfig = sentinelServersConfig;
+        return Boolean.TRUE.equals(getUseSslConnection()) ? Protocol.REDISS.getFormat() : Protocol.REDIS.getFormat();
     }
 
     public boolean isExternalConfig() {

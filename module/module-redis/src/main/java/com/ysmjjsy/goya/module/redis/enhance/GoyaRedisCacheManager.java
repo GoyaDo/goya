@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.module.redis.enhance;
 
-import com.ysmjjsy.goya.component.cache.properties.CacheProperties;
+import com.ysmjjsy.goya.component.cache.configuration.properties.CacheProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.redis.cache.RedisCache;

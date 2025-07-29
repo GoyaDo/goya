@@ -24,8 +24,8 @@ public class IdGeneratorManager {
      */
     private static Map<String, IdGenerator> MANAGER = new ConcurrentHashMap<>();
 
-    /**
-     * 注册默认 ID 生成器
+    /*
+      注册默认 ID 生成器
      */
     static {
         MANAGER.put("default", new DefaultServiceIdGenerator());
@@ -53,6 +53,6 @@ public class IdGeneratorManager {
      * 获取默认 ID 生成器 {@link DefaultServiceIdGenerator}
      */
     public static ServiceIdGenerator getDefaultServiceIdGenerator() {
-        return Optional.ofNullable(MANAGER.get("default")).map(each -> (ServiceIdGenerator) each).orElse(null);
+        return Optional.ofNullable(MANAGER.get("default")).map(ServiceIdGenerator.class::cast).orElse(null);
     }
 }

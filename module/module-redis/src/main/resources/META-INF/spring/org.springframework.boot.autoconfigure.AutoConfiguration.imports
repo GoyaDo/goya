@@ -1,2 +1,2 @@
-com.ysmjjsy.goya.module.redis.configuration.CacheRedisConfiguration
-com.ysmjjsy.goya.module.redis.configuration.CacheRedissonAutoConfiguration
+com.ysmjjsy.goya.module.redis.configuration.RedisAutoConfiguration
+com.ysmjjsy.goya.module.redis.configuration.RedissonAutoConfiguration

@@ -3,10 +3,9 @@ package com.ysmjjsy.goya.component.cache.configuration;
 import com.alicp.jetcache.CacheManager;
 import com.github.benmanes.caffeine.cache.Caffeine;
 import com.ysmjjsy.goya.component.cache.caffeine.GoyaCaffeineCacheManager;
+import com.ysmjjsy.goya.component.cache.configuration.properties.CacheProperties;
 import com.ysmjjsy.goya.component.cache.jetcache.enhance.GoyaCacheManager;
 import com.ysmjjsy.goya.component.cache.jetcache.enhance.JetCacheCreateCacheFactory;
-import com.ysmjjsy.goya.component.cache.properties.CacheProperties;
-import com.ysmjjsy.goya.component.cache.utils.JetCacheUtils;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -30,13 +29,13 @@ import org.springframework.context.annotation.Primary;
 @RequiredArgsConstructor
 @ConditionalOnClass({CacheManager.class})
 @EnableConfigurationProperties(CacheProperties.class)
-public class CacheConfiguration {
+public class CacheAutoConfiguration {
 
     private final CacheProperties cacheProperties;
 
     @PostConstruct
     public void postConstruct() {
-        log.debug("[Goya] |- component [cache] configure.");
+        log.debug("[Goya] |- component [cache] CacheAutoConfiguration auto configure.");
     }
 
     @Bean
@@ -44,9 +43,7 @@ public class CacheConfiguration {
         Caffeine<Object, Object> caffeine = Caffeine
                 .newBuilder()
                 .expireAfterWrite(cacheProperties.expire());
-
-        log.trace("[Goya] |- Bean [Caffeine] Configure.");
-
+        log.trace("[Goya] |- component [cache] |- bean [caffeine] register.");
         return caffeine;
     }
 
@@ -63,15 +60,14 @@ public class CacheConfiguration {
     public CaffeineCacheManager caffeineCacheManager(Caffeine<Object, Object> caffeine) {
         GoyaCaffeineCacheManager goyaCaffeineCacheManager = new GoyaCaffeineCacheManager(cacheProperties);
         goyaCaffeineCacheManager.setCaffeine(caffeine);
-        log.trace("[Goya] |- Bean [Caffeine Cache Manager] Configure.");
+        log.trace("[Goya] |- component [cache] |- bean [caffeineCacheManager] register.");
         return goyaCaffeineCacheManager;
     }
 
     @Bean
     public JetCacheCreateCacheFactory jetCacheCreateCacheFactory(@Qualifier("jcCacheManager") CacheManager cacheManager, CacheProperties cacheProperties) {
         JetCacheCreateCacheFactory factory = new JetCacheCreateCacheFactory(cacheManager, cacheProperties);
-        JetCacheUtils.setJetCacheCreateCacheFactory(factory);
-        log.trace("[Goya] |- Bean [Jet Cache Create Cache Factory] Configure.");
+        log.trace("[Goya] |- component [cache] |- bean [jetCacheCreateCacheFactory] register.");
         return factory;
     }
 
@@ -81,7 +77,7 @@ public class CacheConfiguration {
     public GoyaCacheManager goyaCacheManager(JetCacheCreateCacheFactory jetCacheCreateCacheFactory, CacheProperties cacheProperties) {
         GoyaCacheManager goyaCacheManager = new GoyaCacheManager(jetCacheCreateCacheFactory, cacheProperties);
         goyaCacheManager.setAllowNullValues(cacheProperties.allowNullValues());
-        log.trace("[Goya] |- Bean [Jet Cache Goya Cache Manager] Configure.");
+        log.trace("[Goya] |- component [cache] |- bean [goyaCacheManager] register.");
         return goyaCacheManager;
     }
 }

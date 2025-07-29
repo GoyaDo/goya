@@ -7,6 +7,7 @@ import org.dromara.hutool.core.lang.Assert;
 import org.dromara.hutool.core.text.StrUtil;
 import org.dromara.hutool.core.util.RandomUtil;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -18,6 +19,7 @@ import java.util.Date;
  */
 public class Snowflake implements Serializable, IdGenerator {
 
+    @Serial
     private static final long serialVersionUID = 1L;
 
     /**

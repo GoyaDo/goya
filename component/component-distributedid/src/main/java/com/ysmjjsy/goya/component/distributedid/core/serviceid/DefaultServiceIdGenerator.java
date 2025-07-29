@@ -2,6 +2,7 @@ package com.ysmjjsy.goya.component.distributedid.core.serviceid;
 
 import com.ysmjjsy.goya.component.distributedid.core.IdGenerator;
 import com.ysmjjsy.goya.component.distributedid.core.snowflake.SnowflakeIdInfo;
+import com.ysmjjsy.goya.component.distributedid.utils.SnowflakeIdUtil;
 
 /**
  * <p>默认业务 ID 生成器</p>

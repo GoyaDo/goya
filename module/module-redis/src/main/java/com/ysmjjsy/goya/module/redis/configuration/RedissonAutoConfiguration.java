@@ -3,7 +3,7 @@ package com.ysmjjsy.goya.module.redis.configuration;
 import com.ysmjjsy.goya.component.common.resolver.ResourceResolver;
 import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
 import com.ysmjjsy.goya.component.pojo.constants.SymbolConstants;
-import com.ysmjjsy.goya.module.redis.properties.RedissonProperties;
+import com.ysmjjsy.goya.module.redis.configuration.properties.RedissonProperties;
 import jakarta.annotation.PostConstruct;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.ObjectUtils;
@@ -39,21 +39,21 @@ import static com.ysmjjsy.goya.module.redis.constants.RedisConstants.PROPERTY_PR
 @AutoConfiguration
 @ConditionalOnProperty(value = PROPERTY_PREFIX_REDISSON + GoyaConstants.PROPERTY_ENABLED, havingValue = "true")
 @EnableConfigurationProperties(RedissonProperties.class)
-public class CacheRedissonAutoConfiguration {
+public class RedissonAutoConfiguration {
 
-    private static final Logger log = LoggerFactory.getLogger(CacheRedissonAutoConfiguration.class);
+    private static final Logger log = LoggerFactory.getLogger(RedissonAutoConfiguration.class);
 
     private final RedissonProperties redissonProperties;
     private final RedisProperties redisProperties;
 
-    public CacheRedissonAutoConfiguration(RedissonProperties redissonProperties, RedisProperties redisProperties) {
+    public RedissonAutoConfiguration(RedissonProperties redissonProperties, RedisProperties redisProperties) {
         this.redissonProperties = redissonProperties;
         this.redisProperties = redisProperties;
     }
 
     @PostConstruct
     public void postConstruct() {
-        log.debug("[Goya] |- Starter [Cache Redisson] Configure.");
+        log.debug("[Goya] |- module [redis] RedissonAutoConfiguration auto configure.");
     }
 
     private File readConfigFile() {
@@ -161,7 +161,7 @@ public class CacheRedissonAutoConfiguration {
 
         RedissonClient redissonClient = Redisson.create(config);
 
-        log.trace("[Goya] |- Bean [Redisson Client] Auto Configure.");
+        log.trace("[Goya] |- module [redis] |- bean [redissonClient] register.");
 
         return redissonClient;
     }

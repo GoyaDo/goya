@@ -10,13 +10,14 @@ import java.lang.annotation.Annotation;
 import java.util.Map;
 
 /**
- * <p></p>
+ * <p>ApplicationContext 持有者模式</p>
  *
  * @author goya
  * @since 2025/6/13 23:31
  */
 @Slf4j
 public class ApplicationContextHolder implements ApplicationContextAware {
+
     @Getter
     private static ApplicationContext applicationContext;
 

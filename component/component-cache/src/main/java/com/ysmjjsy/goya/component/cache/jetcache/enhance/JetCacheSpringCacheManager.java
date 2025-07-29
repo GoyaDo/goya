@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.component.cache.jetcache.enhance;
 
-import com.ysmjjsy.goya.component.cache.properties.CacheProperties;
+import com.ysmjjsy.goya.component.cache.configuration.properties.CacheProperties;
 import com.ysmjjsy.goya.component.pojo.constants.SymbolConstants;
 import lombok.Getter;
 import lombok.Setter;

@@ -2,12 +2,12 @@ package com.ysmjjsy.goya.module.redis.utils;
 
 import com.google.common.hash.Funnels;
 import com.google.common.hash.Hashing;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import com.ysmjjsy.goya.component.common.context.ApplicationContextHolder;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import org.springframework.data.redis.connection.RedisStringCommands;
 import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.stereotype.Component;
 
 import java.nio.charset.StandardCharsets;
 
@@ -35,10 +35,17 @@ import java.nio.charset.StandardCharsets;
  * @since 2022/12/29 17:41
  * @see <a herf="https://www.jianshu.com/p/305e65de1b13"></a>
  */
-@Component
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class RedisBitMapUtils {
 
-    private static StringRedisTemplate stringRedisTemplate;
+    private static class Holder {
+        static final StringRedisTemplate stringRedisTemplate =
+                ApplicationContextHolder.getBean(StringRedisTemplate.class);
+    }
+
+    private static StringRedisTemplate stringRedisTemplate() {
+        return RedisBitMapUtils.Holder.stringRedisTemplate;
+    }
 
     /**
      * 计算 Hash 值
@@ -59,7 +66,7 @@ public class RedisBitMapUtils {
      * @return 返回设置该value之前的值。
      */
     public static Boolean setBit(String key, String param, boolean value) {
-        return stringRedisTemplate.opsForValue().setBit(key, hash(param), value);
+        return stringRedisTemplate().opsForValue().setBit(key, hash(param), value);
     }
 
     /**
@@ -70,7 +77,7 @@ public class RedisBitMapUtils {
      * @return 若偏移位上的值为1，那么返回true。
      */
     public static boolean getBit(String key, String param) {
-        return Boolean.TRUE.equals(stringRedisTemplate.opsForValue().getBit(key, hash(param)));
+        return Boolean.TRUE.equals(stringRedisTemplate().opsForValue().getBit(key, hash(param)));
     }
 
     /**
@@ -82,7 +89,7 @@ public class RedisBitMapUtils {
      * @return 返回设置该value之前的值。
      */
     public static Boolean setBit(String key, Long offset, boolean value) {
-        return stringRedisTemplate.opsForValue().setBit(key, offset, value);
+        return stringRedisTemplate().opsForValue().setBit(key, offset, value);
     }
 
     /**
@@ -93,7 +100,7 @@ public class RedisBitMapUtils {
      * @return 若偏移位上的值为 1，那么返回true。
      */
     public static Boolean getBit(String key, long offset) {
-        return stringRedisTemplate.opsForValue().getBit(key, offset);
+        return stringRedisTemplate().opsForValue().getBit(key, offset);
     }
 
     /**
@@ -103,7 +110,7 @@ public class RedisBitMapUtils {
      * @return value等于1的数量
      */
     public static Long bitCount(String key) {
-        return stringRedisTemplate.execute((RedisCallback<Long>) connection -> connection.stringCommands().bitCount(key.getBytes(StandardCharsets.UTF_8)));
+        return stringRedisTemplate().execute((RedisCallback<Long>) connection -> connection.stringCommands().bitCount(key.getBytes(StandardCharsets.UTF_8)));
     }
 
     /**
@@ -115,7 +122,7 @@ public class RedisBitMapUtils {
      * @return 在指定范围[start*8,end*8]内所有value=1的数量
      */
     public static Long bitCount(String key, int start, int end) {
-        return stringRedisTemplate.execute((RedisCallback<Long>) connection -> connection.stringCommands().bitCount(key.getBytes(), start, end));
+        return stringRedisTemplate().execute((RedisCallback<Long>) connection -> connection.stringCommands().bitCount(key.getBytes(), start, end));
     }
 
     /**
@@ -137,7 +144,7 @@ public class RedisBitMapUtils {
         for (int i = 0; i < destKey.length; i++) {
             bytes[i] = destKey[i].getBytes();
         }
-        return stringRedisTemplate.execute((RedisCallback<Long>) connection -> connection.stringCommands().bitOp(op, saveKey.getBytes(), bytes));
+        return stringRedisTemplate().execute((RedisCallback<Long>) connection -> connection.stringCommands().bitOp(op, saveKey.getBytes(), bytes));
     }
 
     /**
@@ -151,11 +158,5 @@ public class RedisBitMapUtils {
     public static Long bitOpResult(RedisStringCommands.BitOperation op, String saveKey, String... destKey) {
         bitOp(op, saveKey, destKey);
         return bitCount(saveKey);
-    }
-
-    @Autowired
-    @Qualifier(value = "stringRedisTemplate")
-    public void setStringRedisTemplate(StringRedisTemplate stringRedisTemplate) {
-        RedisBitMapUtils.stringRedisTemplate = stringRedisTemplate;
     }
 }

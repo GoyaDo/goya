@@ -1,17 +1,22 @@
 package com.ysmjjsy.goya.module.redis.configuration;
 
-import com.ysmjjsy.goya.component.cache.properties.CacheProperties;
+import com.ysmjjsy.goya.component.cache.configuration.properties.CacheProperties;
+import com.ysmjjsy.goya.module.redis.configuration.properties.RedisBloomFilterPenetrateProperties;
+import com.ysmjjsy.goya.module.redis.constants.RedisConstants;
+import com.ysmjjsy.goya.module.redis.definition.DistributedCache;
+import com.ysmjjsy.goya.module.redis.definition.DistributedCacheTemplateProxy;
 import com.ysmjjsy.goya.module.redis.distributedid.LocalRedisWorkIdChoose;
 import com.ysmjjsy.goya.module.redis.enhance.GoyaRedisCacheManager;
 import jakarta.annotation.PostConstruct;
+import org.redisson.api.RBloomFilter;
+import org.redisson.api.RedissonClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;
 import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.cache.RedisCacheWriter;
@@ -30,14 +35,14 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
  * @since 2022/5/23 17:00
  */
 @AutoConfiguration
-@EnableConfigurationProperties(CacheProperties.class)
-public class CacheRedisConfiguration {
+@EnableConfigurationProperties({CacheProperties.class, RedisBloomFilterPenetrateProperties.class})
+public class RedisAutoConfiguration {
 
-    private static final Logger log = LoggerFactory.getLogger(CacheRedisConfiguration.class);
+    private static final Logger log = LoggerFactory.getLogger(RedisAutoConfiguration.class);
 
     @PostConstruct
     public void postConstruct() {
-        log.debug("[Goya] |- Module [Cache Redis] Configure.");
+        log.debug("[Goya] |- module [redis] RedisAutoConfiguration auto configure.");
     }
 
     private RedisSerializer<String> keySerializer() {
@@ -54,7 +59,7 @@ public class CacheRedisConfiguration {
 //    @Bean(name = "springSessionDefaultRedisSerializer")
     private RedisSerializer<Object> valueSerializer() {
         RedisSerializer<Object> redisSerializer = new Jackson2JsonRedisSerializer<>(Object.class);
-        log.trace("[Goya] |- Bean [Jackson2Json Redis Serializer] Configure.");
+        log.trace("[Goya] |- module [redis] |- bean [valueSerializer] register.");
         return redisSerializer;
     }
 
@@ -75,7 +80,7 @@ public class CacheRedisConfiguration {
         redisTemplate.setDefaultSerializer(valueSerializer());
         redisTemplate.afterPropertiesSet();
 
-        log.trace("[Goya] |- Bean [Redis Template] Configure.");
+        log.trace("[Goya] |- module [redis] |- bean [redisTemplate] register.");
 
         return redisTemplate;
     }
@@ -86,15 +91,34 @@ public class CacheRedisConfiguration {
         StringRedisTemplate stringRedisTemplate = new StringRedisTemplate();
         stringRedisTemplate.setConnectionFactory(redisConnectionFactory);
         stringRedisTemplate.afterPropertiesSet();
-        log.trace("[Goya] |- Bean [String Redis Template] Configure.");
+        log.trace("[Goya] |- module [redis] |- bean [stringRedisTemplate] register.");
         return stringRedisTemplate;
+    }
+
+    /**
+     * 防止缓存穿透的布隆过滤器
+     */
+    @Bean
+    @ConditionalOnProperty(prefix = RedisConstants.REDIS_BLOOM_FILTER_DEFAULT_PREFIX, name = "enabled", havingValue = "true", matchIfMissing = true)
+    public RBloomFilter<String> cachePenetrationBloomFilter(RedissonClient redissonClient, RedisBloomFilterPenetrateProperties bloomFilterPenetrateProperties) {
+        RBloomFilter<String> cachePenetrationBloomFilter = redissonClient.getBloomFilter(bloomFilterPenetrateProperties.getName());
+        cachePenetrationBloomFilter.tryInit(bloomFilterPenetrateProperties.getExpectedInsertions(), bloomFilterPenetrateProperties.getFalseProbability());
+        log.trace("[Goya] |- module [redis] |- bean [cachePenetrationBloomFilter] register.");
+        return cachePenetrationBloomFilter;
+    }
+
+    @Bean
+    public DistributedCache distributedCache(StringRedisTemplate stringRedisTemplate,CacheProperties cacheProperties,RedissonClient redissonClient){
+        DistributedCacheTemplateProxy distributedCacheTemplateProxy = new DistributedCacheTemplateProxy(stringRedisTemplate, cacheProperties, redissonClient);
+        log.trace("[Goya] |- module [redis] |- bean [distributedCache] register.");
+        return distributedCacheTemplateProxy;
     }
 
     @Bean
     public RedisMessageListenerContainer redisMessageListenerContainer(RedisConnectionFactory connectionFactory) {
         RedisMessageListenerContainer container = new RedisMessageListenerContainer();
         container.setConnectionFactory(connectionFactory);
-        log.trace("[Goya] |- Bean [Redis Message Listener Container] Configure.");
+        log.trace("[Goya] |- module [redis] |- bean [redisMessageListenerContainer] register.");
         return container;
     }
 
@@ -114,7 +138,7 @@ public class CacheRedisConfiguration {
         GoyaRedisCacheManager goyaRedisCacheManager = new GoyaRedisCacheManager(redisCacheWriter, redisCacheConfiguration, cacheProperties);
         goyaRedisCacheManager.setTransactionAware(false);
         goyaRedisCacheManager.afterPropertiesSet();
-        log.trace("[Goya] |- Bean [Redis Cache Manager] Configure.");
+        log.trace("[Goya] |- module [redis] |- bean [redisCacheManager] register.");
         return goyaRedisCacheManager;
     }
 
@@ -123,14 +147,9 @@ public class CacheRedisConfiguration {
      */
     @Bean(name = "snowflakeWorkIdChoose")
     public LocalRedisWorkIdChoose snowflakeWorkIdChoose(StringRedisTemplate stringRedisTemplate) {
-        return new LocalRedisWorkIdChoose(stringRedisTemplate);
+        LocalRedisWorkIdChoose localRedisWorkIdChoose = new LocalRedisWorkIdChoose(stringRedisTemplate);
+        log.trace("[Goya] |- module [redis] |- bean [snowflakeWorkIdChoose] register.");
+        return localRedisWorkIdChoose;
     }
 
-    @Configuration(proxyBeanMethods = false)
-    @ComponentScan({
-            "com.ysmjjsy.goya.module.redis.utils"
-    })
-    static class RedisUtilsConfiguration {
-
-    }
 }

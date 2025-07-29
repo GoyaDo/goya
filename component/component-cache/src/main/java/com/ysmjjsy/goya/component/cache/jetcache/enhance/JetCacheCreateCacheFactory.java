@@ -5,7 +5,7 @@ import com.alicp.jetcache.Cache;
 import com.alicp.jetcache.CacheManager;
 import com.alicp.jetcache.anno.CacheType;
 import com.alicp.jetcache.template.QuickConfig;
-import com.ysmjjsy.goya.component.cache.properties.CacheProperties;
+import com.ysmjjsy.goya.component.cache.configuration.properties.CacheProperties;
 import org.apache.commons.lang3.BooleanUtils;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
