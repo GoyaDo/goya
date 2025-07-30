@@ -19,12 +19,6 @@
 
         <dependency>
             <groupId>com.ysmjjsy.goya</groupId>
-            <artifactId>component-context</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.ysmjjsy.goya</groupId>
             <artifactId>component-cache</artifactId>
         </dependency>
 

@@ -17,14 +17,14 @@ public class TenantContextHolder {
     public static String getTenantId() {
         String tenantId = CURRENT_CONTEXT.get();
         if (StringUtils.isBlank(tenantId)) {
-            tenantId = DefaultConstants.TENANT_ID;
+            tenantId = DefaultConstants.DEFAULT_TENANT_ID;
         }
         return tenantId;
     }
 
     public static void setTenantId(final String tenantId) {
         if (StringUtils.isBlank(tenantId)) {
-            CURRENT_CONTEXT.set(DefaultConstants.TENANT_ID);
+            CURRENT_CONTEXT.set(DefaultConstants.DEFAULT_TENANT_ID);
         } else {
             CURRENT_CONTEXT.set(tenantId);
         }

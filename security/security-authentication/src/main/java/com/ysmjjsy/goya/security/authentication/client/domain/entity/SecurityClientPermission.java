@@ -1,7 +1,6 @@
 package com.ysmjjsy.goya.security.authentication.client.domain.entity;
 
 import com.google.common.base.Objects;
-import com.ysmjjsy.goya.component.db.domain.BaseJpaAggregate;
 import com.ysmjjsy.goya.security.authentication.client.constants.SecurityClientConstants;
 import jakarta.persistence.*;
 import lombok.Getter;

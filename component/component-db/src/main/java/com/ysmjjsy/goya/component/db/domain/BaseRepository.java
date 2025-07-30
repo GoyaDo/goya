@@ -1,18 +1,7 @@
 package com.ysmjjsy.goya.component.db.domain;
 
-import jakarta.persistence.QueryHint;
-import org.hibernate.jpa.HibernateHints;
 import org.jetbrains.annotations.NotNull;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.jpa.domain.Specification;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
-import org.springframework.data.jpa.repository.QueryHints;
-import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import org.springframework.data.repository.NoRepositoryBean;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -24,58 +13,60 @@ import java.util.Optional;
  * @since 2025/6/14 17:19
  */
 @NoRepositoryBean
-public interface BaseRepository<E, ID> extends JpaRepository<E, ID>, JpaSpecificationExecutor<E>, QuerydslPredicateExecutor<E> {
+public interface BaseRepository<E extends BaseDbEntity, ID> {
 
-    @NotNull
-    @QueryHints(@QueryHint(name = HibernateHints.HINT_CACHEABLE, value = "true"))
-    @Override
-    List<E> findAll();
+    /**
+     * 保存或更新
+     *
+     * @param entity 实体
+     * @return 保存后实体
+     */
+    E saveOrUpdate(@NotNull E entity);
 
-    @NotNull
-    @QueryHints(@QueryHint(name = HibernateHints.HINT_CACHEABLE, value = "true"))
-    @Override
-    List<E> findAll(@NotNull Sort sort);
+    /**
+     * 批量保存或更新
+     *
+     * @param entities 实体列表
+     * @return 保存或更新后的实体
+     */
+    List<E> saveOrUpdateAll(@NotNull Iterable<E> entities);
 
-    @NotNull
-    @QueryHints(@QueryHint(name = HibernateHints.HINT_CACHEABLE, value = "true"))
-    @Override
-    Optional<E> findOne(@NotNull Specification<E> specification);
-
-    @NotNull
-    @QueryHints(@QueryHint(name = HibernateHints.HINT_CACHEABLE, value = "true"))
-    @Override
-    List<E> findAll(Specification<E> specification);
-
-    @NotNull
-    @QueryHints(@QueryHint(name = HibernateHints.HINT_CACHEABLE, value = "true"))
-    @Override
-    Page<E> findAll(Specification<E> specification, @NotNull Pageable pageable);
-
-    @NotNull
-    @QueryHints(@QueryHint(name = HibernateHints.HINT_CACHEABLE, value = "true"))
-    @Override
-    List<E> findAll(Specification<E> specification, @NotNull Sort sort);
-
-    @QueryHints(@QueryHint(name = HibernateHints.HINT_CACHEABLE, value = "true"))
-    @Override
-    long count(Specification<E> specification);
-
-    @NotNull
-    @QueryHints(@QueryHint(name = HibernateHints.HINT_CACHEABLE, value = "true"))
-    @Override
-    Page<E> findAll(@NotNull Pageable pageable);
-
-    @NotNull
-    @QueryHints(@QueryHint(name = HibernateHints.HINT_CACHEABLE, value = "true"))
-    @Override
-    Optional<E> findById(@NotNull ID id);
-
-    @QueryHints(@QueryHint(name = HibernateHints.HINT_CACHEABLE, value = "true"))
-    @Override
-    long count();
-
-    @Transactional
-    @Override
+    /**
+     * 根据ID删除数据
+     *
+     * @param id 数据对应ID
+     */
     void deleteById(@NotNull ID id);
 
+    /**
+     * 查询全部数据
+     *
+     * @return 全部数据列表
+     */
+    @NotNull
+    List<E> findAll();
+
+    /**
+     * 根据ID查询数据
+     *
+     * @param id 数据ID
+     * @return 与ID对应的数据，如果不存在则返回空
+     */
+    @NotNull
+    Optional<E> findById(@NotNull ID id);
+
+    /**
+     * 查询数量
+     *
+     * @return 数据数量
+     */
+    long count();
+
+    /**
+     * 数据是否存在
+     *
+     * @param id 数据ID
+     * @return true 存在，false 不存在
+     */
+    boolean existsById(@NotNull ID id);
 }

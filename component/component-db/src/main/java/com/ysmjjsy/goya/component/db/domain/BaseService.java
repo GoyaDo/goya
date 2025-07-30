@@ -8,6 +8,6 @@ import java.io.Serializable;
  * @author goya
  * @since 2025/6/14 17:57
  */
-public abstract class BaseService<E extends BaseJpaAggregate, ID extends Serializable> implements BaseWriteableService<E, ID> {
+public abstract class BaseService<E extends BaseDbEntity, ID, R extends BaseRepository<E, ID>> implements BaseWriteableService<E, ID, R> {
 
 }

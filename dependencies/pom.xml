@@ -91,6 +91,7 @@
         <sm-crypto.version>0.3.13</sm-crypto.version>
         <querydsl.version>5.1.0</querydsl.version>
         <therapi-javadoc.version>0.15.0</therapi-javadoc.version>
+        <dynamic-ds.version>4.3.1</dynamic-ds.version>
         <!-- 阿里巴巴开源工具依赖 -->
         <fastjson.version>1.2.83</fastjson.version>
         <fastjson2.version>2.0.57</fastjson2.version>
@@ -224,6 +225,12 @@
                 <version>${mybatis-plus.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <!-- dynamic-datasource 多数据源-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>dynamic-datasource-spring-boot3-starter</artifactId>
+                <version>${dynamic-ds.version}</version>
             </dependency>
             <dependency>
                 <groupId>software.amazon.awssdk</groupId>

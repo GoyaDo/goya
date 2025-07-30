@@ -4,7 +4,6 @@ import com.ysmjjsy.goya.component.web.scan.RequestMappingScanEventManager;
 import com.ysmjjsy.goya.module.identity.resolver.BearerTokenResolver;
 import com.ysmjjsy.goya.security.authorization.annotation.ConditionalOnUseJwtToken;
 import com.ysmjjsy.goya.security.authorization.annotation.ConditionalOnUseOpaqueToken;
-import com.ysmjjsy.goya.security.authorization.auditing.SecurityAuditorAware;
 import com.ysmjjsy.goya.security.authorization.customizer.SecurityAuthorizeHttpRequestsConfigurerCustomer;
 import com.ysmjjsy.goya.security.authorization.customizer.SecurityResourceServerConfigurerCustomer;
 import com.ysmjjsy.goya.security.authorization.introspector.SecurityOpaqueTokenIntrospector;
@@ -29,7 +28,6 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
-import org.springframework.data.domain.AuditorAware;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector;
 import org.springframework.web.servlet.resource.ResourceUrlProvider;
@@ -66,13 +64,6 @@ public class SecurityAuthorizationConfiguration {
         SecurityDefaultRequestMappingScanEventManager requestMappingScanEventManager = new SecurityDefaultRequestMappingScanEventManager(securityAttributeAnalyzer);
         log.trace("[Goya] |- Bean [Servlet Security Request Mapping Scan Event Manager] Configure.");
         return requestMappingScanEventManager;
-    }
-
-    @Bean
-    public AuditorAware<String> auditorAware() {
-        SecurityAuditorAware securityAuditorAware = new SecurityAuditorAware();
-        log.debug("[Goya] |- Bean [Security Auditor Aware] Auto Configure.");
-        return securityAuditorAware;
     }
 
     @Bean

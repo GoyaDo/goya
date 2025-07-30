@@ -1,7 +1,6 @@
 package com.ysmjjsy.goya.module.tenant.entity;
 
 import com.ysmjjsy.goya.component.db.constants.DataConstants;
-import com.ysmjjsy.goya.component.db.domain.BaseJpaAggregate;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.Getter;

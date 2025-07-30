@@ -6,7 +6,6 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.google.common.base.Objects;
 import com.ysmjjsy.goya.component.common.json.jackson2.deserializer.CommaDelimitedStringToSetSerializer;
 import com.ysmjjsy.goya.component.common.json.jackson2.deserializer.SetToCommaDelimitedStringDeserializer;
-import com.ysmjjsy.goya.component.db.domain.BaseJpaAggregate;
 import com.ysmjjsy.goya.component.pojo.constants.DefaultConstants;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Column;

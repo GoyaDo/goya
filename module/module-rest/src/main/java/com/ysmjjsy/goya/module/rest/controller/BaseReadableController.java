@@ -1,6 +1,5 @@
 package com.ysmjjsy.goya.module.rest.controller;
 
-import com.ysmjjsy.goya.component.db.domain.BaseJpaAggregate;
 import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
 import com.ysmjjsy.goya.component.pojo.domain.PageQuery;
 import com.ysmjjsy.goya.component.pojo.response.Response;

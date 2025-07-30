@@ -38,5 +38,7 @@ public interface DefaultConstants {
     /**
      * 默认租户ID
      */
-    String TENANT_ID = "public";
+    String DEFAULT_TENANT_ID = "public";
+
+    String DEFAULT_USER_ID = "public";
 }

@@ -22,12 +22,11 @@ public class UndertowWebServerFactoryCustomizer implements WebServerFactoryCusto
 
     @PostConstruct
     public void postConstruct() {
-        log.debug("[Goya] |- Module [Undertow WebServer Factory Customizer] Configure.");
+        log.debug("[Goya] |- component [web] UndertowWebServerFactoryCustomizer auto configure.");
     }
 
     @Override
     public void customize(UndertowServletWebServerFactory factory) {
-
         factory.addDeploymentInfoCustomizers(deploymentInfo -> {
             WebSocketDeploymentInfo webSocketDeploymentInfo = new WebSocketDeploymentInfo();
             webSocketDeploymentInfo.setBuffers(new DefaultByteBufferPool(false, 1024));

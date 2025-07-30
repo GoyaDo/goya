@@ -1,4 +1,4 @@
-package com.ysmjjsy.goya.component.db.cache;
+package com.ysmjjsy.goya.module.jpa.cache;
 
 import com.ysmjjsy.goya.component.common.context.TenantContextHolder;
 import com.ysmjjsy.goya.component.pojo.constants.SymbolConstants;

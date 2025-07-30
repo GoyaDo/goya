@@ -1,4 +1,4 @@
-package com.ysmjjsy.goya.component.db.naming;
+package com.ysmjjsy.goya.module.jpa.naming;
 
 import org.hibernate.boot.model.naming.Identifier;
 import org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl;

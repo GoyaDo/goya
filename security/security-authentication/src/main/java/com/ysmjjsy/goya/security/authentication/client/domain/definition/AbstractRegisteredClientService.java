@@ -1,6 +1,5 @@
 package com.ysmjjsy.goya.security.authentication.client.domain.definition;
 
-import com.ysmjjsy.goya.component.db.domain.BaseJpaAggregate;
 import com.ysmjjsy.goya.component.db.domain.BaseService;
 import com.ysmjjsy.goya.security.authentication.client.domain.event.DeleteRegisteredClientEvent;
 import com.ysmjjsy.goya.security.authentication.client.domain.event.SaveRegisteredClientEvent;

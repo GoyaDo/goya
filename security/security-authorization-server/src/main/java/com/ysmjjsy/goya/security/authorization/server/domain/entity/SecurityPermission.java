@@ -1,6 +1,5 @@
 package com.ysmjjsy.goya.security.authorization.server.domain.entity;
 
-import com.ysmjjsy.goya.component.db.domain.BaseJpaAggregate;
 import com.ysmjjsy.goya.security.authorization.server.constants.SecurityAuthConstants;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;

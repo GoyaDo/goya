@@ -31,7 +31,7 @@ public class DatabaseMultiTenantConnectionProvider extends AbstractDataSourceBas
 
     public DatabaseMultiTenantConnectionProvider(DataSource dataSource) {
         this.defaultDataSource = dataSource;
-        dataSources.put(DefaultConstants.TENANT_ID, dataSource);
+        dataSources.put(DefaultConstants.DEFAULT_TENANT_ID, dataSource);
     }
 
     private void initialize() {

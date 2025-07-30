@@ -1,4 +1,4 @@
-package com.ysmjjsy.goya.component.db.cache;
+package com.ysmjjsy.goya.module.jpa.cache;
 
 import org.dromara.hutool.extra.spring.SpringUtil;
 import org.hibernate.boot.spi.SessionFactoryOptions;
