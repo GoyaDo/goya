@@ -1,12 +1,14 @@
 package com.ysmjjsy.goya.module.jpa.configuration;
 
 import com.ysmjjsy.goya.module.jpa.auditing.SecurityAuditorAware;
+import com.ysmjjsy.goya.module.jpa.core.BaseJpaRepository;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.AuditorAware;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
@@ -19,6 +21,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @AutoConfiguration
 @RequiredArgsConstructor
 @EnableTransactionManagement(proxyTargetClass = true)
+@EnableJpaRepositories(
+        repositoryBaseClass = BaseJpaRepository.class
+)
 public class JpaAutoConfiguration {
 
     @PostConstruct

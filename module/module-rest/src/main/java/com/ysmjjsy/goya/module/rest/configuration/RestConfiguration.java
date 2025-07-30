@@ -16,8 +16,6 @@ public class RestConfiguration {
 
     @PostConstruct
     public void postConstruct() {
-        log.debug("[Goya] |- component [rest] configure.");
+        log.debug("[Goya] |- module [rest] RestConfiguration auto configure.");
     }
-
-
 }

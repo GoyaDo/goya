@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.component.web.utils;
 
-import com.ysmjjsy.goya.component.common.json.jackson2.utils.Jackson2Utils;
+import com.ysmjjsy.goya.component.json.jackson2.utils.Jackson2Utils;
 import jakarta.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

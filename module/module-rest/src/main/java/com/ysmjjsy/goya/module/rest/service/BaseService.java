@@ -1,6 +1,7 @@
-package com.ysmjjsy.goya.component.db.domain;
+package com.ysmjjsy.goya.module.rest.service;
 
-import java.io.Serializable;
+import com.ysmjjsy.goya.component.db.domain.BaseDbEntity;
+import com.ysmjjsy.goya.component.db.domain.BaseRepository;
 
 /**
  * <p>通用核心 Service</p>

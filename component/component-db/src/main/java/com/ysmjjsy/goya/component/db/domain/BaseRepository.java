@@ -1,5 +1,8 @@
 package com.ysmjjsy.goya.component.db.domain;
 
+import com.google.common.collect.Lists;
+import com.ysmjjsy.goya.component.pojo.domain.PageQuery;
+import com.ysmjjsy.goya.component.pojo.domain.PageVO;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.data.repository.NoRepositoryBean;
 
@@ -24,19 +27,31 @@ public interface BaseRepository<E extends BaseDbEntity, ID> {
     E saveOrUpdate(@NotNull E entity);
 
     /**
-     * 批量保存或更新
+     * 批量保存
      *
      * @param entities 实体列表
-     * @return 保存或更新后的实体
+     * @return 保存后的实体
      */
-    List<E> saveOrUpdateAll(@NotNull Iterable<E> entities);
+    default List<E> savedOrUpdateAll(@NotNull Iterable<E> entities) {
+        entities.forEach(this::saveOrUpdate);
+        return Lists.newArrayList(entities);
+    }
 
     /**
      * 根据ID删除数据
      *
      * @param id 数据对应ID
      */
-    void deleteById(@NotNull ID id);
+    void remoteById(@NotNull ID id);
+
+    /**
+     * 根据ID删除数据
+     *
+     * @param ids 数据对应ID
+     */
+    default void remoteByIds(@NotNull Iterable<ID> ids) {
+        ids.forEach(this::remoteById);
+    }
 
     /**
      * 查询全部数据
@@ -69,4 +84,12 @@ public interface BaseRepository<E extends BaseDbEntity, ID> {
      * @return true 存在，false 不存在
      */
     boolean existsById(@NotNull ID id);
+
+    /**
+     * 分页查询
+     *
+     * @param pageQuery 查询条件
+     * @return 分页数据
+     */
+    PageVO<E> findPage(PageQuery pageQuery);
 }

@@ -1,7 +1,8 @@
 package com.ysmjjsy.goya.module.rest.controller;
 
-import com.ysmjjsy.goya.component.db.domain.BaseReadableService;
-import com.ysmjjsy.goya.component.pojo.response.Response;
+import com.ysmjjsy.goya.component.db.domain.BaseDbEntity;
+import com.ysmjjsy.goya.component.db.domain.BaseRepository;
+import com.ysmjjsy.goya.module.rest.service.BaseWriteableService;
 
 import java.io.Serializable;
 
@@ -12,28 +13,6 @@ import java.io.Serializable;
  * @author goya
  * @since 2025/2/26 11:59
  */
-public abstract class BaseController<E extends BaseJpaAggregate, ID extends Serializable> implements WriteableController<E, ID> {
+public abstract class BaseController<E extends BaseDbEntity, ID extends Serializable, R extends BaseRepository<E, ID>, S extends BaseWriteableService<E, ID, R>> extends BaseWriteableController<E, ID, R, S> {
 
-    /**
-     * 获取Service
-     *
-     * @return Service
-     */
-    @Override
-    public BaseReadableService<E, ID> getReadableService() {
-        return this.getWriteableService();
-    }
-
-    @Override
-    public Response saveOrUpdate(E domain) {
-        E savedDomain = getWriteableService().saveAndFlush(domain);
-        return result(savedDomain);
-    }
-
-    @Override
-    public Response delete(ID id) {
-        Response result = result(String.valueOf(id));
-        getWriteableService().deleteById(id);
-        return result;
-    }
 }

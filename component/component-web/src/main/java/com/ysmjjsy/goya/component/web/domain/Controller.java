@@ -2,6 +2,7 @@ package com.ysmjjsy.goya.component.web.domain;
 
 import com.ysmjjsy.goya.component.pojo.constants.DefaultConstants;
 import com.ysmjjsy.goya.component.pojo.domain.Entity;
+import com.ysmjjsy.goya.component.pojo.domain.PageVO;
 import com.ysmjjsy.goya.component.pojo.response.Response;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.MapUtils;
@@ -14,7 +15,6 @@ import org.springframework.core.convert.converter.Converter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  * <p> Description : Controller基础定义 </p>
@@ -33,7 +33,7 @@ public interface Controller {
      * @param <E>    {@link Entity} 子类型
      * @return {@link Response} Entity
      */
-    default <E extends Entity> Response result(E domain) {
+    default <E extends Entity> Response<E> result(E domain) {
         if (ObjectUtils.isNotEmpty(domain)) {
             return Response.data(domain);
         } else {
@@ -121,9 +121,23 @@ public interface Controller {
         }
     }
 
+    /**
+     * 数据实体转换为统一响应实体
+     *
+     * @param page 数据实体
+     * @param <E>    {@link Entity} 子类型
+     * @return {@link Response} Entity
+     */
+    default <E extends Entity> Response<PageVO<E>> result(PageVO<E> page) {
+        if (ObjectUtils.isNotEmpty(page) && page.getTotalCount() > 0) {
+            return Response.data(page);
+        }
+        return Response.empty();
+    }
+
     default <E extends Entity> Response result(List<E> domains, Converter<E, TreeNode<String>> toTreeNode) {
         if (ObjectUtils.isNotEmpty(domains)) {
-            List<TreeNode<String>> treeNodes = domains.stream().map(toTreeNode::convert).collect(Collectors.toList());
+            List<TreeNode<String>> treeNodes = domains.stream().map(toTreeNode::convert).toList();
             return Response.data("查询数据成功", TreeUtil.build(treeNodes, DefaultConstants.TREE_ROOT_ID));
         } else {
             return Response.empty("未查询到数据！");

@@ -1,4 +1,7 @@
-package com.ysmjjsy.goya.component.db.domain;
+package com.ysmjjsy.goya.module.rest.service;
+
+import com.ysmjjsy.goya.component.db.domain.BaseDbEntity;
+import com.ysmjjsy.goya.component.db.domain.BaseRepository;
 
 import java.util.List;
 
@@ -16,7 +19,7 @@ public interface BaseWriteableService<E extends BaseDbEntity, ID, R extends Base
      * @param id 数据对应ID
      */
     default void deleteById(ID id) {
-        getRepository().deleteById(id);
+        getRepository().remoteById(id);
     }
 
     /**
@@ -36,6 +39,6 @@ public interface BaseWriteableService<E extends BaseDbEntity, ID, R extends Base
      * @return 已经保存的实体集合
      */
     default List<E> saveOrUpdateAll(Iterable<E> entities) {
-        return getRepository().saveOrUpdateAll(entities);
+        return getRepository().savedOrUpdateAll(entities);
     }
 }

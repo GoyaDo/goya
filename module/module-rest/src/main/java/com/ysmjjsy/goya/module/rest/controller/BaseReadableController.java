@@ -1,9 +1,15 @@
 package com.ysmjjsy.goya.module.rest.controller;
 
+import com.ysmjjsy.goya.component.common.context.ApplicationContextHolder;
+import com.ysmjjsy.goya.component.db.domain.BaseDbEntity;
+import com.ysmjjsy.goya.component.db.domain.BaseRepository;
 import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
 import com.ysmjjsy.goya.component.pojo.domain.PageQuery;
+import com.ysmjjsy.goya.component.pojo.domain.PageVO;
 import com.ysmjjsy.goya.component.pojo.response.Response;
 import com.ysmjjsy.goya.component.web.annotation.AccessLimited;
+import com.ysmjjsy.goya.component.web.domain.Controller;
+import com.ysmjjsy.goya.module.rest.service.BaseReadableService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.Parameters;
@@ -12,13 +18,12 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
-import org.apache.commons.lang3.StringUtils;
-import org.springframework.data.domain.Sort;
+import org.springframework.core.GenericTypeResolver;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.io.Serializable;
-import java.util.Map;
 
 /**
  * <p>Description: 只读RestController </p>
@@ -27,12 +32,22 @@ import java.util.Map;
  * @since 2021/7/5 17:21
  */
 @SecurityRequirement(name = GoyaConstants.OPEN_API_SECURITY_SCHEME_BEARER_NAME)
-public abstract class BaseReadableController<E extends BaseJpaAggregate, ID extends Serializable> implements ReadableController<E, ID> {
+public abstract class BaseReadableController<E extends BaseDbEntity, ID extends Serializable, R extends BaseRepository<E, ID>, S extends BaseReadableService<E, ID, R>> implements Controller {
+
+    protected S getService() {
+        Class<?>[] typeArguments = GenericTypeResolver.resolveTypeArguments(getClass(), BaseReadableController.class);
+        if (typeArguments == null || typeArguments.length < 4) {
+            throw new IllegalStateException("无法解析 Service 泛型类型参数，请确保实现类直接继承 BaseReadableService<ID, E, R>");
+        }
+
+        Class<S> serviceClass = (Class<S>) typeArguments[3];
+        return ApplicationContextHolder.getBean(serviceClass);
+    }
 
     @AccessLimited
     @Operation(summary = "分页查询数据", description = "通过pageNumber和pageSize获取分页数据",
             responses = {
-                    @ApiResponse(description = "单位列表", content = @Content(mediaType = "application/json", schema = @Schema(implementation = Map.class))),
+                    @ApiResponse(description = "单位列表", content = @Content(mediaType = "application/json", schema = @Schema(implementation = PageVO.class))),
                     @ApiResponse(responseCode = "204", description = "查询成功，未查到数据"),
                     @ApiResponse(responseCode = "500", description = "查询失败")
             })
@@ -40,12 +55,17 @@ public abstract class BaseReadableController<E extends BaseJpaAggregate, ID exte
             @Parameter(name = "pager", required = true, in = ParameterIn.QUERY, description = "分页Bo对象", schema = @Schema(implementation = PageQuery.class))
     })
     @GetMapping
-    public Response findByPage(@Validated PageQuery pager) {
-        if (StringUtils.isNotEmpty(pager.getOrderBy())) {
-            Sort.Direction direction = Sort.Direction.valueOf(pager.getOrderDirection());
-            return ReadableController.super.findByPage(pager.getPageIndex(), pager.getPageSize(), direction, pager.getOrderBy());
-        } else {
-            return ReadableController.super.findByPage(pager.getPageIndex(), pager.getPageSize());
-        }
+    public Response<PageVO<E>> findByPage(@Validated PageQuery pager) {
+        return result(getService().findPage(pager));
+    }
+
+    @AccessLimited
+    @Operation(summary = "查询详情", description = "通过id查询详情")
+    @Parameters({
+            @Parameter(name = "id", required = true, in = ParameterIn.QUERY, description = "id", schema = @Schema(implementation = String.class))
+    })
+    @GetMapping("/{id}")
+    public Response<E> findById(@PathVariable ID id) {
+        return result(getService().findById(id));
     }
 }

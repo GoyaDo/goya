@@ -69,11 +69,6 @@ public abstract class PageQuery implements Query {
     private String orderDirection = DESC;
 
     /**
-     * 分组字段
-     */
-    private String groupBy;
-
-    /**
      * 是否需要总记录数
      */
     private boolean needTotalCount = true;

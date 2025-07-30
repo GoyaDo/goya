@@ -1,8 +1,10 @@
 package com.ysmjjsy.goya.module.rest.controller;
 
-import com.ysmjjsy.goya.component.db.domain.BaseReadableService;
+import com.ysmjjsy.goya.component.db.domain.BaseDbEntity;
+import com.ysmjjsy.goya.component.db.domain.BaseRepository;
 import com.ysmjjsy.goya.component.pojo.response.Response;
 import com.ysmjjsy.goya.component.web.annotation.Idempotent;
+import com.ysmjjsy.goya.module.rest.service.BaseWriteableService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.Parameters;
@@ -22,12 +24,7 @@ import java.io.Serializable;
  * @author goya
  * @since 2020/2/29 15:28
  */
-public abstract class BaseWriteableController<E extends BaseJpaAggregate, ID extends Serializable> extends BaseReadableController<E, ID> implements WriteableController<E, ID> {
-
-    @Override
-    public BaseReadableService<E, ID> getReadableService() {
-        return this.getWriteableService();
-    }
+public abstract class BaseWriteableController<E extends BaseDbEntity, ID extends Serializable, R extends BaseRepository<E, ID>, S extends BaseWriteableService<E, ID, R>> extends BaseReadableController<E, ID, R, S> {
 
     @Idempotent
     @Operation(summary = "保存或更新数据", description = "接收JSON数据，转换为实体，进行保存或更新",
@@ -37,9 +34,8 @@ public abstract class BaseWriteableController<E extends BaseJpaAggregate, ID ext
             @Parameter(name = "domain", required = true, description = "可转换为实体的json数据")
     })
     @PostMapping
-    @Override
-    public Response saveOrUpdate(@RequestBody E domain) {
-        return WriteableController.super.saveOrUpdate(domain);
+    public Response<E> saveOrUpdate(@RequestBody E domain) {
+        return result(getService().saveOrUpdate(domain));
     }
 
     @Idempotent
@@ -50,8 +46,8 @@ public abstract class BaseWriteableController<E extends BaseJpaAggregate, ID ext
             @Parameter(name = "id", required = true, in = ParameterIn.PATH, description = "实体ID，@Id注解对应的实体属性")
     })
     @DeleteMapping("/{id}")
-    @Override
-    public Response delete(@PathVariable ID id) {
-        return WriteableController.super.delete(id);
+    public Response<Void> delete(@PathVariable ID id) {
+        getService().deleteById(id);
+        return Response.success();
     }
 }

@@ -9,6 +9,7 @@ import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerIntercept
 import com.baomidou.mybatisplus.extension.plugins.inner.TenantLineInnerInterceptor;
 import com.ysmjjsy.goya.component.common.context.ApplicationContextHolder;
 import com.ysmjjsy.goya.component.common.resolver.YmlPropertySourceFactory;
+import com.ysmjjsy.goya.module.mybatisplus.domain.BaseMpRepository;
 import com.ysmjjsy.goya.module.mybatisplus.enhance.SnowIdentifierGenerator;
 import com.ysmjjsy.goya.module.mybatisplus.handler.InjectionMetaObjectHandler;
 import com.ysmjjsy.goya.module.mybatisplus.handler.MybatisExceptionHandler;
@@ -32,7 +33,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Slf4j
 @AutoConfiguration
 @RequiredArgsConstructor
-@MapperScan("${mybatis-plus.mapperPackage}")
+@MapperScan(
+        value = "${mybatis-plus.mapperPackage}",
+        markerInterface = BaseMpRepository.class
+)
 @EnableTransactionManagement(proxyTargetClass = true)
 @PropertySource(value = "classpath:common-mybatis.yml", factory = YmlPropertySourceFactory.class)
 public class MybatisPlusAutoConfiguration {
@@ -111,7 +115,7 @@ public class MybatisPlusAutoConfiguration {
     public IdentifierGenerator idGenerator() {
         SnowIdentifierGenerator snowIdentifierGenerator = new SnowIdentifierGenerator();
         log.trace("[Goya] |- module [mybatis-plus] |- bean [idGenerator] register.");
-        return  snowIdentifierGenerator;
+        return snowIdentifierGenerator;
     }
 
     /**

@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.module.tenant;
 
 import com.ysmjjsy.goya.component.db.domain.BaseRepository;
-import com.ysmjjsy.goya.component.db.domain.BaseService;
+import com.ysmjjsy.goya.module.rest.service.BaseService;
 import com.ysmjjsy.goya.module.tenant.entity.SysTenantDataSource;
 import com.ysmjjsy.goya.module.tenant.repository.SysTenantDataSourceRepository;
 import org.slf4j.Logger;

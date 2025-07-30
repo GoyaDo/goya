@@ -1,6 +1,10 @@
-package com.ysmjjsy.goya.component.db.domain;
+package com.ysmjjsy.goya.module.rest.service;
 
 import com.ysmjjsy.goya.component.common.context.ApplicationContextHolder;
+import com.ysmjjsy.goya.component.db.domain.BaseDbEntity;
+import com.ysmjjsy.goya.component.db.domain.BaseRepository;
+import com.ysmjjsy.goya.component.pojo.domain.PageQuery;
+import com.ysmjjsy.goya.component.pojo.domain.PageVO;
 import org.springframework.core.GenericTypeResolver;
 
 import java.util.List;
@@ -59,6 +63,16 @@ public interface BaseReadableService<E extends BaseDbEntity, ID, R extends BaseR
      */
     default List<E> findAll() {
         return getRepository().findAll();
+    }
+
+    /**
+     * 分页查询
+     *
+     * @param query 查询条件
+     * @return 分页数据
+     */
+    default PageVO<E> findPage(PageQuery query) {
+        return getRepository().findPage(query);
     }
 
 }
