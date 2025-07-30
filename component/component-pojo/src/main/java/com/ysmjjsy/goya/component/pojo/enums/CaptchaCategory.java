@@ -3,6 +3,8 @@ package com.ysmjjsy.goya.component.pojo.enums;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.google.common.collect.ImmutableMap;
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,7 +19,9 @@ import java.util.Map;
  */
 @Schema(title = "验证码类别")
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
-public enum CaptchaCategory {
+@Getter
+@AllArgsConstructor
+public enum CaptchaCategory implements GoyaEnum<String>{
 
     /**
      * 验证码类别
@@ -66,11 +70,6 @@ public enum CaptchaCategory {
     @Schema(title = "文字")
     private final String description;
 
-    CaptchaCategory(String constant, String description) {
-        this.constant = constant;
-        this.description = description;
-    }
-
     public static CaptchaCategory getCaptchaCategory(String name) {
         return INDEX_MAP.get(name);
     }
@@ -79,11 +78,8 @@ public enum CaptchaCategory {
         return JSON_STRUCT;
     }
 
-    public String getConstant() {
+    @Override
+    public String getValue() {
         return constant;
-    }
-
-    public String getDescription() {
-        return description;
     }
 }

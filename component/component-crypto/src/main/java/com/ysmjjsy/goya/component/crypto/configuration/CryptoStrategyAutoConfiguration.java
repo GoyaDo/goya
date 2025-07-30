@@ -6,7 +6,7 @@ import com.ysmjjsy.goya.component.crypto.processor.AESCryptoProcessor;
 import com.ysmjjsy.goya.component.crypto.processor.RSACryptoProcessor;
 import com.ysmjjsy.goya.component.crypto.processor.SM2CryptoProcessor;
 import com.ysmjjsy.goya.component.crypto.processor.SM4CryptoProcessor;
-import com.ysmjjsy.goya.component.crypto.properties.CryptoProperties;
+import com.ysmjjsy.goya.component.crypto.configuration.properties.CryptoProperties;
 import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
 import jakarta.annotation.PostConstruct;
 import org.slf4j.Logger;
@@ -32,18 +32,23 @@ public class CryptoStrategyAutoConfiguration {
 
     @PostConstruct
     public void postConstruct() {
-        log.debug("[Goya] |- component [protect crypto strategy] configure.");
+        log.debug("[Goya] |- component [crypto] CryptoStrategyAutoConfiguration auto configure.");
     }
 
     @ConditionalOnProperty(name = GoyaConstants.PROPERTY_ASSISTANT_CRYPTO_STRATEGY, havingValue = "SM")
     @Configuration(proxyBeanMethods = false)
     static class SMCryptoConfiguration {
 
+        @PostConstruct
+        public void postConstruct() {
+            log.debug("[Goya] |- component [crypto] SMCryptoConfiguration auto configure.");
+        }
+
         @Bean
         @ConditionalOnMissingBean
         public AsymmetricCryptoProcessor sm2CryptoProcessor() {
             SM2CryptoProcessor sm2CryptoProcessor = new SM2CryptoProcessor();
-            log.trace("[Goya] |- Strategy [SM Asymmetric SM2 Crypto Processor] Configure.");
+            log.trace("[Goya] |- component [crypto] |- bean [sm2CryptoProcessor] register.");
             return sm2CryptoProcessor;
         }
 
@@ -51,7 +56,7 @@ public class CryptoStrategyAutoConfiguration {
         @ConditionalOnMissingBean
         public SymmetricCryptoProcessor sm4CryptoProcessor() {
             SM4CryptoProcessor sm4CryptoProcessor = new SM4CryptoProcessor();
-            log.trace("[Goya] |- Strategy [SM Symmetric SM4 Crypto Processor] Configure.");
+            log.trace("[Goya] |- component [crypto] |- bean [sm4CryptoProcessor] register.");
             return sm4CryptoProcessor;
         }
     }
@@ -60,11 +65,16 @@ public class CryptoStrategyAutoConfiguration {
     @Configuration(proxyBeanMethods = false)
     static class StandardCryptoConfiguration {
 
+        @PostConstruct
+        public void postConstruct() {
+            log.debug("[Goya] |- component [crypto] StandardCryptoConfiguration auto configure.");
+        }
+
         @Bean
         @ConditionalOnMissingBean
         public AsymmetricCryptoProcessor rsaCryptoProcessor() {
             RSACryptoProcessor rsaCryptoProcessor = new RSACryptoProcessor();
-            log.trace("[Goya] |- Strategy [Standard Asymmetric RSA Crypto Processor] Configure.");
+            log.trace("[Goya] |- component [crypto] |- bean [rsaCryptoProcessor] register.");
             return rsaCryptoProcessor;
         }
 
@@ -72,7 +82,7 @@ public class CryptoStrategyAutoConfiguration {
         @ConditionalOnMissingBean
         public SymmetricCryptoProcessor aesCryptoProcessor() {
             AESCryptoProcessor aesCryptoProcessor = new AESCryptoProcessor();
-            log.trace("[Goya] |- Strategy [Standard Symmetric AES Crypto Processor] Configure.");
+            log.trace("[Goya] |- component [crypto] |- bean [aesCryptoProcessor] register.");
             return aesCryptoProcessor;
         }
     }

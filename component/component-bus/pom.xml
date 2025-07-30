@@ -16,10 +16,5 @@
             <groupId>com.ysmjjsy.goya</groupId>
             <artifactId>component-common</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>com.ysmjjsy.goya</groupId>
-            <artifactId>component-context</artifactId>
-        </dependency>
     </dependencies>
 </project>

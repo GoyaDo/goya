@@ -1,4 +1,4 @@
-package com.ysmjjsy.goya.component.web.properties;
+package com.ysmjjsy.goya.component.web.configuration.properties;
 
 import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
 import lombok.Getter;

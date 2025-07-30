@@ -1,12 +1,18 @@
 package com.ysmjjsy.goya.component.captcha.enums;
 
+import com.ysmjjsy.goya.component.pojo.enums.GoyaBaseEnum;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 /**
  * <p>Description: 字体资源 </p>
  *
  * @author goya
  * @since 2021/12/21 16:00
  */
-public enum CaptchaFont {
+@Getter
+@AllArgsConstructor
+public enum CaptchaFont implements GoyaBaseEnum {
     /**
      * 内置字体类型
      */
@@ -22,12 +28,4 @@ public enum CaptchaFont {
     SCANDAL("Scandal.ttf");
 
     private final String fontName;
-
-    CaptchaFont(String fontName) {
-        this.fontName = fontName;
-    }
-
-    public String getFontName() {
-        return fontName;
-    }
 }

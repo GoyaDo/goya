@@ -6,7 +6,7 @@ package com.ysmjjsy.goya.component.pojo.enums;
  * @author goya
  * @since 2019/11/26 11:33
  */
-public enum Architecture {
+public enum Architecture implements GoyaBaseEnum{
 
     /**
      * 分布式架构

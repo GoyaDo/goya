@@ -5,8 +5,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletRequestWrapper;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
 import java.util.List;
@@ -27,8 +25,6 @@ import java.util.stream.Collectors;
  * @since 2021/8/29 21:30
  */
 public class XssHttpServletRequestWrapper extends HttpServletRequestWrapper {
-
-    private static final Logger log = LoggerFactory.getLogger(XssHttpServletRequestWrapper.class);
 
     public XssHttpServletRequestWrapper(HttpServletRequest request) {
         super(request);

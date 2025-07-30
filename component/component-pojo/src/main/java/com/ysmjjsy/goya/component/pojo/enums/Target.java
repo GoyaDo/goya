@@ -8,7 +8,7 @@ package com.ysmjjsy.goya.component.pojo.enums;
  * @author goya
  * @since 2022/10/10 19:33
  */
-public enum Target {
+public enum Target implements GoyaBaseEnum{
 
     /**
      * 目标为服务本地

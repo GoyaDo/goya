@@ -8,7 +8,7 @@ import org.apache.commons.lang3.StringUtils;
  * @author goya
  * @since 2022/3/9 19:06
  */
-public enum UrlCategory {
+public enum UrlCategory implements GoyaBaseEnum{
 
     /**
      * 含有通配符，含有 "*" 或 "?"

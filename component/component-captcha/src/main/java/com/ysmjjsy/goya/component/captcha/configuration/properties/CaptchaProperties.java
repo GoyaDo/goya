@@ -1,4 +1,4 @@
-package com.ysmjjsy.goya.component.captcha.properties;
+package com.ysmjjsy.goya.component.captcha.configuration.properties;
 
 import com.ysmjjsy.goya.component.captcha.enums.CaptchaCharacter;
 import com.ysmjjsy.goya.component.captcha.enums.CaptchaFont;

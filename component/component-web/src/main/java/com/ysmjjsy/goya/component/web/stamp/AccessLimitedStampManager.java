@@ -2,7 +2,7 @@ package com.ysmjjsy.goya.component.web.stamp;
 
 import com.ysmjjsy.goya.component.cache.jetcache.stamp.AbstractStampManager;
 import com.ysmjjsy.goya.component.web.constants.WebConstants;
-import com.ysmjjsy.goya.component.web.properties.SecureProperties;
+import com.ysmjjsy.goya.component.web.configuration.properties.SecureProperties;
 import lombok.Getter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

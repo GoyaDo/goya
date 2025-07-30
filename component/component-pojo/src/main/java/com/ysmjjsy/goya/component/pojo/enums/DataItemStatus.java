@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.google.common.collect.ImmutableMap;
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,6 +17,8 @@ import java.util.Map;
  */
 @Schema(title = "数据状态")
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
+@Getter
+@AllArgsConstructor
 public enum DataItemStatus implements GoyaEnum<Integer> {
 
     /**
@@ -53,11 +57,6 @@ public enum DataItemStatus implements GoyaEnum<Integer> {
     private final Integer value;
     @Schema(title = "文字")
     private final String description;
-
-    DataItemStatus(Integer value, String description) {
-        this.value = value;
-        this.description = description;
-    }
 
     public static DataItemStatus get(Integer index) {
         return INDEX_MAP.get(index);

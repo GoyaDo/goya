@@ -1,4 +1,4 @@
-package com.ysmjjsy.goya.component.crypto.properties;
+package com.ysmjjsy.goya.component.crypto.configuration.properties;
 
 import com.google.common.base.MoreObjects;
 import com.ysmjjsy.goya.component.crypto.enums.CryptoStrategy;

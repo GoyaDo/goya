@@ -1,12 +1,17 @@
 package com.ysmjjsy.goya.component.pojo.enums;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 /**
  * <p>Description: Protocol枚举 </p>
  *
  * @author goya
  * @since 2021/6/12 14:48
  */
-public enum Protocol {
+@Getter
+@AllArgsConstructor
+public enum Protocol implements GoyaBaseEnum{
     /**
      * 协议类型
      */
@@ -17,17 +22,4 @@ public enum Protocol {
 
     private final String format;
     private final String prefix;
-
-    Protocol(String format, String prefix) {
-        this.format = format;
-        this.prefix = prefix;
-    }
-
-    public String getFormat() {
-        return format;
-    }
-
-    public String getPrefix() {
-        return prefix;
-    }
 }

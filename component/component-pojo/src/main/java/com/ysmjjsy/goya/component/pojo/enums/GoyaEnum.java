@@ -6,6 +6,6 @@ package com.ysmjjsy.goya.component.pojo.enums;
  * @author goya
  * @since : 2022/3/26 16:52
  */
-public interface GoyaEnum<T> extends EnumValue<T>, EnumDescription {
+public interface GoyaEnum<T> extends EnumValue<T>, EnumDescription, GoyaBaseEnum {
 
 }

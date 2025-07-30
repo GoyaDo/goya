@@ -1,4 +1,4 @@
-package com.ysmjjsy.goya.component.doc.properties;
+package com.ysmjjsy.goya.component.doc.configuration.properties;
 
 import com.google.common.base.MoreObjects;
 import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;

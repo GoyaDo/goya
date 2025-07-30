@@ -2,7 +2,7 @@ package com.ysmjjsy.goya.component.captcha.provider;
 
 import com.ysmjjsy.goya.component.captcha.enums.CaptchaResource;
 import com.ysmjjsy.goya.component.captcha.enums.FontStyle;
-import com.ysmjjsy.goya.component.captcha.properties.CaptchaProperties;
+import com.ysmjjsy.goya.component.captcha.configuration.properties.CaptchaProperties;
 import com.ysmjjsy.goya.component.common.resolver.ResourceResolver;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.ArrayUtils;

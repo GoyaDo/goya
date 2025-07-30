@@ -3,7 +3,7 @@ package com.ysmjjsy.goya.component.captcha.definition;
 import com.alicp.jetcache.anno.CacheType;
 import com.ysmjjsy.goya.component.cache.jetcache.stamp.AbstractStampManager;
 import com.ysmjjsy.goya.component.captcha.processor.CaptchaRenderer;
-import com.ysmjjsy.goya.component.captcha.properties.CaptchaProperties;
+import com.ysmjjsy.goya.component.captcha.configuration.properties.CaptchaProperties;
 import com.ysmjjsy.goya.component.captcha.provider.ResourceProvider;
 import org.dromara.hutool.swing.img.ImgUtil;
 

@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.component.web.configuration;
 
-import com.ysmjjsy.goya.component.web.properties.ScanProperties;
+import com.ysmjjsy.goya.component.web.configuration.properties.ScanProperties;
 import com.ysmjjsy.goya.component.web.scan.DefaultRequestMappingScanEventManager;
 import com.ysmjjsy.goya.component.web.scan.RequestMappingScanEventManager;
 import com.ysmjjsy.goya.component.web.scan.RequestMappingScanner;
@@ -24,20 +24,20 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @AutoConfiguration
 @ConditionalOnClass(RequestMappingScanEventManager.class)
 @EnableConfigurationProperties(ScanProperties.class)
-public class WebMvcRequestMappingScanConfiguration {
+public class WebMvcRequestMappingScanAutoConfiguration {
 
-    private static final Logger log = LoggerFactory.getLogger(WebMvcRequestMappingScanConfiguration.class);
+    private static final Logger log = LoggerFactory.getLogger(WebMvcRequestMappingScanAutoConfiguration.class);
 
     @PostConstruct
     public void postConstruct() {
-        log.debug("[Goya] |- component [servlet request mapping Scan] configure.");
+        log.debug("[Goya] |- component [web] WebMvcRequestMappingScanAutoConfiguration auto configure.");
     }
 
     @Bean
     @ConditionalOnMissingBean
     public RequestMappingScanner requestMappingScanner(ScanProperties scanProperties, RequestMappingScanEventManager requestMappingScanManager) {
         RequestMappingScanner scanner = new RequestMappingScanner(scanProperties, requestMappingScanManager);
-        log.trace("[Goya] |- Bean [Servlet Default Request Mapping Scanner] Configure.");
+        log.trace("[Goya] |- component [web] |- bean [requestMappingScanner] register.");
         return scanner;
     }
 
@@ -46,7 +46,7 @@ public class WebMvcRequestMappingScanConfiguration {
     @Order
     public RequestMappingScanEventManager requestMappingScanEventManager() {
         DefaultRequestMappingScanEventManager requestMappingScanEventManager = new DefaultRequestMappingScanEventManager(EnableWebMvc.class);
-        log.trace("[Goya] |- Bean [Servlet Request Mapping Scan Event Manager] Configure.");
+        log.trace("[Goya] |- component [web] |- bean [requestMappingScanEventManager] register.");
         return requestMappingScanEventManager;
     }
 }

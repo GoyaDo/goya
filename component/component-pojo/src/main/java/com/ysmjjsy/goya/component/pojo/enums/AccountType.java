@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.google.common.collect.ImmutableMap;
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import me.zhyd.oauth.config.AuthDefaultSource;
 
@@ -18,7 +19,9 @@ import java.util.Map;
  */
 @Schema(title = "账号类型")
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
-public enum AccountType {
+@Getter
+@AllArgsConstructor
+public enum AccountType implements GoyaBaseEnum{
 
     /**
      * 登录类型
@@ -103,12 +106,6 @@ public enum AccountType {
     @Getter
     @Schema(title = "文字")
     private final String description;
-
-    AccountType(String key, String handler, String description) {
-        this.key = key;
-        this.handler = handler;
-        this.description = description;
-    }
 
     public static AccountType getAccountType(String key) {
         return INDEX_MAP.get(key);

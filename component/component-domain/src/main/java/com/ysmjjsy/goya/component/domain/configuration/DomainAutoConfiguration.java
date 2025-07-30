@@ -12,10 +12,10 @@ import org.springframework.boot.autoconfigure.AutoConfiguration;
  */
 @Slf4j
 @AutoConfiguration
-public class DomainConfiguration {
+public class DomainAutoConfiguration {
 
     @PostConstruct
     public void init() {
-        log.debug("[Goya] |- component [domain] configure.");
+        log.debug("[Goya] |- component [domain] DomainAutoConfiguration auto configure.");
     }
 }

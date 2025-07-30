@@ -2,8 +2,8 @@ package com.ysmjjsy.goya.component.web.customizer;
 
 import com.fasterxml.jackson.databind.Module;
 import com.fasterxml.jackson.databind.module.SimpleModule;
-import com.ysmjjsy.goya.component.common.json.jackson2.BaseObjectMapperBuilderCustomizer;
-import com.ysmjjsy.goya.component.common.json.jackson2.Jackson2CustomizerOrder;
+import com.ysmjjsy.goya.component.json.jackson2.BaseObjectMapperBuilderCustomizer;
+import com.ysmjjsy.goya.component.json.jackson2.Jackson2CustomizerOrder;
 import com.ysmjjsy.goya.component.web.jackson2.XssStringJsonDeserializer;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 

@@ -1,6 +1,9 @@
 package com.ysmjjsy.goya.component.captcha.enums;
 
 import com.ysmjjsy.goya.component.captcha.provider.RandomProvider;
+import com.ysmjjsy.goya.component.pojo.enums.GoyaBaseEnum;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 /**
  * <p>Description: 验证码字符类型 </p>
@@ -8,7 +11,9 @@ import com.ysmjjsy.goya.component.captcha.provider.RandomProvider;
  * @author goya
  * @since 2021/12/21 16:26
  */
-public enum CaptchaCharacter {
+@Getter
+@AllArgsConstructor
+public enum CaptchaCharacter implements GoyaBaseEnum {
 
     /**
      * 验证码字母显示类别
@@ -33,21 +38,4 @@ public enum CaptchaCharacter {
      */
     private final String description;
 
-    CaptchaCharacter(int start, int end, String description) {
-        this.start = start;
-        this.end = end;
-        this.description = description;
-    }
-
-    public int getStart() {
-        return start;
-    }
-
-    public int getEnd() {
-        return end;
-    }
-
-    public String getDescription() {
-        return description;
-    }
 }

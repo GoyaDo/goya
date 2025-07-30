@@ -1,4 +1,4 @@
-package com.ysmjjsy.goya.component.web.properties;
+package com.ysmjjsy.goya.component.web.configuration.properties;
 
 import com.ysmjjsy.goya.component.common.utils.WellFormedUtils;
 import com.ysmjjsy.goya.component.common.context.GoyaContextHolder;

@@ -24,11 +24,6 @@
 
         <dependency>
             <groupId>com.ysmjjsy.goya</groupId>
-            <artifactId>component-context</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.ysmjjsy.goya</groupId>
             <artifactId>component-bus</artifactId>
         </dependency>
 

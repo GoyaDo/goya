@@ -17,17 +17,19 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @Slf4j
 @AutoConfiguration
 @EnableAspectJAutoProxy
-public class CatchLogConfiguration {
+public class CatchLogAutoConfiguration {
 
     @PostConstruct
     public void postConstruct() {
-        log.debug("[Goya] |- component [catchlog] configure.");
+        log.debug("[Goya] |- component [catchlog] CatchLogAutoConfiguration auto configure.");
     }
 
     @Bean
     @ConditionalOnMissingBean(CatchLogAspect.class)
     public CatchLogAspect catchLogAspect() {
-        return new CatchLogAspect();
+        CatchLogAspect catchLogAspect = new CatchLogAspect();
+        log.trace("[Goya] |- component [catchlog] |- bean [catchLogAspect] register.");
+        return catchLogAspect;
     }
 
 

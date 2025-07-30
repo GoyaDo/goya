@@ -4,6 +4,7 @@ import com.ysmjjsy.goya.component.exception.request.RequestInvalidException;
 import com.ysmjjsy.goya.component.web.annotation.Crypto;
 import com.ysmjjsy.goya.component.web.utils.RequestUtils;
 import jakarta.servlet.http.HttpServletRequest;
+import lombok.Setter;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -32,11 +33,8 @@ public class DecryptRequestParamResolver implements HandlerMethodArgumentResolve
     private static final Logger log = LoggerFactory.getLogger(DecryptRequestParamResolver.class);
 
     private HttpCryptoProcessor httpCryptoProcessor;
+    @Setter
     private RequestParamMethodArgumentResolver requestParamMethodArgumentResolver;
-
-    public void setRequestParamMethodArgumentResolver(RequestParamMethodArgumentResolver requestParamMethodArgumentResolver) {
-        this.requestParamMethodArgumentResolver = requestParamMethodArgumentResolver;
-    }
 
     public void setInterfaceCryptoProcessor(HttpCryptoProcessor httpCryptoProcessor) {
         this.httpCryptoProcessor = httpCryptoProcessor;

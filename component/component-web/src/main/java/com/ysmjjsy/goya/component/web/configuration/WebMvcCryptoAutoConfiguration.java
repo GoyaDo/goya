@@ -24,14 +24,14 @@ import java.util.List;
  */
 @AutoConfiguration
 @Import(HttpCryptoConfiguration.class)
-public class WebMvcCryptoConfiguration {
+public class WebMvcCryptoAutoConfiguration {
 
-    private static final Logger log = LoggerFactory.getLogger(WebMvcCryptoConfiguration.class);
+    private static final Logger log = LoggerFactory.getLogger(WebMvcCryptoAutoConfiguration.class);
     private final RequestMappingHandlerAdapter requestMappingHandlerAdapter;
     private final DecryptRequestParamResolver decryptRequestParamResolver;
     private final DecryptRequestParamMapResolver decryptRequestParamMapResolver;
 
-    public WebMvcCryptoConfiguration(RequestMappingHandlerAdapter requestMappingHandlerAdapter, DecryptRequestParamResolver decryptRequestParamResolver, DecryptRequestParamMapResolver decryptRequestParamMapResolver) {
+    public WebMvcCryptoAutoConfiguration(RequestMappingHandlerAdapter requestMappingHandlerAdapter, DecryptRequestParamResolver decryptRequestParamResolver, DecryptRequestParamMapResolver decryptRequestParamMapResolver) {
         this.requestMappingHandlerAdapter = requestMappingHandlerAdapter;
         this.decryptRequestParamResolver = decryptRequestParamResolver;
         this.decryptRequestParamMapResolver = decryptRequestParamMapResolver;
@@ -39,7 +39,7 @@ public class WebMvcCryptoConfiguration {
 
     @PostConstruct
     public void postConstruct() {
-        log.debug("[Goya] |- component [web crypto] configure.");
+        log.debug("[Goya] |- component [web] WebMvcCryptoAutoConfiguration auto configure.");
 
         List<HandlerMethodArgumentResolver> unmodifiableList = requestMappingHandlerAdapter.getArgumentResolvers();
         List<HandlerMethodArgumentResolver> list = Lists.newArrayList();
@@ -55,7 +55,7 @@ public class WebMvcCryptoConfiguration {
             }
             list.add(methodArgumentResolver);
         }
-        log.debug("[Goya] |- Rest Crypto HandlerMethodArgumentResolver Configure.");
+        log.debug("[Goya] |- component [web] Crypto HandlerMethodArgumentResolver auto configure.");
 
         requestMappingHandlerAdapter.setArgumentResolvers(list);
     }

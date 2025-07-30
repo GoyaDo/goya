@@ -1,3 +1,3 @@
-com.ysmjjsy.goya.component.web.configuration.WebMvcConfiguration
-com.ysmjjsy.goya.component.web.configuration.WebMvcCryptoConfiguration
-com.ysmjjsy.goya.component.web.configuration.WebMvcRequestMappingScanConfiguration
+com.ysmjjsy.goya.component.web.configuration.WebMvcAutoConfiguration
+com.ysmjjsy.goya.component.web.configuration.WebMvcCryptoAutoConfiguration
+com.ysmjjsy.goya.component.web.configuration.WebMvcRequestMappingScanAutoConfiguration

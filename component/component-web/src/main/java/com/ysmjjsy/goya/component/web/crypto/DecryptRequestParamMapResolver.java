@@ -4,6 +4,7 @@ import com.ysmjjsy.goya.component.web.annotation.Crypto;
 import com.ysmjjsy.goya.component.web.utils.RequestUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.Part;
+import lombok.Setter;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -38,14 +39,11 @@ public class DecryptRequestParamMapResolver implements HandlerMethodArgumentReso
     private static final Logger log = LoggerFactory.getLogger(DecryptRequestParamMapResolver.class);
 
     private HttpCryptoProcessor httpCryptoProcessor;
+    @Setter
     private RequestParamMapMethodArgumentResolver requestParamMapMethodArgumentResolver;
 
     public void setInterfaceCryptoProcessor(HttpCryptoProcessor httpCryptoProcessor) {
         this.httpCryptoProcessor = httpCryptoProcessor;
-    }
-
-    public void setRequestParamMapMethodArgumentResolver(RequestParamMapMethodArgumentResolver requestParamMapMethodArgumentResolver) {
-        this.requestParamMapMethodArgumentResolver = requestParamMapMethodArgumentResolver;
     }
 
     @Override

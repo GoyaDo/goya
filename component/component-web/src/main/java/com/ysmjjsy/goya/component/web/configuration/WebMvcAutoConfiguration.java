@@ -26,9 +26,9 @@ import org.springframework.web.servlet.resource.LiteWebJarsResourceResolver;
 @EnableWebMvc
 @RequiredArgsConstructor
 @Import({SecureConfiguration.class, WebServiceConfiguration.class})
-public class WebMvcConfiguration implements WebMvcConfigurer {
+public class WebMvcAutoConfiguration implements WebMvcConfigurer {
 
-    private static final Logger log = LoggerFactory.getLogger(WebMvcConfiguration.class);
+    private static final Logger log = LoggerFactory.getLogger(WebMvcAutoConfiguration.class);
 
     private final IdempotentInterceptor idempotentInterceptor;
     private final AccessLimitedInterceptor accessLimitedInterceptor;
@@ -36,7 +36,7 @@ public class WebMvcConfiguration implements WebMvcConfigurer {
 
     @PostConstruct
     public void postConstruct() {
-        log.debug("[Goya] |- component [web Servlet] configure.");
+        log.debug("[Goya] |- component [web] WebMvcConfiguration auto configure.");
     }
 
     @Override

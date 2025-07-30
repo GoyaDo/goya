@@ -2,7 +2,7 @@ package com.ysmjjsy.goya.component.doc.configuration;
 
 import com.google.common.collect.ImmutableList;
 import com.ysmjjsy.goya.component.common.context.GoyaContextHolder;
-import com.ysmjjsy.goya.component.doc.properties.SwaggerProperties;
+import com.ysmjjsy.goya.component.doc.configuration.properties.SwaggerProperties;
 import com.ysmjjsy.goya.component.doc.server.OpenApiServerResolver;
 import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
 import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
@@ -36,11 +36,11 @@ import org.springframework.context.annotation.Bean;
 //                        authorizationCode = @OAuthFlow(authorizationUrl = "${goya.platform.endpoint.user-authorization-uri}", tokenUrl = "${goya.platform.endpoint.access-token-uri}", refreshUrl = "${goya.platform.endpoint.access-token-uri}", scopes = @OAuthScope(name = "all"))
                 )),
 })
-public class SpringdocConfiguration {
+public class SpringdocAutoConfiguration {
 
     @PostConstruct
     public void postConstruct() {
-        log.debug("[Goya] |- component [doc] configure.");
+        log.debug("[Goya] |- component [doc] SpringdocAutoConfiguration auto configure.");
     }
 
     @Bean
@@ -51,14 +51,14 @@ public class SpringdocConfiguration {
             server.setUrl(GoyaContextHolder.getInstance().getUrl());
             return ImmutableList.of(server);
         };
-        log.trace("[Goya] |- Bean [Open Api Server Resolver] Configure.");
+        log.trace("[Goya] |- component [doc] |- bean [openApiServerResolver] register.");
         return resolver;
     }
 
     @Bean
     @ConditionalOnMissingBean
     public OpenAPI createOpenApi(OpenApiServerResolver openApiServerResolver) {
-        return new OpenAPI()
+        OpenAPI openApi = new OpenAPI()
                 .servers(openApiServerResolver.getServers())
                 .info(new Info().title(GoyaConstants.SYSTEM_NAME)
                         .description("Goya Cloud Microservices Architecture")
@@ -67,6 +67,8 @@ public class SpringdocConfiguration {
                 .externalDocs(new ExternalDocumentation()
                         .description("Goya Cloud Documentation")
                         .url(GoyaConstants.WEBSITE));
+        log.trace("[Goya] |- component [doc] |- bean [OpenAPI] register.");
+        return openApi;
     }
 
 }

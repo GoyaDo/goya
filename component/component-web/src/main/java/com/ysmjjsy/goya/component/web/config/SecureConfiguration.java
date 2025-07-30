@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.component.web.config;
 
-import com.ysmjjsy.goya.component.web.properties.SecureProperties;
+import com.ysmjjsy.goya.component.web.configuration.properties.SecureProperties;
 import com.ysmjjsy.goya.component.web.secure.AccessLimitedInterceptor;
 import com.ysmjjsy.goya.component.web.secure.IdempotentInterceptor;
 import com.ysmjjsy.goya.component.web.secure.XssHttpServletFilter;
@@ -29,14 +29,14 @@ public class SecureConfiguration {
 
     @PostConstruct
     public void postConstruct() {
-        log.debug("[Goya] |- component [servlet secure] configure.");
+        log.debug("[Goya] |- component [web] SecureConfiguration configure.");
     }
 
     @Bean
     @ConditionalOnMissingBean
     public IdempotentStampManager idempotentStampManager(SecureProperties secureProperties) {
         IdempotentStampManager idempotentStampManager = new IdempotentStampManager(secureProperties);
-        log.trace("[Goya] |- Bean [Idempotent Stamp Manager] Configure.");
+        log.trace("[Goya] |- component [web] |- bean [idempotentStampManager] register.");
         return idempotentStampManager;
     }
 
@@ -44,7 +44,7 @@ public class SecureConfiguration {
     @ConditionalOnMissingBean
     public AccessLimitedStampManager accessLimitedStampManager(SecureProperties secureProperties) {
         AccessLimitedStampManager accessLimitedStampManager = new AccessLimitedStampManager(secureProperties);
-        log.trace("[Goya] |- Bean [Access Limited Stamp Manager] Configure.");
+        log.trace("[Goya] |- component [web] |- bean [accessLimitedStampManager] register.");
         return accessLimitedStampManager;
     }
 
@@ -54,7 +54,7 @@ public class SecureConfiguration {
     public IdempotentInterceptor idempotentInterceptor(IdempotentStampManager idempotentStampManager) {
         IdempotentInterceptor idempotentInterceptor = new IdempotentInterceptor();
         idempotentInterceptor.setIdempotentStampManager(idempotentStampManager);
-        log.trace("[Goya] |- Bean [Idempotent Interceptor] Configure.");
+        log.trace("[Goya] |- component [web] |- bean [idempotentInterceptor] register.");
         return idempotentInterceptor;
     }
 
@@ -64,7 +64,7 @@ public class SecureConfiguration {
     public AccessLimitedInterceptor accessLimitedInterceptor(AccessLimitedStampManager accessLimitedStampManager) {
         AccessLimitedInterceptor accessLimitedInterceptor = new AccessLimitedInterceptor();
         accessLimitedInterceptor.setAccessLimitedStampManager(accessLimitedStampManager);
-        log.trace("[Goya] |- Bean [Access Limited Interceptor] Configure.");
+        log.trace("[Goya] |- component [web] |- bean [accessLimitedInterceptor] register.");
         return accessLimitedInterceptor;
     }
 
@@ -72,7 +72,7 @@ public class SecureConfiguration {
     @ConditionalOnMissingBean
     public XssHttpServletFilter xssHttpServletFilter() {
         XssHttpServletFilter xssHttpServletFilter = new XssHttpServletFilter();
-        log.trace("[Goya] |- Bean [Xss Http Servlet Filter] Configure.");
+        log.trace("[Goya] |- component [web] |- bean [xssHttpServletFilter] register.");
         return xssHttpServletFilter;
     }
 }

@@ -1,5 +1,9 @@
 package com.ysmjjsy.goya.component.captcha.enums;
 
+import com.ysmjjsy.goya.component.pojo.enums.GoyaBaseEnum;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 import java.awt.*;
 
 /**
@@ -12,7 +16,9 @@ import java.awt.*;
  * @author goya
  * @since 2021/12/23 10:33
  */
-public enum FontStyle {
+@Getter
+@AllArgsConstructor
+public enum FontStyle implements GoyaBaseEnum {
 
     /**
      * 字体风格
@@ -22,12 +28,4 @@ public enum FontStyle {
     ITALIC(Font.ITALIC);
 
     private final int mapping;
-
-    FontStyle(int mapping) {
-        this.mapping = mapping;
-    }
-
-    public int getMapping() {
-        return mapping;
-    }
 }

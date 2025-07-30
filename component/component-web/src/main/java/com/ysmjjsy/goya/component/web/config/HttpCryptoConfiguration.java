@@ -24,14 +24,14 @@ public class HttpCryptoConfiguration {
 
     @PostConstruct
     public void postConstruct() {
-        log.debug("[Goya] |- component [protect http crypto] configure.");
+        log.debug("[Goya] |- component [web] HttpCryptoConfiguration configure.");
     }
 
     @Bean
     @ConditionalOnMissingBean
     public HttpCryptoProcessor httpCryptoProcessor(AsymmetricCryptoProcessor asymmetricCryptoProcessor, SymmetricCryptoProcessor symmetricCryptoProcessor) {
         HttpCryptoProcessor httpCryptoProcessor = new HttpCryptoProcessor(asymmetricCryptoProcessor, symmetricCryptoProcessor);
-        log.trace("[Goya] |- Bean [Interface Crypto Processor] Configure.");
+        log.trace("[Goya] |- component [web] |- bean [httpCryptoProcessor] register.");
         return httpCryptoProcessor;
     }
 
@@ -41,7 +41,7 @@ public class HttpCryptoConfiguration {
     public DecryptRequestBodyAdvice decryptRequestBodyAdvice(HttpCryptoProcessor httpCryptoProcessor) {
         DecryptRequestBodyAdvice decryptRequestBodyAdvice = new DecryptRequestBodyAdvice();
         decryptRequestBodyAdvice.setInterfaceCryptoProcessor(httpCryptoProcessor);
-        log.trace("[Goya] |- Bean [Decrypt Request Body Advice] Configure.");
+        log.trace("[Goya] |- component [web] |- bean [decryptRequestBodyAdvice] register.");
         return decryptRequestBodyAdvice;
     }
 
@@ -51,7 +51,7 @@ public class HttpCryptoConfiguration {
     public EncryptResponseBodyAdvice encryptResponseBodyAdvice(HttpCryptoProcessor httpCryptoProcessor) {
         EncryptResponseBodyAdvice encryptResponseBodyAdvice = new EncryptResponseBodyAdvice();
         encryptResponseBodyAdvice.setInterfaceCryptoProcessor(httpCryptoProcessor);
-        log.trace("[Goya] |- Bean [Encrypt Response Body Advice] Configure.");
+        log.trace("[Goya] |- component [web] |- bean [encryptResponseBodyAdvice] register.");
         return encryptResponseBodyAdvice;
     }
 
@@ -61,7 +61,7 @@ public class HttpCryptoConfiguration {
     public DecryptRequestParamMapResolver decryptRequestParamStringResolver(HttpCryptoProcessor httpCryptoProcessor) {
         DecryptRequestParamMapResolver decryptRequestParamMapResolver = new DecryptRequestParamMapResolver();
         decryptRequestParamMapResolver.setInterfaceCryptoProcessor(httpCryptoProcessor);
-        log.trace("[Goya] |- Bean [Decrypt Request Param Map Resolver] Configure.");
+        log.trace("[Goya] |- component [web] |- bean [decryptRequestParamStringResolver] register.");
         return decryptRequestParamMapResolver;
     }
 
@@ -71,7 +71,7 @@ public class HttpCryptoConfiguration {
     public DecryptRequestParamResolver decryptRequestParamResolver(HttpCryptoProcessor httpCryptoProcessor) {
         DecryptRequestParamResolver decryptRequestParamResolver = new DecryptRequestParamResolver();
         decryptRequestParamResolver.setInterfaceCryptoProcessor(httpCryptoProcessor);
-        log.trace("[Goya] |- Bean [Decrypt Request Param Resolver] Configure.");
+        log.trace("[Goya] |- component [web] |- bean [decryptRequestParamResolver] register.");
         return decryptRequestParamResolver;
     }
 }

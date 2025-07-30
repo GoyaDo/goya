@@ -1,12 +1,18 @@
 package com.ysmjjsy.goya.component.captcha.enums;
 
+import com.ysmjjsy.goya.component.pojo.enums.GoyaEnum;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 /**
  * <p>Description: 验证码资源 </p>
  *
  * @author goya
  * @since 2021/12/11 15:27
  */
-public enum CaptchaResource {
+@Getter
+@AllArgsConstructor
+public enum CaptchaResource implements GoyaEnum<String> {
 
     /**
      * 验证码资源类型
@@ -18,16 +24,8 @@ public enum CaptchaResource {
     private final String content;
     private final String description;
 
-    CaptchaResource(String type, String description) {
-        this.content = type;
-        this.description = description;
-    }
-
-    public String getContent() {
+    @Override
+    public String getValue() {
         return content;
-    }
-
-    public String getDescription() {
-        return description;
     }
 }

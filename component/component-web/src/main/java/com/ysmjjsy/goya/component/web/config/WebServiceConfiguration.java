@@ -6,7 +6,7 @@ import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
 import com.ysmjjsy.goya.component.web.advice.ServletRestControllerAdvice;
 import com.ysmjjsy.goya.component.web.customizer.Jackson2XssObjectMapperBuilderCustomizer;
 import com.ysmjjsy.goya.component.web.initializer.GoyaContextHolderBuilder;
-import com.ysmjjsy.goya.component.web.properties.PlatformProperties;
+import com.ysmjjsy.goya.component.web.configuration.properties.PlatformProperties;
 import jakarta.annotation.Nonnull;
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
@@ -49,20 +49,20 @@ public class WebServiceConfiguration implements ApplicationContextAware {
 
     @PostConstruct
     public void postConstruct() {
-        log.debug("[Goya] |- component [web service] configure.");
+        log.debug("[Goya] |- component [web] WebServiceConfiguration configure.");
     }
 
     @Override
     public void setApplicationContext(@Nonnull ApplicationContext applicationContext) throws BeansException {
         this.goyaContextHolder.setApplicationContext(applicationContext);
         this.goyaContextHolder.setApplicationName(PropertyResolver.getProperty(applicationContext.getEnvironment(), GoyaConstants.ITEM_SPRING_APPLICATION_NAME));
-        log.debug("[Goya] |- Goya ApplicationContext initialization completed.");
+        log.trace("[Goya] |- component [web] |- Goya ApplicationContext initialization completed.");
     }
 
     @Bean
     public Jackson2ObjectMapperBuilderCustomizer xssObjectMapperBuilderCustomizer() {
         Jackson2XssObjectMapperBuilderCustomizer customizer = new Jackson2XssObjectMapperBuilderCustomizer();
-        log.debug("[Goya] |- Strategy [Jackson2 Xss ObjectMapper Builder Customizer] Configure.");
+        log.trace("[Goya] |- component [web] |- bean [xssObjectMapperBuilderCustomizer] register.");
         return customizer;
     }
 }
