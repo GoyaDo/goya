@@ -12,7 +12,7 @@ import org.springframework.boot.autoconfigure.AutoConfiguration;
  */
 @Slf4j
 @AutoConfiguration
-public class RestConfiguration {
+public class RestAutoConfiguration {
 
     @PostConstruct
     public void postConstruct() {
