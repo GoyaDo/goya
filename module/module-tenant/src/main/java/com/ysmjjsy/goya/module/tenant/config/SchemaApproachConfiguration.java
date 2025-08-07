@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.module.tenant.config;
 
-import com.ysmjjsy.goya.module.jpa.tenant.SchemaMultiTenantConnectionProvider;
+import com.ysmjjsy.goya.module.tenant.tenant.SchemaMultiTenantConnectionProvider;
 import com.ysmjjsy.goya.module.tenant.annotation.ConditionalOnSchemaApproach;
 import jakarta.annotation.PostConstruct;
 import org.slf4j.Logger;

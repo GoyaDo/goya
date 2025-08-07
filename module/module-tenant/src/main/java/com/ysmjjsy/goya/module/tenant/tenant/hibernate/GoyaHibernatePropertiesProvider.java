@@ -1,4 +1,4 @@
-package com.ysmjjsy.goya.module.jpa.tenant.hibernate;
+package com.ysmjjsy.goya.module.tenant.tenant.hibernate;
 
 import org.hibernate.boot.model.naming.ImplicitNamingStrategy;
 import org.hibernate.boot.model.naming.PhysicalNamingStrategy;

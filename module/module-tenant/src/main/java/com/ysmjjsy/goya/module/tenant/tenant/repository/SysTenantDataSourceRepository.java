@@ -1,7 +1,7 @@
-package com.ysmjjsy.goya.module.jpa.tenant.repository;
+package com.ysmjjsy.goya.module.tenant.tenant.repository;
 
-import com.ysmjjsy.goya.component.db.adapter.GoyaRepository;
-import com.ysmjjsy.goya.module.jpa.tenant.entity.SysTenantDataSource;
+import com.ysmjjsy.goya.module.jpa.domain.BaseJpaRepository;
+import com.ysmjjsy.goya.module.tenant.tenant.entity.SysTenantDataSource;
 import jakarta.persistence.QueryHint;
 import org.hibernate.jpa.AvailableHints;
 import org.springframework.data.jpa.repository.QueryHints;
@@ -12,7 +12,7 @@ import org.springframework.data.jpa.repository.QueryHints;
  * @author goya
  * @since 2023/3/28 21:58
  */
-public interface SysTenantDataSourceRepository extends GoyaRepository<SysTenantDataSource> {
+public interface SysTenantDataSourceRepository extends BaseJpaRepository<SysTenantDataSource> {
 
     /**
      * 根据租户ID查询数据源

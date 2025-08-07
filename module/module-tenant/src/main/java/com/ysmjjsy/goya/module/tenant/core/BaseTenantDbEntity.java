@@ -1,7 +1,8 @@
-package com.ysmjjsy.goya.component.db.domain;
+package com.ysmjjsy.goya.module.tenant.core;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
+import com.ysmjjsy.goya.component.db.domain.BaseDbEntity;
 import lombok.Getter;
 import lombok.Setter;
 

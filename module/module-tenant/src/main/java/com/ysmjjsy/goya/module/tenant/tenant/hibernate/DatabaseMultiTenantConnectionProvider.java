@@ -1,6 +1,6 @@
-package com.ysmjjsy.goya.module.jpa.tenant.hibernate;
+package com.ysmjjsy.goya.module.tenant.tenant.hibernate;
 
-import com.ysmjjsy.goya.module.jpa.tenant.datasource.MultiTenantDataSourceFactory;
+import com.ysmjjsy.goya.module.tenant.tenant.datasource.MultiTenantDataSourceFactory;
 import com.ysmjjsy.goya.component.pojo.constants.DefaultConstants;
 import org.apache.commons.lang3.ObjectUtils;
 import org.dromara.hutool.extra.spring.SpringUtil;

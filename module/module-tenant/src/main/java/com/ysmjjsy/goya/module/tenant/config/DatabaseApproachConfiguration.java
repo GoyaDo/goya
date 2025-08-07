@@ -1,8 +1,8 @@
 package com.ysmjjsy.goya.module.tenant.config;
 
-import com.ysmjjsy.goya.module.jpa.tenant.datasource.MultiTenantDataSourceFactory;
-import com.ysmjjsy.goya.module.jpa.tenant.hibernate.DatabaseMultiTenantConnectionProvider;
-import com.ysmjjsy.goya.module.jpa.tenant.hibernate.GoyaHibernatePropertiesProvider;
+import com.ysmjjsy.goya.module.tenant.tenant.datasource.MultiTenantDataSourceFactory;
+import com.ysmjjsy.goya.module.tenant.tenant.hibernate.DatabaseMultiTenantConnectionProvider;
+import com.ysmjjsy.goya.module.tenant.tenant.hibernate.GoyaHibernatePropertiesProvider;
 import com.ysmjjsy.goya.module.tenant.configuration.properties.MultiTenantProperties;
 import jakarta.annotation.PostConstruct;
 import org.hibernate.boot.model.naming.ImplicitNamingStrategy;
@@ -12,7 +12,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateProperties;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernatePropertiesCustomizer;
 import org.springframework.boot.autoconfigure.orm.jpa.JpaProperties;
@@ -20,7 +19,6 @@ import org.springframework.boot.jdbc.SchemaManagementProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -39,12 +37,6 @@ import java.util.Objects;
  */
 @Configuration(proxyBeanMethods = false)
 @EnableTransactionManagement
-@EntityScan(basePackages = {
-        "com.ysmjjsy.goya.module.jpa.tenant.entity",
-})
-@EnableJpaRepositories(basePackages = {
-        "com.ysmjjsy.goya.module.jpa.tenant.repository",
-})
 public class DatabaseApproachConfiguration {
 
     private static final Logger log = LoggerFactory.getLogger(DatabaseApproachConfiguration.class);

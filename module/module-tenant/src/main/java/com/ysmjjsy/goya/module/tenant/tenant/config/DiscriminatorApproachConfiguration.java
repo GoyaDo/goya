@@ -1,6 +1,6 @@
-package com.ysmjjsy.goya.module.jpa.tenant.config;
+package com.ysmjjsy.goya.module.tenant.tenant.config;
 
-import com.ysmjjsy.goya.module.jpa.tenant.GoyaTenantIdentifierResolver;
+import com.ysmjjsy.goya.module.tenant.tenant.GoyaTenantIdentifierResolver;
 import jakarta.annotation.PostConstruct;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

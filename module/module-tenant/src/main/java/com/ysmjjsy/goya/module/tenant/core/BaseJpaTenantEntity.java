@@ -1,7 +1,8 @@
-package com.ysmjjsy.goya.module.jpa.domain;
+package com.ysmjjsy.goya.module.tenant.core;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
+import com.ysmjjsy.goya.module.jpa.domain.BaseJpaEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
 import lombok.Getter;
@@ -21,7 +22,7 @@ import java.io.Serial;
 @Getter
 @Setter
 @RequiredArgsConstructor
-public abstract class BaseJpaTenantAggregate extends BaseJpaEntity {
+public abstract class BaseJpaTenantEntity extends BaseJpaEntity {
 
     @Serial
     private static final long serialVersionUID = 8227316877620962339L;
@@ -33,7 +34,7 @@ public abstract class BaseJpaTenantAggregate extends BaseJpaEntity {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
-        BaseJpaTenantAggregate that = (BaseJpaTenantAggregate) o;
+        BaseJpaTenantEntity that = (BaseJpaTenantEntity) o;
         return Objects.equal(getTenantId(), that.getTenantId());
     }
 

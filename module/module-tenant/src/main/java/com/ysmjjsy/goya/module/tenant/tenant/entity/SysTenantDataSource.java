@@ -1,4 +1,4 @@
-package com.ysmjjsy.goya.module.jpa.tenant.entity;
+package com.ysmjjsy.goya.module.tenant.tenant.entity;
 
 import com.ysmjjsy.goya.component.db.constants.DbConstants;
 import com.ysmjjsy.goya.module.jpa.domain.BaseJpaEntity;

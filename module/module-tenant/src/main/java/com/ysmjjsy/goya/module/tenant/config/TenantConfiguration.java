@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.module.tenant.config;
 
-import com.ysmjjsy.goya.module.jpa.tenant.config.DiscriminatorApproachConfiguration;
+import com.ysmjjsy.goya.module.tenant.tenant.config.DiscriminatorApproachConfiguration;
 import com.ysmjjsy.goya.module.tenant.configuration.properties.MultiTenantProperties;
 import com.ysmjjsy.goya.module.tenant.interceptor.MultiTenantInterceptor;
 import jakarta.annotation.PostConstruct;

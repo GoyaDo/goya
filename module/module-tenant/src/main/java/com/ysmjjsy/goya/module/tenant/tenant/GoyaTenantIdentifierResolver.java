@@ -1,4 +1,4 @@
-package com.ysmjjsy.goya.module.jpa.tenant;
+package com.ysmjjsy.goya.module.tenant.tenant;
 
 import com.ysmjjsy.goya.component.common.context.TenantContextHolder;
 import org.hibernate.cfg.AvailableSettings;

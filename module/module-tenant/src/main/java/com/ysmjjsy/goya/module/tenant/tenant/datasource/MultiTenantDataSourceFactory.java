@@ -1,7 +1,7 @@
-package com.ysmjjsy.goya.module.jpa.tenant.datasource;
+package com.ysmjjsy.goya.module.tenant.tenant.datasource;
 
-import com.ysmjjsy.goya.module.jpa.tenant.entity.SysTenantDataSource;
-import com.ysmjjsy.goya.module.jpa.tenant.repository.SysTenantDataSourceRepository;
+import com.ysmjjsy.goya.module.tenant.tenant.entity.SysTenantDataSource;
+import com.ysmjjsy.goya.module.tenant.tenant.repository.SysTenantDataSourceRepository;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import org.apache.commons.collections4.CollectionUtils;
