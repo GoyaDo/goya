@@ -1,10 +1,8 @@
 package com.ysmjjsy.goya.module.rest.controller;
 
 import com.ysmjjsy.goya.component.db.domain.BaseDbEntity;
-import com.ysmjjsy.goya.component.db.domain.BaseRepository;
+import com.ysmjjsy.goya.component.db.adapter.GoyaRepository;
 import com.ysmjjsy.goya.module.rest.service.BaseWriteableService;
-
-import java.io.Serializable;
 
 /**
  * Description : 通用Controller
@@ -13,6 +11,6 @@ import java.io.Serializable;
  * @author goya
  * @since 2025/2/26 11:59
  */
-public abstract class BaseController<E extends BaseDbEntity, ID extends Serializable, R extends BaseRepository<E, ID>, S extends BaseWriteableService<E, ID, R>> extends BaseWriteableController<E, ID, R, S> {
+public abstract class BaseController<E extends BaseDbEntity, R extends GoyaRepository<E>, S extends BaseWriteableService<E, R>> extends BaseWriteableController<E, R, S> {
 
 }

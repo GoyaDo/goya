@@ -1,10 +1,9 @@
 package com.ysmjjsy.goya.module.tenant.config;
 
-import com.ysmjjsy.goya.module.tenant.annotation.ConditionalOnDatabaseApproach;
-import com.ysmjjsy.goya.module.tenant.datasource.MultiTenantDataSourceFactory;
-import com.ysmjjsy.goya.module.tenant.hibernate.DatabaseMultiTenantConnectionProvider;
-import com.ysmjjsy.goya.module.tenant.hibernate.GoyaHibernatePropertiesProvider;
-import com.ysmjjsy.goya.module.tenant.properties.MultiTenantProperties;
+import com.ysmjjsy.goya.module.jpa.tenant.datasource.MultiTenantDataSourceFactory;
+import com.ysmjjsy.goya.module.jpa.tenant.hibernate.DatabaseMultiTenantConnectionProvider;
+import com.ysmjjsy.goya.module.jpa.tenant.hibernate.GoyaHibernatePropertiesProvider;
+import com.ysmjjsy.goya.module.tenant.configuration.properties.MultiTenantProperties;
 import jakarta.annotation.PostConstruct;
 import org.hibernate.boot.model.naming.ImplicitNamingStrategy;
 import org.hibernate.boot.model.naming.PhysicalNamingStrategy;
@@ -39,13 +38,12 @@ import java.util.Objects;
  * @since 2023/3/28 23:37
  */
 @Configuration(proxyBeanMethods = false)
-@ConditionalOnDatabaseApproach
 @EnableTransactionManagement
 @EntityScan(basePackages = {
-        "com.ysmjjsy.goya.component.db.tenant.entity",
+        "com.ysmjjsy.goya.module.jpa.tenant.entity",
 })
 @EnableJpaRepositories(basePackages = {
-        "com.ysmjjsy.goya.component.db.tenant.repository",
+        "com.ysmjjsy.goya.module.jpa.tenant.repository",
 })
 public class DatabaseApproachConfiguration {
 

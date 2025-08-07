@@ -2,7 +2,7 @@ package com.ysmjjsy.goya.module.rest.controller;
 
 import com.ysmjjsy.goya.component.common.context.ApplicationContextHolder;
 import com.ysmjjsy.goya.component.db.domain.BaseDbEntity;
-import com.ysmjjsy.goya.component.db.domain.BaseRepository;
+import com.ysmjjsy.goya.component.db.adapter.GoyaRepository;
 import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
 import com.ysmjjsy.goya.component.pojo.domain.PageQuery;
 import com.ysmjjsy.goya.component.pojo.domain.PageVO;
@@ -23,8 +23,6 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import java.io.Serializable;
-
 /**
  * <p>Description: 只读RestController </p>
  *
@@ -32,15 +30,15 @@ import java.io.Serializable;
  * @since 2021/7/5 17:21
  */
 @SecurityRequirement(name = GoyaConstants.OPEN_API_SECURITY_SCHEME_BEARER_NAME)
-public abstract class BaseReadableController<E extends BaseDbEntity, ID extends Serializable, R extends BaseRepository<E, ID>, S extends BaseReadableService<E, ID, R>> implements Controller {
+public abstract class BaseReadableController<E extends BaseDbEntity, R extends GoyaRepository<E>, S extends BaseReadableService<E, R>> implements Controller {
 
     protected S getService() {
         Class<?>[] typeArguments = GenericTypeResolver.resolveTypeArguments(getClass(), BaseReadableController.class);
-        if (typeArguments == null || typeArguments.length < 4) {
-            throw new IllegalStateException("无法解析 Service 泛型类型参数，请确保实现类直接继承 BaseReadableService<ID, E, R>");
+        if (typeArguments == null || typeArguments.length < 3) {
+            throw new IllegalStateException("无法解析 Service 泛型类型参数，请确保实现类直接继承 BaseReadableService<E, R>");
         }
 
-        Class<S> serviceClass = (Class<S>) typeArguments[3];
+        Class<S> serviceClass = (Class<S>) typeArguments[2];
         return ApplicationContextHolder.getBean(serviceClass);
     }
 
@@ -65,7 +63,7 @@ public abstract class BaseReadableController<E extends BaseDbEntity, ID extends 
             @Parameter(name = "id", required = true, in = ParameterIn.QUERY, description = "id", schema = @Schema(implementation = String.class))
     })
     @GetMapping("/{id}")
-    public Response<E> findById(@PathVariable ID id) {
+    public Response<E> findById(@PathVariable String id) {
         return result(getService().findById(id));
     }
 }

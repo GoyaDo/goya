@@ -1,14 +1,20 @@
 package com.ysmjjsy.goya.module.jpa.configuration;
 
+import com.ysmjjsy.goya.component.db.adapter.BaseRepositoryAdapter;
+import com.ysmjjsy.goya.component.db.constants.DbConstants;
+import com.ysmjjsy.goya.module.jpa.adapter.JpaRepositoryAdapter;
 import com.ysmjjsy.goya.module.jpa.auditing.SecurityAuditorAware;
-import com.ysmjjsy.goya.module.jpa.core.BaseJpaRepository;
 import jakarta.annotation.PostConstruct;
+import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Primary;
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.data.jpa.repository.support.JpaEntityInformation;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
@@ -22,7 +28,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @RequiredArgsConstructor
 @EnableTransactionManagement(proxyTargetClass = true)
 @EnableJpaRepositories(
-        repositoryBaseClass = BaseJpaRepository.class
+        repositoryBaseClass = JpaRepositoryAdapter.class
 )
 public class JpaAutoConfiguration {
 
@@ -37,5 +43,13 @@ public class JpaAutoConfiguration {
         log.trace("[Goya] |- module [jpa] |- bean [auditorAware] register.");
         return securityAuditorAware;
     }
+
+    @Bean
+    @ConditionalOnProperty(name = DbConstants.PROPERTY_PREFIX_DB + ".mode", havingValue = "JPA")
+    @Primary
+    public BaseRepositoryAdapter jpaAdapter(JpaEntityInformation entityInformation, EntityManager entityManager) {
+        return new JpaRepositoryAdapter<>(entityInformation, entityManager);
+    }
+
 
 }

@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.security.authorization.server.domain.service;
 
-import com.ysmjjsy.goya.component.db.domain.BaseRepository;
+import com.ysmjjsy.goya.component.db.adapter.GoyaRepository;
 import com.ysmjjsy.goya.component.db.domain.BaseService;
 import com.ysmjjsy.goya.component.web.domain.RequestMapping;
 import com.ysmjjsy.goya.security.authorization.server.converter.RequestMappingToSecurityInterfaceConverter;
@@ -40,7 +40,7 @@ public class SecurityInterfaceService extends BaseService<SecurityInterface,Stri
     }
 
     @Override
-    public BaseRepository<SecurityInterface, String> getRepository() {
+    public GoyaRepository<SecurityInterface, String> getRepository() {
         return securityInterfaceRepository;
     }
 

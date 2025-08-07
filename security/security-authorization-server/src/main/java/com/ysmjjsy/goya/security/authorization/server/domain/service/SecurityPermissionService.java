@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.security.authorization.server.domain.service;
 
-import com.ysmjjsy.goya.component.db.domain.BaseRepository;
+import com.ysmjjsy.goya.component.db.adapter.GoyaRepository;
 import com.ysmjjsy.goya.component.db.domain.BaseService;
 import com.ysmjjsy.goya.security.authorization.server.domain.entity.SecurityPermission;
 import com.ysmjjsy.goya.security.authorization.server.domain.repository.SecurityPermissionRepository;
@@ -22,7 +22,7 @@ public class SecurityPermissionService extends BaseService<SecurityPermission,St
     private final SecurityPermissionRepository securityPermissionRepository;
 
     @Override
-    public BaseRepository<SecurityPermission, String> getRepository() {
+    public GoyaRepository<SecurityPermission, String> getRepository() {
         return securityPermissionRepository;
     }
 }

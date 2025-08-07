@@ -3,6 +3,7 @@ package com.ysmjjsy.goya.component.db.configuration;
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
 /**
  * <p></p>
@@ -12,6 +13,7 @@ import org.springframework.boot.autoconfigure.AutoConfiguration;
  */
 @Slf4j
 @AutoConfiguration
+@EnableConfigurationProperties({DbProperties.class})
 public class DbAutoConfiguration {
 
     @PostConstruct

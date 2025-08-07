@@ -20,11 +20,11 @@
         <module>module-sms</module>
         <module>module-justauth</module>
         <module>module-wechat</module>
-        <module>module-tenant</module>
         <module>module-rest</module>
         <module>module-identity</module>
         <module>module-jpa</module>
         <module>module-mybatis-plus</module>
+        <module>module-tenant</module>
     </modules>
 
 

@@ -5,7 +5,7 @@ import com.ysmjjsy.goya.component.exception.definition.GoyaRuntimeException;
 import com.ysmjjsy.goya.component.pojo.constants.DefaultConstants;
 import com.ysmjjsy.goya.module.identity.context.GoyaLoginInfoContext;
 import com.ysmjjsy.goya.module.identity.domain.GoyaUserPrincipal;
-import com.ysmjjsy.goya.module.mybatisplus.domain.BaseMpAggregate;
+import com.ysmjjsy.goya.module.mybatisplus.domain.BaseMpEntity;
 import org.apache.ibatis.reflection.MetaObject;
 
 import java.time.LocalDateTime;
@@ -28,7 +28,7 @@ public class InjectionMetaObjectHandler implements MetaObjectHandler {
     @Override
     public void insertFill(MetaObject metaObject) {
         try {
-            if (Objects.nonNull(metaObject) && metaObject.getOriginalObject() instanceof BaseMpAggregate baseEntity) {
+            if (Objects.nonNull(metaObject) && metaObject.getOriginalObject() instanceof BaseMpEntity baseEntity) {
                 // 获取当前时间作为创建时间和更新时间，如果创建时间不为空，则使用创建时间，否则使用当前时间
                 LocalDateTime current = Objects.nonNull(baseEntity.getCreatedTime()) ? baseEntity.getCreatedTime() : LocalDateTime.now();
                 baseEntity.setCreatedTime(current);
@@ -66,7 +66,7 @@ public class InjectionMetaObjectHandler implements MetaObjectHandler {
     @Override
     public void updateFill(MetaObject metaObject) {
         try {
-            if (Objects.nonNull(metaObject) && metaObject.getOriginalObject() instanceof BaseMpAggregate baseEntity) {
+            if (Objects.nonNull(metaObject) && metaObject.getOriginalObject() instanceof BaseMpEntity baseEntity) {
                 // 获取当前时间作为更新时间，无论原始对象中的更新时间是否为空都填充
                 LocalDateTime current = LocalDateTime.now();
                 baseEntity.setUpdatedTime(current);

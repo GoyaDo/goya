@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.security.authentication.client.domain.service;
 
-import com.ysmjjsy.goya.component.db.domain.BaseRepository;
+import com.ysmjjsy.goya.component.db.adapter.GoyaRepository;
 import com.ysmjjsy.goya.security.authentication.client.domain.converter.SecurityClientDeviceToRegisteredClientConverter;
 import com.ysmjjsy.goya.security.authentication.client.domain.definition.AbstractRegisteredClientService;
 import com.ysmjjsy.goya.security.authentication.client.domain.entity.SecurityClientDevice;
@@ -38,7 +38,7 @@ public class SecurityClientDeviceService extends AbstractRegisteredClientService
     }
 
     @Override
-    public BaseRepository<SecurityClientDevice, String> getRepository() {
+    public GoyaRepository<SecurityClientDevice, String> getRepository() {
         return securityClientDeviceRepository;
     }
 

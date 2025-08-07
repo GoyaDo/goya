@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.security.authentication.client.domain.repository;
 
-import com.ysmjjsy.goya.component.db.domain.BaseRepository;
+import com.ysmjjsy.goya.component.db.adapter.GoyaRepository;
 import com.ysmjjsy.goya.security.authentication.client.domain.entity.SecurityClientCompliance;
 
 /**
@@ -9,5 +9,5 @@ import com.ysmjjsy.goya.security.authentication.client.domain.entity.SecurityCli
  * @author goya
  * @since 2025/7/21 23:51
  */
-public interface SecurityClientComplianceRepository extends BaseRepository<SecurityClientCompliance,String> {
+public interface SecurityClientComplianceRepository extends GoyaRepository<SecurityClientCompliance,String> {
 }

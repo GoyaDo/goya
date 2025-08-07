@@ -12,6 +12,6 @@ import org.springframework.context.ApplicationListener;
  * @author goya
  * @since 2023/10/26 16:46
  */
-public interface MessageSendingAdapter<P, D extends Message<P>, E extends GoyaAbstractEvent<D>> extends ApplicationListener<E> {
+public interface MessageSendingAdapter<P, D extends Message<P>, E extends GoyaAbstractEvent> extends ApplicationListener<E> {
 
 }

@@ -14,12 +14,17 @@
     <dependencies>
         <dependency>
             <groupId>com.ysmjjsy.goya</groupId>
-            <artifactId>component-db</artifactId>
+            <artifactId>module-rest</artifactId>
         </dependency>
 
         <dependency>
             <groupId>com.ysmjjsy.goya</groupId>
-            <artifactId>module-rest</artifactId>
+            <artifactId>module-jpa</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ysmjjsy.goya</groupId>
+            <artifactId>module-mybatis-plus</artifactId>
         </dependency>
     </dependencies>
 

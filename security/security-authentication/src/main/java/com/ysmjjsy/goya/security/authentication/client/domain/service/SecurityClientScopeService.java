@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.security.authentication.client.domain.service;
 
-import com.ysmjjsy.goya.component.db.domain.BaseRepository;
+import com.ysmjjsy.goya.component.db.adapter.GoyaRepository;
 import com.ysmjjsy.goya.component.db.domain.BaseService;
 import com.ysmjjsy.goya.security.authentication.client.domain.entity.SecurityClientPermission;
 import com.ysmjjsy.goya.security.authentication.client.domain.entity.SecurityClientScope;
@@ -27,7 +27,7 @@ public class SecurityClientScopeService extends BaseService<SecurityClientScope,
 
 
     @Override
-    public BaseRepository<SecurityClientScope, String> getRepository() {
+    public GoyaRepository<SecurityClientScope, String> getRepository() {
         return securityClientScopeRepository;
     }
 

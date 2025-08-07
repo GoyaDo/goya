@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.module.rest.service;
 
 import com.ysmjjsy.goya.component.db.domain.BaseDbEntity;
-import com.ysmjjsy.goya.component.db.domain.BaseRepository;
+import com.ysmjjsy.goya.component.db.adapter.GoyaRepository;
 
 import java.util.List;
 
@@ -11,14 +11,14 @@ import java.util.List;
  * @author goya
  * @since 2025/6/14 18:00
  */
-public interface BaseWriteableService<E extends BaseDbEntity, ID, R extends BaseRepository<E, ID>> extends BaseReadableService<E, ID, R> {
+public interface BaseWriteableService<E extends BaseDbEntity, R extends GoyaRepository<E>> extends BaseReadableService<E, R> {
 
     /**
      * 根据ID删除数据
      *
      * @param id 数据对应ID
      */
-    default void deleteById(ID id) {
+    default void deleteById(String id) {
         getRepository().remoteById(id);
     }
 

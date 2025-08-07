@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.security.authentication.client.domain.service;
 
 import com.google.common.net.HttpHeaders;
-import com.ysmjjsy.goya.component.db.domain.BaseRepository;
+import com.ysmjjsy.goya.component.db.adapter.GoyaRepository;
 import com.ysmjjsy.goya.component.db.domain.BaseService;
 import com.ysmjjsy.goya.security.authentication.client.domain.entity.SecurityClientCompliance;
 import com.ysmjjsy.goya.security.authentication.client.domain.repository.SecurityClientComplianceRepository;
@@ -37,7 +37,7 @@ public class SecurityClientComplianceService extends BaseService<SecurityClientC
     private final SecurityClientComplianceRepository securityClientComplianceRepository;
 
     @Override
-    public BaseRepository<SecurityClientCompliance, String> getRepository() {
+    public GoyaRepository<SecurityClientCompliance, String> getRepository() {
         return securityClientComplianceRepository;
     }
 

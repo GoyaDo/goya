@@ -2,7 +2,6 @@ package com.ysmjjsy.goya.component.db.domain;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
-import com.ysmjjsy.goya.component.domain.event.BaseAggregateRoot;
 import com.ysmjjsy.goya.component.pojo.domain.Entity;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,7 +17,7 @@ import java.time.LocalDateTime;
  */
 @Getter
 @Setter
-public abstract class BaseDbEntity extends BaseAggregateRoot implements Entity {
+public abstract class BaseDbEntity implements Entity {
 
     @Serial
     private static final long serialVersionUID = -3144768033700724819L;

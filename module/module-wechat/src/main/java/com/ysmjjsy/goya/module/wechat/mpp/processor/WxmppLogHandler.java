@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.module.wechat.mpp.processor;
 
-import com.ysmjjsy.goya.component.common.json.jackson2.utils.Jackson2Utils;
+import com.ysmjjsy.goya.component.json.jackson2.utils.Jackson2Utils;
 import me.chanjar.weixin.common.error.WxErrorException;
 import me.chanjar.weixin.common.session.WxSessionManager;
 import me.chanjar.weixin.mp.api.WxMpMessageHandler;

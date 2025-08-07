@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.security.authentication.client.domain.service;
 
-import com.ysmjjsy.goya.component.db.domain.BaseRepository;
+import com.ysmjjsy.goya.component.db.adapter.GoyaRepository;
 import com.ysmjjsy.goya.component.db.domain.BaseService;
 import com.ysmjjsy.goya.security.authentication.client.domain.entity.SecurityClientProduct;
 import com.ysmjjsy.goya.security.authentication.client.domain.repository.SecurityClientProductRepository;
@@ -22,7 +22,7 @@ public class SecurityClientProductService extends BaseService<SecurityClientProd
     private final SecurityClientProductRepository securityClientProductRepository;
 
     @Override
-    public BaseRepository<SecurityClientProduct, String> getRepository() {
+    public GoyaRepository<SecurityClientProduct, String> getRepository() {
         return securityClientProductRepository;
     }
 }

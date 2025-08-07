@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.security.authentication.client.domain.repository;
 
-import com.ysmjjsy.goya.component.db.domain.BaseRepository;
+import com.ysmjjsy.goya.component.db.adapter.GoyaRepository;
 import com.ysmjjsy.goya.security.authentication.client.domain.entity.SecurityClientScope;
 
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.List;
  * @author goya
  * @since 2025/7/21 23:53
  */
-public interface SecurityClientScopeRepository extends BaseRepository<SecurityClientScope, String> {
+public interface SecurityClientScopeRepository extends GoyaRepository<SecurityClientScope, String> {
 
     /**
      * 根据范围代码查询应用范围

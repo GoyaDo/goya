@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.module.rest.controller;
 
 import com.ysmjjsy.goya.component.db.domain.BaseDbEntity;
-import com.ysmjjsy.goya.component.db.domain.BaseRepository;
+import com.ysmjjsy.goya.component.db.adapter.GoyaRepository;
 import com.ysmjjsy.goya.component.pojo.response.Response;
 import com.ysmjjsy.goya.component.web.annotation.Idempotent;
 import com.ysmjjsy.goya.module.rest.service.BaseWriteableService;
@@ -16,15 +16,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import java.io.Serializable;
-
 /**
  * <p> Description : BaseRestController </p>
  *
  * @author goya
  * @since 2020/2/29 15:28
  */
-public abstract class BaseWriteableController<E extends BaseDbEntity, ID extends Serializable, R extends BaseRepository<E, ID>, S extends BaseWriteableService<E, ID, R>> extends BaseReadableController<E, ID, R, S> {
+public abstract class BaseWriteableController<E extends BaseDbEntity, R extends GoyaRepository<E>, S extends BaseWriteableService<E, R>> extends BaseReadableController<E, R, S> {
 
     @Idempotent
     @Operation(summary = "保存或更新数据", description = "接收JSON数据，转换为实体，进行保存或更新",
@@ -46,7 +44,7 @@ public abstract class BaseWriteableController<E extends BaseDbEntity, ID extends
             @Parameter(name = "id", required = true, in = ParameterIn.PATH, description = "实体ID，@Id注解对应的实体属性")
     })
     @DeleteMapping("/{id}")
-    public Response<Void> delete(@PathVariable ID id) {
+    public Response<Void> delete(@PathVariable String id) {
         getService().deleteById(id);
         return Response.success();
     }

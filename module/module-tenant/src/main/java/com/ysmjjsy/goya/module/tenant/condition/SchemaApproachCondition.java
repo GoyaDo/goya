@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.module.tenant.condition;
 
 import com.ysmjjsy.goya.component.common.resolver.PropertyResolver;
-import com.ysmjjsy.goya.component.db.constants.DataConstants;
+import com.ysmjjsy.goya.component.db.constants.DbConstants;
 import com.ysmjjsy.goya.module.tenant.enums.MultiTenantApproach;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -23,7 +23,7 @@ public class SchemaApproachCondition implements Condition {
     @SuppressWarnings("NullableProblems")
     @Override
     public boolean matches(ConditionContext conditionContext, AnnotatedTypeMetadata annotatedTypeMetadata) {
-        String property = PropertyResolver.getProperty(conditionContext, DataConstants.ITEM_MULTI_TENANT_APPROACH);
+        String property = PropertyResolver.getProperty(conditionContext, DbConstants.ITEM_MULTI_TENANT_APPROACH);
         boolean result = StringUtils.isNotBlank(property) && StringUtils.equalsIgnoreCase(property, MultiTenantApproach.SCHEMA.name());
         log.debug("[Goya] |- Condition [Schema Approach] value is [{}]", result);
         return result;
