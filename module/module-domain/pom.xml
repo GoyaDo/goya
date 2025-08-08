@@ -14,7 +14,17 @@
     <dependencies>
         <dependency>
             <groupId>com.ysmjjsy.goya</groupId>
-            <artifactId>component-domain</artifactId>
+            <artifactId>component-common</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ysmjjsy.goya</groupId>
+            <artifactId>component-bus</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
         </dependency>
     </dependencies>
 

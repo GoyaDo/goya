@@ -1,1 +1,15 @@
-com.ysmjjsy.goya.common.CommonAutoConfiguration
+com.ysmjjsy.goya.component.json.configuration.GoyaJsonAutoConfiguration
+com.ysmjjsy.goya.component.common.configuration.GoyaCommonAutoConfiguration
+com.ysmjjsy.goya.component.crypto.configuration.GoyaCryptoAutoConfiguration
+com.ysmjjsy.goya.component.catchlog.configuration.GoyaCatchLogAutoConfiguration
+com.ysmjjsy.goya.component.distributedid.configuration.GoyaDistributedIdAutoConfiguration
+com.ysmjjsy.goya.component.cache.configuration.GoyaCacheAutoConfiguration
+com.ysmjjsy.goya.component.captcha.configuration.GoyaCaptchaAutoConfiguration
+com.ysmjjsy.goya.component.db.configuration.GoyaDbAutoConfiguration
+com.ysmjjsy.goya.component.bus.configuration.GoyaBusAutoConfiguration
+com.ysmjjsy.goya.component.web.configuration.WebServiceAutoConfiguration
+com.ysmjjsy.goya.component.web.configuration.WebAutoConfiguration
+com.ysmjjsy.goya.component.web.configuration.WebMvcCryptoAutoConfiguration
+com.ysmjjsy.goya.component.web.configuration.WebMvcRequestMappingScanAutoConfiguration
+com.ysmjjsy.goya.component.doc.configuration.SpringdocAutoConfiguration
+com.ysmjjsy.goya.common.CommonAllAutoConfiguration

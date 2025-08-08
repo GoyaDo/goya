@@ -12,12 +12,6 @@
     <artifactId>component-db</artifactId>
 
     <dependencies>
-
-        <dependency>
-            <groupId>com.ysmjjsy.goya</groupId>
-            <artifactId>component-domain</artifactId>
-        </dependency>
-
         <dependency>
             <groupId>com.ysmjjsy.goya</groupId>
             <artifactId>component-distributedid</artifactId>

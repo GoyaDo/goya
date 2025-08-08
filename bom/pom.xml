@@ -68,16 +68,6 @@
             </dependency>
             <dependency>
                 <groupId>com.ysmjjsy.goya</groupId>
-                <artifactId>component-domain</artifactId>
-                <version>${revision}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ysmjjsy.goya</groupId>
-                <artifactId>component-job</artifactId>
-                <version>${revision}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ysmjjsy.goya</groupId>
                 <artifactId>component-ruleengine</artifactId>
                 <version>${revision}</version>
             </dependency>

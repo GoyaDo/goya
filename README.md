@@ -300,7 +300,7 @@ goya:
 - **测试覆盖**: 支持单元测试、集成测试和端到端测试
 - **文档规范**: 使用OpenAPI 3.0规范生成API文档
 
-### 8 计划支持
+## 8. 计划支持
 - 增加module: openim全面支持
 - 增加module: springai 全面支持
 - 增加module: oss、s3、minio支持

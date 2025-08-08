@@ -29,6 +29,7 @@ public interface GoyaConstants {
 
     String PROPERTY_PREFIX_DB = GoyaConstants.GOYA + ".db";
     String PROPERTY_PREFIX_DOC = GoyaConstants.GOYA + ".doc";
+    String ITEM_DOC_ENABLED  = PROPERTY_PREFIX_DOC+ PROPERTY_ENABLED;
 
     String PROPERTY_PREFIX_WEB = GoyaConstants.GOYA + ".web";
 

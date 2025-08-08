@@ -18,6 +18,7 @@ import org.springframework.context.annotation.Configuration;
  * @since 2022/1/14 21:11
  */
 @Configuration(proxyBeanMethods = false)
+@ConditionalOnMissingBean(HttpCryptoConfiguration.class)
 public class HttpCryptoConfiguration {
 
     private static final Logger log = LoggerFactory.getLogger(HttpCryptoConfiguration.class);

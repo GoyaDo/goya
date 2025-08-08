@@ -22,6 +22,7 @@ import org.springframework.context.annotation.Configuration;
  * @since 2021/10/4 17:28
  */
 @Configuration(proxyBeanMethods = false)
+@ConditionalOnMissingBean(SecureConfiguration.class)
 @EnableConfigurationProperties(SecureProperties.class)
 public class SecureConfiguration {
 

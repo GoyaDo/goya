@@ -4,7 +4,7 @@ import com.ysmjjsy.goya.component.cache.core.CacheGetFilter;
 import com.ysmjjsy.goya.component.cache.core.CacheGetIfAbsent;
 import com.ysmjjsy.goya.component.cache.core.CacheLoader;
 import com.ysmjjsy.goya.component.common.context.ApplicationContextHolder;
-import com.ysmjjsy.goya.module.redis.definition.DistributedCache;
+import com.ysmjjsy.goya.module.redis.definition.GoyaRedisCache;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AccessLevel;
@@ -23,11 +23,11 @@ import java.time.Duration;
 public class RedisUtils {
 
     private static class Holder {
-        static final DistributedCache distributedCache =
-                ApplicationContextHolder.getBean(DistributedCache.class);
+        static final GoyaRedisCache distributedCache =
+                ApplicationContextHolder.getBean(GoyaRedisCache.class);
     }
 
-    private static DistributedCache distributedCache() {
+    private static GoyaRedisCache distributedCache() {
         return RedisUtils.Holder.distributedCache;
     }
 

@@ -29,7 +29,7 @@ import java.util.Optional;
  * @since 2025/7/30 00:25
  */
 @RequiredArgsConstructor
-public class DistributedCacheTemplateProxy implements DistributedCache {
+public class DistributedCacheTemplateProxy implements GoyaRedisCache {
 
     private final StringRedisTemplate stringRedisTemplate;
     private final CacheProperties cacheProperties;

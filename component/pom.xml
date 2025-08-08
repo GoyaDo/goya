@@ -16,12 +16,10 @@
         <module>component-catchlog</module>
         <module>component-common</module>
         <module>component-db</module>
-        <module>component-domain</module>
         <module>component-pojo</module>
         <module>component-exception</module>
         <module>component-test-container</module>
         <module>component-ruleengine</module>
-        <module>component-job</module>
         <module>component-statemachine</module>
         <module>component-doc</module>
         <module>component-web</module>

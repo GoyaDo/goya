@@ -6,12 +6,7 @@ package com.ysmjjsy.goya.component.common.strategy;
  * @author goya
  * @since 2025/7/24 23:39
  */
-public interface AbstractExecuteStrategy<REQUEST, RESPONSE> {
-
-    /**
-     * 执行策略标识
-     */
-    String mark();
+public interface AbstractExecuteStrategy<REQUEST, RESPONSE> extends AbstractStrategy{
 
     /**
      * 执行策略

@@ -3,7 +3,7 @@ package com.ysmjjsy.goya.module.redis.configuration;
 import com.ysmjjsy.goya.component.cache.configuration.properties.CacheProperties;
 import com.ysmjjsy.goya.module.redis.configuration.properties.RedisBloomFilterPenetrateProperties;
 import com.ysmjjsy.goya.module.redis.constants.RedisConstants;
-import com.ysmjjsy.goya.module.redis.definition.DistributedCache;
+import com.ysmjjsy.goya.module.redis.definition.GoyaRedisCache;
 import com.ysmjjsy.goya.module.redis.definition.DistributedCacheTemplateProxy;
 import com.ysmjjsy.goya.module.redis.distributedid.LocalRedisWorkIdChoose;
 import com.ysmjjsy.goya.module.redis.enhance.GoyaRedisCacheManager;
@@ -108,7 +108,7 @@ public class RedisAutoConfiguration {
     }
 
     @Bean
-    public DistributedCache distributedCache(StringRedisTemplate stringRedisTemplate,CacheProperties cacheProperties,RedissonClient redissonClient){
+    public GoyaRedisCache distributedCache(StringRedisTemplate stringRedisTemplate, CacheProperties cacheProperties, RedissonClient redissonClient){
         DistributedCacheTemplateProxy distributedCacheTemplateProxy = new DistributedCacheTemplateProxy(stringRedisTemplate, cacheProperties, redissonClient);
         log.trace("[Goya] |- module [redis] |- bean [distributedCache] register.");
         return distributedCacheTemplateProxy;

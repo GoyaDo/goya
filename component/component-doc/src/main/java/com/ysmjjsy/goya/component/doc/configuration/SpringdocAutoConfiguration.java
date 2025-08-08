@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.component.doc.configuration;
 
 import com.google.common.collect.ImmutableList;
-import com.ysmjjsy.goya.component.common.context.GoyaContextHolder;
+import com.ysmjjsy.goya.component.doc.annotation.ConditionalOnSwaggerEnabled;
 import com.ysmjjsy.goya.component.doc.configuration.properties.SwaggerProperties;
 import com.ysmjjsy.goya.component.doc.server.OpenApiServerResolver;
 import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
@@ -26,6 +26,7 @@ import org.springframework.context.annotation.Bean;
  * @since 2025/6/13 18:00
  */
 @Slf4j
+@ConditionalOnSwaggerEnabled
 @AutoConfiguration
 @EnableConfigurationProperties(SwaggerProperties.class)
 @SecuritySchemes({
@@ -48,7 +49,6 @@ public class SpringdocAutoConfiguration {
     public OpenApiServerResolver openApiServerResolver() {
         OpenApiServerResolver resolver = () -> {
             Server server = new Server();
-            server.setUrl(GoyaContextHolder.getInstance().getUrl());
             return ImmutableList.of(server);
         };
         log.trace("[Goya] |- component [doc] |- bean [openApiServerResolver] register.");

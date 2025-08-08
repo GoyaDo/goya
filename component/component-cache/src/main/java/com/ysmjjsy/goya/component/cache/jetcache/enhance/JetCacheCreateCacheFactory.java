@@ -6,6 +6,7 @@ import com.alicp.jetcache.CacheManager;
 import com.alicp.jetcache.anno.CacheType;
 import com.alicp.jetcache.template.QuickConfig;
 import com.ysmjjsy.goya.component.cache.configuration.properties.CacheProperties;
+import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.BooleanUtils;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -18,15 +19,11 @@ import java.time.Duration;
  * @author goya
  * @since 2022/7/23 10:49
  */
+@RequiredArgsConstructor
 public class JetCacheCreateCacheFactory {
 
     private final CacheManager cacheManager;
     private final CacheProperties cacheProperties;
-
-    public JetCacheCreateCacheFactory(CacheManager cacheManager, CacheProperties cacheProperties) {
-        this.cacheManager = cacheManager;
-        this.cacheProperties = cacheProperties;
-    }
 
     public <K, V> Cache<K, V> create(String name, CacheProperties cacheProperties) {
         return create(name, false, cacheProperties);

@@ -18,15 +18,6 @@ import java.time.Duration;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class JetCacheUtils {
 
-    private static class Holder {
-        static final JetCacheCreateCacheFactory jetCacheCreateCacheFactory =
-                ApplicationContextHolder.getBean(JetCacheCreateCacheFactory.class);
-    }
-
-    private static JetCacheCreateCacheFactory jetCacheCreateCacheFactory() {
-        return Holder.jetCacheCreateCacheFactory;
-    }
-
     public static <K, V> Cache<K, V> create(String name, Duration expire) {
         return create(name, expire, true);
     }
@@ -52,6 +43,6 @@ public class JetCacheUtils {
     }
 
     public static <K, V> Cache<K, V> create(String name, CacheType cacheType, Duration expire, Boolean cacheNullValue, Boolean syncLocal) {
-        return jetCacheCreateCacheFactory().create(name, cacheType, expire, cacheNullValue, syncLocal);
+        return ApplicationContextHolder.getBean(JetCacheCreateCacheFactory.class).create(name, cacheType, expire, cacheNullValue, syncLocal);
     }
 }

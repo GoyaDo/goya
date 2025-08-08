@@ -85,7 +85,7 @@ public abstract class AbstractStampManager<K, V> implements StampManager<K, V> {
     }
 
     @Override
-    public void delete(K key){
+    public void delete(K key) {
         boolean result = this.getCache().remove(key);
 
         if (!result) {
