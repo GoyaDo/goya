@@ -66,26 +66,24 @@ goya/
 ├── dependencies/                    # 外部依赖版本管理
 ├── bom/                           # 内部依赖版本管理
 ├── component/                     # 通用技术组件
-│   ├── component-web/             # Web层通用组件
-│   ├── component-rest/            # RESTful API组件
-│   ├── component-db/              # 数据库组件
+│   ├── component-web/             # Web层通用组件 (WebMVC, Undertow, Thymeleaf)
+│   ├── component-common/          # 通用工具组件 (Hutool, OkHttp, Apache Commons)
 │   ├── component-cache/           # 缓存组件
+│   ├── component-db/              # 数据库组件
 │   ├── component-exception/       # 异常处理组件
-│   ├── component-common/          # 通用工具组件
-│   ├── component-dto/             # 数据传输对象
-│   ├── component-domain/          # 领域模型
+│   ├── component-json/            # JSON处理组件
+│   ├── component-distributedid/   # 分布式ID生成组件
+│   ├── component-catchlog/        # 日志捕获组件
+│   ├── component-doc/             # 文档组件
+│   ├── component-domain/          # 领域模型组件
 │   ├── component-job/             # 定时任务组件
 │   ├── component-ruleengine/      # 规则引擎组件
 │   ├── component-statemachine/    # 状态机组件
+│   ├── component-test-container/  # 测试容器组件
+│   ├── component-bus/             # 事件总线组件
 │   ├── component-captcha/         # 验证码组件
 │   ├── component-crypto/          # 加密组件
-│   ├── component-bus/             # 事件总线
-│   ├── component-distributedid/   # 分布式ID生成
-│   ├── component-json/            # JSON处理组件
-│   ├── component-catchlog/        # 日志捕获组件
-│   ├── component-context/         # 上下文组件
-│   ├── component-doc/             # 文档组件
-│   └── component-test-container/  # 测试容器组件
+│   └── component-pojo/            # POJO对象组件
 ├── module/                        # 业务功能模块
 │   ├── module-redis/              # Redis集成模块
 │   ├── module-kafka/              # Kafka集成模块
@@ -99,7 +97,8 @@ goya/
 │   ├── module-rest/               # REST服务模块
 │   ├── module-identity/           # 身份认证模块
 │   ├── module-jpa/                # JPA集成模块
-│   └── module-mybatis-plus/       # MyBatis-Plus集成模块
+│   ├── module-mybatis-plus/       # MyBatis-Plus集成模块
+│   └── module-domain/             # 领域模块
 ├── security/                      # 安全认证模块
 │   ├── security-core/             # 安全核心组件
 │   ├── security-authorization/    # 授权组件
@@ -109,13 +108,9 @@ goya/
 ├── starter/                       # Spring Boot Starter
 │   ├── goya-common-starter/       # 通用Starter
 │   ├── goya-common-api-starter/   # API通用Starter
-│   ├── goya-common-jpa-starter/   # JPA通用Starter
-│   ├── goya-common-web-starter/   # Web通用Starter
-│   ├── goya-common-rest-starter/  # REST通用Starter
-│   ├── goya-module-redis-starter/ # Redis Starter
+│   ├── goya-cloud-starter/        # 云原生Starter
 │   ├── goya-security-resource-server-starter/  # 资源服务器Starter
 │   ├── goya-security-authorization-server-starter/  # 授权服务器Starter
-│   ├── goya-cloud-starter/        # 云原生Starter
 │   └── goya-service-starter/      # 服务Starter
 ├── cloud/                         # 云原生组件
 │   ├── cloud-alibaba/             # 阿里云组件
@@ -130,14 +125,17 @@ goya/
 ### 4.1 Component 组件模块
 
 #### 核心组件
-- **`component-web`**: Web层通用配置、拦截器、过滤器、控制器基类、接口扫描等
-- **`component-rest`**: RESTful API通用工具类、异常处理器、响应封装、幂等性控制
-- **`component-db`**: 数据库通用配置、JPA集成、数据源管理、多租户支持
+- **`component-web`**: Web层通用组件，包含WebMVC、Undertow、Thymeleaf、WebClient等Web相关功能
+- **`component-common`**: 通用工具组件，包含Hutool、OkHttp、Apache Commons、BouncyCastle等常用工具库
 - **`component-cache`**: 缓存通用配置和抽象接口，支持多种缓存实现
+- **`component-db`**: 数据库通用配置、JPA集成、数据源管理、多租户支持
 - **`component-exception`**: 项目统一的业务异常类和全局异常处理器
-- **`component-common`**: 通用工具类、枚举、常量、策略选择器、责任链等
-- **`component-dto`**: 数据传输对象，用于接口参数和返回值
+- **`component-json`**: JSON处理组件，支持安全序列化和反序列化
+- **`component-distributedid`**: 分布式ID生成器，支持雪花算法等
+- **`component-catchlog`**: 日志捕获组件，支持日志收集和分析
+- **`component-doc`**: 文档组件，支持文档生成和管理
 - **`component-domain`**: 领域模型和领域服务
+- **`component-pojo`**: POJO对象，基础数据对象
 
 #### 功能组件
 - **`component-job`**: 定时任务组件，支持分布式任务调度
@@ -146,11 +144,6 @@ goya/
 - **`component-captcha`**: 验证码组件，支持多种验证码类型
 - **`component-crypto`**: 加密组件，支持国密算法
 - **`component-bus`**: 事件总线，支持事件驱动架构
-- **`component-distributedid`**: 分布式ID生成器，支持雪花算法
-- **`component-json`**: JSON处理组件，支持安全序列化
-- **`component-catchlog`**: 日志捕获组件，支持日志收集和分析
-- **`component-context`**: 上下文组件，支持请求上下文管理
-- **`component-doc`**: 文档组件，支持文档生成和管理
 - **`component-test-container`**: 测试容器组件，支持集成测试
 
 ### 4.2 Module 业务模块
@@ -171,6 +164,7 @@ goya/
 - **`module-identity`**: 身份认证，支持多种认证方式
 - **`module-jpa`**: JPA集成，提供JPA相关功能
 - **`module-mybatis-plus`**: MyBatis-Plus集成，提供MyBatis增强功能
+- **`module-domain`**: 领域模块，包含业务领域模型
 
 ### 4.3 Security 安全模块
 
@@ -186,15 +180,9 @@ goya/
 #### 通用Starter
 - **`goya-common-starter`**: 通用功能自动配置
 - **`goya-common-api-starter`**: API相关自动配置
-- **`goya-common-jpa-starter`**: JPA相关自动配置
-- **`goya-common-web-starter`**: Web相关自动配置
-- **`goya-common-rest-starter`**: REST相关自动配置
-
-#### 功能Starter
-- **`goya-module-redis-starter`**: Redis自动配置
+- **`goya-cloud-starter`**: 云原生自动配置
 - **`goya-security-resource-server-starter`**: 资源服务器自动配置
 - **`goya-security-authorization-server-starter`**: 授权服务器自动配置
-- **`goya-cloud-starter`**: 云原生自动配置
 - **`goya-service-starter`**: 服务自动配置
 
 ### 4.5 Cloud 云原生模块
@@ -216,7 +204,7 @@ goya/
 
 ```bash
 # 克隆项目
-git clone https://github.com/GoyaDo/goya.git
+git clone https://codeup.aliyun.com/62f27d11f9861067e4e7831d/goya/goya.git
 cd goya
 
 # 构建整个项目
@@ -312,7 +300,13 @@ goya:
 - **测试覆盖**: 支持单元测试、集成测试和端到端测试
 - **文档规范**: 使用OpenAPI 3.0规范生成API文档
 
-## 8. 贡献指南
+### 8 计划支持
+- 增加module: openim全面支持
+- 增加module: springai 全面支持
+- 增加module: oss、s3、minio支持
+- 增加module: 大疆上云api支持.增加飞控平台
+
+## 9. 贡献指南
 
 1. Fork 本仓库
 2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
@@ -320,11 +314,11 @@ goya:
 4. 推送到分支 (`git push origin feature/AmazingFeature`)
 5. 打开 Pull Request
 
-## 9. 许可证
+## 10. 许可证
 
 本项目采用 Apache License 2.0 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
 
-## 10. 联系方式
+## 11. 联系方式
 
 - **项目地址**: https://github.com/GoyaDo/goya
 - **官方网站**: https://www.ysmjjsy.com
