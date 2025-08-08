@@ -2,12 +2,10 @@ package com.ysmjjsy.goya.component.web.scan;
 
 import com.ysmjjsy.goya.component.bus.event.strategy.ApplicationStrategyEventManager;
 import com.ysmjjsy.goya.component.common.context.GoyaContextHolder;
-import com.ysmjjsy.goya.component.web.domain.RequestMapping;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.ObjectUtils;
 
 import java.lang.annotation.Annotation;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -16,7 +14,7 @@ import java.util.Map;
  * @author goya
  * @since 2022/1/16 18:42
  */
-public interface RequestMappingScanEventManager extends ApplicationStrategyEventManager<List<RequestMapping>> {
+public interface RequestMappingScanEventManager extends ApplicationStrategyEventManager<RequestMappingEvent> {
 
     /**
      * 获取是否执行扫描的标记注解。
@@ -30,7 +28,7 @@ public interface RequestMappingScanEventManager extends ApplicationStrategyEvent
      *
      * @param requestMappings 扫描到的RequestMapping
      */
-    void postLocalStorage(List<RequestMapping> requestMappings);
+    void postLocalStorage(RequestMappingEvent requestMappings);
 
     /**
      * 发布远程事件，传送RequestMapping
@@ -38,7 +36,7 @@ public interface RequestMappingScanEventManager extends ApplicationStrategyEvent
      * @param requestMappings 扫描到的RequestMapping
      */
     @Override
-    default void postProcess(List<RequestMapping> requestMappings) {
+    default void postProcess(RequestMappingEvent requestMappings) {
         postLocalStorage(requestMappings);
         ApplicationStrategyEventManager.super.postProcess(requestMappings);
     }

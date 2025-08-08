@@ -19,8 +19,8 @@ public class DefaultAccountStatusEventManager implements AccountStatusEventManag
     }
 
     @Override
-    public void postLocalProcess(UserStatus data) {
-        publishEvent(new ChangeUserStatusEvent(data));
+    public void postLocalProcess(ChangeUserStatusEvent data) {
+        publishEvent(data);
     }
 
     @Override

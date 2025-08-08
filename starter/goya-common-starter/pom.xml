@@ -14,12 +14,17 @@
     <dependencies>
         <dependency>
             <groupId>com.ysmjjsy.goya</groupId>
-            <artifactId>component-common</artifactId>
+            <artifactId>component-bus</artifactId>
         </dependency>
 
         <dependency>
             <groupId>com.ysmjjsy.goya</groupId>
-            <artifactId>component-cache</artifactId>
+            <artifactId>component-db</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ysmjjsy.goya</groupId>
+            <artifactId>component-web</artifactId>
         </dependency>
 
         <dependency>
@@ -55,6 +60,11 @@
         <dependency>
             <groupId>com.ysmjjsy.goya</groupId>
             <artifactId>goya-common-api-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ysmjjsy.goya</groupId>
+            <artifactId>component-test-container</artifactId>
         </dependency>
     </dependencies>
 

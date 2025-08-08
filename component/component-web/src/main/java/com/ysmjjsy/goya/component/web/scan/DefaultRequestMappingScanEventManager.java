@@ -1,12 +1,10 @@
 package com.ysmjjsy.goya.component.web.scan;
 
 import com.ysmjjsy.goya.component.common.context.GoyaContextHolder;
-import com.ysmjjsy.goya.component.web.domain.RequestMapping;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 import java.lang.annotation.Annotation;
-import java.util.List;
 
 /**
  * <p>Description: 自定义 RequestMappingScanManager</p>
@@ -26,7 +24,7 @@ public class DefaultRequestMappingScanEventManager implements RequestMappingScan
     }
 
     @Override
-    public void postLocalStorage(List<RequestMapping> requestMappings) {
+    public void postLocalStorage(RequestMappingEvent requestMappings) {
         log.info("[Goya] |- [4] Async store request mapping process BEGIN!");
     }
 
@@ -36,8 +34,8 @@ public class DefaultRequestMappingScanEventManager implements RequestMappingScan
     }
 
     @Override
-    public void postLocalProcess(List<RequestMapping> data) {
-        publishEvent(new RequestMappingEvent(data));
+    public void postLocalProcess(RequestMappingEvent data) {
+        publishEvent(data);
     }
 
     @Override

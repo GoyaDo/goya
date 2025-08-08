@@ -1,7 +1,6 @@
 package com.ysmjjsy.goya.security.authorization.scan;
 
 import com.ysmjjsy.goya.component.common.context.GoyaContextHolder;
-import com.ysmjjsy.goya.component.web.domain.RequestMapping;
 import com.ysmjjsy.goya.component.web.scan.RequestMappingEvent;
 import com.ysmjjsy.goya.component.web.scan.RequestMappingScanEventManager;
 import com.ysmjjsy.goya.security.authorization.processor.SecurityAttributeAnalyzer;
@@ -10,7 +9,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 
 import java.lang.annotation.Annotation;
-import java.util.List;
 
 /**
  * <p></p>
@@ -35,13 +33,13 @@ public class SecurityDefaultRequestMappingScanEventManager implements RequestMap
     }
 
     @Override
-    public void postLocalStorage(List<RequestMapping> requestMappings) {
+    public void postLocalStorage(RequestMappingEvent requestMappings) {
         securityAttributeAnalyzer.processRequestMatchers();
     }
 
     @Override
-    public void postLocalProcess(List<RequestMapping> data) {
-        publishEvent(new RequestMappingEvent(data));
+    public void postLocalProcess(RequestMappingEvent data) {
+        publishEvent(data);
     }
 
     @Override

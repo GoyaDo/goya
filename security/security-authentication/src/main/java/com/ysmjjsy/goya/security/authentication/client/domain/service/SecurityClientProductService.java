@@ -1,7 +1,6 @@
 package com.ysmjjsy.goya.security.authentication.client.domain.service;
 
-import com.ysmjjsy.goya.component.db.adapter.GoyaRepository;
-import com.ysmjjsy.goya.component.db.domain.BaseService;
+import com.ysmjjsy.goya.module.rest.service.BaseService;
 import com.ysmjjsy.goya.security.authentication.client.domain.entity.SecurityClientProduct;
 import com.ysmjjsy.goya.security.authentication.client.domain.repository.SecurityClientProductRepository;
 import lombok.RequiredArgsConstructor;
@@ -17,12 +16,6 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class SecurityClientProductService extends BaseService<SecurityClientProduct, String> {
+public class SecurityClientProductService extends BaseService<SecurityClientProduct, SecurityClientProductRepository> {
 
-    private final SecurityClientProductRepository securityClientProductRepository;
-
-    @Override
-    public GoyaRepository<SecurityClientProduct, String> getRepository() {
-        return securityClientProductRepository;
-    }
 }

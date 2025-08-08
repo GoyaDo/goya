@@ -1,8 +1,7 @@
 package com.ysmjjsy.goya.security.authentication.client.domain.service;
 
 import com.google.common.net.HttpHeaders;
-import com.ysmjjsy.goya.component.db.adapter.GoyaRepository;
-import com.ysmjjsy.goya.component.db.domain.BaseService;
+import com.ysmjjsy.goya.module.rest.service.BaseService;
 import com.ysmjjsy.goya.security.authentication.client.domain.entity.SecurityClientCompliance;
 import com.ysmjjsy.goya.security.authentication.client.domain.repository.SecurityClientComplianceRepository;
 import jakarta.persistence.criteria.Predicate;
@@ -32,14 +31,7 @@ import java.util.List;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class SecurityClientComplianceService extends BaseService<SecurityClientCompliance, String> {
-
-    private final SecurityClientComplianceRepository securityClientComplianceRepository;
-
-    @Override
-    public GoyaRepository<SecurityClientCompliance, String> getRepository() {
-        return securityClientComplianceRepository;
-    }
+public class SecurityClientComplianceService extends BaseService<SecurityClientCompliance,SecurityClientComplianceRepository> {
 
     public Page<SecurityClientCompliance> findByCondition(int pageNumber, int pageSize, String principalName, String clientId, String ip) {
         Pageable pageable = PageRequest.of(pageNumber, pageSize);
@@ -65,13 +57,13 @@ public class SecurityClientComplianceService extends BaseService<SecurityClientC
             return criteriaQuery.getRestriction();
         };
 
-        return this.findByPage(specification, pageable);
+        return this.getRepository().findAll(specification, pageable);
     }
 
     public SecurityClientCompliance save(String principalName, String clientId, String operation, HttpServletRequest request) {
         SecurityClientCompliance compliance = toEntity(principalName, clientId, operation, request);
         log.debug("[Goya] |- Sign in user is [{}]", compliance);
-        return super.save(compliance);
+        return super.saveOrUpdate(compliance);
     }
 
     private UserAgent getUserAgent(HttpServletRequest request) {

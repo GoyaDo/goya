@@ -3,7 +3,6 @@ package com.ysmjjsy.goya.module.kafka.account;
 import com.ysmjjsy.goya.component.common.context.GoyaContextHolder;
 import com.ysmjjsy.goya.module.kafka.bus.RemoteChangeUserStatusEvent;
 import com.ysmjjsy.goya.security.authentication.client.compliance.AccountStatusEventManager;
-import com.ysmjjsy.goya.security.authentication.client.compliance.UserStatus;
 import com.ysmjjsy.goya.security.authentication.client.compliance.event.ChangeUserStatusEvent;
 import lombok.extern.slf4j.Slf4j;
 
@@ -21,12 +20,12 @@ public class RemoteAccountStatusEventManager implements AccountStatusEventManage
     }
 
     @Override
-    public void postLocalProcess(UserStatus data) {
-        publishEvent(new ChangeUserStatusEvent(data));
+    public void postLocalProcess(ChangeUserStatusEvent data) {
+        publishEvent(data);
     }
 
     @Override
     public void postRemoteProcess(String data, String originService, String destinationService) {
-        publishEvent(new RemoteChangeUserStatusEvent(data, originService, destinationService));
+        publishEvent(new RemoteChangeUserStatusEvent(this, originService, destinationService,data));
     }
 }

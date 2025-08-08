@@ -1,7 +1,6 @@
 package com.ysmjjsy.goya.security.authentication.client.domain.service;
 
-import com.ysmjjsy.goya.component.db.adapter.GoyaRepository;
-import com.ysmjjsy.goya.component.db.domain.BaseService;
+import com.ysmjjsy.goya.module.rest.service.BaseService;
 import com.ysmjjsy.goya.security.authentication.client.domain.entity.SecurityClientPermission;
 import com.ysmjjsy.goya.security.authentication.client.domain.entity.SecurityClientScope;
 import com.ysmjjsy.goya.security.authentication.client.domain.repository.SecurityClientScopeRepository;
@@ -21,22 +20,16 @@ import java.util.Set;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class SecurityClientScopeService extends BaseService<SecurityClientScope, String> {
+public class SecurityClientScopeService extends BaseService<SecurityClientScope, SecurityClientScopeRepository> {
 
     private final SecurityClientScopeRepository securityClientScopeRepository;
-
-
-    @Override
-    public GoyaRepository<SecurityClientScope, String> getRepository() {
-        return securityClientScopeRepository;
-    }
 
     public SecurityClientScope assigned(String scopeId, Set<SecurityClientPermission> permissions) {
 
         SecurityClientScope oldScope = findById(scopeId);
         oldScope.setPermissions(permissions);
 
-        return saveAndFlush(oldScope);
+        return getRepository().saveAndFlush(oldScope);
     }
 
     public SecurityClientScope findByScopeCode(String scopeCode) {

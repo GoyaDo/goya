@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.security.authentication.client.processor.jackson2;
 
 import com.fasterxml.jackson.databind.module.SimpleModule;
-import com.ysmjjsy.goya.component.common.json.jackson2.Jackson2Constants;
+import com.ysmjjsy.goya.component.json.jackson2.Jackson2Constants;
 import org.springframework.security.jackson2.SecurityJackson2Modules;
 import org.springframework.security.oauth2.core.AuthorizationGrantType;
 import org.springframework.security.oauth2.core.ClientAuthenticationMethod;

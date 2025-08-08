@@ -1,7 +1,6 @@
 package com.ysmjjsy.goya.security.authorization.server.domain.service;
 
-import com.ysmjjsy.goya.component.db.adapter.GoyaRepository;
-import com.ysmjjsy.goya.component.db.domain.BaseService;
+import com.ysmjjsy.goya.module.rest.service.BaseService;
 import com.ysmjjsy.goya.security.authorization.server.domain.entity.SecurityAttribute;
 import com.ysmjjsy.goya.security.authorization.server.domain.repository.SecurityAttributeRepository;
 import lombok.RequiredArgsConstructor;
@@ -19,16 +18,13 @@ import java.util.List;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class SecurityAttributeService extends BaseService<SecurityAttribute,String> {
-
-    private final SecurityAttributeRepository securityAttributeRepository;
-
-    @Override
-    public GoyaRepository<SecurityAttribute, String> getRepository() {
-        return securityAttributeRepository;
-    }
+public class SecurityAttributeService extends BaseService<SecurityAttribute,SecurityAttributeRepository> {
 
     public List<SecurityAttribute> findAllByServiceId(String serviceId) {
-        return securityAttributeRepository.findAllByServiceId(serviceId);
+        return getRepository().findAllByServiceId(serviceId);
+    }
+
+    public List<SecurityAttribute> saveAllAndFlush(List<SecurityAttribute> elements) {
+        return getRepository().saveAllAndFlush(elements);
     }
 }

@@ -1,4 +1,4 @@
-package com.ysmjjsy.goya.component.bus.event;
+package com.ysmjjsy.goya.component.bus.event.queue;
 
 /**
  * <p></p>

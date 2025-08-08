@@ -1,4 +1,4 @@
-package com.ysmjjsy.goya.component.db.configuration;
+package com.ysmjjsy.goya.component.db.configuration.properties;
 
 import com.ysmjjsy.goya.component.db.enums.RepositoryMode;
 import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;

@@ -1,9 +1,11 @@
 package com.ysmjjsy.goya.component.bus.event.strategy;
 
+import com.ysmjjsy.goya.component.bus.api.GoyaBus;
+import com.ysmjjsy.goya.component.bus.event.domain.GoyaEvent;
+import com.ysmjjsy.goya.component.common.context.ApplicationContextHolder;
 import com.ysmjjsy.goya.component.common.context.GoyaContextHolder;
 import com.ysmjjsy.goya.component.json.jackson2.utils.Jackson2Utils;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.context.ApplicationEvent;
 
 /**
  * <p>Description: 策略 Event 定义 </p>
@@ -14,23 +16,23 @@ import org.springframework.context.ApplicationEvent;
  * @author goya
  * @since 2022/2/5 15:32
  */
-public interface StrategyEventManager<T> {
+public interface StrategyEventManager<E extends GoyaEvent> {
 
     /**
      * 创建本地事件
      *
-     * @param data 事件携带数据
+     * @param event 事件
      */
-    void postLocalProcess(T data);
+    void postLocalProcess(E event);
 
     /**
      * 创建远程事件
      *
-     * @param data               事件携带数据。JSON 格式的数据。
+     * @param event               事件。JSON 格式的数据。
      * @param originService      发送远程事件原始服务
      * @param destinationService 接收远程事件目的地
      */
-    void postRemoteProcess(String data, String originService, String destinationService);
+    void postRemoteProcess(String event, String originService, String destinationService);
 
     /**
      * 是否是本地处理事件。
@@ -48,7 +50,7 @@ public interface StrategyEventManager<T> {
      * @param data               事件携带数据
      * @param destinationService 接收远程事件目的地
      */
-    default void postProcess(String destinationService, T data) {
+    default void postProcess(String destinationService, E data) {
         postProcess(GoyaContextHolder.getInstance().getOriginService(), destinationService, data);
     }
 
@@ -59,7 +61,7 @@ public interface StrategyEventManager<T> {
      * @param originService      发送远程事件原始服务
      * @param destinationService 接收远程事件目的地
      */
-    default void postProcess(String originService, String destinationService, T data) {
+    default void postProcess(String originService, String destinationService, E data) {
         if (isLocal(destinationService)) {
             postLocalProcess(data);
         } else {
@@ -72,7 +74,8 @@ public interface StrategyEventManager<T> {
      *
      * @param event 自定义 Spring Event
      */
-    default void publishEvent(ApplicationEvent event) {
-        GoyaContextHolder.getInstance().publishEvent(event);
+    default void publishEvent(GoyaEvent event) {
+        GoyaBus goyaBus = ApplicationContextHolder.getBean(GoyaBus.class);
+        goyaBus.publish(event);
     }
 }

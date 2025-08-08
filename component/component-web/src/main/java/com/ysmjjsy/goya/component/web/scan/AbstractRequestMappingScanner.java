@@ -149,7 +149,7 @@ public abstract class AbstractRequestMappingScanner implements ApplicationListen
     protected void complete(String serviceId, List<RequestMapping> resources) {
         if (CollectionUtils.isNotEmpty(resources)) {
             log.debug("[Goya] |- [2] Request mapping scan found [{}] resources in service [{}], go to next stage!", serviceId, resources.size());
-            requestMappingScanEventManager.postProcess(resources);
+            requestMappingScanEventManager.postProcess(new RequestMappingEvent(this,resources));
         } else {
             log.debug("[Goya] |- [2] Request mapping scan can not find any resources in service [{}]!", serviceId);
         }

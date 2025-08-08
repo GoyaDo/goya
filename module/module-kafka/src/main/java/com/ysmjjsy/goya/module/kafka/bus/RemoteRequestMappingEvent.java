@@ -1,7 +1,8 @@
 package com.ysmjjsy.goya.module.kafka.bus;
 
+import com.ysmjjsy.goya.component.bus.enums.EventType;
+import com.ysmjjsy.goya.module.kafka.core.GoyaAbstractRemoteEvent;
 import lombok.Getter;
-import org.springframework.cloud.bus.event.RemoteApplicationEvent;
 
 import java.io.Serial;
 
@@ -12,19 +13,19 @@ import java.io.Serial;
  * @since 2025/7/11 00:03
  */
 @Getter
-public class RemoteRequestMappingEvent extends RemoteApplicationEvent {
+public class RemoteRequestMappingEvent extends GoyaAbstractRemoteEvent {
     @Serial
     private static final long serialVersionUID = 5004257521851814250L;
 
-    private String data;
+    private final String data;
 
-    public RemoteRequestMappingEvent() {
-        super();
-    }
-
-    public RemoteRequestMappingEvent(String data, String originService, String destinationService) {
-        super(data, originService, DEFAULT_DESTINATION_FACTORY.getDestination(destinationService));
+    public RemoteRequestMappingEvent(Object source, String originService, String destinationService, String data) {
+        super(source, originService, DEFAULT_DESTINATION_FACTORY.getDestination(destinationService));
         this.data = data;
     }
 
+    @Override
+    public EventType eventType() {
+        return EventType.PLATFORM_EVENT;
+    }
 }

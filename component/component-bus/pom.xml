@@ -14,7 +14,7 @@
     <dependencies>
         <dependency>
             <groupId>com.ysmjjsy.goya</groupId>
-            <artifactId>component-common</artifactId>
+            <artifactId>component-distributedid</artifactId>
         </dependency>
     </dependencies>
 </project>

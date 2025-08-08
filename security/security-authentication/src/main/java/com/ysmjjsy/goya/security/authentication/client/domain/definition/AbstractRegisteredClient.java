@@ -4,9 +4,10 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.google.common.base.Objects;
-import com.ysmjjsy.goya.component.common.json.jackson2.deserializer.CommaDelimitedStringToSetSerializer;
-import com.ysmjjsy.goya.component.common.json.jackson2.deserializer.SetToCommaDelimitedStringDeserializer;
+import com.ysmjjsy.goya.component.json.jackson2.deserializer.CommaDelimitedStringToSetSerializer;
+import com.ysmjjsy.goya.component.json.jackson2.deserializer.SetToCommaDelimitedStringDeserializer;
 import com.ysmjjsy.goya.component.pojo.constants.DefaultConstants;
+import com.ysmjjsy.goya.module.jpa.domain.BaseJpaEntity;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
@@ -28,7 +29,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @MappedSuperclass
-public abstract class AbstractRegisteredClient extends BaseJpaAggregate implements RegisteredClientDetails{
+public abstract class AbstractRegisteredClient extends BaseJpaEntity implements RegisteredClientDetails{
 
     @Serial
     private static final long serialVersionUID = -7543872975020979274L;

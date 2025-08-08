@@ -1,5 +1,6 @@
 package com.ysmjjsy.goya.security.authorization.server.domain.entity;
 
+import com.ysmjjsy.goya.module.jpa.domain.BaseJpaEntity;
 import com.ysmjjsy.goya.security.authorization.server.listener.SecurityAttributeEntityListener;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
@@ -28,7 +29,8 @@ import java.util.Set;
 @Entity
 @Table(name = "security_attribute", indexes = {@Index(name = "security_attribute_id_idx", columnList = "attribute_id")})
 @EntityListeners(value = {SecurityAttributeEntityListener.class})
-public class SecurityAttribute extends BaseJpaAggregate {
+public class SecurityAttribute extends BaseJpaEntity {
+
     @Serial
     private static final long serialVersionUID = -5272634414594774626L;
 

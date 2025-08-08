@@ -1,10 +1,12 @@
-package com.ysmjjsy.goya.component.bus.event.domain;
+package com.ysmjjsy.goya.module.kafka.core;
 
 import com.ysmjjsy.goya.component.bus.enums.EventStatus;
+import com.ysmjjsy.goya.component.bus.event.domain.GoyaEvent;
 import com.ysmjjsy.goya.component.distributedid.utils.SnowflakeIdUtil;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.context.ApplicationEvent;
+import org.springframework.cloud.bus.event.Destination;
+import org.springframework.cloud.bus.event.RemoteApplicationEvent;
 
 import java.io.Serial;
 import java.time.LocalDateTime;
@@ -13,13 +15,13 @@ import java.time.LocalDateTime;
  * <p></p>
  *
  * @author goya
- * @since 2025/7/10 22:41
+ * @since 2025/8/8 10:34
  */
 @Getter
-public abstract class GoyaAbstractEvent extends ApplicationEvent implements GoyaEvent {
+public abstract class GoyaAbstractRemoteEvent extends RemoteApplicationEvent implements GoyaEvent {
 
     @Serial
-    private static final long serialVersionUID = -2363499974541919631L;
+    private static final long serialVersionUID = 1534639056094107619L;
 
     /**
      * 事件ID - 全局唯一标识符
@@ -42,9 +44,9 @@ public abstract class GoyaAbstractEvent extends ApplicationEvent implements Goya
     @Setter
     protected EventStatus eventStatus;
 
-    protected GoyaAbstractEvent(Object source) {
-        super(source);
-        this.eventId = "EVENT-"+SnowflakeIdUtil.nextIdStr();
+    protected GoyaAbstractRemoteEvent(Object source, String originService, Destination destination) {
+        super(source, originService, destination);
+        this.eventId = "EVENT-"+ SnowflakeIdUtil.nextIdStr();
         this.eventStatus = EventStatus.PENDING;
     }
 }

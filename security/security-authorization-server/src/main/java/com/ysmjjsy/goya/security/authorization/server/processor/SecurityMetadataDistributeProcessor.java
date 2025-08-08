@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.ysmjjsy.goya.component.bus.event.strategy.StrategyEventManager;
 import com.ysmjjsy.goya.component.exception.transaction.TransactionalRollbackException;
 import com.ysmjjsy.goya.component.web.domain.RequestMapping;
+import com.ysmjjsy.goya.component.web.scan.RequestMappingEvent;
 import com.ysmjjsy.goya.security.authorization.domain.AttributeTransmitter;
 import com.ysmjjsy.goya.security.authorization.processor.SecurityAttributeAnalyzer;
 import com.ysmjjsy.goya.security.authorization.server.converter.SecurityAttributeToAttributeTransmitterConverter;
@@ -12,6 +13,7 @@ import com.ysmjjsy.goya.security.authorization.server.domain.entity.SecurityAttr
 import com.ysmjjsy.goya.security.authorization.server.domain.entity.SecurityInterface;
 import com.ysmjjsy.goya.security.authorization.server.domain.service.SecurityAttributeService;
 import com.ysmjjsy.goya.security.authorization.server.domain.service.SecurityInterfaceService;
+import com.ysmjjsy.goya.security.authorization.server.event.AttributeTransmitterChangeEvent;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.core.convert.converter.Converter;
@@ -26,7 +28,7 @@ import java.util.List;
  * @since 2025/7/11 09:12
  */
 @Slf4j
-public class SecurityMetadataDistributeProcessor implements StrategyEventManager<List<AttributeTransmitter>> {
+public class SecurityMetadataDistributeProcessor implements StrategyEventManager<AttributeTransmitterChangeEvent> {
 
 
     private final Converter<List<SecurityInterface>, List<SecurityAttribute>> toSysAttributes;
@@ -45,8 +47,8 @@ public class SecurityMetadataDistributeProcessor implements StrategyEventManager
     }
 
     @Override
-    public void postLocalProcess(List<AttributeTransmitter> data) {
-        securityAttributeAnalyzer.processSecurityAttribute(data);
+    public void postLocalProcess(AttributeTransmitterChangeEvent data) {
+        securityAttributeAnalyzer.processSecurityAttribute(data.getAttributeTransmitters());
     }
 
     @Override
@@ -58,7 +60,8 @@ public class SecurityMetadataDistributeProcessor implements StrategyEventManager
      * 将SysAuthority表中存在，但是SysSecurityAttribute中不存在的数据同步至SysSecurityAttribute，保证两侧数据一致
      */
     @Transactional(rollbackFor = TransactionalRollbackException.class)
-    public void postRequestMappings(List<RequestMapping> requestMappings) {
+    public void postRequestMappings(RequestMappingEvent event) {
+        List<RequestMapping> requestMappings = event.getRequestMappings();
         List<SecurityInterface> storedInterfaces = sysInterfaceService.storeRequestMappings(requestMappings);
         if (CollectionUtils.isNotEmpty(storedInterfaces)) {
             log.debug("[Goya] |- [5] Request mapping store success, start to merge security metadata!");
@@ -88,13 +91,13 @@ public class SecurityMetadataDistributeProcessor implements StrategyEventManager
             if (CollectionUtils.isNotEmpty(sysAttributes)) {
                 List<AttributeTransmitter> securityAttributes = sysAttributes.stream().map(toSecurityAttribute::convert).toList();
                 log.debug("[Goya] |- [6] Synchronization permissions to service [{}]", serviceId);
-                this.postProcess(serviceId, securityAttributes);
+                this.postProcess(serviceId, new AttributeTransmitterChangeEvent(this, securityAttributes));
             }
         });
     }
 
     public void distributeChangedSecurityAttribute(SecurityAttribute sysAttribute) {
         AttributeTransmitter securityAttribute = toSecurityAttribute.convert(sysAttribute);
-        postProcess(securityAttribute.getServiceId(), ImmutableList.of(securityAttribute));
+        postProcess(securityAttribute.getServiceId(), new AttributeTransmitterChangeEvent(this, ImmutableList.of(securityAttribute)));
     }
 }

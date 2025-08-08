@@ -18,6 +18,6 @@ public class SecurityAttributeEntityListener extends AbstractApplicationContextA
     @PostUpdate
     protected void postUpdate(SecurityAttribute entity) {
         log.debug("[Goya] |- [1] SecurityAttribute entity @PostUpdate activated, value is : [{}]. Trigger SecurityAttribute change event.", entity.toString());
-        publishEvent(new SecurityAttributeChangeEvent(entity));
+        publishEvent(new SecurityAttributeChangeEvent(this, entity));
     }
 }

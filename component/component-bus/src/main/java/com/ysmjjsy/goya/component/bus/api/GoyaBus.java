@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.component.bus.api;
 
-import com.ysmjjsy.goya.component.bus.event.domain.GoyaAbstractEvent;
+import com.ysmjjsy.goya.component.bus.event.domain.GoyaEvent;
 
 /**
  * <p></p>
@@ -10,7 +10,10 @@ import com.ysmjjsy.goya.component.bus.event.domain.GoyaAbstractEvent;
  */
 public interface GoyaBus {
 
-    void publish();
-
-    void publish(GoyaAbstractEvent event);
+    /**
+     * 发布事件
+     *
+     * @param event 事件
+     */
+    void publish(GoyaEvent event);
 }

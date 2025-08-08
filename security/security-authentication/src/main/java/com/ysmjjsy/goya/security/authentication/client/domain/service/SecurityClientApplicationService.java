@@ -1,6 +1,5 @@
 package com.ysmjjsy.goya.security.authentication.client.domain.service;
 
-import com.ysmjjsy.goya.component.db.adapter.GoyaRepository;
 import com.ysmjjsy.goya.security.authentication.client.domain.converter.SecurityClientApplicationToRegisteredClientConverter;
 import com.ysmjjsy.goya.security.authentication.client.domain.definition.AbstractRegisteredClientService;
 import com.ysmjjsy.goya.security.authentication.client.domain.entity.SecurityClientApplication;
@@ -26,7 +25,7 @@ import java.util.Set;
  */
 @Slf4j
 @Service
-public class SecurityClientApplicationService extends AbstractRegisteredClientService<SecurityClientApplication> {
+public class SecurityClientApplicationService extends AbstractRegisteredClientService<SecurityClientApplication,SecurityClientApplicationRepository> {
 
     private final SecurityClientApplicationRepository securityClientApplicationRepository;
     private final Converter<SecurityClientApplication, RegisteredClient> objectConverter;
@@ -38,14 +37,8 @@ public class SecurityClientApplicationService extends AbstractRegisteredClientSe
         this.objectConverter = new SecurityClientApplicationToRegisteredClientConverter();
     }
 
-    @Override
-    public GoyaRepository<SecurityClientApplication, String> getRepository() {
-        return securityClientApplicationRepository;
-    }
-
-    @Override
     public SecurityClientApplication saveAndFlush(SecurityClientApplication entity) {
-        SecurityClientApplication application = super.saveAndFlush(entity);
+        SecurityClientApplication application = getRepository().saveAndFlush(entity);
         if (ObjectUtils.isNotEmpty(application)) {
             save(Objects.requireNonNull(objectConverter.convert(application)));
             return application;

@@ -1,6 +1,7 @@
 package com.ysmjjsy.goya.security.authentication.client.domain.entity;
 
 import com.google.common.base.Objects;
+import com.ysmjjsy.goya.module.jpa.domain.BaseJpaEntity;
 import com.ysmjjsy.goya.security.authentication.client.constants.SecurityClientConstants;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -29,7 +30,7 @@ import java.util.Set;
         @Index(name = "security_client_scope_code_idx", columnList = "scope_code")})
 @Cacheable
 @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE, region = SecurityClientConstants.REGION_CLIENT_SCOPE)
-public class SecurityClientScope extends BaseJpaAggregate {
+public class SecurityClientScope extends BaseJpaEntity {
 
     @Serial
     private static final long serialVersionUID = -7331702188588004616L;

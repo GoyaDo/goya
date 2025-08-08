@@ -22,7 +22,7 @@ public class StreamMessageSendingAdapter implements MessageSendingAdapter<Object
 
     @Override
     public void onApplicationEvent(StreamMessageSendingEvent<StreamMessage> event) {
-        StreamMessage message = event.getData();
+        StreamMessage message = event.getStreamMessage();
 
         if (ObjectUtils.isEmpty(message.getBinderName())) {
             if (ObjectUtils.isEmpty(message.getOutputContentType())) {

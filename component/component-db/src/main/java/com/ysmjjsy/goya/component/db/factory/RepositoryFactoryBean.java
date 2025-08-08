@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.component.db.factory;
 
 import com.ysmjjsy.goya.component.common.context.ApplicationContextHolder;
-import com.ysmjjsy.goya.component.db.configuration.DbProperties;
+import com.ysmjjsy.goya.component.db.configuration.properties.DbProperties;
 import com.ysmjjsy.goya.component.db.adapter.GoyaRepository;
 import com.ysmjjsy.goya.component.db.enums.RepositoryMode;
 import lombok.RequiredArgsConstructor;

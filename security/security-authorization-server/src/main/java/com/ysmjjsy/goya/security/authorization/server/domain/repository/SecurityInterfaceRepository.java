@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.security.authorization.server.domain.repository;
 
-import com.ysmjjsy.goya.component.db.adapter.GoyaRepository;
+import com.ysmjjsy.goya.module.jpa.domain.BaseJpaRepository;
 import com.ysmjjsy.goya.security.authorization.server.domain.entity.SecurityInterface;
 
 /**
@@ -9,5 +9,5 @@ import com.ysmjjsy.goya.security.authorization.server.domain.entity.SecurityInte
  * @author goya
  * @since 2025/7/11 09:53
  */
-public interface SecurityInterfaceRepository extends GoyaRepository<SecurityInterface,String> {
+public interface SecurityInterfaceRepository extends BaseJpaRepository<SecurityInterface> {
 }

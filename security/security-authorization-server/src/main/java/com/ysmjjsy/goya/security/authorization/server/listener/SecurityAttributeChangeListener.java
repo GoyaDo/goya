@@ -23,7 +23,7 @@ public class SecurityAttributeChangeListener implements ApplicationListener<Secu
 
     @Override
     public void onApplicationEvent(SecurityAttributeChangeEvent event) {
-        SecurityAttribute sysAttribute = event.getData();
+        SecurityAttribute sysAttribute = event.getSecurityAttribute();
         if (ObjectUtils.isNotEmpty(sysAttribute)) {
             log.debug("[Goya] |- Got SysAttribute, start to process SysAttribute change.");
             securityMetadataDistributeProcessor.distributeChangedSecurityAttribute(sysAttribute);

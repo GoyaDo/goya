@@ -38,5 +38,15 @@ public enum EventType {
      */
     OTHER_EVENT,
 
+    /**
+     * 消息事件
+     */
+    MESSAGE_EVENT,
+
+    /**
+     * 安全事件
+     */
+    SECURITY_EVENT,
+
     ;
 }

@@ -1,12 +1,10 @@
 package com.ysmjjsy.goya.security.authentication.client.compliance.event;
 
-import com.ysmjjsy.goya.component.bus.enums.EventStatus;
 import com.ysmjjsy.goya.component.bus.enums.EventType;
 import com.ysmjjsy.goya.component.bus.event.domain.GoyaAbstractEvent;
+import lombok.Getter;
 
 import java.io.Serial;
-import java.time.Clock;
-import java.time.LocalDateTime;
 
 /**
  * <p>Description: 从账户状态缓存中释放账号事件 </p>
@@ -14,6 +12,7 @@ import java.time.LocalDateTime;
  * @author goya
  * @since 2022/7/8 21:27
  */
+@Getter
 public class AccountReleaseFromCacheEvent extends GoyaAbstractEvent {
 
     @Serial
@@ -21,29 +20,13 @@ public class AccountReleaseFromCacheEvent extends GoyaAbstractEvent {
 
     private final String data;
 
-    public AccountReleaseFromCacheEvent(String data) {
-        super(data);
+    public AccountReleaseFromCacheEvent(Object source, String data) {
+        super(source);
         this.data = data;
-    }
-
-    public AccountReleaseFromCacheEvent(String data, Clock clock) {
-        super(data, clock);
-        this.data = data;
-
     }
 
     @Override
     public EventType eventType() {
-        return null;
-    }
-
-    @Override
-    public LocalDateTime getCreateTime() {
-        return null;
-    }
-
-    @Override
-    public void setEventStatus(EventStatus eventStatus) {
-
+        return EventType.PLATFORM_EVENT;
     }
 }

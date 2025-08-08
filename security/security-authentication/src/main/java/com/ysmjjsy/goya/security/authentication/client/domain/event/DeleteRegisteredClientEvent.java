@@ -1,6 +1,8 @@
 package com.ysmjjsy.goya.security.authentication.client.domain.event;
 
+import com.ysmjjsy.goya.component.bus.enums.EventType;
 import com.ysmjjsy.goya.component.bus.event.domain.GoyaAbstractEvent;
+import lombok.Getter;
 
 import java.io.Serial;
 
@@ -10,11 +12,20 @@ import java.io.Serial;
  * @author goya
  * @since 2025/7/21 23:56
  */
-public class DeleteRegisteredClientEvent extends GoyaAbstractEvent<String> {
+@Getter
+public class DeleteRegisteredClientEvent extends GoyaAbstractEvent {
     @Serial
     private static final long serialVersionUID = -8868221614402788460L;
 
-    public DeleteRegisteredClientEvent(String data) {
-        super(data);
+    private final String data;
+
+    public DeleteRegisteredClientEvent(Object source, String data) {
+        super(source);
+        this.data = data;
+    }
+
+    @Override
+    public EventType eventType() {
+        return EventType.PLATFORM_EVENT;
     }
 }

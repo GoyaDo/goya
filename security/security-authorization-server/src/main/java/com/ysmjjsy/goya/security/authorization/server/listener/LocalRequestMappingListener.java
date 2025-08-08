@@ -26,9 +26,9 @@ public class LocalRequestMappingListener implements ApplicationListener<RequestM
     public void onApplicationEvent(RequestMappingEvent event) {
         log.info("[Goya] |- Request mapping gather LOCAL listener, response event!");
 
-        List<RequestMapping> requestMappings = event.getData();
+        List<RequestMapping> requestMappings = event.getRequestMappings();
         if (CollectionUtils.isNotEmpty(requestMappings)) {
-            requestMappingStoreProcessor.postProcess(requestMappings);
+            requestMappingStoreProcessor.postProcess(event);
         }
     }
 }

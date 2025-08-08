@@ -1,7 +1,6 @@
 package com.ysmjjsy.goya.module.kafka.scan;
 
 import com.ysmjjsy.goya.component.common.context.GoyaContextHolder;
-import com.ysmjjsy.goya.component.web.domain.RequestMapping;
 import com.ysmjjsy.goya.component.web.scan.RequestMappingEvent;
 import com.ysmjjsy.goya.component.web.scan.RequestMappingScanEventManager;
 import com.ysmjjsy.goya.module.kafka.bus.RemoteRequestMappingEvent;
@@ -11,7 +10,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 
 import java.lang.annotation.Annotation;
-import java.util.List;
 
 /**
  * <p></p>
@@ -36,17 +34,17 @@ public class RemoteSecurityDefaultRequestMappingScanEventManager implements Requ
     }
 
     @Override
-    public void postLocalStorage(List<RequestMapping> requestMappings) {
+    public void postLocalStorage(RequestMappingEvent requestMappings) {
         securityAttributeAnalyzer.processRequestMatchers();
     }
 
     @Override
-    public void postLocalProcess(List<RequestMapping> data) {
-        publishEvent(new RequestMappingEvent(data));
+    public void postLocalProcess(RequestMappingEvent data) {
+        publishEvent(data);
     }
 
     @Override
     public void postRemoteProcess(String data, String originService, String destinationService) {
-        publishEvent(new RemoteRequestMappingEvent(data, originService, destinationService));
+        publishEvent(new RemoteRequestMappingEvent(this, originService, destinationService, data));
     }
 }

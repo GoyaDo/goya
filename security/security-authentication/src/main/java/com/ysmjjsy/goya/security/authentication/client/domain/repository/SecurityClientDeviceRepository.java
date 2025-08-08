@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.security.authentication.client.domain.repository;
 
-import com.ysmjjsy.goya.component.db.adapter.GoyaRepository;
+import com.ysmjjsy.goya.module.jpa.domain.BaseJpaRepository;
 import com.ysmjjsy.goya.security.authentication.client.domain.entity.SecurityClientDevice;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.Modifying;
@@ -12,7 +12,7 @@ import org.springframework.data.jpa.repository.Query;
  * @author goya
  * @since 2023/5/15 16:14
  */
-public interface SecurityClientDeviceRepository extends GoyaRepository<SecurityClientDevice, String> {
+public interface SecurityClientDeviceRepository extends BaseJpaRepository<SecurityClientDevice> {
 
     /**
      * 根据 Client ID 查询 OAuth2Device

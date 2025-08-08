@@ -1,5 +1,6 @@
 package com.ysmjjsy.goya.module.jpa.configuration;
 
+import com.querydsl.jpa.impl.JPAQueryFactory;
 import com.ysmjjsy.goya.component.db.adapter.BaseRepositoryAdapter;
 import com.ysmjjsy.goya.component.db.constants.DbConstants;
 import com.ysmjjsy.goya.module.jpa.adapter.JpaRepositoryAdapter;
@@ -49,6 +50,13 @@ public class JpaAutoConfiguration {
     @Primary
     public BaseRepositoryAdapter jpaAdapter(JpaEntityInformation entityInformation, EntityManager entityManager) {
         return new JpaRepositoryAdapter<>(entityInformation, entityManager);
+    }
+
+    @Bean
+    public JPAQueryFactory jpaQueryFactory(EntityManager entityManager) {
+        JPAQueryFactory queryFactory = new JPAQueryFactory(entityManager);
+        log.trace("[Goya] |- module [jpa] |- bean [jpaQueryFactory] register.");
+        return queryFactory;
     }
 
 

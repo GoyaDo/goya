@@ -1,6 +1,7 @@
 package com.ysmjjsy.goya.security.authentication.client.compliance;
 
 import com.ysmjjsy.goya.component.pojo.enums.DataItemStatus;
+import com.ysmjjsy.goya.security.authentication.client.compliance.event.ChangeUserStatusEvent;
 import com.ysmjjsy.goya.security.authentication.client.compliance.stamp.LockedUserDetailsStampManager;
 import com.ysmjjsy.goya.security.core.domain.GoyaUser;
 import com.ysmjjsy.goya.security.core.service.EnhanceUserDetailsService;
@@ -48,7 +49,8 @@ public class SecurityAccountStatusManager {
     public void lock(String username) {
         String userId = getUserId(username);
         if (ObjectUtils.isNotEmpty(userId)) {
-            accountStatusEventManager.postProcess(new UserStatus(userId, DataItemStatus.LOCKING.name()));
+            UserStatus userStatus = new UserStatus(userId, DataItemStatus.LOCKING.name());
+            accountStatusEventManager.postProcess(new ChangeUserStatusEvent(this, userStatus));
             lockedUserDetailsStampManager.put(userId, username);
             log.info("[Goya] |- User count [{}] has been locked, and record into cache!", username);
         }
@@ -56,7 +58,8 @@ public class SecurityAccountStatusManager {
 
     public void enable(String userId) {
         if (ObjectUtils.isNotEmpty(userId)) {
-            accountStatusEventManager.postProcess(new UserStatus(userId, DataItemStatus.ENABLE.name()));
+            UserStatus userStatus = new UserStatus(userId, DataItemStatus.ENABLE.name());
+            accountStatusEventManager.postProcess(new ChangeUserStatusEvent(this, userStatus));
         }
     }
 

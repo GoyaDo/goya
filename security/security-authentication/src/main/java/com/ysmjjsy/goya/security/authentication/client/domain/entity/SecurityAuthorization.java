@@ -2,6 +2,7 @@ package com.ysmjjsy.goya.security.authentication.client.domain.entity;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
+import com.ysmjjsy.goya.module.jpa.domain.BaseJpaEntity;
 import com.ysmjjsy.goya.security.authentication.client.constants.SecurityClientConstants;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -27,7 +28,7 @@ import java.time.LocalDateTime;
 )
 @Cacheable
 @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE, region = SecurityClientConstants.REGION_CLIENT_AUTHORIZATION)
-public class SecurityAuthorization extends BaseJpaAggregate {
+public class SecurityAuthorization extends BaseJpaEntity {
 
     @Serial
     private static final long serialVersionUID = 3493360483403866986L;

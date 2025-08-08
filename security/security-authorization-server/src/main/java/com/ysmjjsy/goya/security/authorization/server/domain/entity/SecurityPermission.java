@@ -1,5 +1,6 @@
 package com.ysmjjsy.goya.security.authorization.server.domain.entity;
 
+import com.ysmjjsy.goya.module.jpa.domain.BaseJpaEntity;
 import com.ysmjjsy.goya.security.authorization.server.constants.SecurityAuthConstants;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
@@ -26,7 +27,7 @@ import java.util.Objects;
 @Table(name = "security_permission", indexes = {@Index(name = "security_permission_id_idx", columnList = "permission_id")})
 @Cacheable
 @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE, region = SecurityAuthConstants.REGION_SECURITY_PERMISSION)
-public class SecurityPermission extends BaseJpaAggregate {
+public class SecurityPermission extends BaseJpaEntity {
     @Serial
     private static final long serialVersionUID = -35860705766793659L;
 

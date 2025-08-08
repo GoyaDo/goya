@@ -31,11 +31,11 @@ public class OidcClientRegistrationListener implements ApplicationListener<OidcC
 
     @Override
     public void onApplicationEvent(OidcClientRegistrationEvent event) {
-        RegisteredClient registeredClient = event.getData();
+        RegisteredClient registeredClient = event.getRegisteredClient();
 
         if (ObjectUtils.isNotEmpty(registeredClient)) {
             SecurityClientDevice oauth2Device = toOAuth2DeviceConverter.convert(registeredClient);
-            SecurityClientDevice result = securityClientDeviceService.save(oauth2Device);
+            SecurityClientDevice result = securityClientDeviceService.saveAndFlush(oauth2Device);
             if (ObjectUtils.isNotEmpty(result)) {
                 log.error("[Goya] |- Async saveOrUpdate device success");
             }

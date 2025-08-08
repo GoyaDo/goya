@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.security.authentication.client.processor.jackson2;
 
 import com.fasterxml.jackson.databind.module.SimpleModule;
-import com.ysmjjsy.goya.component.common.json.jackson2.Jackson2Constants;
+import com.ysmjjsy.goya.component.json.jackson2.Jackson2Constants;
 import com.ysmjjsy.goya.security.authentication.form.FormLoginWebAuthenticationDetails;
 import com.ysmjjsy.goya.security.core.domain.GoyaGrantedAuthority;
 import com.ysmjjsy.goya.security.core.domain.GoyaUser;

@@ -1,8 +1,7 @@
 package com.ysmjjsy.goya.security.authorization.server.domain.service;
 
-import com.ysmjjsy.goya.component.db.adapter.GoyaRepository;
-import com.ysmjjsy.goya.component.db.domain.BaseService;
 import com.ysmjjsy.goya.component.web.domain.RequestMapping;
+import com.ysmjjsy.goya.module.rest.service.BaseService;
 import com.ysmjjsy.goya.security.authorization.server.converter.RequestMappingToSecurityInterfaceConverter;
 import com.ysmjjsy.goya.security.authorization.server.domain.entity.SecurityAttribute;
 import com.ysmjjsy.goya.security.authorization.server.domain.entity.SecurityInterface;
@@ -29,19 +28,12 @@ import java.util.stream.Collectors;
  */
 @Slf4j
 @Service
-public class SecurityInterfaceService extends BaseService<SecurityInterface,String> {
+public class SecurityInterfaceService extends BaseService<SecurityInterface,SecurityInterfaceRepository> {
 
-    private final SecurityInterfaceRepository securityInterfaceRepository;
     private final Converter<RequestMapping, SecurityInterface> toSysInterface;
 
-    public SecurityInterfaceService(SecurityInterfaceRepository securityInterfaceRepository) {
-        this.securityInterfaceRepository = securityInterfaceRepository;
+    public SecurityInterfaceService() {
         this.toSysInterface = new RequestMappingToSecurityInterfaceConverter();
-    }
-
-    @Override
-    public GoyaRepository<SecurityInterface, String> getRepository() {
-        return securityInterfaceRepository;
     }
 
     public List<SecurityInterface> findAllocatable() {
@@ -66,12 +58,12 @@ public class SecurityInterfaceService extends BaseService<SecurityInterface,Stri
             return criteriaQuery.getRestriction();
         };
 
-        return this.findAll(specification);
+        return this.getRepository().findAll(specification);
     }
 
     public List<SecurityInterface> storeRequestMappings(List<RequestMapping> requestMappings) {
         List<SecurityInterface> sysAuthorities = toSysInterfaces(requestMappings);
-        return saveAllAndFlush(sysAuthorities);
+        return this.getRepository().saveAllAndFlush(sysAuthorities);
     }
 
     private List<SecurityInterface> toSysInterfaces(Collection<RequestMapping> requestMappings) {

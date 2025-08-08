@@ -60,7 +60,7 @@ public class OidcClientRegistrationResponseHandler implements AuthenticationSucc
         RegisteredClient registeredClient = registeredClientRepository.findByClientId(clientRegistration.getClientId());
         if (ObjectUtils.isNotEmpty(registeredClient) && StringUtils.isNotBlank(clientRegistration.getRegistrationAccessToken())) {
             log.debug("[Goya] |- Sync oidcClientRegistration to device.");
-            applicationEventPublisher.publishEvent(new OidcClientRegistrationEvent(registeredClient));
+            applicationEventPublisher.publishEvent(new OidcClientRegistrationEvent(this,registeredClient));
         }
 
         ServletServerHttpResponse httpResponse = new ServletServerHttpResponse(response);

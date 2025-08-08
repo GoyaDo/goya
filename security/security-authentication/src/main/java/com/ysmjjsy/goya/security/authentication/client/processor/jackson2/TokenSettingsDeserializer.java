@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ysmjjsy.goya.component.common.json.jackson2.utils.JsonNodeUtils;
+import com.ysmjjsy.goya.component.json.jackson2.utils.JsonNodeUtils;
 import org.springframework.security.oauth2.server.authorization.settings.TokenSettings;
 
 import java.io.IOException;

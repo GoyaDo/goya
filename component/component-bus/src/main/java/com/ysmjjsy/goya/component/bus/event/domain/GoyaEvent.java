@@ -29,19 +29,19 @@ public interface GoyaEvent extends Serializable {
     String getEventId();
 
     /**
-     * 获取事件key
+     * 获取事件索引
      * 用于消息路由、监听器匹配等场景
      *
      * @return 事件类型，如 "order.created", "payment.failed"
      */
-    String getKey();
+    String getIndex();
 
     /**
      * 获取事件创建时间
      *
      * @return 事件创建的时间戳
      */
-    LocalDateTime getCreateTime();
+    LocalDateTime getCreatedTime();
 
     /**
      * 获取事件状态

@@ -1,7 +1,6 @@
 package com.ysmjjsy.goya.security.authorization.server.domain.service;
 
-import com.ysmjjsy.goya.component.db.adapter.GoyaRepository;
-import com.ysmjjsy.goya.component.db.domain.BaseService;
+import com.ysmjjsy.goya.module.rest.service.BaseService;
 import com.ysmjjsy.goya.security.authorization.server.domain.entity.SecurityPermission;
 import com.ysmjjsy.goya.security.authorization.server.domain.repository.SecurityPermissionRepository;
 import lombok.RequiredArgsConstructor;
@@ -17,12 +16,6 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class SecurityPermissionService extends BaseService<SecurityPermission,String> {
+public class SecurityPermissionService extends BaseService<SecurityPermission,SecurityPermissionRepository> {
 
-    private final SecurityPermissionRepository securityPermissionRepository;
-
-    @Override
-    public GoyaRepository<SecurityPermission, String> getRepository() {
-        return securityPermissionRepository;
-    }
 }

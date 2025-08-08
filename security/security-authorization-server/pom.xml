@@ -29,7 +29,12 @@
 
         <dependency>
             <groupId>com.ysmjjsy.goya</groupId>
-            <artifactId>component-db</artifactId>
+            <artifactId>module-jpa</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ysmjjsy.goya</groupId>
+            <artifactId>module-rest</artifactId>
         </dependency>
     </dependencies>
 </project>

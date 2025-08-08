@@ -1,6 +1,8 @@
 package com.ysmjjsy.goya.security.authentication.client.domain.definition;
 
-import com.ysmjjsy.goya.component.db.domain.BaseService;
+import com.ysmjjsy.goya.module.jpa.domain.BaseJpaEntity;
+import com.ysmjjsy.goya.module.jpa.domain.BaseJpaRepository;
+import com.ysmjjsy.goya.module.rest.service.BaseService;
 import com.ysmjjsy.goya.security.authentication.client.domain.event.DeleteRegisteredClientEvent;
 import com.ysmjjsy.goya.security.authentication.client.domain.event.SaveRegisteredClientEvent;
 import lombok.RequiredArgsConstructor;
@@ -16,18 +18,18 @@ import org.springframework.security.oauth2.server.authorization.client.Registere
  */
 @Slf4j
 @RequiredArgsConstructor
-public abstract class AbstractRegisteredClientService <T extends BaseJpaAggregate> extends BaseService<T, String> {
+public abstract class AbstractRegisteredClientService <T extends BaseJpaEntity,R extends BaseJpaRepository<T>> extends BaseService<T, R> {
 
     protected final ApplicationEventPublisher applicationEventPublisher;
 
     @Override
     public void deleteById(String id) {
         super.deleteById(id);
-        applicationEventPublisher.publishEvent(new DeleteRegisteredClientEvent(id));
+        applicationEventPublisher.publishEvent(new DeleteRegisteredClientEvent(this,id));
     }
 
     protected void save(RegisteredClient registeredClient) {
         log.debug("[Goya] |- Async saveOrUpdate registered client [{}].", registeredClient.getClientId());
-        applicationEventPublisher.publishEvent(new SaveRegisteredClientEvent(registeredClient));
+        applicationEventPublisher.publishEvent(new SaveRegisteredClientEvent(this,registeredClient));
     }
 }

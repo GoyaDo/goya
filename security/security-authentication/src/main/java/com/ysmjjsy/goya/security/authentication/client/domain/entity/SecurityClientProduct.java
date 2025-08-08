@@ -1,6 +1,7 @@
 package com.ysmjjsy.goya.security.authentication.client.domain.entity;
 
 import com.google.common.base.Objects;
+import com.ysmjjsy.goya.module.jpa.domain.BaseJpaEntity;
 import com.ysmjjsy.goya.security.authentication.client.constants.SecurityClientConstants;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
@@ -26,7 +27,7 @@ import java.io.Serial;
         indexes = {@Index(name = "security_client_product_pid_idx", columnList = "id"), @Index(name = "oauth2_product_ipk_idx", columnList = "product_key")})
 @Cacheable
 @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE, region = SecurityClientConstants.REGION_CLIENT_PRODUCT)
-public class SecurityClientProduct extends BaseJpaAggregate {
+public class SecurityClientProduct extends BaseJpaEntity {
 
     @Serial
     private static final long serialVersionUID = 213812028998321356L;

@@ -1,5 +1,6 @@
 package com.ysmjjsy.goya.security.authorization.server.domain.entity;
 
+import com.ysmjjsy.goya.module.jpa.domain.BaseJpaEntity;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -25,7 +26,7 @@ import java.util.Objects;
 @Schema(name = "系统应用接口")
 @Entity
 @Table(name = "security_interface", indexes = {@Index(name = "sys_interface_id_idx", columnList = "interface_id")})
-public class SecurityInterface extends BaseJpaAggregate {
+public class SecurityInterface extends BaseJpaEntity {
 
     @Serial
     private static final long serialVersionUID = 8655568707113106183L;

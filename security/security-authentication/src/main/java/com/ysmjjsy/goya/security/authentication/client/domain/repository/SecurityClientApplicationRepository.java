@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.security.authentication.client.domain.repository;
 
-import com.ysmjjsy.goya.component.db.adapter.GoyaRepository;
+import com.ysmjjsy.goya.module.jpa.domain.BaseJpaRepository;
 import com.ysmjjsy.goya.security.authentication.client.domain.entity.SecurityClientApplication;
 
 /**
@@ -9,7 +9,7 @@ import com.ysmjjsy.goya.security.authentication.client.domain.entity.SecurityCli
  * @author goya
  * @since 2025/7/21 23:50
  */
-public interface SecurityClientApplicationRepository extends GoyaRepository<SecurityClientApplication,String> {
+public interface SecurityClientApplicationRepository extends BaseJpaRepository<SecurityClientApplication> {
 
     /**
      * 根据 Client ID 查询 SecurityClientApplication

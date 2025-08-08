@@ -118,6 +118,11 @@ public class GoyaContextHolder {
         getApplicationContext().publishEvent(applicationEvent);
     }
 
+
+    public void publishEvent(Object event) {
+        getApplicationContext().publishEvent(event);
+    }
+
     public String getId() {
         return this.getApplicationName() + SymbolConstants.COLON + this.getPort();
     }

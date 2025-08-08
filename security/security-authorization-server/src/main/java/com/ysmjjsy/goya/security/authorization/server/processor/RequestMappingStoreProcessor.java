@@ -1,11 +1,9 @@
 package com.ysmjjsy.goya.security.authorization.server.processor;
 
-import com.ysmjjsy.goya.component.web.domain.RequestMapping;
+import com.ysmjjsy.goya.component.web.scan.RequestMappingEvent;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;
-
-import java.util.List;
 
 /**
  * <p></p>
@@ -20,7 +18,7 @@ public class RequestMappingStoreProcessor {
     private final SecurityMetadataDistributeProcessor securityMetadataDistributeProcessor;
 
     @Async
-    public void postProcess(List<RequestMapping> requestMappings) {
+    public void postProcess(RequestMappingEvent requestMappings) {
         log.debug("[Goya] |- [4] Async store request mapping process BEGIN!");
         securityMetadataDistributeProcessor.postRequestMappings(requestMappings);
     }

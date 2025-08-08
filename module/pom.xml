@@ -25,6 +25,7 @@
         <module>module-jpa</module>
         <module>module-mybatis-plus</module>
         <module>module-tenant</module>
+        <module>module-domain</module>
     </modules>
 
 

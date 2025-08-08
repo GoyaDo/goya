@@ -1,5 +1,6 @@
 package com.ysmjjsy.goya.component.db.configuration;
 
+import com.ysmjjsy.goya.component.db.configuration.properties.DbProperties;
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.AutoConfiguration;

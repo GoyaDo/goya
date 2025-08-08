@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.security.authentication.response;
 
-import com.ysmjjsy.goya.component.common.json.jackson2.utils.Jackson2Utils;
+import com.ysmjjsy.goya.component.json.jackson2.utils.Jackson2Utils;
 import com.ysmjjsy.goya.component.web.crypto.HttpCryptoProcessor;
 import com.ysmjjsy.goya.component.web.utils.RequestUtils;
 import com.ysmjjsy.goya.security.core.constants.SecurityConstants;

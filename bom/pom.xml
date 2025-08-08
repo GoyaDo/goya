@@ -229,30 +229,6 @@
 
             <dependency>
                 <groupId>com.ysmjjsy.goya</groupId>
-                <artifactId>goya-common-jpa-starter</artifactId>
-                <version>${revision}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.ysmjjsy.goya</groupId>
-                <artifactId>goya-common-web-starter</artifactId>
-                <version>${revision}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.ysmjjsy.goya</groupId>
-                <artifactId>goya-common-rest-starter</artifactId>
-                <version>${revision}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.ysmjjsy.goya</groupId>
-                <artifactId>goya-module-redis-starter</artifactId>
-                <version>${revision}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.ysmjjsy.goya</groupId>
                 <artifactId>goya-cloud-starter</artifactId>
                 <version>${revision}</version>
             </dependency>

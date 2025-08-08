@@ -1,6 +1,7 @@
 package com.ysmjjsy.goya.security.authentication.client.domain.entity;
 
 import com.google.common.base.Objects;
+import com.ysmjjsy.goya.module.jpa.domain.BaseJpaEntity;
 import com.ysmjjsy.goya.security.authentication.client.constants.SecurityClientConstants;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -24,7 +25,7 @@ import java.io.Serial;
         @Index(name = "security_client_compliance_id_idx", columnList = "id")})
 @Cacheable
 @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE, region = SecurityClientConstants.REGION_CLIENT_COMPLIANCE)
-public class SecurityClientCompliance extends BaseJpaAggregate {
+public class SecurityClientCompliance extends BaseJpaEntity {
 
     @Serial
     private static final long serialVersionUID = -263580015488006610L;

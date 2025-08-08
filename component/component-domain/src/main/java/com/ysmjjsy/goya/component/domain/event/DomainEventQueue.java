@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.component.domain.event;
 
-import com.ysmjjsy.goya.component.bus.event.EventQueue;
+import com.ysmjjsy.goya.component.bus.event.queue.EventQueue;
 
 import java.util.ArrayList;
 import java.util.List;
