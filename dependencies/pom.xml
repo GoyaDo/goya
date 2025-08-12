@@ -99,7 +99,7 @@
         <nacos.version>3.0.1</nacos.version>
         <transmittable-thread-local.version>2.14.5</transmittable-thread-local.version>
         <!-- 国内开源通用组件 -->
-        <hutool.version>6.0.0-M21</hutool.version>
+        <hutool.version>7.0.0-M1</hutool.version>
         <okhttps.version>4.1.0</okhttps.version>
         <weixin-java-sdk.version>4.7.7-20250716.230806</weixin-java-sdk.version>
         <!--GRPC 依赖-->
@@ -326,8 +326,18 @@
                 <version>${zxing.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.dromara.hutool</groupId>
+                <groupId>cn.hutool.v7</groupId>
                 <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool.v7</groupId>
+                <artifactId>hutool-core</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool.v7</groupId>
+                <artifactId>hutool-extra</artifactId>
                 <version>${hutool.version}</version>
             </dependency>
             <dependency>

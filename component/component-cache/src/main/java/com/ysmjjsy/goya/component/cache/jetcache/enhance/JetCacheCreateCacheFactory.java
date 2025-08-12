@@ -1,5 +1,6 @@
 package com.ysmjjsy.goya.component.cache.jetcache.enhance;
 
+import cn.hutool.v7.crypto.SecureUtil;
 import com.alibaba.fastjson2.JSON;
 import com.alicp.jetcache.Cache;
 import com.alicp.jetcache.CacheManager;
@@ -10,7 +11,6 @@ import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.BooleanUtils;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.dromara.hutool.crypto.SecureUtil;
 
 import java.time.Duration;
 /**

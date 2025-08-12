@@ -23,12 +23,12 @@
             <!-- component -->
             <dependency>
                 <groupId>com.ysmjjsy.goya</groupId>
-                <artifactId>component-pojo</artifactId>
+                <artifactId>component-exception</artifactId>
                 <version>${revision}</version>
             </dependency>
             <dependency>
                 <groupId>com.ysmjjsy.goya</groupId>
-                <artifactId>component-exception</artifactId>
+                <artifactId>component-core</artifactId>
                 <version>${revision}</version>
             </dependency>
             <dependency>

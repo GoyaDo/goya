@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.module.kafka.scan;
 
-import com.ysmjjsy.goya.component.common.context.GoyaContextHolder;
+import com.ysmjjsy.goya.component.common.context.ServiceContextHolder;
 import com.ysmjjsy.goya.component.web.scan.RequestMappingEvent;
 import com.ysmjjsy.goya.component.web.scan.RequestMappingScanEventManager;
 import com.ysmjjsy.goya.module.kafka.bus.RemoteRequestMappingEvent;
@@ -30,7 +30,7 @@ public class RemoteSecurityDefaultRequestMappingScanEventManager implements Requ
 
     @Override
     public String getDestinationServiceName() {
-        return GoyaContextHolder.getInstance().getAuthServiceName();
+        return ServiceContextHolder.getInstance().getAuthServiceName();
     }
 
     @Override

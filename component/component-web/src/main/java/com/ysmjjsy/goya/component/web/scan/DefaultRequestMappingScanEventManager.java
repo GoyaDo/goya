@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.component.web.scan;
 
-import com.ysmjjsy.goya.component.common.context.GoyaContextHolder;
+import com.ysmjjsy.goya.component.common.context.ServiceContextHolder;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -30,7 +30,7 @@ public class DefaultRequestMappingScanEventManager implements RequestMappingScan
 
     @Override
     public String getDestinationServiceName() {
-        return GoyaContextHolder.getInstance().getAuthServiceName();
+        return ServiceContextHolder.getInstance().getAuthServiceName();
     }
 
     @Override

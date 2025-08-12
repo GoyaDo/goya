@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.module.redis.definition;
 
-import com.ysmjjsy.goya.component.cache.core.Cache;
+import com.ysmjjsy.goya.component.cache.core.GoyaCache;
 import com.ysmjjsy.goya.component.cache.core.CacheGetFilter;
 import com.ysmjjsy.goya.component.cache.core.CacheGetIfAbsent;
 import com.ysmjjsy.goya.component.cache.core.CacheLoader;
@@ -16,7 +16,7 @@ import java.time.Duration;
  * @author goya
  * @since 2025/7/30 00:21
  */
-public interface GoyaRedisCache extends Cache {
+public interface GoyaRedisCache extends GoyaCache {
 
     /**
      * 获取缓存，如查询结果为空，调用 {@link CacheLoader} 加载缓存

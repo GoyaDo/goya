@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.module.rest.controller;
 
-import com.ysmjjsy.goya.component.common.context.ApplicationContextHolder;
+import com.ysmjjsy.goya.component.common.context.SpringContextHolder;
 import com.ysmjjsy.goya.component.db.domain.BaseDbEntity;
 import com.ysmjjsy.goya.component.db.adapter.GoyaRepository;
 import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
@@ -39,7 +39,7 @@ public abstract class BaseReadableController<E extends BaseDbEntity, R extends G
         }
 
         Class<S> serviceClass = (Class<S>) typeArguments[2];
-        return ApplicationContextHolder.getBean(serviceClass);
+        return SpringContextHolder.getBean(serviceClass);
     }
 
     @AccessLimited

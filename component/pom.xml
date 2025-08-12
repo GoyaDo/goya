@@ -16,7 +16,6 @@
         <module>component-catchlog</module>
         <module>component-common</module>
         <module>component-db</module>
-        <module>component-pojo</module>
         <module>component-exception</module>
         <module>component-test-container</module>
         <module>component-ruleengine</module>
@@ -27,7 +26,7 @@
         <module>component-crypto</module>
         <module>component-bus</module>
         <module>component-distributedid</module>
-        <module>component-json</module>
+        <module>component-core</module>
     </modules>
 
 

@@ -1,12 +1,13 @@
 package com.ysmjjsy.goya.component.common.utils;
 
+import cn.hutool.v7.core.net.url.UrlDecoder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
-import com.ysmjjsy.goya.component.pojo.constants.SymbolConstants;
-import com.ysmjjsy.goya.component.json.gson.GsonUtils;
+import com.ysmjjsy.goya.component.common.gson.GsonUtils;
+import com.ysmjjsy.goya.component.common.pojo.constants.SymbolConstants;
+import lombok.experimental.UtilityClass;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.ObjectUtils;
-import org.dromara.hutool.core.net.url.UrlDecoder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,6 +22,7 @@ import java.util.stream.Stream;
  * @author goya
  * @since 2021/9/1 10:17
  */
+@UtilityClass
 public class SqlInjectionUtils {
 
     private static final Logger log = LoggerFactory.getLogger(SqlInjectionUtils.class);

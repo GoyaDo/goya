@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.OptimisticLockerInnerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.TenantLineInnerInterceptor;
-import com.ysmjjsy.goya.component.common.context.ApplicationContextHolder;
+import com.ysmjjsy.goya.component.common.context.SpringContextHolder;
 import com.ysmjjsy.goya.component.common.resolver.YmlPropertySourceFactory;
 import com.ysmjjsy.goya.component.db.adapter.BaseRepositoryAdapter;
 import com.ysmjjsy.goya.component.db.constants.DbConstants;
@@ -64,7 +64,7 @@ public class MybatisPlusAutoConfiguration {
         MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();
         // 多租户插件 必须放到第一位
         try {
-            TenantLineInnerInterceptor tenant = ApplicationContextHolder.getBean(TenantLineInnerInterceptor.class);
+            TenantLineInnerInterceptor tenant = SpringContextHolder.getBean(TenantLineInnerInterceptor.class);
             interceptor.addInnerInterceptor(tenant);
         } catch (BeansException ignore) {
         }

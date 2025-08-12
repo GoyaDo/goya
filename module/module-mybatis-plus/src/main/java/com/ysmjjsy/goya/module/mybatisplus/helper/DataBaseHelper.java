@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.module.mybatisplus.helper;
 
 import com.baomidou.dynamic.datasource.DynamicRoutingDataSource;
-import com.ysmjjsy.goya.component.common.context.ApplicationContextHolder;
+import com.ysmjjsy.goya.component.common.context.SpringContextHolder;
 import com.ysmjjsy.goya.component.exception.definition.GoyaRuntimeException;
 import com.ysmjjsy.goya.module.mybatisplus.enums.DataBaseType;
 import lombok.AccessLevel;
@@ -23,7 +23,7 @@ import java.util.List;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class DataBaseHelper {
 
-    private static final DynamicRoutingDataSource DS = ApplicationContextHolder.getBean(DynamicRoutingDataSource.class);
+    private static final DynamicRoutingDataSource DS = SpringContextHolder.getBean(DynamicRoutingDataSource.class);
 
     /**
      * 获取当前数据库类型

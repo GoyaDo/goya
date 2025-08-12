@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.module.rest.service;
 
-import com.ysmjjsy.goya.component.common.context.ApplicationContextHolder;
+import com.ysmjjsy.goya.component.common.context.SpringContextHolder;
 import com.ysmjjsy.goya.component.db.domain.BaseDbEntity;
 import com.ysmjjsy.goya.component.db.adapter.GoyaRepository;
 import com.ysmjjsy.goya.component.pojo.domain.PageQuery;
@@ -24,7 +24,7 @@ public interface BaseReadableService<E extends BaseDbEntity, R extends GoyaRepos
         }
 
         Class<R> repositoryClass = (Class<R>) typeArguments[1];
-        return ApplicationContextHolder.getBean(repositoryClass);
+        return SpringContextHolder.getBean(repositoryClass);
     }
 
     /**

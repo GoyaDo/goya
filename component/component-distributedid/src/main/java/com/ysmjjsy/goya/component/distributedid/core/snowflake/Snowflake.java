@@ -1,11 +1,11 @@
 package com.ysmjjsy.goya.component.distributedid.core.snowflake;
 
+import cn.hutool.v7.core.data.id.IdUtil;
+import cn.hutool.v7.core.date.SystemClock;
+import cn.hutool.v7.core.lang.Assert;
+import cn.hutool.v7.core.text.StrUtil;
+import cn.hutool.v7.core.util.RandomUtil;
 import com.ysmjjsy.goya.component.distributedid.core.IdGenerator;
-import org.dromara.hutool.core.data.id.IdUtil;
-import org.dromara.hutool.core.date.SystemClock;
-import org.dromara.hutool.core.lang.Assert;
-import org.dromara.hutool.core.text.StrUtil;
-import org.dromara.hutool.core.util.RandomUtil;
 
 import java.io.Serial;
 import java.io.Serializable;

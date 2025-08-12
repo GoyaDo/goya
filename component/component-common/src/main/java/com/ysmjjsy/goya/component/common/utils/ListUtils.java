@@ -1,7 +1,10 @@
 package com.ysmjjsy.goya.component.common.utils;
 
+import lombok.experimental.UtilityClass;
 import org.apache.commons.collections4.CollectionUtils;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -10,6 +13,7 @@ import java.util.List;
  * @author goya
  * @since 2023/3/28 23:15
  */
+@UtilityClass
 public class ListUtils {
 
     /**
@@ -39,6 +43,22 @@ public class ListUtils {
             return resources.toArray(result);
         } else {
             return new String[]{};
+        }
+    }
+
+    /**
+     * 将字符串数组转换成字符串List
+     *
+     * @param array 字符串数组
+     * @return 字符串List
+     */
+    public static List<String> toStringList(String[] array) {
+        if (org.apache.commons.lang3.ArrayUtils.isNotEmpty(array)) {
+            List<String> list = new ArrayList<>(array.length);
+            Collections.addAll(list, array);
+            return list;
+        } else {
+            return new ArrayList<>();
         }
     }
 }

@@ -2,8 +2,8 @@ package com.ysmjjsy.goya.component.bus.event.strategy;
 
 import com.ysmjjsy.goya.component.bus.api.GoyaBus;
 import com.ysmjjsy.goya.component.bus.event.domain.GoyaEvent;
-import com.ysmjjsy.goya.component.common.context.ApplicationContextHolder;
-import com.ysmjjsy.goya.component.common.context.GoyaContextHolder;
+import com.ysmjjsy.goya.component.common.context.SpringContextHolder;
+import com.ysmjjsy.goya.component.common.context.ServiceContextHolder;
 import com.ysmjjsy.goya.component.json.jackson2.utils.Jackson2Utils;
 import org.apache.commons.lang3.StringUtils;
 
@@ -41,7 +41,7 @@ public interface StrategyEventManager<E extends GoyaEvent> {
      * @return false 远程事件，local 本地事件
      */
     default boolean isLocal(String destinationService) {
-        return !GoyaContextHolder.getInstance().isDistributedArchitecture() || StringUtils.equals(GoyaContextHolder.getInstance().getApplicationName(), destinationService);
+        return !ServiceContextHolder.getInstance().isDistributedArchitecture() || StringUtils.equals(ServiceContextHolder.getInstance().getApplicationName(), destinationService);
     }
 
     /**
@@ -51,7 +51,7 @@ public interface StrategyEventManager<E extends GoyaEvent> {
      * @param destinationService 接收远程事件目的地
      */
     default void postProcess(String destinationService, E data) {
-        postProcess(GoyaContextHolder.getInstance().getOriginService(), destinationService, data);
+        postProcess(ServiceContextHolder.getInstance().getOriginService(), destinationService, data);
     }
 
     /**
@@ -75,7 +75,7 @@ public interface StrategyEventManager<E extends GoyaEvent> {
      * @param event 自定义 Spring Event
      */
     default void publishEvent(GoyaEvent event) {
-        GoyaBus goyaBus = ApplicationContextHolder.getBean(GoyaBus.class);
+        GoyaBus goyaBus = SpringContextHolder.getBean(GoyaBus.class);
         goyaBus.publish(event);
     }
 }

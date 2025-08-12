@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.component.catchlog.handler;
 
-import com.ysmjjsy.goya.component.common.context.ApplicationContextHolder;
+import com.ysmjjsy.goya.component.common.context.SpringContextHolder;
 
 /**
  * <p></p>
@@ -11,8 +11,8 @@ import com.ysmjjsy.goya.component.common.context.ApplicationContextHolder;
 public class ResponseHandlerFactory {
 
     public static ResponseHandlerI get(){
-        if(ApplicationContextHolder.getBean(ResponseHandlerI.class) != null){
-            return ApplicationContextHolder.getBean(ResponseHandlerI.class);
+        if(SpringContextHolder.getBean(ResponseHandlerI.class) != null){
+            return SpringContextHolder.getBean(ResponseHandlerI.class);
         }
         return new DefaultResponseHandler();
     }

@@ -3,7 +3,7 @@ package com.ysmjjsy.goya.module.redis.utils;
 import com.ysmjjsy.goya.component.cache.core.CacheGetFilter;
 import com.ysmjjsy.goya.component.cache.core.CacheGetIfAbsent;
 import com.ysmjjsy.goya.component.cache.core.CacheLoader;
-import com.ysmjjsy.goya.component.common.context.ApplicationContextHolder;
+import com.ysmjjsy.goya.component.common.context.SpringContextHolder;
 import com.ysmjjsy.goya.module.redis.definition.GoyaRedisCache;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -24,7 +24,7 @@ public class RedisUtils {
 
     private static class Holder {
         static final GoyaRedisCache distributedCache =
-                ApplicationContextHolder.getBean(GoyaRedisCache.class);
+                SpringContextHolder.getBean(GoyaRedisCache.class);
     }
 
     private static GoyaRedisCache distributedCache() {

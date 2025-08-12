@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.component.web.scan;
 
 import com.ysmjjsy.goya.component.bus.event.strategy.ApplicationStrategyEventManager;
-import com.ysmjjsy.goya.component.common.context.GoyaContextHolder;
+import com.ysmjjsy.goya.component.common.context.ServiceContextHolder;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.ObjectUtils;
 
@@ -50,12 +50,12 @@ public interface RequestMappingScanEventManager extends ApplicationStrategyEvent
      * @return true 执行， false 不执行
      */
     default boolean isPerformScan() {
-        if (GoyaContextHolder.getInstance().isDistributedArchitecture()) {
+        if (ServiceContextHolder.getInstance().isDistributedArchitecture()) {
             if (ObjectUtils.isEmpty(getScanAnnotationClass())) {
                 return false;
             }
 
-            Map<String, Object> content = GoyaContextHolder.getInstance().getApplicationContext().getBeansWithAnnotation(getScanAnnotationClass());
+            Map<String, Object> content = ServiceContextHolder.getInstance().getApplicationContext().getBeansWithAnnotation(getScanAnnotationClass());
             return !MapUtils.isEmpty(content);
         }
 

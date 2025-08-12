@@ -1,8 +1,8 @@
 package com.ysmjjsy.goya.component.web.configuration;
 
 import com.google.common.collect.ImmutableList;
-import com.ysmjjsy.goya.component.cache.configuration.GoyaCacheAutoConfiguration;
-import com.ysmjjsy.goya.component.common.context.GoyaContextHolder;
+import com.ysmjjsy.goya.component.cache.configuration.CacheAutoConfiguration;
+import com.ysmjjsy.goya.component.common.context.ServiceContextHolder;
 import com.ysmjjsy.goya.component.common.resolver.PropertyResolver;
 import com.ysmjjsy.goya.component.doc.server.OpenApiServerResolver;
 import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
@@ -34,12 +34,12 @@ import org.springframework.context.annotation.Primary;
  */
 @Slf4j
 @AutoConfiguration
-@AutoConfigureAfter(GoyaCacheAutoConfiguration.class)
+@AutoConfigureAfter(CacheAutoConfiguration.class)
 @EnableConfigurationProperties({PlatformProperties.class})
 @Import(ServletRestControllerAdvice.class)
 public class WebServiceAutoConfiguration implements ApplicationContextAware {
 
-    private final GoyaContextHolder goyaContextHolder;
+    private final ServiceContextHolder goyaContextHolder;
 
     /**
      * 使用构造函数的方式，可以确保时机正确，几个参数对象设置正确，最终保证 ServiceContextHolder 的初始化时机合理

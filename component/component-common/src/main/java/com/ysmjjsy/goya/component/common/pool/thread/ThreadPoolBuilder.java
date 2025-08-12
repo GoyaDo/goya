@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.component.common.pool.thread;
 
+import cn.hutool.v7.core.lang.Assert;
 import com.ysmjjsy.goya.component.common.builder.Builder;
-import org.dromara.hutool.core.lang.Assert;
 
 import java.io.Serial;
 import java.math.BigDecimal;

@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.component.web.initializer;
 
 import com.ysmjjsy.goya.component.common.utils.WellFormedUtils;
-import com.ysmjjsy.goya.component.common.context.GoyaContextHolder;
+import com.ysmjjsy.goya.component.common.context.ServiceContextHolder;
 import com.ysmjjsy.goya.component.web.configuration.properties.PlatformProperties;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -40,8 +40,8 @@ public class GoyaContextHolderBuilder {
         return this;
     }
 
-    public GoyaContextHolder build() {
-        GoyaContextHolder holder = GoyaContextHolder.getInstance();
+    public ServiceContextHolder build() {
+        ServiceContextHolder holder = ServiceContextHolder.getInstance();
         holder.setPort(String.valueOf(this.getPort()));
         holder.setIp(getHostAddress());
         setProperties(platformProperties, holder);
@@ -70,7 +70,7 @@ public class GoyaContextHolderBuilder {
         }
     }
 
-    private void setProperties(PlatformProperties platformProperties, GoyaContextHolder serviceContextHolder) {
+    private void setProperties(PlatformProperties platformProperties, ServiceContextHolder serviceContextHolder) {
         serviceContextHolder.setArchitecture(platformProperties.getArchitecture());
         serviceContextHolder.setProtocol(platformProperties.getProtocol());
         serviceContextHolder.setGatewayServiceUri(platformProperties.getGatewayServiceUri());

@@ -2,7 +2,7 @@ package com.ysmjjsy.goya.module.redis.utils;
 
 import com.google.common.hash.Funnels;
 import com.google.common.hash.Hashing;
-import com.ysmjjsy.goya.component.common.context.ApplicationContextHolder;
+import com.ysmjjsy.goya.component.common.context.SpringContextHolder;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.springframework.data.redis.connection.RedisStringCommands;
@@ -40,7 +40,7 @@ public class RedisBitMapUtils {
 
     private static class Holder {
         static final StringRedisTemplate stringRedisTemplate =
-                ApplicationContextHolder.getBean(StringRedisTemplate.class);
+                SpringContextHolder.getBean(StringRedisTemplate.class);
     }
 
     private static StringRedisTemplate stringRedisTemplate() {

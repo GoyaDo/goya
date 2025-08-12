@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.security.authorization.scan;
 
-import com.ysmjjsy.goya.component.common.context.GoyaContextHolder;
+import com.ysmjjsy.goya.component.common.context.ServiceContextHolder;
 import com.ysmjjsy.goya.component.web.scan.RequestMappingEvent;
 import com.ysmjjsy.goya.component.web.scan.RequestMappingScanEventManager;
 import com.ysmjjsy.goya.security.authorization.processor.SecurityAttributeAnalyzer;
@@ -29,7 +29,7 @@ public class SecurityDefaultRequestMappingScanEventManager implements RequestMap
 
     @Override
     public String getDestinationServiceName() {
-        return GoyaContextHolder.getInstance().getAuthServiceName();
+        return ServiceContextHolder.getInstance().getAuthServiceName();
     }
 
     @Override

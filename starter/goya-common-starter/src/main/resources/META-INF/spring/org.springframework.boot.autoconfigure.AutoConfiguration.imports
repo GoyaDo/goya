@@ -2,8 +2,8 @@ com.ysmjjsy.goya.component.json.configuration.GoyaJsonAutoConfiguration
 com.ysmjjsy.goya.component.common.configuration.GoyaCommonAutoConfiguration
 com.ysmjjsy.goya.component.crypto.configuration.GoyaCryptoAutoConfiguration
 com.ysmjjsy.goya.component.catchlog.configuration.GoyaCatchLogAutoConfiguration
-com.ysmjjsy.goya.component.distributedid.configuration.GoyaDistributedIdAutoConfiguration
-com.ysmjjsy.goya.component.cache.configuration.GoyaCacheAutoConfiguration
+com.ysmjjsy.goya.component.distributedid.configuration.DistributedIdAutoConfiguration
+com.ysmjjsy.goya.component.cache.configuration.CacheAutoConfiguration
 com.ysmjjsy.goya.component.captcha.configuration.GoyaCaptchaAutoConfiguration
 com.ysmjjsy.goya.component.db.configuration.GoyaDbAutoConfiguration
 com.ysmjjsy.goya.component.bus.configuration.GoyaBusAutoConfiguration

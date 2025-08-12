@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.component.db.configuration;
 
 import com.ysmjjsy.goya.component.db.configuration.properties.DbProperties;
-import com.ysmjjsy.goya.component.distributedid.configuration.GoyaDistributedIdAutoConfiguration;
+import com.ysmjjsy.goya.component.distributedid.configuration.DistributedIdAutoConfiguration;
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
@@ -16,7 +16,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
  */
 @Slf4j
 @AutoConfiguration
-@AutoConfigureAfter(GoyaDistributedIdAutoConfiguration.class)
+@AutoConfigureAfter(DistributedIdAutoConfiguration.class)
 @EnableConfigurationProperties({DbProperties.class})
 public class GoyaDbAutoConfiguration {
 

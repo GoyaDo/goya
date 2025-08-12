@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.component.web.configuration;
 
-import com.ysmjjsy.goya.component.cache.configuration.GoyaCacheAutoConfiguration;
+import com.ysmjjsy.goya.component.cache.configuration.CacheAutoConfiguration;
 import com.ysmjjsy.goya.component.web.config.SecureConfiguration;
 import com.ysmjjsy.goya.component.web.secure.AccessLimitedInterceptor;
 import com.ysmjjsy.goya.component.web.secure.IdempotentInterceptor;
@@ -28,7 +28,7 @@ import org.springframework.web.servlet.resource.LiteWebJarsResourceResolver;
  * @since 2024/4/10 9:29
  */
 @AutoConfiguration(after = {org.springframework.boot.autoconfigure.web.client.RestClientAutoConfiguration.class, RestTemplateAutoConfiguration.class})
-@AutoConfigureAfter(GoyaCacheAutoConfiguration.class)
+@AutoConfigureAfter(CacheAutoConfiguration.class)
 @EnableWebMvc
 @RequiredArgsConstructor
 @Import({SecureConfiguration.class})

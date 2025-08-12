@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.component.cache.constants;
 
-import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
+import com.ysmjjsy.goya.component.common.pojo.constants.GoyaConstants;
 
 /**
  * <p></p>
@@ -9,7 +9,6 @@ import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
  * @since 2025/6/13 16:16
  */
 public interface CacheConstants {
-
 
     /* ---------- 通用缓存常量 ---------- */
 

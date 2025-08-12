@@ -3,9 +3,8 @@ package com.ysmjjsy.goya.component.cache.utils;
 import com.alicp.jetcache.Cache;
 import com.alicp.jetcache.anno.CacheType;
 import com.ysmjjsy.goya.component.cache.jetcache.enhance.JetCacheCreateCacheFactory;
-import com.ysmjjsy.goya.component.common.context.ApplicationContextHolder;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
+import com.ysmjjsy.goya.component.core.context.SpringContextHolder;
+import lombok.experimental.UtilityClass;
 
 import java.time.Duration;
 
@@ -15,7 +14,7 @@ import java.time.Duration;
  * @author goya
  * @since 2022/8/9 15:43
  */
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@UtilityClass
 public class JetCacheUtils {
 
     public static <K, V> Cache<K, V> create(String name, Duration expire) {
@@ -43,6 +42,6 @@ public class JetCacheUtils {
     }
 
     public static <K, V> Cache<K, V> create(String name, CacheType cacheType, Duration expire, Boolean cacheNullValue, Boolean syncLocal) {
-        return ApplicationContextHolder.getBean(JetCacheCreateCacheFactory.class).create(name, cacheType, expire, cacheNullValue, syncLocal);
+        return SpringContextHolder.getBean(JetCacheCreateCacheFactory.class).create(name, cacheType, expire, cacheNullValue, syncLocal);
     }
 }

@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.module.identity.context;
 
-import com.ysmjjsy.goya.component.common.context.ApplicationContextHolder;
+import com.ysmjjsy.goya.component.common.context.SpringContextHolder;
 import com.ysmjjsy.goya.module.identity.domain.GoyaUserPrincipal;
 import com.ysmjjsy.goya.module.identity.handler.LoginUserHandler;
 import lombok.experimental.UtilityClass;
@@ -20,6 +20,6 @@ public class GoyaLoginInfoContext {
      * @return 当前登录用户的信息，如果用户未登录则返回 null
      */
     public static GoyaUserPrincipal getLoginUser() {
-        return ApplicationContextHolder.getBean(LoginUserHandler.class).getLoginUser();
+        return SpringContextHolder.getBean(LoginUserHandler.class).getLoginUser();
     }
 }

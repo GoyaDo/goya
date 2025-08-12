@@ -13,10 +13,6 @@
     <description>异常定义模块</description>
 
     <dependencies>
-        <dependency>
-            <groupId>com.ysmjjsy.goya</groupId>
-            <artifactId>component-pojo</artifactId>
-        </dependency>
     </dependencies>
 
 

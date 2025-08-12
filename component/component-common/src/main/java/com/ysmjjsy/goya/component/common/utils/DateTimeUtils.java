@@ -1,9 +1,10 @@
 package com.ysmjjsy.goya.component.common.utils;
 
-import com.ysmjjsy.goya.component.pojo.constants.DefaultConstants;
+import cn.hutool.v7.core.math.NumberUtil;
+import com.ysmjjsy.goya.component.common.pojo.constants.DefaultConstants;
+import lombok.experimental.UtilityClass;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.dromara.hutool.core.math.NumberUtil;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
@@ -18,6 +19,7 @@ import java.util.Date;
  * @author goya
  * @since 2022/7/2 22:54
  */
+@UtilityClass
 public class DateTimeUtils {
 
     private static final String DEFAULT_TIME_ZONE_NAME = "Asia/Shanghai";

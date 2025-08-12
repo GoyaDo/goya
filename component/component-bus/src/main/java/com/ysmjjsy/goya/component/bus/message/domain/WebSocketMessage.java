@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.component.bus.message.domain;
 
-import com.ysmjjsy.goya.component.common.context.GoyaContextHolder;
+import com.ysmjjsy.goya.component.common.context.ServiceContextHolder;
 import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
 
@@ -30,7 +30,7 @@ public abstract class WebSocketMessage<T> implements Message<T> {
         if (StringUtils.isNotBlank(id)) {
             return id;
         } else {
-            return GoyaContextHolder.getInstance().getId();
+            return ServiceContextHolder.getInstance().getId();
         }
     }
 }

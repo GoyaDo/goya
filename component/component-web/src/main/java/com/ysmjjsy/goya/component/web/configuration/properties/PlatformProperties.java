@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.component.web.configuration.properties;
 
 import com.ysmjjsy.goya.component.common.utils.WellFormedUtils;
-import com.ysmjjsy.goya.component.common.context.GoyaContextHolder;
+import com.ysmjjsy.goya.component.common.context.ServiceContextHolder;
 import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
 import com.ysmjjsy.goya.component.pojo.enums.Architecture;
 import com.ysmjjsy.goya.component.pojo.enums.Protocol;
@@ -47,6 +47,6 @@ public class PlatformProperties {
 
 
     public String getAuthServiceUri() {
-        return WellFormedUtils.serviceUri(authServiceUri, getAuthServiceName(), GoyaContextHolder.getInstance().getGatewayServiceUri(), "AUTH");
+        return WellFormedUtils.serviceUri(authServiceUri, getAuthServiceName(), ServiceContextHolder.getInstance().getGatewayServiceUri(), "AUTH");
     }
 }

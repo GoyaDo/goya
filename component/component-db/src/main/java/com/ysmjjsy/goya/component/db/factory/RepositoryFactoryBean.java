@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.component.db.factory;
 
-import com.ysmjjsy.goya.component.common.context.ApplicationContextHolder;
+import com.ysmjjsy.goya.component.common.context.SpringContextHolder;
 import com.ysmjjsy.goya.component.db.configuration.properties.DbProperties;
 import com.ysmjjsy.goya.component.db.adapter.GoyaRepository;
 import com.ysmjjsy.goya.component.db.enums.RepositoryMode;
@@ -44,7 +44,7 @@ public class RepositoryFactoryBean <T extends GoyaRepository<?>> implements Fact
     @Override
     public void afterPropertiesSet() throws Exception {
         RepositoryMode mode = dbProperties.getMode();
-        Map<String, GoyaRepository> repositoryMap = ApplicationContextHolder.getBeansOfType(GoyaRepository.class);
+        Map<String, GoyaRepository> repositoryMap = SpringContextHolder.getBeansOfType(GoyaRepository.class);
         repositoryMap.forEach((k,v)->{
             if (StringUtils.containsIgnoreCase(k, mode.name())){
                 targetRepository = (T) v;
