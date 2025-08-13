@@ -14,12 +14,7 @@
     <dependencies>
         <dependency>
             <groupId>com.ysmjjsy.goya</groupId>
-            <artifactId>component-pojo</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.ysmjjsy.goya</groupId>
-            <artifactId>component-common</artifactId>
+            <artifactId>component-core</artifactId>
         </dependency>
 
         <dependency>

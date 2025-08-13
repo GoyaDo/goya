@@ -1,6 +1,7 @@
 package com.ysmjjsy.goya.component.catchlog.handler;
 
-import com.ysmjjsy.goya.component.common.context.SpringContextHolder;
+
+import com.ysmjjsy.goya.component.core.context.SpringContextHolder;
 
 /**
  * <p></p>

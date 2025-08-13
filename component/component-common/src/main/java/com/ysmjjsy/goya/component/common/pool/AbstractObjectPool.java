@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.component.common.pool;
 
-import com.ysmjjsy.goya.component.exception.pool.BorrowObjectFromPoolErrorException;
+import com.ysmjjsy.goya.component.common.exception.pool.BorrowObjectFromPoolErrorException;
 import jakarta.annotation.Nonnull;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.pool2.PooledObjectFactory;

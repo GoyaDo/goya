@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.component.db.configuration.properties;
 
 import com.ysmjjsy.goya.component.db.enums.RepositoryMode;
-import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
+import com.ysmjjsy.goya.component.common.pojo.constants.GoyaConstants;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

@@ -2,7 +2,7 @@ package com.ysmjjsy.goya.security.authorization.server.processor;
 
 import com.google.common.collect.ImmutableList;
 import com.ysmjjsy.goya.component.bus.event.strategy.StrategyEventManager;
-import com.ysmjjsy.goya.component.exception.transaction.TransactionalRollbackException;
+import com.ysmjjsy.goya.component.common.exception.transaction.TransactionalRollbackException;
 import com.ysmjjsy.goya.component.web.domain.RequestMapping;
 import com.ysmjjsy.goya.component.web.scan.RequestMappingEvent;
 import com.ysmjjsy.goya.security.authorization.domain.AttributeTransmitter;

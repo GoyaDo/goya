@@ -6,10 +6,10 @@ import com.ysmjjsy.goya.component.captcha.domain.Captcha;
 import com.ysmjjsy.goya.component.captcha.domain.GraphicCaptcha;
 import com.ysmjjsy.goya.component.captcha.domain.Metadata;
 import com.ysmjjsy.goya.component.captcha.domain.Verification;
-import com.ysmjjsy.goya.component.exception.captcha.CaptchaHasExpiredException;
-import com.ysmjjsy.goya.component.exception.captcha.CaptchaIsEmptyException;
-import com.ysmjjsy.goya.component.exception.captcha.CaptchaMismatchException;
-import com.ysmjjsy.goya.component.exception.captcha.CaptchaParameterIllegalException;
+import com.ysmjjsy.goya.component.common.exception.captcha.CaptchaHasExpiredException;
+import com.ysmjjsy.goya.component.common.exception.captcha.CaptchaIsEmptyException;
+import com.ysmjjsy.goya.component.common.exception.captcha.CaptchaMismatchException;
+import com.ysmjjsy.goya.component.common.exception.captcha.CaptchaParameterIllegalException;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 

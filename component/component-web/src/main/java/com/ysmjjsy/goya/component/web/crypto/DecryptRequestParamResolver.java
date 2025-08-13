@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.component.web.crypto;
 
-import com.ysmjjsy.goya.component.exception.request.RequestInvalidException;
+import com.ysmjjsy.goya.component.common.exception.request.RequestInvalidException;
 import com.ysmjjsy.goya.component.web.annotation.Crypto;
 import com.ysmjjsy.goya.component.web.utils.RequestUtils;
 import jakarta.servlet.http.HttpServletRequest;

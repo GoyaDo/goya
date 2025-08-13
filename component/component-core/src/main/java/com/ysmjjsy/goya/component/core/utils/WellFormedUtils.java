@@ -3,7 +3,7 @@ package com.ysmjjsy.goya.component.core.utils;
 import com.ysmjjsy.goya.component.common.pojo.constants.DefaultConstants;
 import com.ysmjjsy.goya.component.common.pojo.constants.SymbolConstants;
 import com.ysmjjsy.goya.component.common.pojo.enums.Protocol;
-import com.ysmjjsy.goya.component.exception.properties.PropertyValueIsNotSetException;
+import com.ysmjjsy.goya.component.common.exception.properties.PropertyValueIsNotSetException;
 import lombok.experimental.UtilityClass;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;

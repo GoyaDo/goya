@@ -1,9 +1,9 @@
 package com.ysmjjsy.goya.security.core.exception;
 
-import com.ysmjjsy.goya.component.pojo.errorcode.ErrorCodeService;
-import com.ysmjjsy.goya.component.pojo.errorcode.ErrorCodes;
-import com.ysmjjsy.goya.component.pojo.response.Response;
-import com.ysmjjsy.goya.component.exception.definition.GoyaException;
+import com.ysmjjsy.goya.component.common.pojo.errorcode.ErrorCodeService;
+import com.ysmjjsy.goya.component.common.pojo.errorcode.ErrorCodes;
+import com.ysmjjsy.goya.component.common.pojo.response.Response;
+import com.ysmjjsy.goya.component.common.exception.definition.GoyaException;
 import org.springframework.security.core.AuthenticationException;
 
 import java.io.Serial;

@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.component.crypto.enums;
 
-import com.ysmjjsy.goya.component.pojo.enums.GoyaBaseEnum;
+import com.ysmjjsy.goya.component.common.pojo.enums.GoyaBaseEnum;
 
 /**
  * <p>Description: 加密算法策略 </p>

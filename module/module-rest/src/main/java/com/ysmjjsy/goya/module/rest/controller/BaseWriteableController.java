@@ -2,7 +2,7 @@ package com.ysmjjsy.goya.module.rest.controller;
 
 import com.ysmjjsy.goya.component.db.domain.BaseDbEntity;
 import com.ysmjjsy.goya.component.db.adapter.GoyaRepository;
-import com.ysmjjsy.goya.component.pojo.response.Response;
+import com.ysmjjsy.goya.component.common.pojo.response.Response;
 import com.ysmjjsy.goya.component.web.annotation.Idempotent;
 import com.ysmjjsy.goya.module.rest.service.BaseWriteableService;
 import io.swagger.v3.oas.annotations.Operation;

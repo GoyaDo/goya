@@ -15,7 +15,7 @@
     <dependencies>
         <dependency>
             <groupId>com.ysmjjsy.goya</groupId>
-            <artifactId>component-exception</artifactId>
+            <artifactId>component-common</artifactId>
         </dependency>
     </dependencies>
 </project>

@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.module.wechat.app.service;
 
 import cn.binarywang.wx.miniapp.bean.WxMaJscode2SessionResult;
-import com.ysmjjsy.goya.component.exception.access.AccessPreProcessFailedException;
+import com.ysmjjsy.goya.component.common.exception.access.AccessPreProcessFailedException;
 import com.ysmjjsy.goya.module.wechat.app.processor.WxappProcessor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

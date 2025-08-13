@@ -14,10 +14,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.ysmjjsy.goya</groupId>
-            <artifactId>component-exception</artifactId>
-        </dependency>
-        <dependency>
             <groupId>cn.zhxu</groupId>
             <artifactId>okhttps-jackson</artifactId>
         </dependency>

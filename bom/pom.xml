@@ -23,17 +23,7 @@
             <!-- component -->
             <dependency>
                 <groupId>com.ysmjjsy.goya</groupId>
-                <artifactId>component-exception</artifactId>
-                <version>${revision}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ysmjjsy.goya</groupId>
                 <artifactId>component-core</artifactId>
-                <version>${revision}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ysmjjsy.goya</groupId>
-                <artifactId>component-json</artifactId>
                 <version>${revision}</version>
             </dependency>
             <dependency>

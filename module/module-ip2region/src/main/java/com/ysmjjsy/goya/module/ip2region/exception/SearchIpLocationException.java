@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.module.ip2region.exception;
 
-import com.ysmjjsy.goya.component.exception.definition.GoyaRuntimeException;
+import com.ysmjjsy.goya.component.common.exception.definition.GoyaRuntimeException;
 
 import java.io.Serial;
 

@@ -1,5 +1,6 @@
 package com.ysmjjsy.goya.module.mybatisplus.handler;
 
+import com.ysmjjsy.goya.component.common.exception.definition.GoyaRuntimeException;
 import com.ysmjjsy.goya.module.mybatisplus.annotation.DataPermission;
 import com.ysmjjsy.goya.module.mybatisplus.helper.DataPermissionHelper;
 import lombok.AllArgsConstructor;
@@ -108,7 +109,7 @@ public class PlusDataPermissionHandler {
      * @param dataPermission 数据权限注解
      * @param isSelect       标志当前操作是否为查询操作，查询操作和更新或删除操作在处理过滤条件时会有不同的处理方式
      * @return 构建的数据过滤条件的 SQL 语句
-     * @throws com.ysmjjsy.goya.component.exception.definition.GoyaRuntimeException 如果角色的数据范围异常或者 key 与 value 的长度不匹配，则抛出 GoyaRuntimeException 异常
+     * @throws GoyaRuntimeException 如果角色的数据范围异常或者 key 与 value 的长度不匹配，则抛出 GoyaRuntimeException 异常
      */
     private String buildDataFilter(DataPermission dataPermission, boolean isSelect) {
 //        // 更新或删除需满足所有条件

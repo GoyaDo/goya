@@ -1,6 +1,6 @@
 //package com.ysmjjsy.goya.module.tenant;
 //
-//import com.ysmjjsy.goya.component.pojo.response.Response;
+//import com.ysmjjsy.goya.component.common.pojo.response.Response;
 //import com.ysmjjsy.goya.component.web.annotation.AccessLimited;
 //import com.ysmjjsy.goya.module.jpa.tenant.entity.SysTenantDataSource;
 //import com.ysmjjsy.goya.module.rest.controller.BaseWriteableController;

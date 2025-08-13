@@ -3,7 +3,7 @@ package com.ysmjjsy.goya.component.core.stragegy;
 import com.ysmjjsy.goya.component.common.strategy.AbstractExecuteStrategy;
 import com.ysmjjsy.goya.component.core.context.SpringContextHolder;
 import com.ysmjjsy.goya.component.core.init.ApplicationInitializingEvent;
-import com.ysmjjsy.goya.component.exception.definition.GoyaRuntimeException;
+import com.ysmjjsy.goya.component.common.exception.definition.GoyaRuntimeException;
 import org.springframework.context.ApplicationListener;
 
 import java.util.HashMap;

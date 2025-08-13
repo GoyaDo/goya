@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.ysmjjsy.goya.component.doc.annotation.ConditionalOnSwaggerEnabled;
 import com.ysmjjsy.goya.component.doc.configuration.properties.SwaggerProperties;
 import com.ysmjjsy.goya.component.doc.server.OpenApiServerResolver;
-import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
+import com.ysmjjsy.goya.component.common.pojo.constants.GoyaConstants;
 import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
 import io.swagger.v3.oas.annotations.security.*;
 import io.swagger.v3.oas.models.ExternalDocumentation;

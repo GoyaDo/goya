@@ -3,8 +3,8 @@ package com.ysmjjsy.goya.module.rest.service;
 import com.ysmjjsy.goya.component.common.context.SpringContextHolder;
 import com.ysmjjsy.goya.component.db.domain.BaseDbEntity;
 import com.ysmjjsy.goya.component.db.adapter.GoyaRepository;
-import com.ysmjjsy.goya.component.pojo.domain.PageQuery;
-import com.ysmjjsy.goya.component.pojo.domain.PageVO;
+import com.ysmjjsy.goya.component.common.pojo.domain.PageQuery;
+import com.ysmjjsy.goya.component.common.pojo.domain.PageVO;
 import org.springframework.core.GenericTypeResolver;
 
 import java.util.List;

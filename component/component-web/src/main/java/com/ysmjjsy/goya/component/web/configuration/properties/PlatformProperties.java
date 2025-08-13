@@ -2,9 +2,9 @@ package com.ysmjjsy.goya.component.web.configuration.properties;
 
 import com.ysmjjsy.goya.component.common.utils.WellFormedUtils;
 import com.ysmjjsy.goya.component.common.context.ServiceContextHolder;
-import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
-import com.ysmjjsy.goya.component.pojo.enums.Architecture;
-import com.ysmjjsy.goya.component.pojo.enums.Protocol;
+import com.ysmjjsy.goya.component.common.pojo.constants.GoyaConstants;
+import com.ysmjjsy.goya.component.common.pojo.enums.Architecture;
+import com.ysmjjsy.goya.component.common.pojo.enums.Protocol;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;

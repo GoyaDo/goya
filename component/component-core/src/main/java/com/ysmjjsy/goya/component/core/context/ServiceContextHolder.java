@@ -1,8 +1,10 @@
 package com.ysmjjsy.goya.component.core.context;
 
+import com.ysmjjsy.goya.component.common.exception.definition.GoyaRuntimeException;
 import com.ysmjjsy.goya.component.common.pojo.constants.SymbolConstants;
 import com.ysmjjsy.goya.component.common.pojo.enums.Architecture;
 import com.ysmjjsy.goya.component.common.pojo.enums.Protocol;
+import com.ysmjjsy.goya.component.common.strategy.Singleton;
 import com.ysmjjsy.goya.component.core.utils.WellFormedUtils;
 import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
@@ -127,5 +129,13 @@ public class ServiceContextHolder {
         }
 
         return false;
+    }
+
+    public static  ServiceContextHolder getInstance() {
+        ServiceContextHolder serviceContextHolder = Singleton.get(ServiceContextHolder.class);
+        if (serviceContextHolder == null) {
+            throw new GoyaRuntimeException("ServiceContextHolder is null");
+        }
+        return serviceContextHolder;
     }
 }

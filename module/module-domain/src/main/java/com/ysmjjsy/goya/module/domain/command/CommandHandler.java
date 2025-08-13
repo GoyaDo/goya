@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.module.domain.command;
 
-import com.ysmjjsy.goya.component.pojo.domain.Command;
+import com.ysmjjsy.goya.component.common.pojo.domain.Command;
 import com.ysmjjsy.goya.module.domain.event.DomainEventQueue;
 
 /**

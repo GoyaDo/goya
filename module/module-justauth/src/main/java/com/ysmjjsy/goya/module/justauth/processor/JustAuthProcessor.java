@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.module.justauth.processor;
 
-import com.ysmjjsy.goya.component.exception.access.AccessConfigErrorException;
-import com.ysmjjsy.goya.component.exception.access.IllegalAccessSourceException;
+import com.ysmjjsy.goya.component.common.exception.access.AccessConfigErrorException;
+import com.ysmjjsy.goya.component.common.exception.access.IllegalAccessSourceException;
 import com.ysmjjsy.goya.module.justauth.properties.JustAuthProperties;
 import com.ysmjjsy.goya.module.justauth.stamp.JustAuthStateStampManager;
 import lombok.Setter;

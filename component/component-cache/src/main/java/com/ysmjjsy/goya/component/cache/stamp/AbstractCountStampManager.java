@@ -2,7 +2,7 @@ package com.ysmjjsy.goya.component.cache.stamp;
 
 import cn.hutool.v7.crypto.SecureUtil;
 import com.alicp.jetcache.anno.CacheType;
-import com.ysmjjsy.goya.component.exception.stamp.MaximumLimitExceededException;
+import com.ysmjjsy.goya.component.common.exception.stamp.MaximumLimitExceededException;
 import lombok.Getter;
 import lombok.Setter;
 import org.apache.commons.lang3.ObjectUtils;

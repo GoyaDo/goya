@@ -3,7 +3,7 @@ package com.ysmjjsy.goya.component.core.configuration;
 import com.ysmjjsy.goya.component.common.utils.ThreadUtils;
 import com.ysmjjsy.goya.component.core.context.SpringContextHolder;
 import com.ysmjjsy.goya.component.core.utils.EnvironmentUtils;
-import com.ysmjjsy.goya.component.exception.definition.GoyaRuntimeException;
+import com.ysmjjsy.goya.component.common.exception.definition.GoyaRuntimeException;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import lombok.extern.slf4j.Slf4j;

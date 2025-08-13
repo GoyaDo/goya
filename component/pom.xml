@@ -16,7 +16,6 @@
         <module>component-catchlog</module>
         <module>component-common</module>
         <module>component-db</module>
-        <module>component-exception</module>
         <module>component-test-container</module>
         <module>component-ruleengine</module>
         <module>component-statemachine</module>

@@ -1,8 +1,8 @@
 package com.ysmjjsy.goya.module.mybatisplus.handler;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
-import com.ysmjjsy.goya.component.exception.definition.GoyaRuntimeException;
-import com.ysmjjsy.goya.component.pojo.constants.DefaultConstants;
+import com.ysmjjsy.goya.component.common.exception.definition.GoyaRuntimeException;
+import com.ysmjjsy.goya.component.common.pojo.constants.DefaultConstants;
 import com.ysmjjsy.goya.module.identity.context.GoyaLoginInfoContext;
 import com.ysmjjsy.goya.module.identity.domain.GoyaUserPrincipal;
 import com.ysmjjsy.goya.module.mybatisplus.domain.BaseMpEntity;

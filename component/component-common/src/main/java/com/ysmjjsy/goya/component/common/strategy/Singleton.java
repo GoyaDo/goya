@@ -1,7 +1,6 @@
 package com.ysmjjsy.goya.component.common.strategy;
 
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
+import lombok.experimental.UtilityClass;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Supplier;
@@ -13,7 +12,7 @@ import java.util.function.Supplier;
  * @since 2025/7/24 23:44
  */
 @SuppressWarnings("all")
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@UtilityClass
 public class Singleton {
 
     private static final ConcurrentHashMap<String, Object> SINGLE_OBJECT_POOL = new ConcurrentHashMap<>();
@@ -27,6 +26,18 @@ public class Singleton {
      */
     public static <T> T get(String key) {
         Object result = SINGLE_OBJECT_POOL.get(key);
+        return result == null ? null : (T) result;
+    }
+
+    /**
+     * 根据 key 获取单例对象
+     *
+     * @param key key
+     * @param <T> 对象
+     * @return 对象
+     */
+    public static <T> T get(Class<T> clazz) {
+        Object result = SINGLE_OBJECT_POOL.get(clazz.getName());
         return result == null ? null : (T) result;
     }
 

@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.component.web.secure;
 
-import com.ysmjjsy.goya.component.exception.request.FrequentRequestsException;
+import com.ysmjjsy.goya.component.common.exception.request.FrequentRequestsException;
 import com.ysmjjsy.goya.component.web.annotation.AccessLimited;
 import com.ysmjjsy.goya.component.web.stamp.AccessLimitedStampManager;
 import org.apache.commons.lang3.ObjectUtils;

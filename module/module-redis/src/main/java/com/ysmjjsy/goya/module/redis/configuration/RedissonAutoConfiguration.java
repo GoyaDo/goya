@@ -1,8 +1,8 @@
 package com.ysmjjsy.goya.module.redis.configuration;
 
 import com.ysmjjsy.goya.component.core.resolver.ResourceResolver;
-import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
-import com.ysmjjsy.goya.component.pojo.constants.SymbolConstants;
+import com.ysmjjsy.goya.component.common.pojo.constants.GoyaConstants;
+import com.ysmjjsy.goya.component.common.pojo.constants.SymbolConstants;
 import com.ysmjjsy.goya.module.redis.configuration.properties.RedissonProperties;
 import jakarta.annotation.PostConstruct;
 import org.apache.commons.collections4.CollectionUtils;

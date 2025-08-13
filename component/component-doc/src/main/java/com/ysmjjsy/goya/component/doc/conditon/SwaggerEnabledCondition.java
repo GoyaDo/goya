@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.component.doc.conditon;
 
-import com.ysmjjsy.goya.component.common.resolver.PropertyResolver;
-import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
+import com.ysmjjsy.goya.component.common.pojo.constants.GoyaConstants;
+import com.ysmjjsy.goya.component.core.resolver.PropertyResolver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Condition;

@@ -1,8 +1,8 @@
 package com.ysmjjsy.goya.module.redis.configuration.properties;
 
 import com.google.common.base.MoreObjects;
-import com.ysmjjsy.goya.component.pojo.constants.SymbolConstants;
-import com.ysmjjsy.goya.component.pojo.enums.Protocol;
+import com.ysmjjsy.goya.component.common.pojo.constants.SymbolConstants;
+import com.ysmjjsy.goya.component.common.pojo.enums.Protocol;
 import com.ysmjjsy.goya.module.redis.constants.RedisConstants;
 import lombok.Data;
 import org.apache.commons.lang3.StringUtils;

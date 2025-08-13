@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.component.bus.core;
 
 import com.ysmjjsy.goya.component.bus.event.domain.GoyaEvent;
-import com.ysmjjsy.goya.component.common.context.SpringContextHolder;
+import com.ysmjjsy.goya.component.core.context.SpringContextHolder;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -14,7 +14,6 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RequiredArgsConstructor
 public class DefaultGoyaEventBus extends AbstractGoyaEventBus{
-
 
     @Override
     public void publish(GoyaEvent event) {

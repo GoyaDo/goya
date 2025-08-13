@@ -1,9 +1,9 @@
 package com.ysmjjsy.goya.component.cache.api;
 
 import com.alicp.jetcache.AutoReleaseLock;
-import com.ysmjjsy.goya.component.exception.stamp.StampHasExpiredException;
-import com.ysmjjsy.goya.component.exception.stamp.StampMismatchException;
-import com.ysmjjsy.goya.component.exception.stamp.StampParameterIllegalException;
+import com.ysmjjsy.goya.component.common.exception.stamp.StampHasExpiredException;
+import com.ysmjjsy.goya.component.common.exception.stamp.StampMismatchException;
+import com.ysmjjsy.goya.component.common.exception.stamp.StampParameterIllegalException;
 import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.beans.factory.InitializingBean;
 

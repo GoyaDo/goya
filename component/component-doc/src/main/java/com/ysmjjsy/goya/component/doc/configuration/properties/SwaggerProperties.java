@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.component.doc.configuration.properties;
 
 import com.google.common.base.MoreObjects;
-import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
+import com.ysmjjsy.goya.component.common.pojo.constants.GoyaConstants;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;

@@ -1,8 +1,8 @@
 package com.ysmjjsy.goya.module.jpa.adapter;
 
 import com.ysmjjsy.goya.component.db.adapter.BaseRepositoryAdapter;
-import com.ysmjjsy.goya.component.pojo.domain.PageQuery;
-import com.ysmjjsy.goya.component.pojo.domain.PageVO;
+import com.ysmjjsy.goya.component.common.pojo.domain.PageQuery;
+import com.ysmjjsy.goya.component.common.pojo.domain.PageVO;
 import com.ysmjjsy.goya.module.jpa.domain.BaseJpaEntity;
 import jakarta.persistence.EntityManager;
 import org.apache.commons.lang3.StringUtils;

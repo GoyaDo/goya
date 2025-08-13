@@ -3,7 +3,7 @@ package com.ysmjjsy.goya.component.core.chain;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.ysmjjsy.goya.component.core.context.SpringContextHolder;
-import com.ysmjjsy.goya.component.exception.definition.GoyaRuntimeException;
+import com.ysmjjsy.goya.component.common.exception.definition.GoyaRuntimeException;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.Ordered;
 import org.springframework.util.CollectionUtils;

@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.security.authentication.client.compliance.event.listener;
 
-import com.ysmjjsy.goya.component.exception.stamp.MaximumLimitExceededException;
+import com.ysmjjsy.goya.component.common.exception.stamp.MaximumLimitExceededException;
 import com.ysmjjsy.goya.security.authentication.client.compliance.SecurityAccountStatusManager;
 import com.ysmjjsy.goya.security.authentication.client.compliance.stamp.SignInFailureLimitedStampManager;
 import org.apache.commons.collections4.MapUtils;

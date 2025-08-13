@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.module.mybatisplus.handler;
 
-import com.ysmjjsy.goya.component.pojo.response.Response;
+import com.ysmjjsy.goya.component.common.pojo.response.Response;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;

@@ -5,7 +5,7 @@ import com.ysmjjsy.goya.component.cache.configuration.CacheAutoConfiguration;
 import com.ysmjjsy.goya.component.common.context.ServiceContextHolder;
 import com.ysmjjsy.goya.component.core.resolver.PropertyResolver;
 import com.ysmjjsy.goya.component.doc.server.OpenApiServerResolver;
-import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
+import com.ysmjjsy.goya.component.common.pojo.constants.GoyaConstants;
 import com.ysmjjsy.goya.component.web.advice.ServletRestControllerAdvice;
 import com.ysmjjsy.goya.component.web.configuration.properties.PlatformProperties;
 import com.ysmjjsy.goya.component.web.customizer.Jackson2XssObjectMapperBuilderCustomizer;

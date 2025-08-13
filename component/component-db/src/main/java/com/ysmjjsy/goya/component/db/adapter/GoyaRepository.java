@@ -3,8 +3,8 @@ package com.ysmjjsy.goya.component.db.adapter;
 import com.google.common.collect.Lists;
 import com.ysmjjsy.goya.component.db.domain.BaseDbEntity;
 import com.ysmjjsy.goya.component.db.domain.BaseRepository;
-import com.ysmjjsy.goya.component.pojo.domain.PageQuery;
-import com.ysmjjsy.goya.component.pojo.domain.PageVO;
+import com.ysmjjsy.goya.component.common.pojo.domain.PageQuery;
+import com.ysmjjsy.goya.component.common.pojo.domain.PageVO;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.data.repository.NoRepositoryBean;
 

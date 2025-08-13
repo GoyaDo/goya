@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.component.web.secure;
 
-import com.ysmjjsy.goya.component.exception.request.RepeatSubmissionException;
+import com.ysmjjsy.goya.component.common.exception.request.RepeatSubmissionException;
 import com.ysmjjsy.goya.component.web.annotation.Idempotent;
 import com.ysmjjsy.goya.component.web.stamp.IdempotentStampManager;
 import org.apache.commons.lang3.StringUtils;
