@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.component.cache.utils;
 
-import com.ysmjjsy.goya.component.cache.core.GoyaCache;
-import com.ysmjjsy.goya.component.cache.core.GoyaDefaultCache;
+import com.ysmjjsy.goya.component.cache.api.CacheApi;
+import com.ysmjjsy.goya.component.cache.core.DefaultCacheImpl;
 import com.ysmjjsy.goya.component.core.context.SpringContextHolder;
 import lombok.experimental.UtilityClass;
 
@@ -78,7 +78,7 @@ public class CacheUtils {
         return getCache().hasKey(key);
     }
 
-    public static GoyaCache getCache() {
-        return SpringContextHolder.getBean(GoyaDefaultCache.class);
+    public static CacheApi getCache() {
+        return SpringContextHolder.getBean(DefaultCacheImpl.class);
     }
 }

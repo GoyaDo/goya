@@ -1,4 +1,4 @@
-package com.ysmjjsy.goya.component.cache.jetcache.stamp;
+package com.ysmjjsy.goya.component.cache.stamp;
 
 import cn.hutool.v7.crypto.SecureUtil;
 import com.alicp.jetcache.anno.CacheType;

@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.module.justauth.stamp;
 
-import com.ysmjjsy.goya.component.cache.jetcache.stamp.AbstractStampManager;
+import com.ysmjjsy.goya.component.cache.stamp.AbstractStampManager;
 import com.ysmjjsy.goya.module.justauth.constants.JustAuthConstants;
 import com.ysmjjsy.goya.module.justauth.properties.JustAuthProperties;
 import lombok.Setter;

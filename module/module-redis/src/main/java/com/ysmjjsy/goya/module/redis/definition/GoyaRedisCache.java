@@ -1,9 +1,9 @@
 package com.ysmjjsy.goya.module.redis.definition;
 
-import com.ysmjjsy.goya.component.cache.core.GoyaCache;
-import com.ysmjjsy.goya.component.cache.core.CacheGetFilter;
-import com.ysmjjsy.goya.component.cache.core.CacheGetIfAbsent;
-import com.ysmjjsy.goya.component.cache.core.CacheLoader;
+import com.ysmjjsy.goya.component.cache.api.CacheApi;
+import com.ysmjjsy.goya.component.cache.api.CacheGetFilter;
+import com.ysmjjsy.goya.component.cache.api.CacheGetIfAbsent;
+import com.ysmjjsy.goya.component.cache.api.CacheLoader;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import org.redisson.api.RBloomFilter;
@@ -16,7 +16,7 @@ import java.time.Duration;
  * @author goya
  * @since 2025/7/30 00:21
  */
-public interface GoyaRedisCache extends GoyaCache {
+public interface GoyaRedisCache extends CacheApi {
 
     /**
      * 获取缓存，如查询结果为空，调用 {@link CacheLoader} 加载缓存

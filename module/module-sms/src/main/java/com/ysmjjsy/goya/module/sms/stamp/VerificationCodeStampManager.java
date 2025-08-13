@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.module.sms.stamp;
 
-import com.ysmjjsy.goya.component.cache.jetcache.stamp.AbstractStampManager;
+import com.ysmjjsy.goya.component.cache.stamp.AbstractStampManager;
 import com.ysmjjsy.goya.module.sms.constants.SmsConstants;
 import com.ysmjjsy.goya.module.sms.properties.SmsProperties;
 import lombok.Setter;

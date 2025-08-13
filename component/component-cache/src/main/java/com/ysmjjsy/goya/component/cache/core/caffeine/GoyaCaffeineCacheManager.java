@@ -1,4 +1,4 @@
-package com.ysmjjsy.goya.component.cache.caffeine;
+package com.ysmjjsy.goya.component.cache.core.caffeine;
 
 import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;

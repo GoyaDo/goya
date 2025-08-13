@@ -1,4 +1,4 @@
-package com.ysmjjsy.goya.component.cache.jetcache.enhance;
+package com.ysmjjsy.goya.component.cache.core.jetcache;
 
 import cn.hutool.v7.crypto.SecureUtil;
 import com.alibaba.fastjson2.JSON;

@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.security.authentication.client.compliance.stamp;
 
-import com.ysmjjsy.goya.component.cache.jetcache.stamp.AbstractStampManager;
+import com.ysmjjsy.goya.component.cache.stamp.AbstractStampManager;
 import com.ysmjjsy.goya.security.authentication.properties.SecurityAuthenticationProperties;
 import com.ysmjjsy.goya.security.core.constants.SecurityConstants;
 import org.dromara.hutool.core.data.id.IdUtil;

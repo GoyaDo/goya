@@ -2,17 +2,16 @@ package com.ysmjjsy.goya.component.cache.configuration;
 
 import com.alicp.jetcache.CacheManager;
 import com.github.benmanes.caffeine.cache.Caffeine;
-import com.ysmjjsy.goya.component.cache.caffeine.GoyaCaffeineCacheManager;
 import com.ysmjjsy.goya.component.cache.configuration.properties.CacheProperties;
-import com.ysmjjsy.goya.component.cache.core.GoyaDefaultCache;
-import com.ysmjjsy.goya.component.cache.jetcache.enhance.GoyaCacheManager;
-import com.ysmjjsy.goya.component.cache.jetcache.enhance.JetCacheCreateCacheFactory;
+import com.ysmjjsy.goya.component.cache.core.caffeine.GoyaCaffeineCacheManager;
+import com.ysmjjsy.goya.component.cache.core.jetcache.JetCacheCreateCacheFactory;
+import com.ysmjjsy.goya.component.cache.core.jetcache.JetCacheSpringCacheManager;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cache.caffeine.CaffeineCacheManager;
@@ -28,7 +27,6 @@ import org.springframework.context.annotation.Primary;
 @Slf4j
 @AutoConfiguration
 @RequiredArgsConstructor
-@ConditionalOnClass({CacheManager.class})
 @EnableConfigurationProperties(CacheProperties.class)
 public class CacheAutoConfiguration {
 
@@ -66,6 +64,8 @@ public class CacheAutoConfiguration {
     }
 
     @Bean
+    @ConditionalOnBean(CacheManager.class)
+    @ConditionalOnMissingBean
     public JetCacheCreateCacheFactory jetCacheCreateCacheFactory(@Qualifier("jcCacheManager") CacheManager cacheManager, CacheProperties cacheProperties) {
         JetCacheCreateCacheFactory factory = new JetCacheCreateCacheFactory(cacheManager, cacheProperties);
         log.trace("[Goya] |- component [cache] |- bean [jetCacheCreateCacheFactory] register.");
@@ -74,19 +74,11 @@ public class CacheAutoConfiguration {
 
     @Bean
     @Primary
-    @ConditionalOnMissingBean
-    public GoyaCacheManager goyaCacheManager(JetCacheCreateCacheFactory jetCacheCreateCacheFactory, CacheProperties cacheProperties) {
-        GoyaCacheManager goyaCacheManager = new GoyaCacheManager(jetCacheCreateCacheFactory, cacheProperties);
-        goyaCacheManager.setAllowNullValues(cacheProperties.allowNullValues());
-        log.trace("[Goya] |- component [cache] |- bean [goyaCacheManager] register.");
-        return goyaCacheManager;
-    }
-
-    @Bean
-    @ConditionalOnMissingBean
-    public GoyaDefaultCache goyaDefaultCache(GoyaCacheManager goyaCacheManager) {
-        GoyaDefaultCache goyaDefaultCache = new GoyaDefaultCache(goyaCacheManager);
-        log.trace("[Goya] |- component [cache] |- bean [goyaDefaultCache] register.");
-        return goyaDefaultCache;
+    @ConditionalOnBean(JetCacheCreateCacheFactory.class)
+    public JetCacheSpringCacheManager jetCacheSpringCacheManager(JetCacheCreateCacheFactory jetCacheCreateCacheFactory, CacheProperties cacheProperties) {
+        JetCacheSpringCacheManager jetCacheSpringCacheManager = new JetCacheSpringCacheManager(jetCacheCreateCacheFactory, cacheProperties);
+        jetCacheSpringCacheManager.setAllowNullValues(cacheProperties.allowNullValues());
+        log.trace("[Goya] |- component [cache] |- bean [jetCacheSpringCacheManager] register.");
+        return jetCacheSpringCacheManager;
     }
 }

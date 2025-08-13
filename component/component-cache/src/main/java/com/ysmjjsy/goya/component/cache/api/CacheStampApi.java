@@ -1,4 +1,4 @@
-package com.ysmjjsy.goya.component.cache.jetcache.stamp;
+package com.ysmjjsy.goya.component.cache.api;
 
 import com.alicp.jetcache.AutoReleaseLock;
 import com.ysmjjsy.goya.component.exception.stamp.StampHasExpiredException;
@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
  * @author goya
  * @since 2021/8/22 15:00
  */
-public interface StampManager<K, V> extends InitializingBean {
+public interface CacheStampApi<K, V> extends InitializingBean {
 
     /**
      * 过期时间

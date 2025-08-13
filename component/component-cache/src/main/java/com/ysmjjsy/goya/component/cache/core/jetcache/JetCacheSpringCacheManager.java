@@ -1,4 +1,4 @@
-package com.ysmjjsy.goya.component.cache.jetcache.enhance;
+package com.ysmjjsy.goya.component.cache.core.jetcache;
 
 import com.ysmjjsy.goya.component.cache.configuration.properties.CacheProperties;
 import com.ysmjjsy.goya.component.common.pojo.constants.SymbolConstants;
@@ -16,6 +16,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+
 /**
  * <p>Description: 基于 JetCache 的 Spring Cache Manager 扩展 </p>
  *
@@ -31,23 +32,20 @@ public class JetCacheSpringCacheManager implements CacheManager {
     @Setter
     @Getter
     private boolean allowNullValues = true;
+    private final CacheProperties cacheProperties;
 
-    public JetCacheSpringCacheManager(JetCacheCreateCacheFactory jetCacheCreateCacheFactory) {
+    public JetCacheSpringCacheManager(JetCacheCreateCacheFactory jetCacheCreateCacheFactory, CacheProperties cacheProperties) {
         this.jetCacheCreateCacheFactory = jetCacheCreateCacheFactory;
+        this.cacheProperties = cacheProperties;
     }
 
-    public JetCacheSpringCacheManager(JetCacheCreateCacheFactory jetCacheCreateCacheFactory, String... cacheNames) {
+    public JetCacheSpringCacheManager(JetCacheCreateCacheFactory jetCacheCreateCacheFactory, CacheProperties cacheProperties, String... cacheNames) {
         this.jetCacheCreateCacheFactory = jetCacheCreateCacheFactory;
+        this.cacheProperties = cacheProperties;
         setCacheNames(Arrays.asList(cacheNames));
     }
 
     protected Cache createJetCache(String name) {
-        com.alicp.jetcache.Cache<Object, Object> cache = jetCacheCreateCacheFactory.create(name);
-        log.debug("[Goya] |- CACHE - Goya cache [{}] is CREATED.", name);
-        return new JetCacheSpringCache(name, cache, allowNullValues);
-    }
-
-    protected Cache createJetCache(String name, CacheProperties cacheProperties) {
         com.alicp.jetcache.Cache<Object, Object> cache = jetCacheCreateCacheFactory.create(name, allowNullValues, cacheProperties);
         log.debug("[Goya] |- CACHE - Goya cache [{}] use entity cache is CREATED.", name);
         return new JetCacheSpringCache(name, cache, allowNullValues);

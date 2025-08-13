@@ -1,4 +1,4 @@
-package com.ysmjjsy.goya.component.cache.core;
+package com.ysmjjsy.goya.component.cache.api;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -12,7 +12,7 @@ import java.util.Collection;
  * @author goya
  * @since 2025/7/30 00:19
  */
-public interface GoyaCache extends InitializingBean {
+public interface CacheApi extends InitializingBean {
 
     /**
      * 获取缓存

@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.component.web.crypto;
 
-import com.ysmjjsy.goya.component.cache.jetcache.stamp.AbstractStampManager;
+import com.ysmjjsy.goya.component.cache.stamp.AbstractStampManager;
 import com.ysmjjsy.goya.component.crypto.definition.AsymmetricCryptoProcessor;
 import com.ysmjjsy.goya.component.crypto.definition.SymmetricCryptoProcessor;
 import com.ysmjjsy.goya.component.crypto.domain.SecretKey;

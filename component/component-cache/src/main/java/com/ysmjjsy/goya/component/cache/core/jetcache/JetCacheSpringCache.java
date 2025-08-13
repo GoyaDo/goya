@@ -1,4 +1,4 @@
-package com.ysmjjsy.goya.component.cache.jetcache.enhance;
+package com.ysmjjsy.goya.component.cache.core.jetcache;
 
 import com.alicp.jetcache.Cache;
 import org.apache.commons.lang3.ObjectUtils;

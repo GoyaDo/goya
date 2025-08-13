@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.security.authentication.client.compliance.stamp;
 
-import com.ysmjjsy.goya.component.cache.jetcache.stamp.AbstractCountStampManager;
+import com.ysmjjsy.goya.component.cache.stamp.AbstractCountStampManager;
 import com.ysmjjsy.goya.security.authentication.client.compliance.SignInErrorStatus;
 import com.ysmjjsy.goya.security.authentication.properties.SecurityAuthenticationProperties;
 import com.ysmjjsy.goya.security.core.constants.SecurityConstants;

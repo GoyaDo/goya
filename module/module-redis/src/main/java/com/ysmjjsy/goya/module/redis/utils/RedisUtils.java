@@ -1,8 +1,8 @@
 package com.ysmjjsy.goya.module.redis.utils;
 
-import com.ysmjjsy.goya.component.cache.core.CacheGetFilter;
-import com.ysmjjsy.goya.component.cache.core.CacheGetIfAbsent;
-import com.ysmjjsy.goya.component.cache.core.CacheLoader;
+import com.ysmjjsy.goya.component.cache.api.CacheGetFilter;
+import com.ysmjjsy.goya.component.cache.api.CacheGetIfAbsent;
+import com.ysmjjsy.goya.component.cache.api.CacheLoader;
 import com.ysmjjsy.goya.component.common.context.SpringContextHolder;
 import com.ysmjjsy.goya.module.redis.definition.GoyaRedisCache;
 import jakarta.validation.constraints.NotBlank;

@@ -2,7 +2,7 @@ package com.ysmjjsy.goya.component.cache.utils;
 
 import com.alicp.jetcache.Cache;
 import com.alicp.jetcache.anno.CacheType;
-import com.ysmjjsy.goya.component.cache.jetcache.enhance.JetCacheCreateCacheFactory;
+import com.ysmjjsy.goya.component.cache.core.jetcache.JetCacheCreateCacheFactory;
 import com.ysmjjsy.goya.component.core.context.SpringContextHolder;
 import lombok.experimental.UtilityClass;
 

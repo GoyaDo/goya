@@ -1,8 +1,9 @@
-package com.ysmjjsy.goya.component.cache.jetcache.stamp;
+package com.ysmjjsy.goya.component.cache.stamp;
 
 import com.alicp.jetcache.AutoReleaseLock;
 import com.alicp.jetcache.Cache;
 import com.alicp.jetcache.anno.CacheType;
+import com.ysmjjsy.goya.component.cache.api.CacheStampApi;
 import com.ysmjjsy.goya.component.cache.utils.JetCacheUtils;
 import com.ysmjjsy.goya.component.exception.stamp.StampHasExpiredException;
 import com.ysmjjsy.goya.component.exception.stamp.StampMismatchException;
@@ -23,7 +24,7 @@ import java.util.concurrent.TimeUnit;
  * @author goya
  * @since 2021/8/23 11:51
  */
-public abstract class AbstractStampManager<K, V> implements StampManager<K, V> {
+public abstract class AbstractStampManager<K, V> implements CacheStampApi<K, V> {
 
     private static final Logger log = LoggerFactory.getLogger(AbstractStampManager.class);
 

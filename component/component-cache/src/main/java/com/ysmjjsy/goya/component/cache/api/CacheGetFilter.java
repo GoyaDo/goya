@@ -1,4 +1,4 @@
-package com.ysmjjsy.goya.component.cache.core;
+package com.ysmjjsy.goya.component.cache.api;
 
 /**
  * <p>缓存过滤</p>
