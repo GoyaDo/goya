@@ -1,5 +1,6 @@
 package com.ysmjjsy.goya.security.authentication.client.domain.converter;
 
+import cn.hutool.v7.core.date.DateUtil;
 import com.ysmjjsy.goya.security.authentication.client.domain.entity.SecurityClientDevice;
 import com.ysmjjsy.goya.security.authentication.client.domain.entity.SecurityClientScope;
 import com.ysmjjsy.goya.security.authentication.client.domain.service.SecurityClientScopeService;
@@ -10,7 +11,6 @@ import com.ysmjjsy.goya.security.core.constants.SecurityConstants;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.ObjectUtils;
-import org.dromara.hutool.core.date.DateUtil;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.security.oauth2.core.AuthorizationGrantType;
 import org.springframework.security.oauth2.server.authorization.client.RegisteredClient;

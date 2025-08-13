@@ -1,9 +1,9 @@
 package com.ysmjjsy.goya.module.tenant.tenant.hibernate;
 
-import com.ysmjjsy.goya.module.tenant.tenant.datasource.MultiTenantDataSourceFactory;
+import cn.hutool.v7.extra.spring.SpringUtil;
 import com.ysmjjsy.goya.component.common.pojo.constants.DefaultConstants;
+import com.ysmjjsy.goya.module.tenant.tenant.datasource.MultiTenantDataSourceFactory;
 import org.apache.commons.lang3.ObjectUtils;
-import org.dromara.hutool.extra.spring.SpringUtil;
 import org.hibernate.cfg.AvailableSettings;
 import org.hibernate.engine.jdbc.connections.spi.AbstractDataSourceBasedMultiTenantConnectionProviderImpl;
 import org.slf4j.Logger;

@@ -2,12 +2,12 @@ package com.ysmjjsy.goya.module.redis.definition;
 
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
-import com.ysmjjsy.goya.component.cache.configuration.properties.CacheProperties;
 import com.ysmjjsy.goya.component.cache.api.CacheGetFilter;
 import com.ysmjjsy.goya.component.cache.api.CacheGetIfAbsent;
 import com.ysmjjsy.goya.component.cache.api.CacheLoader;
+import com.ysmjjsy.goya.component.cache.configuration.properties.CacheProperties;
 import com.ysmjjsy.goya.component.common.strategy.Singleton;
-import com.ysmjjsy.goya.component.json.jackson2.utils.Jackson2Utils;
+import com.ysmjjsy.goya.component.core.jackson2.utils.Jackson2Utils;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import org.redisson.api.RBloomFilter;

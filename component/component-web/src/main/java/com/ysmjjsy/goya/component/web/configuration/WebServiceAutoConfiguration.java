@@ -2,10 +2,11 @@ package com.ysmjjsy.goya.component.web.configuration;
 
 import com.google.common.collect.ImmutableList;
 import com.ysmjjsy.goya.component.cache.configuration.CacheAutoConfiguration;
-import com.ysmjjsy.goya.component.common.context.ServiceContextHolder;
+import com.ysmjjsy.goya.component.common.pojo.constants.GoyaConstants;
+import com.ysmjjsy.goya.component.common.strategy.Singleton;
+import com.ysmjjsy.goya.component.core.context.ServiceContextHolder;
 import com.ysmjjsy.goya.component.core.resolver.PropertyResolver;
 import com.ysmjjsy.goya.component.doc.server.OpenApiServerResolver;
-import com.ysmjjsy.goya.component.common.pojo.constants.GoyaConstants;
 import com.ysmjjsy.goya.component.web.advice.ServletRestControllerAdvice;
 import com.ysmjjsy.goya.component.web.configuration.properties.PlatformProperties;
 import com.ysmjjsy.goya.component.web.customizer.Jackson2XssObjectMapperBuilderCustomizer;
@@ -39,7 +40,7 @@ import org.springframework.context.annotation.Primary;
 @Import(ServletRestControllerAdvice.class)
 public class WebServiceAutoConfiguration implements ApplicationContextAware {
 
-    private final ServiceContextHolder goyaContextHolder;
+    private final ServiceContextHolder serviceContextHolder;
 
     /**
      * 使用构造函数的方式，可以确保时机正确，几个参数对象设置正确，最终保证 ServiceContextHolder 的初始化时机合理
@@ -48,7 +49,7 @@ public class WebServiceAutoConfiguration implements ApplicationContextAware {
      * @param serverProperties   {@link ServerProperties}
      */
     public WebServiceAutoConfiguration(PlatformProperties platformProperties, ServerProperties serverProperties) {
-        this.goyaContextHolder = GoyaContextHolderBuilder.builder()
+        this.serviceContextHolder = GoyaContextHolderBuilder.builder()
                 .platformProperties(platformProperties)
                 .serverProperties(serverProperties)
                 .build();
@@ -61,9 +62,10 @@ public class WebServiceAutoConfiguration implements ApplicationContextAware {
 
     @Override
     public void setApplicationContext(@Nonnull ApplicationContext applicationContext) throws BeansException {
-        this.goyaContextHolder.setApplicationContext(applicationContext);
-        this.goyaContextHolder.setApplicationName(PropertyResolver.getProperty(applicationContext.getEnvironment(), GoyaConstants.ITEM_SPRING_APPLICATION_NAME));
+        this.serviceContextHolder.setApplicationContext(applicationContext);
+        this.serviceContextHolder.setApplicationName(PropertyResolver.getProperty(applicationContext.getEnvironment(), GoyaConstants.ITEM_SPRING_APPLICATION_NAME));
         log.trace("[Goya] |- component [web] |- Goya ApplicationContext initialization completed.");
+        Singleton.put(this.serviceContextHolder);
     }
 
     @Bean
@@ -71,7 +73,7 @@ public class WebServiceAutoConfiguration implements ApplicationContextAware {
     public OpenApiServerResolver openApiServerResolver() {
         OpenApiServerResolver resolver = () -> {
             Server server = new Server();
-            server.setUrl(goyaContextHolder.getUrl());
+            server.setUrl(serviceContextHolder.getUrl());
             return ImmutableList.of(server);
         };
         log.trace("[Goya] |- component [doc] |- bean [openApiServerResolver] register.");

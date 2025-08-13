@@ -14,7 +14,7 @@
     <dependencies>
         <dependency>
             <groupId>com.ysmjjsy.goya</groupId>
-            <artifactId>goya-common-starter</artifactId>
+            <artifactId>goya-component-starter</artifactId>
         </dependency>
     </dependencies>
 

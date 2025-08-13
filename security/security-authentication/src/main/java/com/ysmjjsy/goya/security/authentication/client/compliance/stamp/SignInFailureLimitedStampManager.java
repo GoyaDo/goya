@@ -1,12 +1,12 @@
 package com.ysmjjsy.goya.security.authentication.client.compliance.stamp;
 
+import cn.hutool.v7.crypto.SecureUtil;
 import com.ysmjjsy.goya.component.cache.stamp.AbstractCountStampManager;
 import com.ysmjjsy.goya.security.authentication.client.compliance.SignInErrorStatus;
 import com.ysmjjsy.goya.security.authentication.properties.SecurityAuthenticationProperties;
 import com.ysmjjsy.goya.security.core.constants.SecurityConstants;
 import lombok.Getter;
 import org.apache.commons.lang3.ObjectUtils;
-import org.dromara.hutool.crypto.SecureUtil;
 
 /**
  * <p>Description: 登录失败次数限制签章管理 </p>

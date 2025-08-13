@@ -2,7 +2,7 @@ package com.ysmjjsy.goya.component.captcha.renderer.graphic;
 
 import com.ysmjjsy.goya.component.captcha.domain.Metadata;
 import com.ysmjjsy.goya.component.captcha.provider.RandomProvider;
-import com.ysmjjsy.goya.component.common.pojo.constants.RegexPool;
+import com.ysmjjsy.goya.component.common.pojo.constants.RegexPoolConstants;
 import com.ysmjjsy.goya.component.common.pojo.enums.CaptchaCategory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -63,7 +63,7 @@ public class ArithmeticCaptchaRenderer extends AbstractBaseGraphicRenderer {
         builder.append("=?");
 
         String result = builder.toString();
-        return result.split(RegexPool.ALL_CHARACTERS);
+        return result.split(RegexPoolConstants.ALL_CHARACTERS);
     }
 
     @Override

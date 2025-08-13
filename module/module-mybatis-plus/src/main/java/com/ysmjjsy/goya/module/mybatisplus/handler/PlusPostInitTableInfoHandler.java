@@ -1,10 +1,10 @@
 package com.ysmjjsy.goya.module.mybatisplus.handler;
 
+import cn.hutool.v7.extra.spring.SpringUtil;
 import com.baomidou.mybatisplus.core.handlers.PostInitTableInfoHandler;
 import com.baomidou.mybatisplus.core.metadata.TableInfo;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.ibatis.session.Configuration;
-import org.dromara.hutool.extra.spring.SpringUtil;
 
 /**
  * <p></p>

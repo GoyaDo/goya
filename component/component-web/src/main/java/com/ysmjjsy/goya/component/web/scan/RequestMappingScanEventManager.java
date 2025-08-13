@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.component.web.scan;
 
 import com.ysmjjsy.goya.component.bus.event.strategy.ApplicationStrategyEventManager;
-import com.ysmjjsy.goya.component.common.context.ServiceContextHolder;
+import com.ysmjjsy.goya.component.core.context.ServiceContextHolder;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.ObjectUtils;
 

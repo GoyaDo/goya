@@ -1,10 +1,10 @@
 package com.ysmjjsy.goya.component.web.stamp;
 
+import cn.hutool.v7.core.data.id.IdUtil;
 import com.ysmjjsy.goya.component.cache.stamp.AbstractStampManager;
-import com.ysmjjsy.goya.component.web.constants.WebConstants;
 import com.ysmjjsy.goya.component.web.configuration.properties.SecureProperties;
+import com.ysmjjsy.goya.component.web.constants.WebConstants;
 import lombok.Getter;
-import org.dromara.hutool.core.data.id.IdUtil;
 
 /**
  * <p>Description: 幂等Stamp管理 </p>

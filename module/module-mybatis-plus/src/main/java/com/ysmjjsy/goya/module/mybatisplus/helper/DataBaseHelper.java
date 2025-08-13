@@ -1,8 +1,8 @@
 package com.ysmjjsy.goya.module.mybatisplus.helper;
 
 import com.baomidou.dynamic.datasource.DynamicRoutingDataSource;
-import com.ysmjjsy.goya.component.common.context.SpringContextHolder;
 import com.ysmjjsy.goya.component.common.exception.definition.GoyaRuntimeException;
+import com.ysmjjsy.goya.component.core.context.SpringContextHolder;
 import com.ysmjjsy.goya.module.mybatisplus.enums.DataBaseType;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;

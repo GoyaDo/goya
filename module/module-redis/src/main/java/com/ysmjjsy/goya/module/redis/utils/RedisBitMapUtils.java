@@ -2,7 +2,7 @@ package com.ysmjjsy.goya.module.redis.utils;
 
 import com.google.common.hash.Funnels;
 import com.google.common.hash.Hashing;
-import com.ysmjjsy.goya.component.common.context.SpringContextHolder;
+import com.ysmjjsy.goya.component.core.context.SpringContextHolder;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.springframework.data.redis.connection.RedisStringCommands;

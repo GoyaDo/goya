@@ -1,6 +1,7 @@
 package com.ysmjjsy.goya.component.statemachine.impl;
 
-import com.ysmjjsy.goya.component.exception.definition.GoyaRuntimeException;
+
+import com.ysmjjsy.goya.component.common.exception.definition.GoyaRuntimeException;
 
 import java.io.Serial;
 

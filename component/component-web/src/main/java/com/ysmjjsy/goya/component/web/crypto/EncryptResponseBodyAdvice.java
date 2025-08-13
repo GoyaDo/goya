@@ -2,7 +2,7 @@ package com.ysmjjsy.goya.component.web.crypto;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.ysmjjsy.goya.component.common.exception.request.RequestInvalidException;
-import com.ysmjjsy.goya.component.json.jackson2.utils.Jackson2Utils;
+import com.ysmjjsy.goya.component.core.jackson2.utils.Jackson2Utils;
 import com.ysmjjsy.goya.component.web.annotation.Crypto;
 import com.ysmjjsy.goya.component.web.utils.RequestUtils;
 import org.apache.commons.lang3.ObjectUtils;

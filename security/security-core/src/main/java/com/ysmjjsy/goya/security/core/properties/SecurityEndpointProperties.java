@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.security.core.properties;
 
-import com.ysmjjsy.goya.component.common.utils.WellFormedUtils;
+import com.ysmjjsy.goya.component.core.utils.WellFormedUtils;
 import com.ysmjjsy.goya.security.core.constants.SecurityConstants;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

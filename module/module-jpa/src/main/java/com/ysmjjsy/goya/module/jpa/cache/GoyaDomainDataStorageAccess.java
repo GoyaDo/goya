@@ -1,10 +1,10 @@
 package com.ysmjjsy.goya.module.jpa.cache;
 
-import com.ysmjjsy.goya.component.common.context.TenantContextHolder;
+import cn.hutool.v7.crypto.SecureUtil;
 import com.ysmjjsy.goya.component.common.pojo.constants.SymbolConstants;
+import com.ysmjjsy.goya.component.core.context.TenantContextHolder;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.dromara.hutool.crypto.SecureUtil;
 import org.hibernate.cache.spi.QueryKey;
 import org.hibernate.cache.spi.support.DomainDataStorageAccess;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;

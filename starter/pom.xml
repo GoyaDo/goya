@@ -12,8 +12,8 @@
     <artifactId>starter</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>goya-common-api-starter</module>
         <module>goya-common-starter</module>
+        <module>goya-component-starter</module>
         <module>goya-security-resource-server-starter</module>
         <module>goya-cloud-starter</module>
         <module>goya-security-authorization-server-starter</module>

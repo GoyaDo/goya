@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.module.tenant.tenant;
 
-import com.ysmjjsy.goya.component.common.context.TenantContextHolder;
+import com.ysmjjsy.goya.component.core.context.TenantContextHolder;
 import org.hibernate.cfg.AvailableSettings;
 import org.hibernate.context.spi.CurrentTenantIdentifierResolver;
 import org.slf4j.Logger;

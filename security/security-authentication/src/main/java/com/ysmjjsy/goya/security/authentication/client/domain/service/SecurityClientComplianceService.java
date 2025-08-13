@@ -1,5 +1,8 @@
 package com.ysmjjsy.goya.security.authentication.client.domain.service;
 
+import cn.hutool.v7.http.server.servlet.ServletUtil;
+import cn.hutool.v7.http.useragent.UserAgent;
+import cn.hutool.v7.http.useragent.UserAgentUtil;
 import com.google.common.net.HttpHeaders;
 import com.ysmjjsy.goya.module.rest.service.BaseService;
 import com.ysmjjsy.goya.security.authentication.client.domain.entity.SecurityClientCompliance;
@@ -10,9 +13,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.dromara.hutool.http.server.servlet.ServletUtil;
-import org.dromara.hutool.http.useragent.UserAgent;
-import org.dromara.hutool.http.useragent.UserAgentUtil;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;

@@ -1,8 +1,8 @@
 package com.ysmjjsy.goya.component.db.factory;
 
-import com.ysmjjsy.goya.component.common.context.SpringContextHolder;
-import com.ysmjjsy.goya.component.db.configuration.properties.DbProperties;
+import com.ysmjjsy.goya.component.core.context.SpringContextHolder;
 import com.ysmjjsy.goya.component.db.adapter.GoyaRepository;
+import com.ysmjjsy.goya.component.db.configuration.properties.DbProperties;
 import com.ysmjjsy.goya.component.db.enums.RepositoryMode;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;

@@ -1,11 +1,11 @@
 package com.ysmjjsy.goya.module.redis.distributedid;
 
+import cn.hutool.v7.core.collection.CollUtil;
 import com.ysmjjsy.goya.component.distributedid.core.snowflake.AbstractWorkIdChooseTemplate;
 import com.ysmjjsy.goya.component.distributedid.core.snowflake.RandomWorkIdChoose;
 import com.ysmjjsy.goya.component.distributedid.core.snowflake.WorkIdWrapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.dromara.hutool.core.collection.CollUtil;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.redis.core.StringRedisTemplate;

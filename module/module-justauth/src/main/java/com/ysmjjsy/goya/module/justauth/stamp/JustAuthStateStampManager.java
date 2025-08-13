@@ -1,11 +1,11 @@
 package com.ysmjjsy.goya.module.justauth.stamp;
 
+import cn.hutool.v7.core.data.id.IdUtil;
 import com.ysmjjsy.goya.component.cache.stamp.AbstractStampManager;
 import com.ysmjjsy.goya.module.justauth.constants.JustAuthConstants;
 import com.ysmjjsy.goya.module.justauth.properties.JustAuthProperties;
 import lombok.Setter;
 import me.zhyd.oauth.cache.AuthStateCache;
-import org.dromara.hutool.core.data.id.IdUtil;
 
 import java.util.concurrent.TimeUnit;
 

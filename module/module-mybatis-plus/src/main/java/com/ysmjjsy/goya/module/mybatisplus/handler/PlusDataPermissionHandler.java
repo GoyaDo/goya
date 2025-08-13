@@ -1,5 +1,7 @@
 package com.ysmjjsy.goya.module.mybatisplus.handler;
 
+import cn.hutool.v7.core.annotation.AnnotationUtil;
+import cn.hutool.v7.extra.spring.SpringUtil;
 import com.ysmjjsy.goya.component.common.exception.definition.GoyaRuntimeException;
 import com.ysmjjsy.goya.module.mybatisplus.annotation.DataPermission;
 import com.ysmjjsy.goya.module.mybatisplus.helper.DataPermissionHelper;
@@ -8,8 +10,6 @@ import lombok.extern.slf4j.Slf4j;
 import net.sf.jsqlparser.expression.Expression;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.ibatis.io.Resources;
-import org.dromara.hutool.core.annotation.AnnotationUtil;
-import org.dromara.hutool.extra.spring.SpringUtil;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.expression.BeanFactoryResolver;
 import org.springframework.core.io.Resource;

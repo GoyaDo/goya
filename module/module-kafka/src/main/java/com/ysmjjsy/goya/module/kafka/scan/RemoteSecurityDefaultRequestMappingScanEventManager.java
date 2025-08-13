@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.module.kafka.scan;
 
-import com.ysmjjsy.goya.component.common.context.ServiceContextHolder;
+import com.ysmjjsy.goya.component.core.context.ServiceContextHolder;
 import com.ysmjjsy.goya.component.web.scan.RequestMappingEvent;
 import com.ysmjjsy.goya.component.web.scan.RequestMappingScanEventManager;
 import com.ysmjjsy.goya.module.kafka.bus.RemoteRequestMappingEvent;

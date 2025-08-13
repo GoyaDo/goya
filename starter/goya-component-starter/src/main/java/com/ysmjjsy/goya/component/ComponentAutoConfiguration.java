@@ -1,4 +1,4 @@
-package com.ysmjjsy.goya.common.api;
+package com.ysmjjsy.goya.component;
 
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
@@ -8,14 +8,14 @@ import org.springframework.boot.autoconfigure.AutoConfiguration;
  * <p></p>
  *
  * @author goya
- * @since 2025/6/16 13:12
+ * @since 2025/6/16 13:16
  */
 @Slf4j
 @AutoConfiguration
-public class CommonApiAutoConfiguration {
+public class ComponentAutoConfiguration {
 
     @PostConstruct
     public void init() {
-        log.info("[Goya] |- starter [common api] auto configure.");
+        log.info("[Goya] |- starter [component] auto configure.");
     }
 }

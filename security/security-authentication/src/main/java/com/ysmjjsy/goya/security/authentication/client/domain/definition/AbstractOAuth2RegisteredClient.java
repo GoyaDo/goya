@@ -1,5 +1,6 @@
 package com.ysmjjsy.goya.security.authentication.client.domain.definition;
 
+import cn.hutool.v7.core.data.id.IdUtil;
 import com.google.common.base.Objects;
 import com.ysmjjsy.goya.security.authentication.client.domain.entity.SecurityClientScope;
 import com.ysmjjsy.goya.security.authentication.client.enums.AllJwsAlgorithm;
@@ -13,7 +14,6 @@ import jakarta.persistence.MappedSuperclass;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.dromara.hutool.core.data.id.IdUtil;
 
 import java.io.Serial;
 import java.time.Duration;

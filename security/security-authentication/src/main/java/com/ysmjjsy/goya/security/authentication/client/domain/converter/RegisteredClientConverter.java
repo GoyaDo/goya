@@ -1,8 +1,8 @@
 package com.ysmjjsy.goya.security.authentication.client.domain.converter;
 
+import cn.hutool.v7.core.date.DateUtil;
 import com.ysmjjsy.goya.security.authentication.client.domain.definition.RegisteredClientDetails;
 import com.ysmjjsy.goya.security.authentication.utils.OAuth2AuthorizationUtils;
-import org.dromara.hutool.core.date.DateUtil;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.security.oauth2.server.authorization.client.RegisteredClient;
 import org.springframework.security.oauth2.server.authorization.settings.ClientSettings;

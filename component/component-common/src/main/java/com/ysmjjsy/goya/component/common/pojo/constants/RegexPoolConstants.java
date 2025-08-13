@@ -1,12 +1,14 @@
 package com.ysmjjsy.goya.component.common.pojo.constants;
 
+import cn.hutool.v7.core.regex.RegexPool;
+
 /**
  * <p>常用正则表达式</p>
  *
  * @author goya
  * @since 2025/2/21 10:56
  */
-public interface RegexPool extends org.dromara.hutool.core.regex.RegexPool {
+public interface RegexPoolConstants extends RegexPool {
 
     /**
      * 匹配大括号以及其中的内容，

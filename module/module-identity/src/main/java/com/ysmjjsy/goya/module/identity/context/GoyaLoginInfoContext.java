@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.module.identity.context;
 
-import com.ysmjjsy.goya.component.common.context.SpringContextHolder;
+import com.ysmjjsy.goya.component.core.context.SpringContextHolder;
 import com.ysmjjsy.goya.module.identity.domain.GoyaUserPrincipal;
 import com.ysmjjsy.goya.module.identity.handler.LoginUserHandler;
 import lombok.experimental.UtilityClass;

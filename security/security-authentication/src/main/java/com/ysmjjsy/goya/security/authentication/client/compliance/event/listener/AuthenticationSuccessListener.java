@@ -1,12 +1,12 @@
 package com.ysmjjsy.goya.security.authentication.client.compliance.event.listener;
 
+import cn.hutool.v7.crypto.SecureUtil;
 import com.ysmjjsy.goya.module.identity.domain.GoyaUserPrincipal;
 import com.ysmjjsy.goya.security.authentication.client.compliance.stamp.SignInFailureLimitedStampManager;
 import com.ysmjjsy.goya.security.authentication.client.domain.service.SecurityClientComplianceService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.dromara.hutool.crypto.SecureUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationListener;

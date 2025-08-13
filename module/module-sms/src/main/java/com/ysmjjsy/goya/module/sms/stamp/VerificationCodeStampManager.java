@@ -1,10 +1,10 @@
 package com.ysmjjsy.goya.module.sms.stamp;
 
+import cn.hutool.v7.core.util.RandomUtil;
 import com.ysmjjsy.goya.component.cache.stamp.AbstractStampManager;
 import com.ysmjjsy.goya.module.sms.constants.SmsConstants;
 import com.ysmjjsy.goya.module.sms.properties.SmsProperties;
 import lombok.Setter;
-import org.dromara.hutool.core.util.RandomUtil;
 
 /**
  * <p>Description: 手机短信验证码签章 </p>

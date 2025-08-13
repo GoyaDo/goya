@@ -1,9 +1,9 @@
 package com.ysmjjsy.goya.security.authentication.client.compliance.stamp;
 
+import cn.hutool.v7.core.data.id.IdUtil;
 import com.ysmjjsy.goya.component.cache.stamp.AbstractStampManager;
 import com.ysmjjsy.goya.security.authentication.properties.SecurityAuthenticationProperties;
 import com.ysmjjsy.goya.security.core.constants.SecurityConstants;
-import org.dromara.hutool.core.data.id.IdUtil;
 
 /**
  * <p>Description: 锁定账户签章管理 </p>

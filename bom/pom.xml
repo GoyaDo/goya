@@ -197,13 +197,13 @@
 
             <dependency>
                 <groupId>com.ysmjjsy.goya</groupId>
-                <artifactId>goya-common-starter</artifactId>
+                <artifactId>goya-component-starter</artifactId>
                 <version>${revision}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.ysmjjsy.goya</groupId>
-                <artifactId>goya-common-api-starter</artifactId>
+                <artifactId>goya-common-starter</artifactId>
                 <version>${revision}</version>
             </dependency>
 

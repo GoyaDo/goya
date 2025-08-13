@@ -1,12 +1,12 @@
 package com.ysmjjsy.goya.security.authentication.utils;
 
+import cn.hutool.v7.core.util.RandomUtil;
+import cn.hutool.v7.crypto.SecureUtil;
+import cn.hutool.v7.crypto.symmetric.AES;
 import com.ysmjjsy.goya.component.common.pojo.constants.SymbolConstants;
 import com.ysmjjsy.goya.security.core.exception.IllegalSymmetricKeyException;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.dromara.hutool.core.util.RandomUtil;
-import org.dromara.hutool.crypto.SecureUtil;
-import org.dromara.hutool.crypto.symmetric.AES;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
