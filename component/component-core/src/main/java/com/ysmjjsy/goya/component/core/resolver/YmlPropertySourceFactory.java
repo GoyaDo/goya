@@ -1,4 +1,4 @@
-package com.ysmjjsy.goya.component.common.resolver;
+package com.ysmjjsy.goya.component.core.resolver;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.config.YamlPropertiesFactoryBean;

@@ -1,5 +1,6 @@
 package com.ysmjjsy.goya.component.captcha.definition;
 
+import cn.hutool.v7.core.data.id.IdUtil;
 import com.ysmjjsy.goya.component.captcha.constants.CaptchaConstants;
 import com.ysmjjsy.goya.component.captcha.domain.Captcha;
 import com.ysmjjsy.goya.component.captcha.domain.GraphicCaptcha;
@@ -11,7 +12,6 @@ import com.ysmjjsy.goya.component.exception.captcha.CaptchaMismatchException;
 import com.ysmjjsy.goya.component.exception.captcha.CaptchaParameterIllegalException;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.dromara.hutool.core.data.id.IdUtil;
 
 import java.awt.*;
 

@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.component.web.scan;
 
-import com.ysmjjsy.goya.component.common.resolver.PropertyResolver;
+import com.ysmjjsy.goya.component.core.resolver.PropertyResolver;
 import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
 import com.ysmjjsy.goya.component.pojo.constants.SymbolConstants;
 import com.ysmjjsy.goya.component.web.domain.RequestMapping;

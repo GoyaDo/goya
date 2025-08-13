@@ -1,9 +1,9 @@
 package com.ysmjjsy.goya.component.captcha.renderer.behavior;
 
+import cn.hutool.v7.core.util.RandomUtil;
 import com.ysmjjsy.goya.component.captcha.domain.Coordinate;
-import com.ysmjjsy.goya.component.pojo.constants.SymbolConstants;
+import com.ysmjjsy.goya.component.common.pojo.constants.SymbolConstants;
 import org.apache.commons.lang3.StringUtils;
-import org.dromara.hutool.core.util.RandomUtil;
 
 import java.util.ArrayList;
 import java.util.Arrays;

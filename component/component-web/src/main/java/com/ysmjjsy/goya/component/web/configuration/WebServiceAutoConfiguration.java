@@ -3,7 +3,7 @@ package com.ysmjjsy.goya.component.web.configuration;
 import com.google.common.collect.ImmutableList;
 import com.ysmjjsy.goya.component.cache.configuration.CacheAutoConfiguration;
 import com.ysmjjsy.goya.component.common.context.ServiceContextHolder;
-import com.ysmjjsy.goya.component.common.resolver.PropertyResolver;
+import com.ysmjjsy.goya.component.core.resolver.PropertyResolver;
 import com.ysmjjsy.goya.component.doc.server.OpenApiServerResolver;
 import com.ysmjjsy.goya.component.pojo.constants.GoyaConstants;
 import com.ysmjjsy.goya.component.web.advice.ServletRestControllerAdvice;

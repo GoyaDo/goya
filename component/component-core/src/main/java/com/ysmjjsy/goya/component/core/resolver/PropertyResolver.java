@@ -1,4 +1,4 @@
-package com.ysmjjsy.goya.component.common.resolver;
+package com.ysmjjsy.goya.component.core.resolver;
 
 import org.springframework.context.annotation.ConditionContext;
 import org.springframework.core.env.Environment;

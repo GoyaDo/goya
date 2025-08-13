@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.component.captcha.provider;
 
+import cn.hutool.v7.core.util.RandomUtil;
 import com.ysmjjsy.goya.component.captcha.enums.CaptchaCharacter;
-import org.dromara.hutool.core.util.RandomUtil;
 
 import java.awt.*;
 import java.util.Arrays;

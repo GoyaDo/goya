@@ -1,10 +1,10 @@
 package com.ysmjjsy.goya.component.captcha.renderer.graphic;
 
+import cn.hutool.v7.core.codec.binary.Base64;
 import com.madgag.gif.fmsware.AnimatedGifEncoder;
 import com.ysmjjsy.goya.component.captcha.domain.Metadata;
-import com.ysmjjsy.goya.component.pojo.constants.SymbolConstants;
+import com.ysmjjsy.goya.component.common.pojo.constants.SymbolConstants;
 import org.apache.commons.lang3.StringUtils;
-import org.dromara.hutool.core.codec.binary.Base64;
 
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;

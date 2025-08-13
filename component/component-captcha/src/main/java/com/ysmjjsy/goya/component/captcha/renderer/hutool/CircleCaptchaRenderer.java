@@ -1,10 +1,10 @@
 package com.ysmjjsy.goya.component.captcha.renderer.hutool;
 
+import cn.hutool.v7.swing.captcha.CaptchaUtil;
+import cn.hutool.v7.swing.captcha.CircleCaptcha;
 import com.ysmjjsy.goya.component.captcha.definition.AbstractGraphicRenderer;
 import com.ysmjjsy.goya.component.captcha.domain.Metadata;
-import com.ysmjjsy.goya.component.pojo.enums.CaptchaCategory;
-import org.dromara.hutool.swing.captcha.CaptchaUtil;
-import org.dromara.hutool.swing.captcha.CircleCaptcha;
+import com.ysmjjsy.goya.component.common.pojo.enums.CaptchaCategory;
 
 
 /**

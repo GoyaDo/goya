@@ -1,6 +1,6 @@
-package com.ysmjjsy.goya.component.common.utils;
+package com.ysmjjsy.goya.component.core.utils;
 
-import com.ysmjjsy.goya.component.common.resolver.ResourceResolver;
+import com.ysmjjsy.goya.component.core.resolver.ResourceResolver;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.text.StringEscapeUtils;
 import org.owasp.validator.html.*;

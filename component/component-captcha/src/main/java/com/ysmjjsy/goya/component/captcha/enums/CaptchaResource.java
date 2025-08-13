@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.component.captcha.enums;
 
-import com.ysmjjsy.goya.component.pojo.enums.GoyaEnum;
+import com.ysmjjsy.goya.component.common.pojo.enums.GoyaEnum;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

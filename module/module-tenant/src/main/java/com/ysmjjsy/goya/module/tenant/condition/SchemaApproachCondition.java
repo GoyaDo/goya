@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.module.tenant.condition;
 
-import com.ysmjjsy.goya.component.common.resolver.PropertyResolver;
+import com.ysmjjsy.goya.component.core.resolver.PropertyResolver;
 import com.ysmjjsy.goya.component.db.constants.DbConstants;
 import com.ysmjjsy.goya.module.tenant.enums.MultiTenantApproach;
 import org.apache.commons.lang3.StringUtils;

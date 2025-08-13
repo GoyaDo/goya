@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.extension.plugins.inner.OptimisticLockerInnerInt
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.TenantLineInnerInterceptor;
 import com.ysmjjsy.goya.component.common.context.SpringContextHolder;
-import com.ysmjjsy.goya.component.common.resolver.YmlPropertySourceFactory;
+import com.ysmjjsy.goya.component.core.resolver.YmlPropertySourceFactory;
 import com.ysmjjsy.goya.component.db.adapter.BaseRepositoryAdapter;
 import com.ysmjjsy.goya.component.db.constants.DbConstants;
 import com.ysmjjsy.goya.module.mybatisplus.adapter.MybatisPlusRepositoryAdapter;

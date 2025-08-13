@@ -1,11 +1,11 @@
 package com.ysmjjsy.goya.component.captcha.definition;
 
+import cn.hutool.v7.swing.img.ImgUtil;
 import com.alicp.jetcache.anno.CacheType;
 import com.ysmjjsy.goya.component.cache.jetcache.stamp.AbstractStampManager;
-import com.ysmjjsy.goya.component.captcha.processor.CaptchaRenderer;
 import com.ysmjjsy.goya.component.captcha.configuration.properties.CaptchaProperties;
+import com.ysmjjsy.goya.component.captcha.processor.CaptchaRenderer;
 import com.ysmjjsy.goya.component.captcha.provider.ResourceProvider;
-import org.dromara.hutool.swing.img.ImgUtil;
 
 import java.awt.image.BufferedImage;
 import java.time.Duration;

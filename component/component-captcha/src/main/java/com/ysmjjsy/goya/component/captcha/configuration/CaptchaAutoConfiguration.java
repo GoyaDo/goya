@@ -1,8 +1,7 @@
 package com.ysmjjsy.goya.component.captcha.configuration;
 
-import com.ysmjjsy.goya.component.cache.configuration.CacheAutoConfiguration;
-import com.ysmjjsy.goya.component.captcha.processor.CaptchaRendererFactory;
 import com.ysmjjsy.goya.component.captcha.configuration.properties.CaptchaProperties;
+import com.ysmjjsy.goya.component.captcha.processor.CaptchaRendererFactory;
 import com.ysmjjsy.goya.component.captcha.provider.ResourceProvider;
 import com.ysmjjsy.goya.component.captcha.renderer.behavior.JigsawCaptchaRenderer;
 import com.ysmjjsy.goya.component.captcha.renderer.behavior.WordClickCaptchaRenderer;
@@ -11,12 +10,11 @@ import com.ysmjjsy.goya.component.captcha.renderer.hutool.CircleCaptchaRenderer;
 import com.ysmjjsy.goya.component.captcha.renderer.hutool.GifCaptchaRenderer;
 import com.ysmjjsy.goya.component.captcha.renderer.hutool.LineCaptchaRenderer;
 import com.ysmjjsy.goya.component.captcha.renderer.hutool.ShearCaptchaRenderer;
-import com.ysmjjsy.goya.component.pojo.enums.CaptchaCategory;
+import com.ysmjjsy.goya.component.common.pojo.enums.CaptchaCategory;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
-import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -30,10 +28,9 @@ import org.springframework.context.annotation.Configuration;
  */
 @Slf4j
 @AutoConfiguration
-@AutoConfigureAfter(CacheAutoConfiguration.class)
 @RequiredArgsConstructor
 @EnableConfigurationProperties(CaptchaProperties.class)
-public class GoyaCaptchaAutoConfiguration {
+public class CaptchaAutoConfiguration {
 
     @PostConstruct
     public void postConstruct() {

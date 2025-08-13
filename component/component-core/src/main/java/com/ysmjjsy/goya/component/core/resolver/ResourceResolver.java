@@ -1,8 +1,8 @@
-package com.ysmjjsy.goya.component.common.resolver;
+package com.ysmjjsy.goya.component.core.resolver;
 
+import cn.hutool.v7.core.codec.binary.Base64;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.dromara.hutool.core.codec.binary.Base64;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.Resource;

@@ -1,5 +1,6 @@
 package com.ysmjjsy.goya.component.captcha.renderer.behavior;
 
+import cn.hutool.v7.core.data.id.IdUtil;
 import com.ysmjjsy.goya.component.captcha.constants.CaptchaConstants;
 import com.ysmjjsy.goya.component.captcha.domain.Captcha;
 import com.ysmjjsy.goya.component.captcha.domain.Coordinate;
@@ -7,14 +8,13 @@ import com.ysmjjsy.goya.component.captcha.domain.Metadata;
 import com.ysmjjsy.goya.component.captcha.domain.Verification;
 import com.ysmjjsy.goya.component.captcha.enums.FontStyle;
 import com.ysmjjsy.goya.component.captcha.provider.RandomProvider;
-import com.ysmjjsy.goya.component.pojo.enums.CaptchaCategory;
+import com.ysmjjsy.goya.component.common.pojo.enums.CaptchaCategory;
 import com.ysmjjsy.goya.component.exception.captcha.CaptchaHasExpiredException;
 import com.ysmjjsy.goya.component.exception.captcha.CaptchaMismatchException;
 import com.ysmjjsy.goya.component.exception.captcha.CaptchaParameterIllegalException;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.dromara.hutool.core.data.id.IdUtil;
 import org.springframework.stereotype.Component;
 
 import java.awt.*;

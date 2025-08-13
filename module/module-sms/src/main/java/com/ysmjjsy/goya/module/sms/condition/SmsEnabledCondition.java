@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.module.sms.condition;
 
-import com.ysmjjsy.goya.component.common.resolver.PropertyResolver;
+import com.ysmjjsy.goya.component.core.resolver.PropertyResolver;
 import com.ysmjjsy.goya.module.sms.constants.SmsConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
