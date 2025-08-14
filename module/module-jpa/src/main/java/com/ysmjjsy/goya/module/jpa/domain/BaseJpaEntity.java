@@ -31,7 +31,7 @@ import java.time.LocalDateTime;
 @Setter
 @RequiredArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
-@SQLDelete(sql = "UPDATE {table_name} SET del_flag = true WHERE id = ?")
+@SQLDelete(sql = "UPDATE #{#entityName} SET del_flag = true WHERE id = ?")
 @SQLRestriction("del_flag = false")
 public abstract class BaseJpaEntity extends BaseDbEntity {
 
