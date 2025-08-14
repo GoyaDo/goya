@@ -3,15 +3,12 @@ package com.ysmjjsy.goya.module.mybatisplus.configuration;
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import com.baomidou.mybatisplus.core.handlers.PostInitTableInfoHandler;
 import com.baomidou.mybatisplus.core.incrementer.IdentifierGenerator;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.OptimisticLockerInnerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.TenantLineInnerInterceptor;
 import com.ysmjjsy.goya.component.core.context.SpringContextHolder;
 import com.ysmjjsy.goya.component.core.resolver.YmlPropertySourceFactory;
-import com.ysmjjsy.goya.component.db.adapter.BaseRepositoryAdapter;
-import com.ysmjjsy.goya.component.db.constants.DbConstants;
 import com.ysmjjsy.goya.module.mybatisplus.adapter.MybatisPlusRepositoryAdapter;
 import com.ysmjjsy.goya.module.mybatisplus.enhance.SnowIdentifierGenerator;
 import com.ysmjjsy.goya.module.mybatisplus.handler.InjectionMetaObjectHandler;
@@ -23,9 +20,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.BeansException;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
@@ -49,13 +44,6 @@ public class MybatisPlusAutoConfiguration {
     @PostConstruct
     public void postConstruct() {
         log.debug("[Goya] |- module [mybatis-plus] MybatisPlusAutoConfiguration auto configure.");
-    }
-
-    @Bean
-    @ConditionalOnProperty(name = DbConstants.PROPERTY_PREFIX_DB + ".mode", havingValue = "mybatis_plus")
-    @Primary
-    public BaseRepositoryAdapter mybatisAdapter(BaseMapper baseMapper) {
-        return new MybatisPlusRepositoryAdapter<>(baseMapper);
     }
 
 

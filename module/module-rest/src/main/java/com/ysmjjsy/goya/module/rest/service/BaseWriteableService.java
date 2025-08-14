@@ -19,7 +19,7 @@ public interface BaseWriteableService<E extends BaseDbEntity, R extends GoyaRepo
      * @param id 数据对应ID
      */
     default void deleteById(String id) {
-        getRepository().remoteById(id);
+        getRepository().removeById(id);
     }
 
     /**

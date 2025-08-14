@@ -40,7 +40,7 @@ public class MybatisPlusRepositoryAdapter<E extends BaseMpEntity> implements Bas
     }
 
     @Override
-    public void remoteById(@NotNull String id) {
+    public void removeById(@NotNull String id) {
         baseMapper.deleteById(id);
     }
 

@@ -14,6 +14,7 @@ import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.domain.Persistable;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.io.Serial;
@@ -33,10 +34,11 @@ import java.time.LocalDateTime;
 @EntityListeners(AuditingEntityListener.class)
 @SQLDelete(sql = "UPDATE #{#entityName} SET del_flag = true WHERE id = ?")
 @SQLRestriction("del_flag = false")
-public abstract class BaseJpaEntity extends BaseDbEntity {
+public abstract class BaseJpaEntity extends BaseDbEntity implements Persistable<String> {
 
     @Serial
     private static final long serialVersionUID = 8227316877620962339L;
+
 
     @Id
     @Column(name = "id", nullable = false, updatable = false)
@@ -88,15 +90,20 @@ public abstract class BaseJpaEntity extends BaseDbEntity {
 
     @PrePersist
     public void prePersist() {
-        if (this.id == null) {
+        if (this.id == null || this.id.isEmpty()) {
             this.id = SnowflakeIdUtil.nextIdStr();
         }
-        this.setCreatedTime(LocalDateTime.now());
+        if (this.createdTime == null) {
+            this.setCreatedTime(LocalDateTime.now());
+        }
         this.setUpdatedTime(LocalDateTime.now());
 
-        // 明确初始化版本号
         if (this.version == null) {
             this.version = 0;
+        }
+
+        if (this.delFlag == null) {
+            this.delFlag = false;
         }
     }
 
@@ -105,12 +112,27 @@ public abstract class BaseJpaEntity extends BaseDbEntity {
         this.setUpdatedTime(LocalDateTime.now());
     }
 
+    /**
+     * Persistable 接口方法，用于判断实体是否新建
+     */
+    @Override
+    @Transient
+    public boolean isNew() {
+        return this.id == null || this.id.isEmpty();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         BaseJpaEntity that = (BaseJpaEntity) o;
-        return Objects.equal(getId(), that.getId()) && Objects.equal(getCreatedTime(), that.getCreatedTime()) && Objects.equal(getUpdatedTime(), that.getUpdatedTime()) && Objects.equal(getCreateBy(), that.getCreateBy()) && Objects.equal(getUpdateBy(), that.getUpdateBy()) && Objects.equal(getVersion(), that.getVersion()) && Objects.equal(getDelFlag(), that.getDelFlag());
+        return Objects.equal(getId(), that.getId()) &&
+                Objects.equal(getCreatedTime(), that.getCreatedTime()) &&
+                Objects.equal(getUpdatedTime(), that.getUpdatedTime()) &&
+                Objects.equal(getCreateBy(), that.getCreateBy()) &&
+                Objects.equal(getUpdateBy(), that.getUpdateBy()) &&
+                Objects.equal(getVersion(), that.getVersion()) &&
+                Objects.equal(getDelFlag(), that.getDelFlag());
     }
 
     @Override

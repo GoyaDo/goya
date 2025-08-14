@@ -44,7 +44,7 @@ public interface GoyaRepository<E extends BaseDbEntity> extends BaseRepository<E
      *
      * @param id 数据对应ID
      */
-    void remoteById(@NotNull String id);
+    void removeById(@NotNull String id);
 
     /**
      * 根据ID删除数据
@@ -52,7 +52,7 @@ public interface GoyaRepository<E extends BaseDbEntity> extends BaseRepository<E
      * @param ids 数据对应ID
      */
     default void remoteByIds(@NotNull Iterable<String> ids) {
-        ids.forEach(this::remoteById);
+        ids.forEach(this::removeById);
     }
 
     /**
