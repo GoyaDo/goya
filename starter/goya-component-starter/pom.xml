@@ -24,11 +24,6 @@
 
         <dependency>
             <groupId>com.ysmjjsy.goya</groupId>
-            <artifactId>component-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.ysmjjsy.goya</groupId>
             <artifactId>component-captcha</artifactId>
         </dependency>
 
@@ -40,6 +35,11 @@
         <dependency>
             <groupId>com.ysmjjsy.goya</groupId>
             <artifactId>component-crypto</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ysmjjsy.goya</groupId>
+            <artifactId>component-secure</artifactId>
         </dependency>
 
         <dependency>

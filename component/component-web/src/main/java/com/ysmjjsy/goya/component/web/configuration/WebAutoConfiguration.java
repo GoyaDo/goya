@@ -1,69 +1,60 @@
 package com.ysmjjsy.goya.component.web.configuration;
 
-import com.ysmjjsy.goya.component.cache.configuration.CacheAutoConfiguration;
-import com.ysmjjsy.goya.component.web.config.SecureConfiguration;
-import com.ysmjjsy.goya.component.web.secure.AccessLimitedInterceptor;
-import com.ysmjjsy.goya.component.web.secure.IdempotentInterceptor;
+import com.ysmjjsy.goya.component.common.pojo.constants.GoyaConstants;
+import com.ysmjjsy.goya.component.common.strategy.Singleton;
+import com.ysmjjsy.goya.component.core.configuration.CoreAutoConfiguration;
+import com.ysmjjsy.goya.component.core.context.ServiceContextHolder;
+import com.ysmjjsy.goya.component.core.resolver.PropertyResolver;
+import com.ysmjjsy.goya.component.doc.configuration.SpringdocAutoConfiguration;
+import com.ysmjjsy.goya.component.web.configuration.properties.PlatformProperties;
+import com.ysmjjsy.goya.component.web.initializer.GoyaContextHolderBuilder;
+import jakarta.annotation.Nonnull;
 import jakarta.annotation.PostConstruct;
-import lombok.RequiredArgsConstructor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeansException;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
-import org.springframework.boot.autoconfigure.AutoConfigureAfter;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.boot.autoconfigure.web.client.RestTemplateAutoConfiguration;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Import;
-import org.springframework.web.client.RestClient;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.web.servlet.resource.LiteWebJarsResourceResolver;
+import org.springframework.boot.autoconfigure.web.ServerProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 
 /**
- * <p>Description </p>
+ * <p>Description: Web 服务通用配置 </p>
  *
  * @author goya
- * @since 2024/4/10 9:29
+ * @since 2024/1/24 16:34
  */
-@AutoConfiguration(after = {org.springframework.boot.autoconfigure.web.client.RestClientAutoConfiguration.class, RestTemplateAutoConfiguration.class})
-@AutoConfigureAfter(CacheAutoConfiguration.class)
-@EnableWebMvc
-@RequiredArgsConstructor
-@Import({SecureConfiguration.class})
-public class WebAutoConfiguration implements WebMvcConfigurer {
+@Slf4j
+@AutoConfiguration(before = SpringdocAutoConfiguration.class,after = CoreAutoConfiguration.class)
+@EnableConfigurationProperties({PlatformProperties.class})
+public class WebAutoConfiguration implements ApplicationContextAware {
 
-    private static final Logger log = LoggerFactory.getLogger(WebAutoConfiguration.class);
+    private final ServiceContextHolder serviceContextHolder;
 
-    private final IdempotentInterceptor idempotentInterceptor;
-    private final AccessLimitedInterceptor accessLimitedInterceptor;
-
+    /**
+     * 使用构造函数的方式，可以确保时机正确，几个参数对象设置正确，最终保证 ServiceContextHolder 的初始化时机合理
+     *
+     * @param platformProperties {@link PlatformProperties}
+     * @param serverProperties   {@link ServerProperties}
+     */
+    public WebAutoConfiguration(PlatformProperties platformProperties, ServerProperties serverProperties) {
+        this.serviceContextHolder = GoyaContextHolderBuilder.builder()
+                .platformProperties(platformProperties)
+                .serverProperties(serverProperties)
+                .build();
+    }
 
     @PostConstruct
     public void postConstruct() {
-        log.debug("[Goya] |- component [web] WebMvcConfiguration auto configure.");
+        log.debug("[Goya] |- component [web] WebServiceConfiguration configure.");
     }
 
     @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(accessLimitedInterceptor);
-        registry.addInterceptor(idempotentInterceptor);
+    public void setApplicationContext(@Nonnull ApplicationContext applicationContext) throws BeansException {
+        this.serviceContextHolder.setApplicationContext(applicationContext);
+        this.serviceContextHolder.setApplicationName(PropertyResolver.getProperty(applicationContext.getEnvironment(), GoyaConstants.ITEM_SPRING_APPLICATION_NAME));
+        log.trace("[Goya] |- component [web] |- Goya ApplicationContext initialization completed.");
+        Singleton.put(this.serviceContextHolder);
     }
 
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
-        registry.addResourceHandler("/webjars/**")
-                .addResourceLocations("classpath:/META-INF/resources/webjars/")
-                .resourceChain(false)
-                .addResolver(new LiteWebJarsResourceResolver());
-    }
-    @Bean
-    @ConditionalOnMissingBean
-    public RestClient restClient(RestClient.Builder restClientBuilder) {
-        RestClient restClient = restClientBuilder.build();
-        log.trace("[Goya] |- component [web] |- bean [RestClient] Configure.");
-        return restClient;
-    }
 }

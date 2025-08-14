@@ -1,6 +1,4 @@
-com.ysmjjsy.goya.component.web.configuration.WebServiceAutoConfiguration
 com.ysmjjsy.goya.component.web.configuration.WebAutoConfiguration
-com.ysmjjsy.goya.component.web.configuration.WebMvcCryptoAutoConfiguration
-com.ysmjjsy.goya.component.web.configuration.WebMvcRequestMappingScanAutoConfiguration
-
-
+com.ysmjjsy.goya.component.web.configuration.WebClientAutoConfiguration
+com.ysmjjsy.goya.component.web.configuration.WebMvcAutoConfiguration
+com.ysmjjsy.goya.component.web.configuration.WebScanAutoConfiguration

@@ -5,7 +5,7 @@ import com.ysmjjsy.goya.component.distributedid.configuration.DistributedIdAutoC
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
-import org.springframework.boot.autoconfigure.AutoConfigureAfter;
+import org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
 /**
@@ -15,8 +15,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
  * @since 2025/6/14 17:26
  */
 @Slf4j
-@AutoConfiguration
-@AutoConfigureAfter(DistributedIdAutoConfiguration.class)
+@AutoConfiguration(after = {CacheAutoConfiguration.class, DistributedIdAutoConfiguration.class})
 @EnableConfigurationProperties({DbProperties.class})
 public class GoyaDbAutoConfiguration {
 

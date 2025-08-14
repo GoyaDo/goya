@@ -16,6 +16,6 @@ public class ComponentAutoConfiguration {
 
     @PostConstruct
     public void init() {
-        log.info("[Goya] |- starter [component] auto configure.");
+        log.info("[Goya] |- starter [component] ComponentAutoConfiguration auto configure.");
     }
 }

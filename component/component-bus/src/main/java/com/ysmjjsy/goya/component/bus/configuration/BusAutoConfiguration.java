@@ -6,6 +6,7 @@ import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
+import org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 
@@ -16,13 +17,13 @@ import org.springframework.context.annotation.Bean;
  * @since 2025/7/10 22:31
  */
 @Slf4j
-@AutoConfiguration
+@AutoConfiguration(after = CacheAutoConfiguration.class)
 @RequiredArgsConstructor
 public class BusAutoConfiguration {
 
     @PostConstruct
     public void postConstruct() {
-        log.debug("[Goya] |- component [bus] configure.");
+        log.debug("[Goya] |- component [bus] BusAutoConfiguration configure.");
     }
 
     @Bean

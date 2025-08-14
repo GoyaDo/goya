@@ -1,6 +1,5 @@
 package com.ysmjjsy.goya.component.core.context;
 
-import com.ysmjjsy.goya.component.common.exception.definition.GoyaRuntimeException;
 import com.ysmjjsy.goya.component.common.pojo.constants.SymbolConstants;
 import com.ysmjjsy.goya.component.common.pojo.enums.Architecture;
 import com.ysmjjsy.goya.component.common.pojo.enums.Protocol;
@@ -10,6 +9,8 @@ import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationEvent;
+
+import java.util.Objects;
 
 /**
  * <p>Description: 服务上下文信息工具类 </p>
@@ -133,9 +134,6 @@ public class ServiceContextHolder {
 
     public static  ServiceContextHolder getInstance() {
         ServiceContextHolder serviceContextHolder = Singleton.get(ServiceContextHolder.class);
-        if (serviceContextHolder == null) {
-            throw new GoyaRuntimeException("ServiceContextHolder is null");
-        }
-        return serviceContextHolder;
+        return Objects.requireNonNullElseGet(serviceContextHolder, ServiceContextHolder::new);
     }
 }

@@ -1,12 +1,10 @@
 package com.ysmjjsy.goya.component.core.configuration;
 
-import cn.hutool.v7.extra.spring.SpringUtil;
 import com.ysmjjsy.goya.component.common.pojo.constants.GoyaConstants;
-import com.ysmjjsy.goya.component.core.safa.FastJsonSafeMode;
 import com.ysmjjsy.goya.component.core.chain.AbstractChainContext;
-import com.ysmjjsy.goya.component.core.context.SpringContextHolder;
 import com.ysmjjsy.goya.component.core.init.ApplicationContentPostProcessor;
 import com.ysmjjsy.goya.component.core.jackson2.Jackson2DefaultObjectMapperBuilderCustomizer;
+import com.ysmjjsy.goya.component.core.safa.FastJsonSafeMode;
 import com.ysmjjsy.goya.component.core.stragegy.AbstractStrategyChoose;
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
@@ -28,7 +26,6 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @Slf4j
 @AutoConfiguration
 @Import({
-        SpringUtil.class,
         AsyncConfiguration.class
 })
 @EnableAsync
@@ -38,13 +35,6 @@ public class CoreAutoConfiguration {
     @PostConstruct
     public void postConstruct() {
         log.debug("[Goya] |- component [core] CoreAutoConfiguration auto configure.");
-    }
-
-    @Bean("applicationContextHolder")
-    public SpringContextHolder applicationContextHolder() {
-        SpringContextHolder bean = new SpringContextHolder();
-        log.trace("[Goya] |- component [core] |- bean [applicationContextHolder] register.");
-        return bean;
     }
 
     @Bean

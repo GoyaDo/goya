@@ -26,6 +26,7 @@
         <module>component-bus</module>
         <module>component-distributedid</module>
         <module>component-core</module>
+        <module>component-secure</module>
     </modules>
 
 

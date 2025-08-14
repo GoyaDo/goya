@@ -16,6 +16,6 @@ public class ServiceAutoConfiguration {
 
     @PostConstruct
     public void init() {
-        log.info("[Goya] |- starter [common web] auto configure.");
+        log.info("[Goya] |- starter [service] ServiceAutoConfiguration auto configure.");
     }
 }

@@ -1,10 +1,11 @@
 package com.ysmjjsy.goya.component.doc.configuration;
 
 import com.google.common.collect.ImmutableList;
-import com.ysmjjsy.goya.component.doc.annotation.ConditionalOnSwaggerEnabled;
+import com.ysmjjsy.goya.component.common.pojo.constants.GoyaConstants;
+import com.ysmjjsy.goya.component.core.configuration.CoreAutoConfiguration;
+import com.ysmjjsy.goya.component.core.context.ServiceContextHolder;
 import com.ysmjjsy.goya.component.doc.configuration.properties.SwaggerProperties;
 import com.ysmjjsy.goya.component.doc.server.OpenApiServerResolver;
-import com.ysmjjsy.goya.component.common.pojo.constants.GoyaConstants;
 import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
 import io.swagger.v3.oas.annotations.security.*;
 import io.swagger.v3.oas.models.ExternalDocumentation;
@@ -26,8 +27,7 @@ import org.springframework.context.annotation.Bean;
  * @since 2025/6/13 18:00
  */
 @Slf4j
-@ConditionalOnSwaggerEnabled
-@AutoConfiguration
+@AutoConfiguration(after = CoreAutoConfiguration.class)
 @EnableConfigurationProperties(SwaggerProperties.class)
 @SecuritySchemes({
         @SecurityScheme(name = GoyaConstants.OPEN_API_SECURITY_SCHEME_BEARER_NAME, type = SecuritySchemeType.OAUTH2, bearerFormat = "JWT", scheme = "bearer",
@@ -49,6 +49,7 @@ public class SpringdocAutoConfiguration {
     public OpenApiServerResolver openApiServerResolver() {
         OpenApiServerResolver resolver = () -> {
             Server server = new Server();
+            server.setUrl(ServiceContextHolder.getInstance().getUrl());
             return ImmutableList.of(server);
         };
         log.trace("[Goya] |- component [doc] |- bean [openApiServerResolver] register.");

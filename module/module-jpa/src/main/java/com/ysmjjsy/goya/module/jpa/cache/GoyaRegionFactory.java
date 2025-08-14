@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.module.jpa.cache;
 
-import cn.hutool.v7.extra.spring.SpringUtil;
+import com.ysmjjsy.goya.component.core.context.SpringContextHolder;
 import org.hibernate.boot.spi.SessionFactoryOptions;
 import org.hibernate.cache.cfg.spi.DomainDataRegionBuildingContext;
 import org.hibernate.cache.cfg.spi.DomainDataRegionConfig;
@@ -39,7 +39,7 @@ public class GoyaRegionFactory extends RegionFactoryTemplate {
 
     @Override
     protected void prepareForUse(SessionFactoryOptions settings, Map configValues) {
-        this.cacheManager = SpringUtil.getBean("goyaCacheManager");
+        this.cacheManager = SpringContextHolder.getBean(CacheManager.class);
     }
 
     @Override

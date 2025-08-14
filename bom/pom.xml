@@ -91,6 +91,11 @@
                 <artifactId>component-crypto</artifactId>
                 <version>${revision}</version>
             </dependency>
+            <dependency>
+                <groupId>com.ysmjjsy.goya</groupId>
+                <artifactId>component-secure</artifactId>
+                <version>${revision}</version>
+            </dependency>
 
             <!-- security -->
             <dependency>

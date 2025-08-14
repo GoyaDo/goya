@@ -6,6 +6,7 @@ import com.ysmjjsy.goya.component.cache.configuration.properties.CacheProperties
 import com.ysmjjsy.goya.component.cache.core.caffeine.GoyaCaffeineCacheManager;
 import com.ysmjjsy.goya.component.cache.core.jetcache.JetCacheCreateCacheFactory;
 import com.ysmjjsy.goya.component.cache.core.jetcache.JetCacheSpringCacheManager;
+import com.ysmjjsy.goya.component.core.configuration.CoreAutoConfiguration;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -25,7 +26,7 @@ import org.springframework.context.annotation.Primary;
  * @since 2025/6/13 16:19
  */
 @Slf4j
-@AutoConfiguration
+@AutoConfiguration(after = CoreAutoConfiguration.class)
 @RequiredArgsConstructor
 @EnableConfigurationProperties(CacheProperties.class)
 public class CacheAutoConfiguration {
@@ -64,7 +65,7 @@ public class CacheAutoConfiguration {
     }
 
     @Bean
-    @ConditionalOnBean(CacheManager.class)
+    @ConditionalOnBean(value = {CacheManager.class})
     @ConditionalOnMissingBean
     public JetCacheCreateCacheFactory jetCacheCreateCacheFactory(@Qualifier("jcCacheManager") CacheManager cacheManager, CacheProperties cacheProperties) {
         JetCacheCreateCacheFactory factory = new JetCacheCreateCacheFactory(cacheManager, cacheProperties);

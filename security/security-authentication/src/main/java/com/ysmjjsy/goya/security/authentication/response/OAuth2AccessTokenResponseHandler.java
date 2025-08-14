@@ -1,7 +1,7 @@
 package com.ysmjjsy.goya.security.authentication.response;
 
 import com.ysmjjsy.goya.component.core.jackson2.utils.Jackson2Utils;
-import com.ysmjjsy.goya.component.web.crypto.HttpCryptoProcessor;
+import com.ysmjjsy.goya.component.crypto.web.HttpCryptoProcessor;
 import com.ysmjjsy.goya.component.web.utils.RequestUtils;
 import com.ysmjjsy.goya.security.core.constants.SecurityConstants;
 import jakarta.servlet.ServletException;

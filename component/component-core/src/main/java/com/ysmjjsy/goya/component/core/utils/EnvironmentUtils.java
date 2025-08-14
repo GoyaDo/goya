@@ -1,6 +1,6 @@
 package com.ysmjjsy.goya.component.core.utils;
 
-import com.ysmjjsy.goya.component.core.context.SpringContextHolder;
+import cn.hutool.v7.extra.spring.SpringUtil;
 import lombok.experimental.UtilityClass;
 import org.springframework.boot.autoconfigure.thread.Threading;
 import org.springframework.core.env.Environment;
@@ -21,6 +21,6 @@ public class EnvironmentUtils {
      * @since 2025/8/12 17:58
      */
     public static boolean isVirtual() {
-        return Threading.VIRTUAL.isActive(SpringContextHolder.getBean(Environment.class));
+        return Threading.VIRTUAL.isActive(SpringUtil.getBean(Environment.class));
     }
 }

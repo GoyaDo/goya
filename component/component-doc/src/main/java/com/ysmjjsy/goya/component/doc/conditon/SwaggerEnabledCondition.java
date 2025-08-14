@@ -22,7 +22,7 @@ public class SwaggerEnabledCondition implements Condition {
     @Override
     public boolean matches(ConditionContext conditionContext, AnnotatedTypeMetadata metadata) {
         boolean result = PropertyResolver.getBoolean(conditionContext, GoyaConstants.ITEM_DOC_ENABLED);
-        log.debug("[Herodotus] |- Condition [Swagger Enabled] value is [{}]", result);
+        log.debug("[Goya] |- Condition [Swagger Enabled] value is [{}]", result);
         return result;
     }
 }

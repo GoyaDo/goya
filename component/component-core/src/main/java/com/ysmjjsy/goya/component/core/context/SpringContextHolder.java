@@ -2,9 +2,9 @@ package com.ysmjjsy.goya.component.core.context;
 
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.ApplicationContextInitializer;
+import org.springframework.context.ConfigurableApplicationContext;
 
 import java.lang.annotation.Annotation;
 import java.util.Map;
@@ -16,15 +16,10 @@ import java.util.Map;
  * @since 2025/6/13 23:31
  */
 @Slf4j
-public class SpringContextHolder implements ApplicationContextAware {
+public class SpringContextHolder implements ApplicationContextInitializer<ConfigurableApplicationContext> {
 
     @Getter
     private static ApplicationContext applicationContext;
-
-    @Override
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        SpringContextHolder.applicationContext = applicationContext;
-    }
 
     /**
      * 通过class获取 Bean.
@@ -103,5 +98,10 @@ public class SpringContextHolder implements ApplicationContextAware {
      */
     public static <A extends Annotation> A findAnnotationOnBean(String beanName, Class<A> annotationType) {
         return SpringContextHolder.getApplicationContext().findAnnotationOnBean(beanName, annotationType);
+    }
+
+    @Override
+    public void initialize(ConfigurableApplicationContext applicationContext) {
+        SpringContextHolder.applicationContext = applicationContext;
     }
 }

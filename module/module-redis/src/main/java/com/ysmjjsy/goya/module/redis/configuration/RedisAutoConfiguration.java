@@ -2,19 +2,16 @@ package com.ysmjjsy.goya.module.redis.configuration;
 
 import com.ysmjjsy.goya.component.cache.configuration.properties.CacheProperties;
 import com.ysmjjsy.goya.module.redis.configuration.properties.RedisBloomFilterPenetrateProperties;
-import com.ysmjjsy.goya.module.redis.constants.RedisConstants;
-import com.ysmjjsy.goya.module.redis.definition.GoyaRedisCache;
 import com.ysmjjsy.goya.module.redis.definition.DistributedCacheTemplateProxy;
+import com.ysmjjsy.goya.module.redis.definition.GoyaRedisCache;
 import com.ysmjjsy.goya.module.redis.distributedid.LocalRedisWorkIdChoose;
 import com.ysmjjsy.goya.module.redis.enhance.GoyaRedisCacheManager;
 import jakarta.annotation.PostConstruct;
-import org.redisson.api.RBloomFilter;
 import org.redisson.api.RedissonClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;
@@ -93,18 +90,6 @@ public class RedisAutoConfiguration {
         stringRedisTemplate.afterPropertiesSet();
         log.trace("[Goya] |- module [redis] |- bean [stringRedisTemplate] register.");
         return stringRedisTemplate;
-    }
-
-    /**
-     * 防止缓存穿透的布隆过滤器
-     */
-    @Bean
-    @ConditionalOnProperty(prefix = RedisConstants.REDIS_BLOOM_FILTER_DEFAULT_PREFIX, name = "enabled", havingValue = "true", matchIfMissing = true)
-    public RBloomFilter<String> cachePenetrationBloomFilter(RedissonClient redissonClient, RedisBloomFilterPenetrateProperties bloomFilterPenetrateProperties) {
-        RBloomFilter<String> cachePenetrationBloomFilter = redissonClient.getBloomFilter(bloomFilterPenetrateProperties.getName());
-        cachePenetrationBloomFilter.tryInit(bloomFilterPenetrateProperties.getExpectedInsertions(), bloomFilterPenetrateProperties.getFalseProbability());
-        log.trace("[Goya] |- module [redis] |- bean [cachePenetrationBloomFilter] register.");
-        return cachePenetrationBloomFilter;
     }
 
     @Bean

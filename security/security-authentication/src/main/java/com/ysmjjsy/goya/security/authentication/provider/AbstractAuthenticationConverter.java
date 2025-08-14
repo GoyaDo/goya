@@ -2,7 +2,7 @@ package com.ysmjjsy.goya.security.authentication.provider;
 
 import com.ysmjjsy.goya.component.common.utils.ListUtils;
 import com.ysmjjsy.goya.component.common.exception.request.RequestInvalidException;
-import com.ysmjjsy.goya.component.web.crypto.HttpCryptoProcessor;
+import com.ysmjjsy.goya.component.crypto.web.HttpCryptoProcessor;
 import com.ysmjjsy.goya.component.web.utils.RequestUtils;
 import com.ysmjjsy.goya.security.authentication.utils.OAuth2EndpointUtils;
 import com.ysmjjsy.goya.security.core.constants.SecurityConstants;

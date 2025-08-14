@@ -19,7 +19,11 @@
 
         <dependency>
             <groupId>com.ysmjjsy.goya</groupId>
-            <artifactId>component-web</artifactId>
+            <artifactId>component-crypto</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ysmjjsy.goya</groupId>
+            <artifactId>component-secure</artifactId>
         </dependency>
     </dependencies>
 </project>

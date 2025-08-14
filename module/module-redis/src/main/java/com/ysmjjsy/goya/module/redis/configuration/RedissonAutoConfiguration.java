@@ -3,12 +3,15 @@ package com.ysmjjsy.goya.module.redis.configuration;
 import com.ysmjjsy.goya.component.core.resolver.ResourceResolver;
 import com.ysmjjsy.goya.component.common.pojo.constants.GoyaConstants;
 import com.ysmjjsy.goya.component.common.pojo.constants.SymbolConstants;
+import com.ysmjjsy.goya.module.redis.configuration.properties.RedisBloomFilterPenetrateProperties;
 import com.ysmjjsy.goya.module.redis.configuration.properties.RedissonProperties;
+import com.ysmjjsy.goya.module.redis.constants.RedisConstants;
 import jakarta.annotation.PostConstruct;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.redisson.Redisson;
+import org.redisson.api.RBloomFilter;
 import org.redisson.api.RedissonClient;
 import org.redisson.codec.JsonJacksonCodec;
 import org.redisson.config.ClusterServersConfig;
@@ -54,6 +57,18 @@ public class RedissonAutoConfiguration {
     @PostConstruct
     public void postConstruct() {
         log.debug("[Goya] |- module [redis] RedissonAutoConfiguration auto configure.");
+    }
+
+    /**
+     * 防止缓存穿透的布隆过滤器
+     */
+    @Bean
+    @ConditionalOnProperty(prefix = RedisConstants.REDIS_BLOOM_FILTER_DEFAULT_PREFIX, name = "enabled", havingValue = "true", matchIfMissing = true)
+    public RBloomFilter<String> cachePenetrationBloomFilter(RedissonClient redissonClient, RedisBloomFilterPenetrateProperties bloomFilterPenetrateProperties) {
+        RBloomFilter<String> cachePenetrationBloomFilter = redissonClient.getBloomFilter(bloomFilterPenetrateProperties.getName());
+        cachePenetrationBloomFilter.tryInit(bloomFilterPenetrateProperties.getExpectedInsertions(), bloomFilterPenetrateProperties.getFalseProbability());
+        log.trace("[Goya] |- module [redis] |- bean [cachePenetrationBloomFilter] register.");
+        return cachePenetrationBloomFilter;
     }
 
     private File readConfigFile() {

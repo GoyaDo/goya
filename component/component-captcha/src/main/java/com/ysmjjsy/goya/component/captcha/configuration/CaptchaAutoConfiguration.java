@@ -1,5 +1,6 @@
 package com.ysmjjsy.goya.component.captcha.configuration;
 
+import com.ysmjjsy.goya.component.cache.configuration.CacheAutoConfiguration;
 import com.ysmjjsy.goya.component.captcha.configuration.properties.CaptchaProperties;
 import com.ysmjjsy.goya.component.captcha.processor.CaptchaRendererFactory;
 import com.ysmjjsy.goya.component.captcha.provider.ResourceProvider;
@@ -27,7 +28,7 @@ import org.springframework.context.annotation.Configuration;
  * @since 2025/6/14 15:35
  */
 @Slf4j
-@AutoConfiguration
+@AutoConfiguration(after = CacheAutoConfiguration.class)
 @RequiredArgsConstructor
 @EnableConfigurationProperties(CaptchaProperties.class)
 public class CaptchaAutoConfiguration {
