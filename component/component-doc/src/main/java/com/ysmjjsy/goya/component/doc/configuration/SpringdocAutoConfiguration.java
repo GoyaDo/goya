@@ -32,8 +32,8 @@ import org.springframework.context.annotation.Bean;
 @SecuritySchemes({
         @SecurityScheme(name = GoyaConstants.OPEN_API_SECURITY_SCHEME_BEARER_NAME, type = SecuritySchemeType.OAUTH2, bearerFormat = "JWT", scheme = "bearer",
                 flows = @OAuthFlows(
-                        password = @OAuthFlow(authorizationUrl = "${goya.endpoint.authorization-uri}", tokenUrl = "${goya.endpoint.access-token-uri}", refreshUrl = "${goya.endpoint.access-token-uri}", scopes = @OAuthScope(name = "all")),
-                        clientCredentials = @OAuthFlow(authorizationUrl = "${goya.endpoint.authorization-uri}", tokenUrl = "${goya.endpoint.access-token-uri}", refreshUrl = "${goya.endpoint.access-token-uri}", scopes = @OAuthScope(name = "all"))
+                        password = @OAuthFlow(authorizationUrl = "${goya.platform.endpoint.authorization-uri}", tokenUrl = "${goya.platform.endpoint.access-token-uri}", refreshUrl = "${goya.platform.endpoint.access-token-uri}", scopes = @OAuthScope(name = "all")),
+                        clientCredentials = @OAuthFlow(authorizationUrl = "${goya.platform.endpoint.authorization-uri}", tokenUrl = "${goya.platform.endpoint.access-token-uri}", refreshUrl = "${goya.platform.endpoint.access-token-uri}", scopes = @OAuthScope(name = "all"))
 //                        authorizationCode = @OAuthFlow(authorizationUrl = "${goya.platform.endpoint.user-authorization-uri}", tokenUrl = "${goya.platform.endpoint.access-token-uri}", refreshUrl = "${goya.platform.endpoint.access-token-uri}", scopes = @OAuthScope(name = "all"))
                 )),
 })
