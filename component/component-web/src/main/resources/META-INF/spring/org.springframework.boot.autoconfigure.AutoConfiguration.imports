@@ -1,0 +1,4 @@
+com.ysmjjsy.goya.component.web.configuration.WebAutoConfiguration
+com.ysmjjsy.goya.component.web.configuration.WebClientAutoConfiguration
+com.ysmjjsy.goya.component.web.configuration.WebMvcAutoConfiguration
+com.ysmjjsy.goya.component.web.configuration.WebScanAutoConfiguration

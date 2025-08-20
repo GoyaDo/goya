@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.ysmjjsy.goya</groupId>
+        <artifactId>goya</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+    <artifactId>component</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>component-cache</module>
+        <module>component-catchlog</module>
+        <module>component-common</module>
+        <module>component-db</module>
+        <module>component-test-container</module>
+        <module>component-ruleengine</module>
+        <module>component-statemachine</module>
+        <module>component-doc</module>
+        <module>component-web</module>
+        <module>component-captcha</module>
+        <module>component-crypto</module>
+        <module>component-bus</module>
+        <module>component-distributedid</module>
+        <module>component-core</module>
+        <module>component-secure</module>
+    </modules>
+
+
+</project>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.ysmjjsy.goya</groupId>
+        <artifactId>bom</artifactId>
+        <version>${revision}</version>
+        <relativePath>bom/pom.xml</relativePath>
+    </parent>
+
+    <artifactId>goya</artifactId>
+    <version>${revision}</version>
+    <packaging>pom</packaging>
+    <description>基于 Spring Boot 的企业级微服务框架</description>
+
+    <url>https://www.ysmjjsy.com</url>
+
+    <licenses>
+        <license>
+            <name>Apache License Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>goya</id>
+            <name>goya</name>
+            <email>chenjie@ysmjjsy.com</email>
+            <timezone>+8</timezone>
+        </developer>
+    </developers>
+    <scm>
+        <url>https://github.com/GoyaDo/goya.git</url>
+    </scm>
+
+    <modules>
+        <module>dependencies</module>
+        <module>bom</module>
+        <module>component</module>
+        <module>starter</module>
+        <module>cloud</module>
+        <module>module</module>
+        <module>openapi</module>
+        <module>security</module>
+    </modules>
+
+</project>
